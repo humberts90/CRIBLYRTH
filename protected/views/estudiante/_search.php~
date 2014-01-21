@@ -1,0 +1,85 @@
+<?php
+/* @var $this M06EmpresaController */
+/* @var $model_1 M06Empresa */
+/* @var $form CActiveForm */
+?>
+
+<div class="wide form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'action'=>Yii::app()->createUrl($this->route),
+	'method'=>'get',
+)); ?>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'id'); ?>
+		<?php echo $form->textField($model_1,'id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'RIF'); ?>
+		<?php echo $form->textField($model_1,'RIF',array('size'=>25,'maxlength'=>25)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Status'); ?>
+		<?php echo $form->textField($model_1,'Status'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Razon_Social'); ?>
+		<?php echo $form->textField($model_1,'Razon_Social',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Direccion'); ?>
+		<?php echo $form->textArea($model_1,'Direccion',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Telefono_1'); ?>
+		<?php echo $form->textField($model_1,'Telefono_1',array('size'=>25,'maxlength'=>25)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Telefono_2'); ?>
+		<?php echo $form->textField($model_1,'Telefono_2',array('size'=>25,'maxlength'=>25)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Fax'); ?>
+		<?php echo $form->textField($model_1,'Fax',array('size'=>25,'maxlength'=>25)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Correo'); ?>
+		<?php echo $form->textField($model_1,'Correo',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Descripcion'); ?>
+		<?php echo $form->textArea($model_1,'Descripcion',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'Sitio_Web'); ?>
+		<?php echo $form->textField($model_1,'Sitio_Web',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'P04_id'); ?>
+		<?php echo $form->textField($model_1,'P04_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model_1,'P08_id'); ?>
+		<?php echo $form->textField($model_1,'P08_id'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton('Search'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- search-form -->
