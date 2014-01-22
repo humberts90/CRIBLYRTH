@@ -34,6 +34,7 @@ class T03Acta extends CActiveRecord
 			array('M05_id, Descripcion, Fecha', 'required'),
 			array('M05_id', 'numerical', 'integerOnly'=>true),
 			array('Anexo', 'length', 'max'=>255),
+			array('Anexo', 'file', 'allowEmpty'=>true, 'on'=>'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, M05_id, Descripcion, Fecha, Anexo', 'safe', 'on'=>'search'),
