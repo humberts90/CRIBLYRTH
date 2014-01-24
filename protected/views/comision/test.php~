@@ -1,0 +1,84 @@
+<h2><?php echo $model->Titulo; ?></h2>
+
+			<?php 		
+			foreach ($has1 as  $value) {
+			$val=M05Usuario::model()->findByPk($value->M05_id); 
+			$actor=P02TipoRelacion::model()->findByPk($value->P02_id);
+			?>
+
+			<b><?php echo CHtml::encode($actor->Descripcion); ?>:</b>
+			<?php echo CHtml::encode($val->Nombre." ".$val->Apellido); ?>
+			<br />
+
+			<?php } ?>
+<b><?php echo '<A HREF="'.Yii::app()->theme->baseUrl.'/Cartas_tutores/Tesis/'.$model->id.'/'.$model->Carta_Tutor.'" TARGET="_blank" >Carta del tutor</A>'; ?></b>
+</br>
+</br>
+<b><?php echo CHtml::encode($data->getAttributeLabel('Introduccion')); ?>:</b>
+	<?php echo CHtml::encode($data->Introduccion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Planteamiento_Problema')); ?>:</b>
+	<?php echo CHtml::encode($data->Planteamiento_Problema); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Objetivo_General')); ?>:</b>
+	<?php echo CHtml::encode($data->Objetivo_General); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Objetivo_especifico')); ?>:</b>
+	<?php echo CHtml::encode($data->Objetivo_especifico); ?>
+	<br />
+
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Justificacion_Importancia')); ?>:</b>
+	<?php echo CHtml::encode($data->Justificacion_Importancia); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Alcance_Delimitaciones')); ?>:</b>
+	<?php echo CHtml::encode($data->Alcance_Delimitaciones); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Antecedentes')); ?>:</b>
+	<?php echo CHtml::encode($data->Antecedentes); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Bases_Teoricas')); ?>:</b>
+	<?php echo CHtml::encode($data->Bases_Teoricas); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Bases_Legales')); ?>:</b>
+	<?php echo CHtml::encode($data->Bases_Legales); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Definicion_Terminos')); ?>:</b>
+	<?php echo CHtml::encode($data->Definicion_Terminos); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Enfoque_Investigacion')); ?>:</b>
+	<?php echo CHtml::encode($data->Enfoque_Investigacion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Tipo_Nivel_Invesstigacion')); ?>:</b>
+	<?php echo CHtml::encode($data->Tipo_Nivel_Invesstigacion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Diseno_Investigacion')); ?>:</b>
+	<?php echo CHtml::encode($data->Diseno_Investigacion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Poblacion_Muestra')); ?>:</b>
+	<?php echo CHtml::encode($data->Poblacion_Muestra); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Tecnicas_Recoleccion_Datos')); ?>:</b>
+	<?php echo CHtml::encode($data->Tecnicas_Recoleccion_Datos); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Metodologias')); ?>:</b>
+	<?php echo CHtml::encode($data->Metodologias); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Referencias')); ?>:</b>
+	<?php echo CHtml::encode($data->Referencias); ?>
+	<br />

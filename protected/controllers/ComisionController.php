@@ -201,5 +201,55 @@ class ComisionController extends Controller {
 			'Usuario'=>$tar,
 		));
 	}
+	//---------------------------------------Evaluar Propuestas----------------------------------------------------
+	public function actionTesis(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=new M03Tesis('search');
+		$model->unsetAttributes();
+
+		$this->render('list_1',array(
+			'Usuario'=>$tar,
+			 'dataProvider'=>$model->search(),
+			 'model'=>$model,
+			));
+	}
+	public function actionTesdeta($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$tesis=M03Tesis::model()->findByPk($id);
+		$has1=T01TesisHasUsuario::model()->findAll('M03_id = '.$tesis->id);
+		$this->render('test',array(
+			'Usuario'=>$tar,
+			'model'=>$tesis,
+			'has1'=>$has1,
+			));
+	}
+	public function actionEvalua($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$tesis=M03Tesis::model()->findByPk($id);
+		$model=new T06Observacion;
+		$tes=T01TesisHasUsuario::model()->findAll("M03_id =".$tesis->id);
+		if(isset($_POST['T06Observacion']))
+		{
+			$model->attributes=$_POST['T06Observacion'];
+			$temp=$_POST['T06Observacion']['M03_id'];
+			$model->M03_id=$tesis->id;
+			$model->Fecha=date('Y-m-d');
+			if($model->save()){
+				foreach ($tes as $value) {
+					$nue=T01TesisHasUsuario::model()->findByPk($value->id);
+					$nue->P03_id=$temp;
+					$nue->save();
+				}
+				echo "<script>alert('Evaluacion realizada con exito');</script>";
+				$this->redirect(array('tesis'));
+			}
+				
+		}
+		$this->render('evalua',array(
+			'Usuario'=>$tar,
+			'tes'=>$tesis,
+			'model'=>$model,
+			));
+	}
 
 }
