@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-01-2014 a las 16:51:41
+-- Tiempo de generación: 27-01-2014 a las 00:46:03
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -168,9 +168,9 @@ CREATE TABLE IF NOT EXISTS `m03_tesis` (
   `Tecnicas_Recoleccion_Datos` longtext,
   `Metodologias` longtext,
   `Referencias` longtext,
-  `Fecha_Inscripcion` timestamp NULL DEFAULT NULL,
-  `Fecha_Aprobación` time DEFAULT NULL,
-  `Fecha_Defensa` time DEFAULT NULL,
+  `Fecha_Inscripcion` date DEFAULT NULL,
+  `Fecha_Aprobación` date DEFAULT NULL,
+  `Fecha_Defensa` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `m05_usuario` (
 
 INSERT INTO `m05_usuario` (`id`, `Cedula`, `Apellido`, `Nombre`, `Usuario`, `Clave`, `Telefono`, `Correo_Electronico`, `Direccion`, `Unidades_Credito_Aprobadas`, `Servicio_Comunitario`, `Ultimo_Lapso_Academico`, `foto`, `session`) VALUES
 (2, '82294818', 'Soler', 'Humberto', 'humberts90', 'maleconazo', '02763430816', 'humberts90', 'calle xxx', NULL, NULL, '', '', ''),
-(5, '17677687', 'useche', 'Samuel', 'samuel.useche', 'e5e47e51d92f173b64ecdbfd494dc5027cb60797', '041622', 'maverick71036@gmail.com', 'S/c', NULL, NULL, '', '', ''),
+(5, '17677687', 'useche', 'Samuel', 'samuel.useche', '9330f907bab4c871a96fc7b75e2f7925a28f31d0', '041622', 'maverick71036@gmail.com', 'S/c', NULL, NULL, '', '', '52de7b6ef35db1.57725116'),
 (11, '666', 'Admin', 'Admin', 'admin', 'ef372c7247ddffff2f572b2375e434136f139234', '666', 'Admin@admin.com', 'sc', NULL, NULL, '', '', '52d5bd4de12f50.09275149'),
 (13, '00025', 'Dahyana Nimo', '---', NULL, NULL, NULL, '----', NULL, NULL, NULL, NULL, NULL, NULL);
 
@@ -1984,8 +1984,8 @@ CREATE TABLE IF NOT EXISTS `t01_tesis_has_usuario` (
 --
 
 INSERT INTO `t01_tesis_has_usuario` (`M03_id`, `M05_id`, `P03_id`, `P02_id`, `id`) VALUES
-(1, 11, 2, 1, 1),
-(1, 13, 2, 2, 2);
+(1, 11, 3, 1, 1),
+(1, 13, 3, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -2018,11 +2018,20 @@ CREATE TABLE IF NOT EXISTS `t03_acta` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `M05_id` int(11) NOT NULL,
   `Descripcion` longtext NOT NULL,
-  `Fecha` time NOT NULL,
+  `Fecha` date NOT NULL,
   `Anexo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Bitacora_Usuario1_idx` (`M05_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `t03_acta`
+--
+
+INSERT INTO `t03_acta` (`id`, `M05_id`, `Descripcion`, `Fecha`, `Anexo`) VALUES
+(2, 11, '<p>asfdsafa</p>', '2014-01-24', ''),
+(3, 11, '<p>adsa</p>', '2014-01-17', 'Reglamento.pdf'),
+(4, 11, '<div id="lipsum">\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\n<p>Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non.</p>\n</div>', '2014-01-31', 'Modulos propuestos .odt');
 
 -- --------------------------------------------------------
 
@@ -2072,11 +2081,23 @@ CREATE TABLE IF NOT EXISTS `t05_tematica_has_tesis` (
 CREATE TABLE IF NOT EXISTS `t06_observacion` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Descripcion` text NOT NULL,
-  `Fecha` time NOT NULL,
+  `Fecha` date NOT NULL,
   `M03_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_T06_Observacion_M03_Tesis1_idx` (`M03_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `t06_observacion`
+--
+
+INSERT INTO `t06_observacion` (`id`, `Descripcion`, `Fecha`, `M03_id`) VALUES
+(1, '<p><strong>Buena</strong></p>', '2014-01-23', 1),
+(2, '<p>Buena</p>', '2014-01-23', 1),
+(3, '<p>Buena chino</p>', '2014-01-24', 1),
+(4, '<p>Buena chino</p>', '2014-01-24', 1),
+(5, '<p>buena pelao</p>', '2014-01-24', 1),
+(6, '<p>bdfbd</p>', '2014-01-24', 1);
 
 -- --------------------------------------------------------
 
@@ -2091,7 +2112,7 @@ CREATE TABLE IF NOT EXISTS `t08_usuario_has_rol` (
   PRIMARY KEY (`id`),
   KEY `fk_M05_Usuario_has_P01_Rol_P01_Rol1_idx` (`P01_id`),
   KEY `fk_M05_Usuario_has_P01_Rol_M05_Usuario1_idx` (`M05_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Volcado de datos para la tabla `t08_usuario_has_rol`
@@ -2100,7 +2121,9 @@ CREATE TABLE IF NOT EXISTS `t08_usuario_has_rol` (
 INSERT INTO `t08_usuario_has_rol` (`M05_id`, `P01_id`, `id`) VALUES
 (2, 1, 2),
 (5, 3, 6),
-(11, 10, 11);
+(11, 10, 11),
+(5, 10, 12),
+(5, 10, 13);
 
 -- --------------------------------------------------------
 
@@ -2113,7 +2136,18 @@ CREATE TABLE IF NOT EXISTS `t09_noticias` (
   `Descripcion` text NOT NULL,
   `Fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `t09_noticias`
+--
+
+INSERT INTO `t09_noticias` (`id`, `Descripcion`, `Fecha`) VALUES
+(1, '<p>dfsfdsdfsdf</p>', '2014-01-01 04:30:00'),
+(2, '<div id="lipsum">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\r\n<p><strong> Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non. </strong></p>\r\n</div>', '2014-01-24 04:30:00'),
+(3, '<div id="lipsum">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\r\n<p><strong> Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non. </strong></p>\r\n</div>', '2014-01-24 04:30:00'),
+(4, '<div id="lipsum">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\r\n<p><strong> Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non. </strong></p>\r\n</div>', '2014-01-24 04:30:00'),
+(5, '<div id="lipsum">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\r\n<p><strong> Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non. </strong></p>\r\n</div>', '2014-01-24 04:30:00');
 
 -- --------------------------------------------------------
 
@@ -2260,5 +2294,3 @@ ALTER TABLE `t11_actividad`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
