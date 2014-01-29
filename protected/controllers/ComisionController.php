@@ -228,20 +228,38 @@ class ComisionController extends Controller {
 		$tesis=M03Tesis::model()->findByPk($id);
 		$model=new T06Observacion;
 		$tes=T01TesisHasUsuario::model()->findAll("M03_id =".$tesis->id);
+		$prof=M01Profesor::model()->findAll();
+		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Jurado 1'");
+		$tipo2=P02TipoRelacion::model()->find("Descripcion = 'Jurado 2'");
+		$tipo3=P02TipoRelacion::model()->find("Descripcion = 'Jurado Suplente'");
+		$jurado1=$_REQUEST['j1'];
+		$jurado2=$_REQUEST['j2'];
+		$jurado3=$_REQUEST['j3'];
+		$ju1=M01Profesor::model()->findByPk($jurado1);
+		$ju2=M01Profesor::model()->findByPk($jurado2);
+		$ju3=M01Profesor::model()->findByPk($jurado3);
+		
+
 		if(isset($_POST['T06Observacion']))
 		{
 			$model->attributes=$_POST['T06Observacion'];
 			$temp=$_POST['T06Observacion']['M03_id'];
 			$model->M03_id=$tesis->id;
 			$model->Fecha=date('Y-m-d');
-			if($model->save()){
+
+
+			if(/*$model->save()*/true){
+			$sql="Insert into t01_tesis_has_usuario (id,M03_id,M05_id,P03_id,P02_id) values (NULL,".$tesis->id."," .$.",'".$prof->Apellido."','".$prof->Correo_UNET."')";
+					$comando = Yii::app() -> db -> createCommand($sql);
+					$comando -> execute(); 
 				foreach ($tes as $value) {
 					$nue=T01TesisHasUsuario::model()->findByPk($value->id);
 					$nue->P03_id=$temp;
-					$nue->save();
+					//$nue->save();
+				
 				}
 				echo "<script>alert('Evaluacion realizada con exito');</script>";
-				$this->redirect(array('tesis'));
+				//$this->redirect(array('tesis'));
 			}
 				
 		}
@@ -249,6 +267,7 @@ class ComisionController extends Controller {
 			'Usuario'=>$tar,
 			'tes'=>$tesis,
 			'model'=>$model,
+			'profesor'=>$prof,
 			));
 	}
 
