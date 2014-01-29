@@ -3,6 +3,8 @@
 	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/jquery/jquery-1.10.2.min.js"></script>
 		
  	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/jquery/jquery.steps.js"></script>	
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/jquery/nicEdit-latest.js"></script>	
+    <!--<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> NO BORRAR -->
 
 	
 
@@ -27,6 +29,23 @@ Yii::app()->clientScript->registerScript('wizard', '
 				{
 					var form = $(this);                             
 					// Submit form input
+					var text = $("#myInstance1").html();
+					$("#Titulo").val(text);
+					text = $("#myInstance2").html();
+					$("#Planteamiento_Problema").val(text);
+					text = $("#myInstance3").html();
+					$("#Descripcion_Trabajo").val(text);
+					text = $("#myInstance4").html();
+					$("#Objetivo_General").val(text);
+					text = $("#myInstance5").html();
+					$("#Objetivo_Especifico").val(text);
+					text = $("#myInstance6").html();
+					$("#Antecedentes").val(text);
+					text = $("#myInstance7").html();
+					$("#Metodologia").val(text);
+					text = $("#myInstance8").html();
+					$("#Productos_Desarrollo").val(text);
+
 					$("#pasantias-form").submit();
 				},
 				labels: {
@@ -51,6 +70,28 @@ $('.search-form form').submit(function(){
 	});
 	return false;
 });
+	//<![CDATA[
+							bkLib.onDomLoaded(function() {
+							var myNicEditor = new nicEditor();
+							myNicEditor.setPanel('myNicPanel1');
+							myNicEditor.setPanel('myNicPanel2');
+							myNicEditor.setPanel('myNicPanel3');
+							myNicEditor.setPanel('myNicPanel4');
+							myNicEditor.setPanel('myNicPanel5');
+							myNicEditor.setPanel('myNicPanel6');
+							myNicEditor.setPanel('myNicPanel7');
+							myNicEditor.setPanel('myNicPanel8');
+
+							myNicEditor.addInstance('myInstance1');
+							myNicEditor.addInstance('myInstance2');
+							myNicEditor.addInstance('myInstance3');
+							myNicEditor.addInstance('myInstance4');
+							myNicEditor.addInstance('myInstance5');
+							myNicEditor.addInstance('myInstance6');
+							myNicEditor.addInstance('myInstance7');
+							myNicEditor.addInstance('myInstance8');
+							});
+							//]]>
 ");
 ?>
 

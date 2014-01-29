@@ -65,7 +65,7 @@ class EstudianteController extends Controller
 		if(isset($_POST['M03Tesis'])){
 			$model_1->attributes=$_POST['M03Tesis'];
 			$model_1->Carta_Tutor=CUploadedFile::getInstance($model_1,'Carta_Tutor');
-
+			
 			if($model_1->save()){
 
 				// Para subir la relacion con el alumno
@@ -143,11 +143,12 @@ class EstudianteController extends Controller
 		$model_5=new T02PasantiaHasUsuario;		
 		if(isset($_POST['M04Pasantia']))
 		{	
+
 			//--------------------------Empresa-----------------------------------------
 
 			$model_2->attributes=$_POST['M04Pasantia']; // datos de las pasantias 
 			if($model_2->temp==null||$model_2->temp==' '){ // si no selecciono empresa es por que va cargar una nueva
-				$model_1->attributes=$_Post['M06Empresa'];
+				$model_1->attributes=$_POST['M06Empresa'];
 				if($model_1->validate()){
 					$model_1->P08_id=$status->id;
 					$model_1->save();
@@ -182,6 +183,7 @@ class EstudianteController extends Controller
 			}
 
 			//---------------------------Pasantias---------------------------------------------
+
 			$model_2->save();
 
 			//---------------------------Pasantias has Usuario---------------------------------

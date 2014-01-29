@@ -56,38 +56,91 @@
 			<h2>Plan de Trabajo I</h2>
 			<section>
 					<label>Titulo</label><br>
-						<?php echo $form->textField($model_2,'Titulo',array('size'=>30,'maxlength'=>255)); ?>
+						<div id="myNicPanel1" style="width:450px;"></div>
+
+						<div id="myInstance1" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_2,"Titulo",array("type"=>"hidden","id"=>"Titulo"),array('size'=>30,'maxlength'=>255)); ?>
 						<?php echo $form->error($model_2,'Titulo'); ?>
 					<br>	
 					<label>Planteamiento del problema</label><br>
-						<?php echo $form->textArea($model_2,'Planteamiento_Problema',array('rows'=>6, 'cols'=>50)); ?>
+					<div id="myNicPanel2" style="width:450px;"></div>
+
+						<div id="myInstance2" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_2,"Planteamiento_Problema",array("type"=>"hidden","id"=>"Planteamiento_Problema"), array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_2,'Planteamiento_Problema'); ?>
+
 					<br>
 					<label>Descripcion del trabajo</label><br>
-						<?php echo $form->textArea($model_2,'Descripcion_Trabajo',array('rows'=>6, 'cols'=>50)); ?>
+					<div id="myNicPanel3" style="width:450px;"></div>
+
+						<div id="myInstance3" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_2,"Descripcion_Trabajo",array("type"=>"hidden","id"=>"Descripcion_Trabajo"), array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_2,'Descripcion_Trabajo'); ?>
+
 					<br>
 					<label>Objetivo General</label><br>
-						<?php echo $form->textArea($model_2,'Objetivo_General',array('rows'=>6, 'cols'=>50)); ?>
+						<div id="myNicPanel4" style="width:450px;"></div>
+
+						<div id="myInstance4" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_2,"Objetivo_General",array("type"=>"hidden","id"=>"Objetivo_General"), array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_2,'Objetivo_General'); ?>
+
 					<br>	
 					<label>Objetivo Especificosl</label><br>
-						<?php echo $form->textArea($model_2,'Objetivo_Especifico',array('rows'=>6, 'cols'=>50)); ?>
+					<div id="myNicPanel5" style="width:450px;"></div>
+
+						<div id="myInstance5" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_2,"Objetivo_Especifico",array("type"=>"hidden","id"=>"Objetivo_Especifico"), array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_2,'Objetivo_Especifico'); ?>
+
 					<br>
 			</section>
 			<h2>Plan de Trabajo II</h2>
 			<section>
 					<label>Antecedentes</label><br>
-						<?php echo $form->textArea($model_2,'Antecedentes',array('rows'=>6, 'cols'=>50)); ?>
+					<div id="myNicPanel6" style="width:450px;"></div>
+
+						<div id="myInstance6" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_2,"Antecedentes",array("type"=>"hidden","id"=>"Antecedentes"), array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_2,'Antecedentes'); ?>
+
 					<br>
 					<label>Metodologia</label><br>
-						<?php echo $form->textArea($model_2,'Metodologia',array('rows'=>6, 'cols'=>50)); ?>
+					<div id="myNicPanel7" style="width:450px;"></div>
+
+						<div id="myInstance7" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_2,"Metodologia",array("type"=>"hidden","id"=>"Metodologia"), array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_2,'Metodologia'); ?>
 					<br>
 					<label>Productos de desarrolloa</label><br>
-						<?php echo $form->textArea($model_2,'Productos_Desarrollo',array('rows'=>6, 'cols'=>50)); ?>
+					<div id="myNicPanel8" style="width:450px;"></div>
+
+						<div id="myInstance8" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_2,"Productos_Desarrollo",array("type"=>"hidden","id"=>"Productos_Desarrollo"), array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_2,'Productos_Desarrollo'); ?>
 					<br>
 			</section>
