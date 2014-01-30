@@ -3714,6 +3714,7 @@ in /opt/lampp/htdocs/CRIBLYRTH/protected/views/comision/evalua.php (5)
 in /opt/lampp/htdocs/CRIBLYRTH/protected/controllers/ComisionController.php (251)
 in /opt/lampp/htdocs/CRIBLYRTH/index.php (13)
 <<<<<<< HEAD
+<<<<<<< HEAD
 2014/01/28 05:01:27 [warning] [application] Error al establecer unsafe al atributo "tutor" de "M03Tesis".
 in C:\xampp\htdocs\CRIBLYRTH\protected\controllers\EstudianteController.php (66)
 in C:\xampp\htdocs\CRIBLYRTH\index.php (13)
@@ -3949,6 +3950,8 @@ in C:\xampp\htdocs\CRIBLYRTH\index.php (13)
 in C:\xampp\htdocs\CRIBLYRTH\protected\controllers\EstudianteController.php (66)
 in C:\xampp\htdocs\CRIBLYRTH\index.php (13)
 =======
+=======
+>>>>>>> 7ff5686f954153f7444560abbf7fa51095f6d20a
 2014/01/28 03:04:12 [error] [php] Object of class M01Profesor could not be converted to string (/opt/lampp/htdocs/CRIBLYRTH/protected/views/comision/evalua.php:36)
 Stack trace:
 #0 /opt/lampp/htdocs/yii/framework/web/CController.php(869): ComisionController->renderFile()
@@ -4009,4 +4012,7 @@ Stack trace:
 REQUEST_URI=/CRIBLYRTH/comision/evalua/1
 in /opt/lampp/htdocs/CRIBLYRTH/protected/controllers/ComisionController.php (243)
 in /opt/lampp/htdocs/CRIBLYRTH/index.php (13)
+<<<<<<< HEAD
+>>>>>>> 7ff5686f954153f7444560abbf7fa51095f6d20a
+=======
 >>>>>>> 7ff5686f954153f7444560abbf7fa51095f6d20a
