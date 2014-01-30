@@ -28,19 +28,14 @@
 	                <?php echo $form->error($model_1,'Carta_Tutor'); ?>	             
 					<br />
 					<label>* Introducción:</label> 
-				
-						<?php
-							Yii::import('ext.krichtexteditor.KRichTextEditor');
-								$this->widget('KRichTextEditor', array(
-								    'model' => $model_1,
-								    'value' => $model_1->isNewRecord ? '' : $model_1->Introduccion,
-								    'attribute' => 'Introduccion',
-								    'options' => array(
-								        'theme_advanced_resizing' => 'true',
-								        'theme_advanced_statusbar_location' => 'bottom',
-								    ),
-								));
-						?>
+		               <div id="myNicPanel" style="width:450px;"></div>
+
+						<div id="myInstance1" style="font-size: 16px; height:250px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Introduccion",array("type"=>"hidden","id"=>"intro"),array('rows'=>6, 'cols'=>50)); ?>
+		                <?php echo $form->error($model_1,'Introduccion'); ?>
 					<br />
                 </section>
         <h2>Capitulo I</h2> 
@@ -48,30 +43,56 @@
 
                 	<label>* Planteamiento del problema:</label> 
 					
-						<?php echo $form->textArea($model_1,'Planteamiento_Problema',array('rows'=>6, 'cols'=>50)); ?>
+					<div id="myNicPanel1" style="width:450px;"></div>
+
+						<div id="myInstance2" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Planteamiento_Problema",array("type"=>"hidden","id"=>"Planteamiento_Problema"),array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_1,'Planteamiento_Problema'); ?>
 					<br />
 					<label>* Objetivo General:</label> 
+
+						<div id="myNicPanel2" style="width:450px;"></div>
+
+						<div id="myInstance3" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
 						
-						<?php echo $form->textArea($model_1,'Objetivo_General',array('rows'=>6, 'cols'=>50)); ?>
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Objetivo_General",array("type"=>"hidden","id"=>"Objetivo_General"),array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_1,'Objetivo_General'); ?>
 					<br />
 					<label>* Objetivos especificos:</label> 
+						<div id="myNicPanel3" style="width:450px;"></div>
+
+						<div id="myInstance4" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
 						
-						<?php echo $form->textArea($model_1,'Objetivo_especifico',array('rows'=>6, 'cols'=>50)); ?>
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Objetivo_especifico",array("type"=>"hidden","id"=>"Objetivo_especifico"),array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_1,'Objetivo_especifico'); ?>
 					<br />
 					<label>* Justificacion e importancia:</label> 
+						<div id="myNicPanel4" style="width:450px;"></div>
+
+						<div id="myInstance5" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
 						
-						<?php echo $form->textArea($model_1,'Justificacion_Importancia',array('rows'=>6, 'cols'=>50)); ?>
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Justificacion_Importancia",array("type"=>"hidden","id"=>"Justificacion_Importancia"),array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_1,'Justificacion_Importancia'); ?>
 					<br />
 					<label>* Alcance y delimitaciones:</label> 
-					<div class="row">
+						<div id="myNicPanel5" style="width:450px;"></div>
+
+						<div id="myInstance6" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
 						
-						<?php echo $form->textArea($model_1,'Alcance_Delimitaciones',array('rows'=>6, 'cols'=>50)); ?>
-						<?php echo $form->error($model_1,'Alcance_Delimitaciones'); ?>
-					</div>
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Alcance_Delimitaciones",array("type"=>"hidden","id"=>"Alcance_Delimitaciones"),array('rows'=>6, 'cols'=>50)); ?>
+					<?php echo $form->error($model_1,'Alcance_Delimitaciones'); ?>
+					
 					<br />
 				       
                 </section>
@@ -79,57 +100,120 @@
         <h2>Capitulo II</h2>
                 <section>
                      <label>* Antecedentes:</label>
-                		<?php echo $form->textArea($model_1,'Antecedentes',array('rows'=>6, 'cols'=>50)); ?>
+                     <div id="myNicPanel6" style="width:450px;"></div>
+
+						<div id="myInstance7" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Antecedentes",array("type"=>"hidden","id"=>"Antecedentes"),array('rows'=>6, 'cols'=>50)); ?>
 						<?php echo $form->error($model_1,'Antecedentes'); ?>
+                	
 					  <br />
 					   <label>* Bases teoricas:</label>
-	                	<?php echo $form->textArea($model_1,'Bases_Teoricas',array('rows'=>6, 'cols'=>50)); ?>
-						<?php echo $form->error($model_1,'Bases_Teoricas'); ?>
+					   <div id="myNicPanel7" style="width:450px;"></div>
+
+						<div id="myInstance8" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Bases_Teoricas",array("type"=>"hidden","id"=>"Bases_Teoricas"),array('rows'=>6, 'cols'=>50)); ?>
+		                <?php echo $form->error($model_1,'Bases_Teoricas'); ?>
 					  <br />
 					   <label>Bases legales: (opcional)</label>
-                		<?php echo $form->textArea($model_1,'Bases_Legales',array('rows'=>6, 'cols'=>50)); ?>
-						<?php echo $form->error($model_1,'Bases_Legales'); ?>
+
+					    <div id="myNicPanel8" style="width:450px;"></div>
+
+						<div id="myInstance9" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+		                
+		                <?php echo $form->hiddenField($model_1,"Bases_Legales",array("type"=>"hidden","id"=>"Bases_Legales"),array('rows'=>6, 'cols'=>50)); ?>
+		                <?php echo $form->error($model_1,'Bases_Legales'); ?>
 					  <br />
 					   <label>* Definicion de Terminos:</label>
-                		<?php echo $form->textArea($model_1,'Definicion_Terminos',array('rows'=>6, 'cols'=>50)); ?>
-						<?php echo $form->error($model_1,'Definicion_Terminos'); ?>
+
+					   <div id="myNicPanel9" style="width:450px;"></div>
+
+						<div id="myInstance10" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+						 <?php echo $form->hiddenField($model_1,"Definicion_Terminos",array("type"=>"hidden","id"=>"Definicion_Terminos"),array('rows'=>6, 'cols'=>50)); ?>
+						  <?php echo $form->error($model_1,'Definicion_Terminos'); ?>
 					  <br />
 													  
                 </section>        
         <h2>Capitulo III parte 1</h2>
                 <section>                     
-                        <label>* Efoque de la Investigación:</label>                                  
-							<?php echo $form->textArea($model_1,'Enfoque_Investigacion',array('rows'=>6, 'cols'=>50)); ?>
-							<?php echo $form->error($model_1,'Enfoque_Investigacion'); ?>
+                        <label>* Efoque de la Investigación:</label>       
+
+					   <div id="myNicPanel10" style="width:450px;"></div>
+
+						<div id="myInstance11" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+						 <?php echo $form->hiddenField($model_1,"Enfoque_Investigacion",array("type"=>"hidden","id"=>"Enfoque_Investigacion"),array('rows'=>6, 'cols'=>50)); ?>
+						 <?php echo $form->error($model_1,'Enfoque_Investigacion'); ?>
 						<br />
-						<label>* Tipo de Investigación:</label>                                  
-							<?php echo $form->textArea($model_1,'Tipo_Nivel_Invesstigacion',array('rows'=>6, 'cols'=>50)); ?>
-							<?php echo $form->error($model_1,'Tipo_Nivel_Invesstigacion'); ?>
+						<label>* Tipo de Investigación:</label>                      
+						 <div id="myNicPanel11" style="width:450px;"></div>
+
+						<div id="myInstance12" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+						 <?php echo $form->hiddenField($model_1,"Tipo_Nivel_Invesstigacion",array("type"=>"hidden","id"=>"Tipo_Nivel_Invesstigacion"),array('rows'=>6, 'cols'=>50)); ?>
+						 	<?php echo $form->error($model_1,'Tipo_Nivel_Invesstigacion'); ?>
 						<br />
-						<label>* Diseño de la Investigación:</label>                                  
-							<?php echo $form->textArea($model_1,'Diseno_Investigacion',array('rows'=>6, 'cols'=>50)); ?>
-							<?php echo $form->error($model_1,'Diseno_Investigacion'); ?>
+						<label>* Diseño de la Investigación:</label>       
+						 <div id="myNicPanel12" style="width:450px;"></div>
+
+						<div id="myInstance13" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+						 <?php echo $form->hiddenField($model_1,"Diseno_Investigacion",array("type"=>"hidden","id"=>"Diseno_Investigacion"),array('rows'=>6, 'cols'=>50)); ?>
+						 <?php echo $form->error($model_1,'Diseno_Investigacion'); ?>
 						<br />
-						<label> Poblacion de muestra: (opcional)</label>                                  
-							<?php echo $form->textArea($model_1,'Poblacion_Muestra',array('rows'=>6, 'cols'=>50)); ?>
-							<?php echo $form->error($model_1,'Poblacion_Muestra'); ?>
+						<label> Poblacion de muestra: (opcional)</label>     
+						 <div id="myNicPanel13" style="width:450px;"></div>
+
+						<div id="myInstance14" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+						 <?php echo $form->hiddenField($model_1,"Poblacion_Muestra",array("type"=>"hidden","id"=>"Poblacion_Muestra"),array('rows'=>6, 'cols'=>50)); ?>
+						 <?php echo $form->error($model_1,'Poblacion_Muestra'); ?>
 						<br />
                 </section>
         <h2>Capitulo III parte 2</h2>
              	<section>               
-                 <label>* Tecnicas de recoleccion de datos:</label>                                  
-					<?php echo $form->textArea($model_1,'Tecnicas_Recoleccion_Datos',array('rows'=>6, 'cols'=>50)); ?>
-					<?php echo $form->error($model_1,'Tecnicas_Recoleccion_Datos'); ?>
+                 <label>* Tecnicas de recoleccion de datos:</label>               
+                 <div id="myNicPanel14" style="width:450px;"></div>
+
+						<div id="myInstance15" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+						 <?php echo $form->hiddenField($model_1,"Tecnicas_Recoleccion_Datos",array("type"=>"hidden","id"=>"Tecnicas_Recoleccion_Datos"),array('rows'=>6, 'cols'=>50)); ?>
+						 <?php echo $form->error($model_1,'Tecnicas_Recoleccion_Datos'); ?>
 				<br />
-				  <label>* Metodologias:</label>                                  
-					<?php echo $form->textArea($model_1,'Metodologias',array('rows'=>6, 'cols'=>50)); ?>
-					<?php echo $form->error($model_1,'Metodologias'); ?>
+				  <label>* Metodologias:</label>                    
+				   <div id="myNicPanel15" style="width:450px;"></div>
+
+						<div id="myInstance16" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+						 <?php echo $form->hiddenField($model_1,"Metodologias",array("type"=>"hidden","id"=>"Metodologias"),array('rows'=>6, 'cols'=>50)); ?>
+						  <?php echo $form->error($model_1,'Metodologias'); ?>
 				<br />
-				  <label>* Referencias:</label>                                  
-					<?php echo $form->textArea($model_1,'Referencias',array('rows'=>6, 'cols'=>50)); ?>
-					<?php echo $form->error($model_1,'Referencias'); ?>
+				  <label>* Referencias:</label>                 
+				  <div id="myNicPanel16" style="width:450px;"></div>
+
+						<div id="myInstance17" style="font-size: 16px; height:100px; background-color: #fff; padding: 3px; border: 1px solid #888; width: 443px; overflow:scroll;">
+						
+						</div><br />
+						 <?php echo $form->hiddenField($model_1,"Referencias",array("type"=>"hidden","id"=>"Referencias"),array('rows'=>6, 'cols'=>50)); ?>
+                              <?php echo $form->error($model_1,'Referencias'); ?>
 				<br />
                 </section>
             </div>
         </div>
 <?php $this->endWidget(); ?>
+

@@ -17,7 +17,9 @@ class T06Observacion extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
-	public $ju1,$ju2,$ju3;
+
+	public $j1,$j2,$j3;
+
 	public function tableName()
 	{
 		return 't06_observacion';

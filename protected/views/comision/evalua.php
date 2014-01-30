@@ -30,7 +30,59 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 		<?php echo $form->error($model,'M03_id'); ?>
 	</div>
 	<div class="row">
-		
+
+		<table>
+			<tr>
+				<td><b>Sugerencia de jurados</b></td>
+			</tr>
+			<tr>
+				<td>Proximamente aqui</td>
+			</tr>
+		</table>
+	</div>
+	<div class="row">
+		<table>
+			<tr>
+				<td><b>Jurado 1</b></td>
+				<td><b>Jurado 2</b></td>
+				<td><b>Jurado Suplente</b></td>
+			</tr>
+			<tr>
+				<td>
+				<select name="j1" >
+					<option selected> </option>
+					<?php 
+						foreach ($profesor as  $value) {
+						echo '<option value='.$value->id.'>'.$value->Nombre.' '.$value->Apellido.'</option>';
+						}
+					?>
+				</select >
+				</td>
+				<td>
+				<select name="j2">
+					<option selected> </option>
+					<?php 
+						foreach ($profesor as  $value) {
+						echo '<option value='.$value->id.'>'.$value->Nombre.' '.$value->Apellido.'</option>';
+						}
+					?>
+				</select >
+				</td>
+				<td>
+				<select name="j3">
+					<option selected> </option>
+					<?php 
+						foreach ($profesor as  $value) {
+						echo '<option value='.$value->id.'>'.$value->Nombre.' '.$value->Apellido.'</option>';
+						}
+					?>
+				</select >
+				</td>
+			</tr>
+
+		</table>	
+	</div>
+
 	<div class="row">
 		<?php echo '<b> Observaciones: </b>' ?>
 				<?php
