@@ -30,6 +30,8 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 		<?php echo $form->error($model,'M03_id'); ?>
 	</div>
 	<div class="row">
+		
+	<div class="row">
 		<?php echo '<b> Observaciones: </b>' ?>
 				<?php
 							Yii::import('ext.krichtexteditor.KRichTextEditor');
