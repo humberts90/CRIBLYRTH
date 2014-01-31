@@ -30,6 +30,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 		<?php echo $form->error($model,'M03_id'); ?>
 	</div>
 	<div class="row">
+
 		<table>
 			<tr>
 				<td><b>Sugerencia de jurados</b></td>
@@ -81,6 +82,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 		</table>	
 	</div>
+
 	<div class="row">
 		<?php echo '<b> Observaciones: </b>' ?>
 				<?php
