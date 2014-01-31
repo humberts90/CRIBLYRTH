@@ -249,7 +249,7 @@ class ComisionController extends Controller {
 
 
 			if(/*$model->save()*/true){
-			$sql="Insert into t01_tesis_has_usuario (id,M03_id,M05_id,P03_id,P02_id) values (NULL,".$tesis->id."," .$.",'".$prof->Apellido."','".$prof->Correo_UNET."')";
+			$sql="Insert into t01_tesis_has_usuario (id,M03_id,M05_id,P03_id,P02_id) values (NULL,".$tesis->id."," .$prof->Nombre.",'".$prof->Apellido."','".$prof->Correo_UNET."')";
 					$comando = Yii::app() -> db -> createCommand($sql);
 					$comando -> execute(); 
 				foreach ($tes as $value) {
