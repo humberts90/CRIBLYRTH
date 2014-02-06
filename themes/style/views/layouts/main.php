@@ -45,12 +45,11 @@
 					),
 				)); ?>
 				</div>
-				
+				<<div class="lineazul"></div>
 
 			</div>
 				<div class="content">
-				</br>
-				<?php echo $content; ?>
+				<<?php echo $content; ?>
 				</div>
 			<!-- Inicio pie de pag-->
 			<div class="piedepag">
