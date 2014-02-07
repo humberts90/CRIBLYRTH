@@ -1,4 +1,15 @@
-			
+	  <script>
+    $(document).ready(function(){
+      var timer = setInterval( MoveCarrusel, 3000);
+      function MoveCarrusel(){
+        var lifirst=$('#carrusel-container li:first');
+        lifirst.slideUp(700,function(){
+        $('#carrusel-container li:last').after(lifirst);
+        lifirst.css({"display" : "block"});
+        });
+      }
+    })
+  </script>		
 			<div class="degradadoar">
 				<div class="imagencentrar">
 					<!-- lista Imagenes dinamica -->
@@ -24,26 +35,23 @@
 						<div class="logonoticias"></div>
 						<span><h3>Noticias</h3></span>
 						<div id="dinamicnoticias" >
-							<!--<span><h3>Noticias</h3></span>-->
-							<div>
-								<div class="sec">
-									Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit...
-								</div>
-								<div class="sec_enlace">
-									<a href="ver_noticiad5e8.html?id=34"><< 01-01-2014 >></a>
-								</div>
-								<div class="sec">
-									Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit...
-								</div>
-								<div class="sec_enlace">
-									<a href="ver_noticiadac1.html?id=32"><< 01-01-2014 >></a>
-								</div>
-								<div class="sec">
-									Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit...
-								</div>
-								<div class="sec_enlace">
-									<a href="ver_noticia9e43.html?id=25"><< 01-01-2014 >></a>
-								</div>
+							<!--<span><h3>Noticias</h3></span>-->				
+
+							<div id="carrusel-container">
+								<ul>
+									<?php foreach ($model as $not) { ?>
+									<li>
+										<div class="sec">
+											<?php echo $not->Titulo; ?>
+										</div>
+										<div class="sec_enlace">
+											<?php echo CHtml::link('<<'.date("d/m/Y",strtotime($not->Fecha)).'>>',array('site/noticia','id'=>$not->id)); ?>
+											
+										</div>
+									<?php }?>
+										
+									 </li>
+								 </ul>
 							</div>
 						</div>
 					</div>
@@ -110,38 +118,38 @@
 					<div class="sec_title" style="height:20px;"></div>
 					<div class="colorfondo">
 						<ul class="enlacesredon">
-							<li>
-								<a href="listadodeprofesores.html" title="Ir a Misión y Visión">
-								<div class="ncaja">
+							<li>								
+								<?php echo CHtml::link('<div class="ncaja">
 									<p class="letraspequenas">
 										Conócenos
 									</p>
 									<p class="letrasgrandes">
 										MISIÓN Y VISIÓN
 									</p>
-								</div> <div class="icono"></div> </a>
+								</div> <div class="icono"></div>',
+								array('site/#')); ?>								 
 							</li>
 							<li>
-								<a href="busqueda_tesis.html" title="Ir a Comisión TAP">
-								<div class="ncaja">
+							<?php echo CHtml::link('<div class="ncaja">
 									<p class="letraspequenas">
 										¿Quienes somos?
 									</p>
 									<p class="letrasgrandes">
 										COMISIÓN TAP
 									</p>
-								</div> <div class="iconolupa"></div> </a>
+								</div> <div class="iconolupa"></div>',
+								array('site/contact')); ?>							
 							</li>
 							<li>
-								<a href="admision_lista_curso.html" title="Ir a Documentos">
-								<div class="ncaja">
+							<?php echo CHtml::link('<div class="ncaja">
 									<p class="letraspequenas">
 										Descarga de 
 									</p>
 									<p class="letrasgrandes">
 										DOCUMENTOS
 									</p>
-								</div> <div class="iconolista"></div> </a>
+								</div> <div class="iconolista"></div> ',
+								array('site/#')); ?>					
 							</li>
 						</ul>
 					</div>

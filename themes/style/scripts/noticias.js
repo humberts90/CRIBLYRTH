@@ -1,8 +1,9 @@
 $(document).ready(function(){
 		$('#dinamicnoticias').cycle({ 
 			fx: 'scrollUp',
-			timeout: 4000,
+			timeout: 400,
 			pause:true,
  		    pauseOnPagerHover:true
 		});			
 });	 
+

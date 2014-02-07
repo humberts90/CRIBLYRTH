@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $Descripcion
  * @property string $Fecha
+ * @property string $Titulo
  */
 class T09Noticias extends CActiveRecord
 {
@@ -36,10 +37,11 @@ class T09Noticias extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Descripcion, Fecha', 'required'),
+			array('Descripcion, Fecha, Titulo', 'required'),
+			array('Titulo', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, Descripcion, Fecha', 'safe', 'on'=>'search'),
+			array('id, Descripcion, Fecha, Titulo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +65,7 @@ class T09Noticias extends CActiveRecord
 			'id' => 'ID',
 			'Descripcion' => 'Descripcion',
 			'Fecha' => 'Fecha',
+			'Titulo' => 'Titulo',
 		);
 	}
 
@@ -80,6 +83,7 @@ class T09Noticias extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('Descripcion',$this->Descripcion,true);
 		$criteria->compare('Fecha',$this->Fecha,true);
+		$criteria->compare('Titulo',$this->Titulo,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

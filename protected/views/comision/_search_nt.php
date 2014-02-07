@@ -12,8 +12,8 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+		<?php echo $form->label($model,'Titulo'); ?>
+		<?php echo $form->textArea($model,'Titulo',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">

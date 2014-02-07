@@ -27,6 +27,12 @@
 		<?php echo $form->error($model,'Fecha'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'Titulo'); ?>
+		<?php echo $form->textField($model,'Titulo',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'Titulo'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

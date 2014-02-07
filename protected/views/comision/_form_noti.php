@@ -5,7 +5,11 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 <?php echo $form->errorSummary($model); ?>
-
+<div class="row">
+		<?php echo $form->labelEx($model,'Titulo'); ?>
+		<?php echo $form->textField($model,'Titulo',array('size'=>45,'maxlength'=>45)); ?>
+					<?php echo $form->error($model,'Titulo'); ?>
+				</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'Descripcion'); ?>
 			<?php

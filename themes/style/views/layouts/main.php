@@ -34,14 +34,15 @@
 						array('label'=>'<p class="letrasgrandes">INICIO</p>',
 									'url'=>array('/site/index')),
 						array('label'=>'<p class="letrasgrandes">Ofertas TAP</p>
-									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/m05Usuario/index')),
+									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/#/#')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Tesis</p>
-									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/page', 'view'=>'about')),
+									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/tesis', 'view'=>'about')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Pasantías</p>
-									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/contact')),
+									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/pasantias')),
 						array('label'=>'<p class="letrasgrandes">Inicio de sesión</p>
-									<p class="letraspequenas">Adaptado a tus necesidades</p>', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+								<p class="letraspequenas">Adaptado a tus necesidades</p>', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+						
 					),
 				)); ?>
 				</div>

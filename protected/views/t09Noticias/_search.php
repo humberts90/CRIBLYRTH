@@ -26,6 +26,11 @@
 		<?php echo $form->textField($model,'Fecha'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'Titulo'); ?>
+		<?php echo $form->textField($model,'Titulo',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
