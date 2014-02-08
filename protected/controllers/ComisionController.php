@@ -297,6 +297,7 @@ class ComisionController extends Controller {
 			));
 	}
 	public function actionCrono($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$psa=M04Pasantia::model()->findByPk($id);
 		$datos=T11Actividad::model()->findAll("M04_Pasantia_id = ".$id);
 		foreach ($datos as $value) {
@@ -309,7 +310,7 @@ class ComisionController extends Controller {
 		$this->render('gantt',array(
 			'data'=>$data,
 			'proy'=>$psa,
-			
+			'Usuario'=>$tar,
 			));
 	}
 

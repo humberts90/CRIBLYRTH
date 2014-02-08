@@ -1,12 +1,13 @@
-<?php 
+<?php
 $this->breadcrumbs=array(
 	'Inicio'=>array('index'),
-	'Evaluar Anteproyectos'=>array('tesis'),
-	'Detalles',
+	'Evaluar planes de trabajo'=>array('pasantias'),
+	'Detalles del plan de trabajo',
 
 );
 
 echo $this->renderPartial('menu', array('usu'=>$Usuario));
+
 
 ?>
 
@@ -30,72 +31,48 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 <b><?php echo CHtml::encode($model->getAttributeLabel('Titulo')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Titulo); ?></p>
 	<br />
-<?php /*
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Planteamiento_Problema')); ?>:</b>
+
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Planteamiento Problema')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Planteamiento_Problema); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo_General')); ?>:</b>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo General')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Objetivo_General); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo_especifico')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Objetivo_especifico); ?></p>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo especifico')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Objetivo_Especifico); ?></p>
 	<br />	
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Justificacion_Importancia')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Justificacion_Importancia); ?></p>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Descripcion Trabajo')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Descripcion_Trabajo); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Alcance_Delimitaciones')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Alcance_Delimitaciones); ?></p>
-	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Antecedentes')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Antecedentes); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Bases_Teoricas')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Bases_Teoricas); ?></p>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Metodologia')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Metodologia); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Bases_Legales')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Bases_Legales); ?></p>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Productos Desarrollo')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Productos_Desarrollo); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Definicion_Terminos')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Definicion_Terminos); ?></p>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha Inscripcion')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Fecha_Inscripcion); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Enfoque_Investigacion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Enfoque_Investigacion); ?></p>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha Defensa')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Fecha_Defensa); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Tipo_Nivel_Invesstigacion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Tipo_Nivel_Invesstigacion); ?></p>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha Aprobacion')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Fecha_Aprobacion); ?></p>
 	<br />
 
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Diseno_Investigacion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Diseno_Investigacion); ?></p>
-	<br />
-
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Poblacion_Muestra')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Poblacion_Muestra); ?></p>
-	<br />
-
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Tecnicas_Recoleccion_Datos')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Tecnicas_Recoleccion_Datos); ?></p>
-	<br />
-
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Metodologias')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Metodologias); ?></p>
-	<br />
-
-	<b><?php echo CHtml::encode($model->getAttributeLabel('Referencias')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Referencias); ?></p>
-	<br />
-
-	<?php //echo CHtml::link(CHtml::encode("Evaluar"), array('evalua', 'id'=>$model->id)); ?>
-	*/?>
+	
 	<?php echo CHtml::link(CHtml::encode("Ver Cronograma de Actividades"), array('crono', 'id'=>$model->id)); ?>
 	<br />
 

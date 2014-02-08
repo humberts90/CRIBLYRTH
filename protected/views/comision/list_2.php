@@ -10,7 +10,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 ?>
 
-<h1> Lista de anteproyectos de tesis </h1>
+<h1> Lista de planes de trabajo de pasantias </h1>
 
 
 <?php $this->widget('zii.widgets.CListView', array(

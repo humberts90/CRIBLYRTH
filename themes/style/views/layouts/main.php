@@ -25,7 +25,7 @@
 				<div class="logoinf">
 					<span><h1></h1></span>
 				</div>
-
+		
 				<div class="menu">
 				<?php $this->widget('zii.widgets.CMenu',array(
 					'encodeLabel'=>false,
@@ -57,67 +57,56 @@
 				<div class="sec">
 					<div class="line"></div>
 					<div class="titulo">
-						<h4>Oferta Acad&eacute;mica</h4>
+						<h4>Informaci&oacuten General</h4>
+					</div>
+					<div class="enlaces">					
+						<?php echo CHtml::link('<h7>
+												Inicio
+												</h7>',
+								array('site/index')); ?>
 					</div>
 					<div class="enlaces">
-						<a href="maestrias.html" title="Ir a Maestr&iacute;as">
-						<h7>
-							Maestr&iacute;as
-						</h7></a>
+						<?php echo CHtml::link('<h7>
+												Ofertas Tap
+												</h7>',
+							 array('site/#')); ?>
 					</div>
 					<div class="enlaces">
-						<a class="enlace" href="especializaciones.html" title="Ir a Especializaciones">
-						<h7>
-							Especializaciones
-						</h7></a>
+					<?php echo CHtml::link('<h7>
+												Decidí hacer tesis 
+												</h7>',
+								array('site/tesis')); ?>
 					</div>
 					<div class="enlaces">
-						<a class="enlace" href="especializaciones_tecnicas.html" title="Ir a Especializaciones T&eacute;cnicas">
-						<h7>
-							Especializaciones T&eacute;cnicas
-						</h7></a>
+							<?php echo CHtml::link('<h7>
+												Decidí hacer pasantias 
+												</h7>',
+								array('site/pasantias')); ?>
 					</div>
-					<div class="enlaces">
-						<a class="enlace" href="academia_cisco.html" title="Ir a Academia Cisco">
-						<h7>
-							Academia Cisco
-						</h7></a>
-					</div>
-					<div class="enlaces">
-						<a class="enlace" href="mejoramiento_profesional.html" title="Ir a Cusros de Mejoramiento Personal">
-						<h7>
-							Cursos de Mejoramiento Profesional
-						</h7></a>
-					</div>
+				
 				</div>
 				<div class="sec2">
 					<div class="line"></div>
 					<div class="titulo">
-						<h4>Procedimientos de Estudiantes</h4>
+						<h4>Informaci&oacuten de inter&eacutes</h4>
+					</div>
+					<div class="enlaces">						
+							<?php echo CHtml::link('<h7>
+												Misión y Visión 
+												</h7>',
+								array('site/#')); ?>
 					</div>
 					<div class="enlaces">
-						<a class="enlace" href="admision_preinscripcion.html" title="Ir a Preinscripcion">
-						<h7>
-							Preinscripcion
-						</h7></a>
+							<?php echo CHtml::link('<h7>
+												Comisión TAP
+												</h7>',
+								array('site/contact')); ?>
 					</div>
 					<div class="enlaces">
-						<a class="enlace" href="admision_lista_selec.html" title="Ir a Listado de seleccionados">
-						<h7>
-							Listado de Seleccionados
-						</h7></a>
-					</div>
-					<div class="enlaces">
-						<a class="enlace" href="estudiantes_carnetizacion.html" title="Ir a Carnetizaci&oacute;n">
-						<h7>
-							Carnetizaci&oacute;n
-						</h7></a>
-					</div>
-					<div class="enlaces">
-						<a class="enlace" href="estudiantes_pago_de_matricula.html" title="Ir a Pago de Matr&iacute;cula e Inscripci&oacute;n">
-						<h7>
-							Pago de Matr&iacute;cula e Inscripci&oacute;n
-						</h7></a>
+							<?php echo CHtml::link('<h7>
+												Descarga de Documentos
+												</h7>',
+								array('site/documento')); ?>
 					</div>
 				</div>
 				<div class="sec3">
@@ -147,7 +136,7 @@
 						<h4>Otros Enlaces</h4>
 					</div>
 					<div class="enlaces">
-						<a class="enlace" href="mapadesitio.html" title="Ir a Mapa de Sitio">
+						<a class="enlace" href="" title="Ir a Mapa de Sitio">
 						<h7>
 							Mapa de Sitio
 						</h7></a>
@@ -159,17 +148,17 @@
 						<h4>Cont&aacute;ctenos</h4>
 					</div>
 					<div class="line"></div>
-					<a title="Ir a twitter" href="http://twitter.com/postgradounet" target="_blank">
+					<a title="Ir a twitter" href="" target="_blank">
 					<div class="twitter">
 						<span>twitter</span>
 					</div></a>
 					<div class="enlaces">
-						<h4>@postgradounet</h4>
+						<h4>@tapinformatica</h4>
 					</div>
 					<div class="line"></div>
 					<div class="enlaces2">
 						<span class="letblancas">Tel&eacute;fono</span>
-						+58 (276) 353-1612
+						+58 (276) 000-0000
 					</div>
 					<div class="line"></div>
 					<div class="line"></div>

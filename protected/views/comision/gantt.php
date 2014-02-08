@@ -1,6 +1,6 @@
 
 <?php
-
+echo $this->renderPartial('menu', array('usu'=>$Usuario));
 require('Librerias/gantti.php'); 
 
 
@@ -25,3 +25,10 @@ $gantti = new Gantti($data, array(
 
 <?php echo $gantti ?>
 
+
+	<?php echo CHtml::link(CHtml::encode("Volver"), array('pasdeta', 'id'=>$proy->id)); ?>
+	<br />
+
+	
+	
+	

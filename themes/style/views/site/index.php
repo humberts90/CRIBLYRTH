@@ -1,4 +1,15 @@
-	  <script>
+		<style>
+			.contenido{
+				backgraund: #fffffff;
+				margin: 0 0 0 -53px;
+			}
+			.espacio{
+				width: 0px;
+				heigth: 0px;
+			}
+		
+		</style>
+ <script>
     $(document).ready(function(){
       var timer = setInterval( MoveCarrusel, 3000);
       function MoveCarrusel(){
@@ -9,7 +20,8 @@
         });
       }
     })
-  </script>		
+  </script>	
+		<div class="contenido">
 			<div class="degradadoar">
 				<div class="imagencentrar">
 					<!-- lista Imagenes dinamica -->
@@ -25,7 +37,7 @@
 								 <?php echo CHtml::image(Yii::app()->theme->baseUrl.'/images/imadina/ima2.png'); ?>
 							</li>
 							<li>
-								<?php echo CHtml::image(Yii::app()->theme->baseUrl.'/images/imadina/ima5.jpg'); ?>
+								<?php echo CHtml::image(Yii::app()->theme->baseUrl.'/images/imadina/ima3.png'); ?>
 								<!--   <div class="barra"></div>
 								<p><a href="#" title="Foto 5"> titulo 5 </a></p>-->
 							</li>
@@ -35,8 +47,7 @@
 						<div class="logonoticias"></div>
 						<span><h3>Noticias</h3></span>
 						<div id="dinamicnoticias" >
-							<!--<span><h3>Noticias</h3></span>-->				
-
+							<!--<span><h3>Noticias</h3></span>-->
 							<div id="carrusel-container">
 								<ul>
 									<?php foreach ($model as $not) { ?>
@@ -117,7 +128,7 @@
 				<div class="sec" style="width:400px;">
 					<div class="sec_title" style="height:20px;"></div>
 					<div class="colorfondo">
-						<ul class="enlacesredon">
+								<ul class="enlacesredon">
 							<li>								
 								<?php echo CHtml::link('<div class="ncaja">
 									<p class="letraspequenas">
@@ -155,3 +166,4 @@
 					</div>
 				</div>
 			</div>
+		</div>

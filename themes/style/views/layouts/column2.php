@@ -1,24 +1,24 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
 
-<div class="cuerpo_pag">
-	<div id="content">
-		<?php echo $content; ?>
-		
-	</div><!-- content -->
-</div>
-<div class="cuerpo_pag">
-	<div id="sidebar">
+<div class="oferta">
+<div class=" espacio"></div>
+	<div class="basemenu">
 	<?php
-		$this->beginWidget('zii.widgets.CPortlet', array(
-			'title'=>'Operations',
-		));
-		$this->widget('zii.widgets.CMenu', array(
+		
+		$this->beginwidget('zii.widgets.CMenu', array(
 			'items'=>$this->menu,
-			'htmlOptions'=>array('class'=>'operations'),
+			
 		));
 		$this->endWidget();
 	?>
 	</div><!-- sidebar -->
+		<div class="cuerpobase">
+		<div class="content">
+			<?php echo $content; ?>
+			
+		</div>	
+	</div><!-- content -->
+	<div class=" espacio"></div>
 </div>
 <?php $this->endContent(); ?>
