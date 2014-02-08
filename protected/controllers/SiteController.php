@@ -55,6 +55,7 @@ class SiteController extends Controller
 	
 		$this->render('contact');
 	}
+	
 		public function actionPasantias()
 	{
 	

@@ -201,7 +201,7 @@ class ComisionController extends Controller {
 			'Usuario'=>$tar,
 		));
 	}
-	//---------------------------------------Evaluar Propuestas----------------------------------------------------
+	//---------------------------------------Evaluar Propuestas de tesis----------------------------------------------------
 	public function actionTesis(){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$model=new M03Tesis('search');
@@ -271,6 +271,45 @@ class ComisionController extends Controller {
 			'tes'=>$tesis,
 			'model'=>$model,
 			'profesor'=>$prof,
+			));
+	}
+
+	//---------------------------------------------Evaluar Propuestas de pasantias----------------------------------------------------------------------------------
+	public function actionPasantias(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=new M04Pasantia('search');
+		$model->unsetAttributes();
+
+		$this->render('list_2',array(
+			'Usuario'=>$tar,
+			 'dataProvider'=>$model->search(),
+			 'model'=>$model,
+			));
+	}
+	public function actionPasdeta($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$tesis=M04Pasantia::model()->findByPk($id);
+		$has1=T02PasantiaHasUsuario::model()->findAll('M04_id = '.$tesis->id);
+		$this->render('test_2',array(
+			'Usuario'=>$tar,
+			'model'=>$tesis,
+			'has1'=>$has1,
+			));
+	}
+	public function actionCrono($id){
+		$psa=M04Pasantia::model()->findByPk($id);
+		$datos=T11Actividad::model()->findAll("M04_Pasantia_id = ".$id);
+		foreach ($datos as $value) {
+			$data[] = array(
+	  		'label' => $value->Descripcion,
+	  		'start' => $value->Fecha_inicio, 
+		     'end'   => $value->Fecha_Fin,
+			);
+		}
+		$this->render('gantt',array(
+			'data'=>$data,
+			'proy'=>$psa,
+			
 			));
 	}
 

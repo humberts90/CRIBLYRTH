@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-02-2014 a las 17:12:07
+-- Tiempo de generación: 08-02-2014 a las 16:54:58
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -197,10 +197,20 @@ CREATE TABLE IF NOT EXISTS `m04_pasantia` (
   `Antecedentes` longtext,
   `Metodologia` longtext,
   `Productos_Desarrollo` longtext,
+  `Fecha_Inscripcion` date DEFAULT NULL,
+  `Fecha_Defensa` date DEFAULT NULL,
+  `Fecha_Aprobacion` date DEFAULT NULL,
   `M06_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Pasantia_empresa1_idx` (`M06_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `m04_pasantia`
+--
+
+INSERT INTO `m04_pasantia` (`id`, `Titulo`, `Planteamiento_Problema`, `Descripcion_Trabajo`, `Objetivo_General`, `Objetivo_Especifico`, `Antecedentes`, `Metodologia`, `Productos_Desarrollo`, `Fecha_Inscripcion`, `Fecha_Defensa`, `Fecha_Aprobacion`, `M06_id`) VALUES
+(1, 'Proyecto de Trabajo', 'dasd', 'asdas', 'sad', 'asdsa', 'asda', 'sda', 'sda', '2014-02-08', '0000-00-00', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -2175,11 +2185,20 @@ CREATE TABLE IF NOT EXISTS `t11_actividad` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `M04_Pasantia_id` int(11) NOT NULL,
   `Descripcion` text NOT NULL,
-  `Fecha_inicio` time NOT NULL,
-  `Fecha_Fin` time NOT NULL,
+  `Fecha_inicio` date NOT NULL,
+  `Fecha_Fin` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Actividad_M04_Pasantia1_idx` (`M04_Pasantia_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `t11_actividad`
+--
+
+INSERT INTO `t11_actividad` (`id`, `M04_Pasantia_id`, `Descripcion`, `Fecha_inicio`, `Fecha_Fin`) VALUES
+(1, 1, 'hrth', '2014-02-04', '2014-02-21'),
+(2, 1, 'Prueba 2', '2014-03-19', '2014-05-16'),
+(3, 1, 'prueba 3', '2014-05-16', '2014-06-01');
 
 --
 -- Restricciones para tablas volcadas
