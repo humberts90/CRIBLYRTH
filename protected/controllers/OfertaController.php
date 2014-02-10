@@ -43,9 +43,55 @@ class OfertaController extends Controller {
 			),
 		);
 	}
-
-	public function actionListar(){
-		
+	public function actionIndex(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+	//	$listado = 
+		$this->render('index',array('Usuario'=>$tar,));
 	}
+	public function actionListar()
+	{
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
+
+		$modelAsoc = T01TesisHasUsuario::model()->findAll("P03_id = '".$modelStatus->id."'");
+		$model_t = array();
+		$a=0;
+		foreach ($modelAsoc as $asoc) 
+		{
+			$model_t[$a] = M03Tesis::model()->find("id = '".$asoc->M03_id."'");
+			$a++;
+		}
+
+		$modelAsoc = T02PasantiaHasUsuario::model()->findAll("P03_id = '".$modelStatus->id."'");
+		$model_p = array();
+		$a=0;
+		foreach ($modelAsoc as $asoc) 
+		{
+			$model_p[$a] = M04Pasantia::model()->find("id = '".$asoc->M04_id."'");
+			$a++;
+		}
+
+	   
+
+		$this->render('oferta',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pasantias'=>$model_p));
+	}
+
+	public function actionDetalle_t($id)
+	{		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$model = M03Tesis::model()->findByPk($id);
+
+		$this->render("detalle_t",array('Usuario'=>$tar,'model'=>$model));
+	}
+
+	public function actionDetalle_p($id)
+	{
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$model = M04Pasantia::model()->findByPk($id);
+
+		$this->render("detalle_p",array('Usuario'=>$tar,'model'=>$model));
+	}
+
 }
 ?>
