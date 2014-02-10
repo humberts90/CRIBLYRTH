@@ -30,14 +30,10 @@ class ProfesorController extends Controller{
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'roles'=>array('Administrador'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				
+			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'users'=>array('@'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
+		
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -54,6 +50,47 @@ class ProfesorController extends Controller{
 		$this->render('oferta',array(
 			'Usuario'=>$tar,
 			'model'=>$model,
+			));
+	}
+
+
+	//-----------------------------Constancias------------------------------------------
+	public function actionConst($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$jefe_1=P01Rol::model()->find("nombre = 'Jefe del Departamento'");
+		$jefe_2=T08UsuarioHasRol::model()->find("P01_id = ".$jefe_1->id);
+		$jefe=M05Usuario::model()->findByPk($jefe_2->M05_id);
+		$tesis=M03Tesis::model()->findByPk($id);
+
+
+		$this->render('cont_1',array(
+			'Usuario'=>$tar,
+			'jefe'=>$jefe,
+			'tesis'=>$tesis,
+			));
+
+
+	}
+	public function actionTesis(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=T01TesisHasUsuario::model()->findAll('M05_id = '.$tar->id);
+
+		
+		
+
+		$this->render('list_1',array(
+			'Usuario'=>$tar,			 
+			 'model'=>$model,
+			));
+	}
+	public function actionTesdeta($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$tesis=M03Tesis::model()->findByPk($id);
+		$has1=T01TesisHasUsuario::model()->findAll('M03_id = '.$tesis->id);
+		$this->render('test',array(
+			'Usuario'=>$tar,
+			'model'=>$tesis,
+			'has1'=>$has1,
 			));
 	}
 	
