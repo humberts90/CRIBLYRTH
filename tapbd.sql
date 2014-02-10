@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-02-2014 a las 16:54:58
+-- Tiempo de generación: 10-02-2014 a las 03:59:03
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -40,7 +40,9 @@ CREATE TABLE IF NOT EXISTS `auth_asignacion` (
 
 INSERT INTO `auth_asignacion` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 ('Administrador', 'admin', NULL, 'N;'),
-('Administrador', 'samuel.useche', NULL, 'N;');
+('Administrador', 'samuel.useche', NULL, 'N;'),
+('Jefe del Departamento', 'maria.valero', NULL, 'N;'),
+('Profesor', 'dahyana.nimo', NULL, 'N;');
 
 -- --------------------------------------------------------
 
@@ -66,6 +68,12 @@ INSERT INTO `auth_items` (`name`, `type`, `description`, `bizrule`, `data`) VALU
 ('Alumno ', 2, 'Alumno normal de la carrera Alumno ', NULL, 'N;'),
 ('Alumno normal de la carrera', 0, 'Alumno normal de la carreraEsta operacion para personas deAlumno ', NULL, 'N;'),
 ('Alumno normal de la carrera9', 1, 'Alumno normal de la carrera Alumno ', NULL, 'N;'),
+('Jefe', 0, 'JefeEsta operacion para personas deJefe del Departamento', NULL, 'N;'),
+('Jefe del Departamento', 2, 'Jefe Jefe del Departamento', NULL, 'N;'),
+('Jefe11', 1, 'Jefe Jefe del Departamento', NULL, 'N;'),
+('Profesor', 2, 'Profesor... Profesor', NULL, 'N;'),
+('Profesor...', 0, 'Profesor...Esta operacion para personas deProfesor', NULL, 'N;'),
+('Profesor...12', 1, 'Profesor... Profesor', NULL, 'N;'),
 ('Todo Poderoso', 0, 'Todo PoderosoEsta operacion para personas deAdministrador', NULL, 'N;'),
 ('Todo Poderoso10', 1, 'Todo Poderoso Administrador', NULL, 'N;');
 
@@ -89,6 +97,10 @@ CREATE TABLE IF NOT EXISTS `auth_relacion` (
 INSERT INTO `auth_relacion` (`parent`, `child`) VALUES
 ('Alumno normal de la carrera9', 'Alumno normal de la carrera'),
 ('Alumno ', 'Alumno normal de la carrera9'),
+('Jefe11', 'Jefe'),
+('Jefe del Departamento', 'Jefe11'),
+('Profesor...12', 'Profesor...'),
+('Profesor', 'Profesor...12'),
 ('Todo Poderoso10', 'Todo Poderoso'),
 ('Administrador', 'Todo Poderoso10');
 
@@ -179,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `m03_tesis` (
 --
 
 INSERT INTO `m03_tesis` (`id`, `Titulo`, `Carta_Tutor`, `Introduccion`, `Planteamiento_Problema`, `Objetivo_General`, `Objetivo_especifico`, `Justificacion_Importancia`, `Alcance_Delimitaciones`, `Antecedentes`, `Bases_Teoricas`, `Bases_Legales`, `Definicion_Terminos`, `Enfoque_Investigacion`, `Tipo_Nivel_Invesstigacion`, `Diseno_Investigacion`, `Poblacion_Muestra`, `Tecnicas_Recoleccion_Datos`, `Metodologias`, `Referencias`, `Fecha_Inscripcion`, `Fecha_Aprobación`, `Fecha_Defensa`) VALUES
-(1, 'prueba', 'ESQUEMA DE ENTREGABLES Y CONTENIDO DEL PARCIAL.pdf', 'jntyjt', 'gj', 'ghj', 'ghj', 'hjg', 'ghj', 'ghj', 'ghj', 'ghj', 'hgjg', 'ghj', 'hgj', 'ghj', 'hj', 'hgj', 'ghj', 'hjg', NULL, NULL, NULL);
+(1, 'prueba', 'ESQUEMA DE ENTREGABLES Y CONTENIDO DEL PARCIAL.pdf', 'jntyjt', 'gj', 'ghj', 'ghj', 'hjg', 'ghj', 'ghj', 'ghj', 'ghj', 'hgjg', 'ghj', 'hgj', 'ghj', 'hj', 'hgj', 'ghj', 'hjg', NULL, NULL, '2014-03-20');
 
 -- --------------------------------------------------------
 
@@ -238,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `m05_usuario` (
   UNIQUE KEY `Correo_Electronico_2` (`Correo_Electronico`),
   UNIQUE KEY `Correo_Electronico_3` (`Correo_Electronico`),
   UNIQUE KEY `Usuario_UNIQUE` (`Usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Volcado de datos para la tabla `m05_usuario`
@@ -248,7 +260,8 @@ INSERT INTO `m05_usuario` (`id`, `Cedula`, `Apellido`, `Nombre`, `Usuario`, `Cla
 (2, '82294818', 'Soler', 'Humberto', 'humberts90', 'maleconazo', '02763430816', 'humberts90', 'calle xxx', NULL, NULL, '', '', ''),
 (5, '17677687', 'useche', 'Samuel', 'samuel.useche', '9330f907bab4c871a96fc7b75e2f7925a28f31d0', '041622', 'maverick71036@gmail.com', 'S/c', NULL, NULL, '', '', '52de7b6ef35db1.57725116'),
 (11, '666', 'Admin', 'Admin', 'admin', 'ef372c7247ddffff2f572b2375e434136f139234', '666', 'Admin@admin.com', 'sc', NULL, NULL, '', '', '52d5bd4de12f50.09275149'),
-(13, '00025', 'Dahyana Nimo', '---', NULL, NULL, NULL, '----', NULL, NULL, NULL, NULL, NULL, NULL);
+(13, '00025', 'Nimo', 'Dahyana', 'dahyana.nimo', '30fe17639a1d313455aec3dcc8680d01dd6a9f08', '5555', '----', 'S/C', NULL, NULL, '', '', '52f83f9e1d8658.37559252'),
+(15, '123456', 'Valero de Clemente', 'Maria. A.', 'maria.valero', '4893b63e649c12d698218d2111fe2e9b6e68b45f', '555555', 'maria.valero@unet.edu.ve', 'S/C', NULL, NULL, '', '', '52f82e27300127.53649136');
 
 -- --------------------------------------------------------
 
@@ -312,7 +325,7 @@ CREATE TABLE IF NOT EXISTS `p01_rol` (
   `nombre` varchar(45) NOT NULL,
   `Descripcion` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `p01_rol`
@@ -321,9 +334,10 @@ CREATE TABLE IF NOT EXISTS `p01_rol` (
 INSERT INTO `p01_rol` (`id`, `nombre`, `Descripcion`) VALUES
 (1, 'Comision TAP', 'Pertenece a la comisión TAP'),
 (2, 'Secretaria', 'Secretaria del Departamento'),
-(3, 'Jefe de Departamento', 'Jefe de Departamento de Ing Informatica'),
 (4, 'Alumno ', 'Alumno normal de la carrera'),
-(10, 'Administrador', 'Todo Poderoso');
+(10, 'Administrador', 'Todo Poderoso'),
+(11, 'Jefe del Departamento', 'Jefe'),
+(12, 'Profesor', 'Profesor...');
 
 -- --------------------------------------------------------
 
@@ -2123,7 +2137,7 @@ CREATE TABLE IF NOT EXISTS `t08_usuario_has_rol` (
   PRIMARY KEY (`id`),
   KEY `fk_M05_Usuario_has_P01_Rol_P01_Rol1_idx` (`P01_id`),
   KEY `fk_M05_Usuario_has_P01_Rol_M05_Usuario1_idx` (`M05_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Volcado de datos para la tabla `t08_usuario_has_rol`
@@ -2131,10 +2145,11 @@ CREATE TABLE IF NOT EXISTS `t08_usuario_has_rol` (
 
 INSERT INTO `t08_usuario_has_rol` (`M05_id`, `P01_id`, `id`) VALUES
 (2, 1, 2),
-(5, 3, 6),
 (11, 10, 11),
-(5, 10, 12),
-(5, 10, 13);
+(15, 11, 15),
+(13, 12, 16),
+(13, 12, 17),
+(13, 12, 18);
 
 -- --------------------------------------------------------
 

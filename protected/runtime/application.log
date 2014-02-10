@@ -4148,3 +4148,93 @@ Stack trace:
 REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
 HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/index
 ---
+2014/02/10 04:00:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/index
+---
+2014/02/10 04:00:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/index
+---
+2014/02/10 04:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/index
+---
+2014/02/10 04:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/index
+---
+2014/02/10 04:00:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_p
+---
+2014/02/10 04:00:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_p
+---
+2014/02/10 04:00:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_p
+---
+2014/02/10 04:00:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_p
+---
+2014/02/10 04:00:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/tesis
+---
+2014/02/10 04:00:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in /opt/lampp/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 /opt/lampp/htdocs/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/CRIBLYRTH/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/tesis
+---
