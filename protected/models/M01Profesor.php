@@ -11,10 +11,20 @@
  * @property string $Correo_UNET
  *
  * The followings are the available model relations:
- * @property T04ProfesorHasTematica[] $t04ProfesorHasTematicas
+ * @property T06ConocimientoProfesor[] $t06ConocimientoProfesors
  */
 class M01Profesor extends CActiveRecord
 {
+	/**
+	 * Returns the static model of the specified AR class.
+	 * @param string $className active record class name.
+	 * @return M01Profesor the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,7 +45,7 @@ class M01Profesor extends CActiveRecord
 			array('Cedula', 'length', 'max'=>12),
 			array('Apellido, Nombre, Correo_UNET', 'length', 'max'=>45),
 			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
+			// Please remove those attributes that should not be searched.
 			array('id, Cedula, Apellido, Nombre, Correo_UNET', 'safe', 'on'=>'search'),
 		);
 	}
@@ -48,7 +58,7 @@ class M01Profesor extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			't04ProfesorHasTematicas' => array(self::HAS_MANY, 'T04ProfesorHasTematica', 'M01_id'),
+			't06ConocimientoProfesors' => array(self::HAS_MANY, 'T06ConocimientoProfesor', 'M01_d'),
 		);
 	}
 
@@ -68,19 +78,12 @@ class M01Profesor extends CActiveRecord
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
 
 		$criteria=new CDbCriteria;
 
@@ -93,16 +96,5 @@ class M01Profesor extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-	}
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return M01Profesor the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
 	}
 }

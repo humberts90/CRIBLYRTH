@@ -5,6 +5,9 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
+
+	
+
 	public function actions()
 	{
 		return array(
@@ -20,7 +23,18 @@ class SiteController extends Controller
 			),
 		);
 	}
-
+		public function accessRules()
+	{
+		return array(
+			array('allow',  
+				'actions'=>array('admin'),
+					'roles'=>array('Administrador'),
+					'users'=>array('@'),
+			),
+		
+		
+		);
+	}
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -70,6 +84,13 @@ class SiteController extends Controller
 		$model=T09Noticias::model()->findByPk($id);
 		$this->render('noticia',array('model'=>$model));	
 	}
+	public function actionAdmin(){
+	
+		
+		$this->render('admin');	
+
+
+	}
 	/**
 	 * Displays the login page
 	 */
@@ -91,7 +112,7 @@ class SiteController extends Controller
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login()){
 				if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
-							$this->redirect(Yii::app()->user->returnUrl.'/site/index');
+							$this->redirect(Yii::app()->user->returnUrl.'/site/admin');
 					}
 					if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){
 						$this->redirect(Yii::app()->user->returnUrl.'/profesor/index');

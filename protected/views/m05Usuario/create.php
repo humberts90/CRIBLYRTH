@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List M05Usuario', 'url'=>array('index')),
-	array('label'=>'Manage M05Usuario', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Usuario', 'url'=>array('index')),
+	array('label'=>'Administrar Usuarios', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create M05Usuario</h1>
+<h1>Nuevo Usuario</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

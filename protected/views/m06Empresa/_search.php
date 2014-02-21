@@ -11,20 +11,20 @@
 	'method'=>'get',
 )); ?>
 
+
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+		<?php echo $form->labelEx($model,'Status de la empresa'); ?>
+		<?php echo $form->dropDownList($model,'P08_id',CHtml::listData(P08Categoria::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Status de la empresa','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'Status'); ?>
 	</div>
+
 
 	<div class="row">
 		<?php echo $form->label($model,'RIF'); ?>
 		<?php echo $form->textField($model,'RIF',array('size'=>25,'maxlength'=>25)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'Status'); ?>
-		<?php echo $form->textField($model,'Status'); ?>
-	</div>
+
 
 	<div class="row">
 		<?php echo $form->label($model,'Razon_Social'); ?>
@@ -67,17 +67,29 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'P04_id'); ?>
-		<?php echo $form->textField($model,'P04_id'); ?>
+		<?php echo $form->labelEx($model,'Pais'); ?>
+		<?php echo $form->dropDownList($model,'P07_id',CHtml::listData(P07Pais::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Pais','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'Pais'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'Estado'); ?>
+		<?php echo $form->dropDownList($model,'P06_id',CHtml::listData(P06Estado::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Estado','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'Estado'); ?>
+	</div>
+		<div class="row">
+		<?php echo $form->labelEx($model,'Municipio'); ?>
+		<?php echo $form->dropDownList($model,'P05_id',CHtml::listData(P05Municipio::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Municipio','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'municipio'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'P08_id'); ?>
-		<?php echo $form->textField($model,'P08_id'); ?>
+		<?php echo $form->labelEx($model,'Parroquia'); ?>
+		<?php echo $form->dropDownList($model,'P04_id',CHtml::listData(P04Parroquia::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Parroquia','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'Parroquia'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

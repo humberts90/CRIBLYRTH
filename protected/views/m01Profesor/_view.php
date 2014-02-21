@@ -5,9 +5,8 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+	
+
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Cedula')); ?>:</b>
 	<?php echo CHtml::encode($data->Cedula); ?>
@@ -24,5 +23,9 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Correo_UNET')); ?>:</b>
 	<?php echo CHtml::encode($data->Correo_UNET); ?>
 	<br />
+	<?php echo CHtml::link(CHtml::encode('Detalles'), array('view', 'id'=>$data->id)); ?>
+	<br />
+	<br />
+
 
 </div>

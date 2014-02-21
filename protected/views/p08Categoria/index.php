@@ -7,12 +7,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create P08Categoria', 'url'=>array('create')),
-	array('label'=>'Manage P08Categoria', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Nueva Categoria', 'url'=>array('create')),
+	array('label'=>'Administrar Categoria', 'url'=>array('admin')),
 );
 ?>
 
-<h1>P08 Categorias</h1>
+<h1>Categorias</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -8,6 +8,11 @@
  * @property string $Descripcion
  * @property string $Fecha
  * @property string $Titulo
+ * @property integer $M05_id
+ * @property string $Imagen
+ *
+ * The followings are the available model relations:
+ * @property M05Usuario $m05
  */
 class T09Noticias extends CActiveRecord
 {
@@ -37,11 +42,12 @@ class T09Noticias extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Descripcion, Fecha, Titulo', 'required'),
-			array('Titulo', 'length', 'max'=>255),
+			array('Descripcion, Fecha, Titulo, M05_id', 'required'),
+			array('M05_id', 'numerical', 'integerOnly'=>true),
+			array('Titulo, Imagen', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, Descripcion, Fecha, Titulo', 'safe', 'on'=>'search'),
+			array('id, Descripcion, Fecha, Titulo, M05_id, Imagen', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,6 +59,7 @@ class T09Noticias extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'm05' => array(self::BELONGS_TO, 'M05Usuario', 'M05_id'),
 		);
 	}
 
@@ -66,6 +73,8 @@ class T09Noticias extends CActiveRecord
 			'Descripcion' => 'Descripcion',
 			'Fecha' => 'Fecha',
 			'Titulo' => 'Titulo',
+			'M05_id' => 'M05',
+			'Imagen' => 'Imagen',
 		);
 	}
 
@@ -84,6 +93,8 @@ class T09Noticias extends CActiveRecord
 		$criteria->compare('Descripcion',$this->Descripcion,true);
 		$criteria->compare('Fecha',$this->Fecha,true);
 		$criteria->compare('Titulo',$this->Titulo,true);
+		$criteria->compare('M05_id',$this->M05_id);
+		$criteria->compare('Imagen',$this->Imagen,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -4,15 +4,16 @@
 
 $this->breadcrumbs=array(
 	'M01 Profesors'=>array('index'),
-	'Create',
+	'Nuevo',
 );
 
 $this->menu=array(
-	array('label'=>'List M01Profesor', 'url'=>array('index')),
-	array('label'=>'Manage M01Profesor', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Profesores', 'url'=>array('index')),
+	array('label'=>'Administrar Profesores', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create M01Profesor</h1>
+<h1>Nuevo Profesor</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

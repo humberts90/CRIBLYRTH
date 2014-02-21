@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List P03Status', 'url'=>array('index')),
-	array('label'=>'Manage P03Status', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Status', 'url'=>array('index')),
+	array('label'=>'Administrar Status', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create P03Status</h1>
+<h1>Nuevo Status</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

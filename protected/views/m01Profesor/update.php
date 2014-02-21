@@ -9,13 +9,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List M01Profesor', 'url'=>array('index')),
-	array('label'=>'Create M01Profesor', 'url'=>array('create')),
-	array('label'=>'View M01Profesor', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage M01Profesor', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Profesores', 'url'=>array('index')),
+	array('label'=>'Nuevo Profesor', 'url'=>array('create')),
+	array('label'=>'Detalles del Profesor', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Profesores', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update M01Profesor <?php echo $model->id; ?></h1>
+<h1>Actualizar Profesor </h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

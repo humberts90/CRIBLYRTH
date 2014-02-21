@@ -30,15 +30,12 @@ class ComisionController extends Controller {
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'roles'=>array('Administrador'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				
 				'users'=>array('@'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'roles'=>array('Comision'),
+				'users'=>array('@'),
+			),			
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -58,12 +55,12 @@ class ComisionController extends Controller {
 	// para redactar las catas
 	public function actionRedactar()
 	{
-		$model=new T03Acta;
+		$model=new T03ActaReunion;
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 
-		if(isset($_POST['T03Acta']))
+		if(isset($_POST['T03ActaReunion']))
 		{
-			$model->attributes=$_POST['T03Acta'];
+			$model->attributes=$_POST['T03ActaReunion'];
 			$model->M05_id=$tar->id;
 			$model->Anexo=CUploadedFile::getInstance($model,'Anexo');	
 			if($model->save()){
@@ -94,25 +91,27 @@ class ComisionController extends Controller {
 		));
 	}
 	public function actionAdminac(){
-		$model=new T03Acta('search');
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$model=new T03ActaReunion('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['T03Acta']))
-			$model->attributes=$_GET['T03Acta'];
+		if(isset($_GET['T03ActaReunion']))
+			$model->attributes=$_GET['T03ActaReunion'];
 
 		$this->render('adminac',array(
 			'model'=>$model,
+			'Usuario'=>$tar,
 		));
 	}
 		public function actionUpdate_ac($id)
 	{
-		$model=T03Acta::model()->findByPk($id);
+		$model=T03ActaReunion::model()->findByPk($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['T03Acta']))
+		if(isset($_POST['T03ActaReunion']))
 		{
-			$model->attributes=$_POST['T03Acta'];
+			$model->attributes=$_POST['T03ActaReunion'];
 			if($model->save())
 				$this->redirect(array('view_ac','id'=>$model->id));
 		}
@@ -123,7 +122,7 @@ class ComisionController extends Controller {
 	}
 	public function actionDelete_ac($id)
 	{
-		$model=T03Acta::model()->findByPk($id);
+		$model=T03ActaReunion::model()->findByPk($id);
 		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -133,7 +132,7 @@ class ComisionController extends Controller {
 	public function actionView_ac($id)
 	{
 		$this->render('view_ac',array(
-			'model'=>T03Acta::model()->findByPk($id),
+			'model'=>T03ActaReunion::model()->findByPk($id),
 		));
 	}
 	//---------------------------Noticias-----------------------------------------------------------------
@@ -141,10 +140,32 @@ class ComisionController extends Controller {
 	public function actionCargarN(){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model=new T09Noticias;
-		if(isset($_POST['T09Noticias'])){
+		
+		if(isset($_POST['T09Noticias']))
+		{
 			$model->attributes=$_POST['T09Noticias'];
-			if($model->save())
-				$this->redirect(array('noticia','id' => $model->id));
+			$model->Imagen=CUploadedFile::getInstance($model,'Imagen');
+			$model->M05_id=$tar->id;
+			if($model->save()){
+
+				$estructura=Yii::app()->theme->basePath.'/Noticias/'.$model->id;
+				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE
+					
+		            mkdir($estructura,0777,true);//CREAR CARPETA CN TODOS LOS PERMISOS
+		            $path="$estructura/$model->Imagen";//DEFINE LA RUTA DEL DOCUMENTO
+					if($model->Imagen!=null||$model->Imagen!=''){
+		                 $model->Imagen->saveAs($path);
+		            }	                 	
+		       	}
+		        else{	                 	
+		                 	$path="$estructura/$model->Imagen";
+		            if($model->Imagen!=null||$model->Imagen!=''){
+		                $model->Imagen->saveAs($path);
+		            }	                 	
+		        }
+		        $this->redirect(array('noticia','id'=>$model->id));
+			}
+				
 		}
 
 		$this->render('nuevan',array('noticia'=>$model,'Usuario'=>$tar));
@@ -166,7 +187,7 @@ class ComisionController extends Controller {
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model=new T09Noticias('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();  
 		if(isset($_GET['T09Noticias']))
 			$model->attributes=$_GET['T09Noticias'];
 
@@ -192,8 +213,28 @@ class ComisionController extends Controller {
 		if(isset($_POST['T09Noticias']))
 		{
 			$model->attributes=$_POST['T09Noticias'];
-			if($model->save())
-				$this->redirect(array('noticia','id'=>$model->id));
+			$model->Imagen=CUploadedFile::getInstance($model,'Imagen');
+			$model->M05_id=$tar->id;
+			if($model->save()){
+
+				$estructura=Yii::app()->theme->basePath.'/Noticias/'.$model->id;
+				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE
+					
+		            mkdir($estructura,0777,true);//CREAR CARPETA CN TODOS LOS PERMISOS
+		            $path="$estructura/$model->Imagen";//DEFINE LA RUTA DEL DOCUMENTO
+					if($model->Imagen!=null||$model->Imagen!=''){
+		                 $model->Imagen->saveAs($path);
+		            }	                 	
+		       	}
+		        else{	                 	
+		                 	$path="$estructura/$model->Imagen";
+		            if($model->Imagen!=null||$model->Imagen!=''){
+		                $model->Imagen->saveAs($path);
+		            }	                 	
+		        }
+		        $this->redirect(array('noticia','id'=>$model->id));
+			}
+				
 		}
 
 		$this->render('update_nt',array(
@@ -204,12 +245,15 @@ class ComisionController extends Controller {
 	//---------------------------------------Evaluar Propuestas de tesis----------------------------------------------------
 	public function actionTesis(){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
-		$model=new M03Tesis('search');
-		$model->unsetAttributes();
+		$model=new M03Tesis();
+		$criteria=new CDbCriteria;		
+		$criteria->condition='P03_id= 2';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M03Tesis::model(), array('criteria'=>$criteria,));
 
 		$this->render('list_1',array(
 			'Usuario'=>$tar,
-			 'dataProvider'=>$model->search(),
+			 'dataProvider'=>$dataProvider,
 			 'model'=>$model,
 			));
 	}
@@ -227,7 +271,7 @@ class ComisionController extends Controller {
 		
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$tesis=M03Tesis::model()->findByPk($id);
-		$model=new T06Observacion;
+		$model=new T07ObservacionTesis;
 		$tes=T01TesisHasUsuario::model()->findAll("M03_id =".$tesis->id);
 		$prof=M01Profesor::model()->findAll();
 		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Jurado 1'");
@@ -277,8 +321,11 @@ class ComisionController extends Controller {
 	//---------------------------------------------Evaluar Propuestas de pasantias----------------------------------------------------------------------------------
 	public function actionPasantias(){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
-		$model=new M04Pasantia('search');
-		$model->unsetAttributes();
+		$model=new M04Pasantia();
+		$criteria=new CDbCriteria;
+		$criteria->condition='P03_id= 2';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M04Pasantia::model(), array('criteria'=>$criteria,));
 
 		$this->render('list_2',array(
 			'Usuario'=>$tar,
@@ -296,22 +343,33 @@ class ComisionController extends Controller {
 			'has1'=>$has1,
 			));
 	}
+	public function actionCronograma($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$cronos=M02Cronograma::model()->findAll("m04_pasantia_id = '".$id."'");
+		$this->render('cronogramas',array('Usuario'=>$tar,'cronos'=>$cronos,));
+	}
 	public function actionCrono($id){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
-		$psa=M04Pasantia::model()->findByPk($id);
-		$datos=T11Actividad::model()->findAll("M04_Pasantia_id = ".$id);
-		foreach ($datos as $value) {
-			$data[] = array(
-	  		'label' => $value->Descripcion,
-	  		'start' => $value->Fecha_inicio, 
-		     'end'   => $value->Fecha_Fin,
-			);
-		}
-		$this->render('gantt',array(
+		$psa=M02Cronograma::model()->findByPk($id);
+		$datos=T11Actividad::model()->findAll("M02_id = ".$id);
+		if(count($datos)>0){
+			foreach ($datos as $value) {
+				$data[] = array(
+		  		'label' => $value->Descripcion,
+		  		'start' => $value->Fecha_inicio, 
+			     'end'   => $value->Fecha_Fin,
+				);
+			}
+			$this->render('gantt',array(
 			'data'=>$data,
 			'proy'=>$psa,
 			'Usuario'=>$tar,
 			));
+		}
+		else{
+			$this->redirect(array('cronograma','id'=>$psa->m04_pasantia_id));
+		}	
+		
 	}
 
 }

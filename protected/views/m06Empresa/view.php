@@ -3,20 +3,22 @@
 /* @var $model M06Empresa */
 
 $this->breadcrumbs=array(
-	'M06 Empresas'=>array('index'),
+	' Empresas'=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List M06Empresa', 'url'=>array('index')),
-	array('label'=>'Create M06Empresa', 'url'=>array('create')),
-	array('label'=>'Update M06Empresa', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete M06Empresa', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage M06Empresa', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Empresas', 'url'=>array('index')),
+	array('label'=>'Nueva Empresa', 'url'=>array('create')),
+	array('label'=>'Actualizar Empresa', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Borrar Empresa', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Empresas', 'url'=>array('admin')),
+
 );
 ?>
 
-<h1>View M06Empresa #<?php echo $model->id; ?></h1>
+<h1> Empresa <?php echo $model->Razon_Social; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -34,5 +36,8 @@ $this->menu=array(
 		'Sitio_Web',
 		'P04_id',
 		'P08_id',
+		'P05_id',
+		'P06_id',
+		'P07_id',
 	),
 )); ?>

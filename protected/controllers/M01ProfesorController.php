@@ -26,18 +26,10 @@ class M01ProfesorController extends Controller
 	 */
 	public function accessRules()
 	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
+		return array(		
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'roles'=>array('Administrador'),
+					'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -67,32 +59,11 @@ class M01ProfesorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		
-
 		if(isset($_POST['M01Profesor']))
-		{  
-			
+		{
 			$model->attributes=$_POST['M01Profesor'];
 			if($model->save())
-			{		
-				
-				$modelTema = M02Tematica::model()->findAll();
-				
-				foreach($modelTema as $tema)
-				{
-					if($_POST["Tema"][$tema->id]==1)
-					{
-						$item = new T04ProfesorHasTematica;
-						
-						$item->M01_id=$model->id;
-						$item->M02_id=$tema->id;
-						
-						$item->save();
-					}
-				}
-				
 				$this->redirect(array('view','id'=>$model->id));
-			}
 		}
 
 		$this->render('create',array(
@@ -116,26 +87,7 @@ class M01ProfesorController extends Controller
 		{
 			$model->attributes=$_POST['M01Profesor'];
 			if($model->save())
-			{
-								
-				$modelTema = M02Tematica::model()->findAll();
-				
-				foreach($modelTema as $tema)
-				{
-					if($_POST["Tema"][$tema->id]==1)
-					{
-						$item = new T04ProfesorHasTematica;
-						
-						$item->M01_id=$model->id;
-						$item->M02_id=$tema->id;
-						
-						$item->save();
-					}
-				}
-				
 				$this->redirect(array('view','id'=>$model->id));
-			}
-			
 		}
 
 		$this->render('update',array(
@@ -150,11 +102,6 @@ class M01ProfesorController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$items = T04ProfesorHasTematica::model()->findAllByAttributes(array('M01_id'=>$id));
-		
-		foreach($items as $item)
-		$item->delete();
-		
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

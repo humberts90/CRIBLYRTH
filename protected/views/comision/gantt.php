@@ -21,12 +21,12 @@ $gantti = new Gantti($data, array(
 
 
 
-<h1>Cronograma de Actividades de <?php echo $proy->Titulo; ?></h1>
+<h1>Cronograma de Actividades de <?php echo $proy->nombre; ?></h1>
 
 <?php echo $gantti ?>
 
 
-	<?php echo CHtml::link(CHtml::encode("Volver"), array('pasdeta', 'id'=>$proy->id)); ?>
+	<?php echo CHtml::link(CHtml::encode("Volver"), array('cronograma', 'id'=>$proy->m04_pasantia_id)); ?>
 	<br />
 
 	

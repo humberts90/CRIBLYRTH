@@ -8,10 +8,6 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'m06-empresa-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -20,16 +16,18 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'Status de la empresa'); ?>
+		<?php echo $form->dropDownList($model,'P08_id',CHtml::listData(P08Categoria::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Status de la empresa','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'Status'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'RIF'); ?>
 		<?php echo $form->textField($model,'RIF',array('size'=>25,'maxlength'=>25)); ?>
 		<?php echo $form->error($model,'RIF'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'Status'); ?>
-		<?php echo $form->textField($model,'Status'); ?>
-		<?php echo $form->error($model,'Status'); ?>
-	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Razon_Social'); ?>
@@ -37,11 +35,7 @@
 		<?php echo $form->error($model,'Razon_Social'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'Direccion'); ?>
-		<?php echo $form->textArea($model,'Direccion',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'Direccion'); ?>
-	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Telefono_1'); ?>
@@ -80,16 +74,37 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Parroquia'); ?>
-		<?php echo $form->dropDownList($model,'P04_id',CHtml::listData(P04Parroquia::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Parroquia','class'=>'form-control')); ?>
-		<?php echo $form->error($model,'P04_id'); ?>
+		<?php echo $form->labelEx($model,'Pais'); ?>
+		<?php echo $form->dropDownList($model,'P07_id',CHtml::listData(P07Pais::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Pais','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'Pais'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'Estado'); ?>
+		<?php echo $form->dropDownList($model,'P06_id',CHtml::listData(P06Estado::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Estado','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'Estado'); ?>
+	</div>
+		<div class="row">
+		<?php echo $form->labelEx($model,'Municipio'); ?>
+		<?php echo $form->dropDownList($model,'P05_id',CHtml::listData(P05Municipio::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Municipio','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'municipio'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Categoria'); ?>
-		<?php echo $form->dropDownList($model,'P08_id',CHtml::listData(P08Categoria::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Categoria','class'=>'form-control')); ?>
-		<?php echo $form->error($model,'P08_id'); ?>
+		<?php echo $form->labelEx($model,'Parroquia'); ?>
+		<?php echo $form->dropDownList($model,'P04_id',CHtml::listData(P04Parroquia::model()->findAll(),'id','Descripcion'),array('empty'=>'Seleccione Parroquia','class'=>'form-control')); ?>
+		<?php echo $form->error($model,'Parroquia'); ?>
 	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'Direccion'); ?>
+		<?php echo $form->textArea($model,'Direccion',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'Direccion'); ?>
+	</div>
+
+</br>
+
+
+
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

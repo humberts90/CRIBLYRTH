@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List T09Noticias', 'url'=>array('index')),
-	array('label'=>'Manage T09Noticias', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Noticias', 'url'=>array('index')),
+	array('label'=>'Administrar Noticias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create T09Noticias</h1>
+<h1>Nueva Noticia</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

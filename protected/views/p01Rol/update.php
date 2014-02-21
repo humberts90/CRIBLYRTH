@@ -9,13 +9,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List P01Rol', 'url'=>array('index')),
-	array('label'=>'Create P01Rol', 'url'=>array('create')),
-	array('label'=>'View P01Rol', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage P01Rol', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Roles', 'url'=>array('index')),
+	array('label'=>'Nuevo Rol', 'url'=>array('create')),
+	array('label'=>'Detalle del Rol', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Roles', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update P01Rol <?php echo $model->id; ?></h1>
+<h1>Actualizar Rol <?php echo $model->nombre; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

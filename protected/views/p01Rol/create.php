@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List P01Rol', 'url'=>array('index')),
-	array('label'=>'Manage P01Rol', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Roles', 'url'=>array('index')),
+	array('label'=>'Administrar Roles', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create P01Rol</h1>
+<h1>Nuevo Rol</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

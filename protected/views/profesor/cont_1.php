@@ -96,7 +96,7 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
       <tr>
         <td  align="center"><strong>'.date("d/m/Y",strtotime($tesis->Fecha_Defensa)).'</strong></td>
         <td  align="center"><strong>'.$tesis->Titulo.'</strong></td>
-        <td  align="center"><strong>[Nombre, Apellido y Cedula]</strong></td>
+        <td  align="center"><strong>'.$nombre_1.$nombre_2.'</strong></td>
       </tr>
     </table>
     

@@ -8,11 +8,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List M06Empresa', 'url'=>array('index')),
-	array('label'=>'Manage M06Empresa', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Empresa', 'url'=>array('index')),
+	array('label'=>'Administrar Empresa', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create M06Empresa</h1>
+<h1>Nueva Empresa</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -9,13 +9,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List T09Noticias', 'url'=>array('index')),
-	array('label'=>'Create T09Noticias', 'url'=>array('create')),
-	array('label'=>'View T09Noticias', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage T09Noticias', 'url'=>array('admin')),
+
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Noticias', 'url'=>array('index')),
+	array('label'=>'Nueva Noticias', 'url'=>array('create')),
+	array('label'=>'Detallar Noticias', 'url'=>array('view', 'id'=>$model->id)),	
+	array('label'=>'Administrar Noticias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update T09Noticias <?php echo $model->id; ?></h1>
+<h1><?php echo $model->Titulo; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -1,18 +1,31 @@
+<?php
+/* @var $this T09NoticiasController */
+/* @var $model T09Noticias */
+/* @var $form CActiveForm */
+?>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'t09-noticias-form',
 	'enableAjaxValidation'=>false,
+	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
-<?php echo $form->errorSummary($model); ?>
-<div class="row">
+
+	<p class="note">Los campos con <span class="required">*</span> son obligatorios.</p>
+
+	<?php echo $form->errorSummary($model); ?>
+
+
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'Titulo'); ?>
-		<?php echo $form->textField($model,'Titulo',array('size'=>45,'maxlength'=>45)); ?>
-					<?php echo $form->error($model,'Titulo'); ?>
-				</div>
+		<?php echo $form->textField($model,'Titulo',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'Titulo'); ?>
+	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'Descripcion'); ?>
-			<?php
+				<?php
 							Yii::import('ext.krichtexteditor.KRichTextEditor');
 								$this->widget('KRichTextEditor', array(
 								    'model' => $model,
@@ -26,7 +39,13 @@
 			?>
 		<?php echo $form->error($model,'Descripcion'); ?>
 	</div>
+
 	<div class="row">
+		<?php echo $form->labelEx($model,'Imagen'); ?>
+		 <?php echo $form->fileField($model,'Imagen',array('rows'=>1, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'Imagen'); ?>
+	</div>
+		<div class="row">		
 		<?php echo $form->labelEx($model,'Fecha'); ?>
 			<?php
 			$this->widget('zii.widgets.jui.CJuiDatePicker',
@@ -46,9 +65,11 @@
 			?>
 		<?php echo $form->error($model,'Fecha'); ?>
 	</div>
+
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Subir' : 'Modificar'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
+
 <?php $this->endWidget(); ?>
 
-</div>
+</div><!-- form -->

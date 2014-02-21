@@ -27,18 +27,32 @@
  * @property string $Fecha_Inscripcion
  * @property string $Fecha_Aprobación
  * @property string $Fecha_Defensa
+ * @property integer $P03_id
+ * @property integer $M06_id
  *
  * The followings are the available model relations:
+ * @property P03Status $p03
+ * @property M06Empresa $m06
  * @property T01TesisHasUsuario[] $t01TesisHasUsuarios
- * @property T05TematicaHasTesis[] $t05TematicaHasTesises
- * @property T06Observacion[] $t06Observacions
+ * @property T04ConocimientoTesis[] $t04ConocimientoTesises
+ * @property T07ObservacionTesis[] $t07ObservacionTesises
  */
 class M03Tesis extends CActiveRecord
 {
 	/**
-	 * @return string the associated database table name
+	 * Returns the static model of the specified AR class.
+	 * @param string $className active record class name.
+	 * @return M03Tesis the static model class
 	 */
 	public $tutor;
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * @return string the associated database table name
+	 */
 	public function tableName()
 	{
 		return 'm03_tesis';
@@ -52,13 +66,14 @@ class M03Tesis extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('P03_id', 'required'),
+			array('P03_id, M06_id', 'numerical', 'integerOnly'=>true),
 			array('Titulo', 'length', 'max'=>45),
 			array('Carta_Tutor', 'length', 'max'=>255),
-			array('Carta_Tutor', 'file','types'=>'pdf', 'allowEmpty'=>true, 'on'=>'update'),
 			array('Introduccion, Planteamiento_Problema, Objetivo_General, Objetivo_especifico, Justificacion_Importancia, Alcance_Delimitaciones, Antecedentes, Bases_Teoricas, Bases_Legales, Definicion_Terminos, Enfoque_Investigacion, Tipo_Nivel_Invesstigacion, Diseno_Investigacion, Poblacion_Muestra, Tecnicas_Recoleccion_Datos, Metodologias, Referencias, Fecha_Inscripcion, Fecha_Aprobación, Fecha_Defensa', 'safe'),
 			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, Titulo, Carta_Tutor, Introduccion, Planteamiento_Problema, Objetivo_General, Objetivo_especifico, Justificacion_Importancia, Alcance_Delimitaciones, Antecedentes, Bases_Teoricas, Bases_Legales, Definicion_Terminos, Enfoque_Investigacion, Tipo_Nivel_Invesstigacion, Diseno_Investigacion, Poblacion_Muestra, Tecnicas_Recoleccion_Datos, Metodologias, Referencias, Fecha_Inscripcion, Fecha_Aprobación, Fecha_Defensa', 'safe', 'on'=>'search'),
+			// Please remove those attributes that should not be searched.
+			array('id, Titulo, Carta_Tutor, Introduccion, Planteamiento_Problema, Objetivo_General, Objetivo_especifico, Justificacion_Importancia, Alcance_Delimitaciones, Antecedentes, Bases_Teoricas, Bases_Legales, Definicion_Terminos, Enfoque_Investigacion, Tipo_Nivel_Invesstigacion, Diseno_Investigacion, Poblacion_Muestra, Tecnicas_Recoleccion_Datos, Metodologias, Referencias, Fecha_Inscripcion, Fecha_Aprobación, Fecha_Defensa, P03_id, M06_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,9 +85,11 @@ class M03Tesis extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'p03' => array(self::BELONGS_TO, 'P03Status', 'P03_id'),
+			'm06' => array(self::BELONGS_TO, 'M06Empresa', 'M06_id'),
 			't01TesisHasUsuarios' => array(self::HAS_MANY, 'T01TesisHasUsuario', 'M03_id'),
-			't05TematicaHasTesises' => array(self::HAS_MANY, 'T05TematicaHasTesis', 'M03_id'),
-			't06Observacions' => array(self::HAS_MANY, 'T06Observacion', 'M03_id'),
+			't04ConocimientoTesises' => array(self::HAS_MANY, 'T04ConocimientoTesis', 'M03_id'),
+			't07ObservacionTesises' => array(self::HAS_MANY, 'T07ObservacionTesis', 'M03_id'),
 		);
 	}
 
@@ -105,24 +122,19 @@ class M03Tesis extends CActiveRecord
 			'Fecha_Inscripcion' => 'Fecha Inscripcion',
 			'Fecha_Aprobación' => 'Fecha Aprobación',
 			'Fecha_Defensa' => 'Fecha Defensa',
+			'P03_id' => 'P03',
+			'M06_id' => 'M06',
 		);
 	}
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
 
 		$criteria=new CDbCriteria;
 
@@ -149,20 +161,11 @@ class M03Tesis extends CActiveRecord
 		$criteria->compare('Fecha_Inscripcion',$this->Fecha_Inscripcion,true);
 		$criteria->compare('Fecha_Aprobación',$this->Fecha_Aprobación,true);
 		$criteria->compare('Fecha_Defensa',$this->Fecha_Defensa,true);
+		$criteria->compare('P03_id',$this->P03_id);
+		$criteria->compare('M06_id',$this->M06_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-	}
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return M03Tesis the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
 	}
 }

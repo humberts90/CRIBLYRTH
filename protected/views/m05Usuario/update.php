@@ -9,13 +9,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List M05Usuario', 'url'=>array('index')),
-	array('label'=>'Create M05Usuario', 'url'=>array('create')),
-	array('label'=>'View M05Usuario', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage M05Usuario', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Usuario', 'url'=>array('index')),
+	array('label'=>'Nuevo Usuario', 'url'=>array('create')),
+	array('label'=>'Detalles de Usuario', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Usuario', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update M05Usuario <?php echo $model->id; ?></h1>
+<h1>Actualizar Usuario <?php echo $model->Usuario; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

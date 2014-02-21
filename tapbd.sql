@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-02-2014 a las 03:59:03
+-- Tiempo de generación: 21-02-2014 a las 21:32:25
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -133,25 +133,25 @@ INSERT INTO `m01_profesor` (`id`, `Cedula`, `Apellido`, `Nombre`, `Correo_UNET`)
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `m02_tematica`
+-- Estructura de tabla para la tabla `m02_cronograma`
 --
 
-CREATE TABLE IF NOT EXISTS `m02_tematica` (
+CREATE TABLE IF NOT EXISTS `m02_cronograma` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Descripcion` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `nombre` varchar(255) NOT NULL,
+  `descripcion` mediumtext NOT NULL,
+  `m04_pasantia_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_m02_cronograma_m04_pasantia1_idx` (`m04_pasantia_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Volcado de datos para la tabla `m02_tematica`
+-- Volcado de datos para la tabla `m02_cronograma`
 --
 
-INSERT INTO `m02_tematica` (`id`, `Descripcion`) VALUES
-(1, 'Sistema de Informacion'),
-(2, 'Inteligencia Artificial'),
-(3, 'Software Empresarial'),
-(4, 'Comunicaciones'),
-(5, 'Investigacion de Operaciones');
+INSERT INTO `m02_cronograma` (`id`, `nombre`, `descripcion`, `m04_pasantia_id`) VALUES
+(1, 'Prueba 1', 'Primer cronograma', 1),
+(2, 'Prueba 2', 'Segundo Cronograma', 1);
 
 -- --------------------------------------------------------
 
@@ -183,15 +183,19 @@ CREATE TABLE IF NOT EXISTS `m03_tesis` (
   `Fecha_Inscripcion` date DEFAULT NULL,
   `Fecha_Aprobación` date DEFAULT NULL,
   `Fecha_Defensa` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `P03_id` int(11) NOT NULL,
+  `M06_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_m03_tesis_p03_status1_idx` (`P03_id`),
+  KEY `fk_m03_tesis_m06_empresa1_idx` (`M06_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `m03_tesis`
 --
 
-INSERT INTO `m03_tesis` (`id`, `Titulo`, `Carta_Tutor`, `Introduccion`, `Planteamiento_Problema`, `Objetivo_General`, `Objetivo_especifico`, `Justificacion_Importancia`, `Alcance_Delimitaciones`, `Antecedentes`, `Bases_Teoricas`, `Bases_Legales`, `Definicion_Terminos`, `Enfoque_Investigacion`, `Tipo_Nivel_Invesstigacion`, `Diseno_Investigacion`, `Poblacion_Muestra`, `Tecnicas_Recoleccion_Datos`, `Metodologias`, `Referencias`, `Fecha_Inscripcion`, `Fecha_Aprobación`, `Fecha_Defensa`) VALUES
-(1, 'prueba', 'ESQUEMA DE ENTREGABLES Y CONTENIDO DEL PARCIAL.pdf', 'jntyjt', 'gj', 'ghj', 'ghj', 'hjg', 'ghj', 'ghj', 'ghj', 'ghj', 'hgjg', 'ghj', 'hgj', 'ghj', 'hj', 'hgj', 'ghj', 'hjg', NULL, NULL, '2014-03-20');
+INSERT INTO `m03_tesis` (`id`, `Titulo`, `Carta_Tutor`, `Introduccion`, `Planteamiento_Problema`, `Objetivo_General`, `Objetivo_especifico`, `Justificacion_Importancia`, `Alcance_Delimitaciones`, `Antecedentes`, `Bases_Teoricas`, `Bases_Legales`, `Definicion_Terminos`, `Enfoque_Investigacion`, `Tipo_Nivel_Invesstigacion`, `Diseno_Investigacion`, `Poblacion_Muestra`, `Tecnicas_Recoleccion_Datos`, `Metodologias`, `Referencias`, `Fecha_Inscripcion`, `Fecha_Aprobación`, `Fecha_Defensa`, `P03_id`, `M06_id`) VALUES
+(4, 'Aplicacion de una tesis de prueba para el sis', NULL, ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent ', NULL, '2014-02-17', '2014-02-18', '2014-02-22', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -213,16 +217,18 @@ CREATE TABLE IF NOT EXISTS `m04_pasantia` (
   `Fecha_Defensa` date DEFAULT NULL,
   `Fecha_Aprobacion` date DEFAULT NULL,
   `M06_id` int(11) DEFAULT NULL,
+  `P03_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_Pasantia_empresa1_idx` (`M06_id`)
+  KEY `fk_Pasantia_empresa1_idx` (`M06_id`),
+  KEY `fk_m04_pasantia_p03_status1_idx` (`P03_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Volcado de datos para la tabla `m04_pasantia`
 --
 
-INSERT INTO `m04_pasantia` (`id`, `Titulo`, `Planteamiento_Problema`, `Descripcion_Trabajo`, `Objetivo_General`, `Objetivo_Especifico`, `Antecedentes`, `Metodologia`, `Productos_Desarrollo`, `Fecha_Inscripcion`, `Fecha_Defensa`, `Fecha_Aprobacion`, `M06_id`) VALUES
-(1, 'Proyecto de Trabajo', 'dasd', 'asdas', 'sad', 'asdsa', 'asda', 'sda', 'sda', '2014-02-08', '0000-00-00', '0000-00-00', 1);
+INSERT INTO `m04_pasantia` (`id`, `Titulo`, `Planteamiento_Problema`, `Descripcion_Trabajo`, `Objetivo_General`, `Objetivo_Especifico`, `Antecedentes`, `Metodologia`, `Productos_Desarrollo`, `Fecha_Inscripcion`, `Fecha_Defensa`, `Fecha_Aprobacion`, `M06_id`, `P03_id`) VALUES
+(1, 'Aplicacion de una pasantias de prueba para el sistema del TAP', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit. ', '2014-02-17', '2014-02-18', '2014-02-22', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -281,19 +287,25 @@ CREATE TABLE IF NOT EXISTS `m06_empresa` (
   `Correo` varchar(255) NOT NULL,
   `Descripcion` text NOT NULL,
   `Sitio_Web` varchar(255) DEFAULT NULL,
-  `P04_id` int(11) NOT NULL,
+  `P04_id` int(11) DEFAULT NULL,
   `P08_id` int(11) DEFAULT NULL,
+  `P05_id` int(11) DEFAULT NULL,
+  `P06_id` int(11) NOT NULL,
+  `P07_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_M06_Empresa_P04_Parroquia1_idx` (`P04_id`),
-  KEY `fk_M06_Empresa_P07_Categoria1_idx` (`P08_id`)
+  KEY `fk_M06_Empresa_P07_Categoria1_idx` (`P08_id`),
+  KEY `fk_m06_empresa_p05_municipio1_idx` (`P05_id`),
+  KEY `fk_m06_empresa_p06_estado1_idx` (`P06_id`),
+  KEY `fk_m06_empresa_p07_pais1_idx` (`P07_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Volcado de datos para la tabla `m06_empresa`
 --
 
-INSERT INTO `m06_empresa` (`id`, `RIF`, `Status`, `Razon_Social`, `Direccion`, `Telefono_1`, `Telefono_2`, `Fax`, `Correo`, `Descripcion`, `Sitio_Web`, `P04_id`, `P08_id`) VALUES
-(1, '2525522', 1, 'empresa x', 'asdfa', '3232', NULL, NULL, 'algo@', 'fsdfs', 'fsd', 1, 1);
+INSERT INTO `m06_empresa` (`id`, `RIF`, `Status`, `Razon_Social`, `Direccion`, `Telefono_1`, `Telefono_2`, `Fax`, `Correo`, `Descripcion`, `Sitio_Web`, `P04_id`, `P08_id`, `P05_id`, `P06_id`, `P07_id`) VALUES
+(1, '5555', 1, 'empresa x', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per ', '555', '555', '555', 'Correo@gmail.com', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices ', 'web', NULL, 1, NULL, 18, 1);
 
 -- --------------------------------------------------------
 
@@ -325,19 +337,16 @@ CREATE TABLE IF NOT EXISTS `p01_rol` (
   `nombre` varchar(45) NOT NULL,
   `Descripcion` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `p01_rol`
 --
 
 INSERT INTO `p01_rol` (`id`, `nombre`, `Descripcion`) VALUES
-(1, 'Comision TAP', 'Pertenece a la comisión TAP'),
-(2, 'Secretaria', 'Secretaria del Departamento'),
-(4, 'Alumno ', 'Alumno normal de la carrera'),
-(10, 'Administrador', 'Todo Poderoso'),
-(11, 'Jefe del Departamento', 'Jefe'),
-(12, 'Profesor', 'Profesor...');
+(1, 'Administrador', 'Todo Poderoso'),
+(2, 'Jefe del Departamento', 'Jefe'),
+(3, 'Profesor', 'Profesor...');
 
 -- --------------------------------------------------------
 
@@ -374,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `p03_status` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Descripcion` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `p03_status`
@@ -385,7 +394,8 @@ INSERT INTO `p03_status` (`id`, `Descripcion`) VALUES
 (2, 'Sin revisar'),
 (3, 'Aprobada'),
 (4, 'Diferido'),
-(5, 'Oferta');
+(5, 'Oferta'),
+(6, 'Rechazada');
 
 -- --------------------------------------------------------
 
@@ -1951,7 +1961,7 @@ CREATE TABLE IF NOT EXISTS `p07_pais` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Descripcion` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `p07_pais`
@@ -1960,9 +1970,7 @@ CREATE TABLE IF NOT EXISTS `p07_pais` (
 INSERT INTO `p07_pais` (`id`, `Descripcion`) VALUES
 (1, 'Venezuela'),
 (2, 'Colombia'),
-(3, 'Ecuador'),
-(4, 'HUMBERTOLANDIA'),
-(5, 'Narnia');
+(3, 'Ecuador');
 
 -- --------------------------------------------------------
 
@@ -1988,19 +1996,88 @@ INSERT INTO `p08_categoria` (`id`, `Descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `p09_departamento`
+--
+
+CREATE TABLE IF NOT EXISTS `p09_departamento` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Volcado de datos para la tabla `p09_departamento`
+--
+
+INSERT INTO `p09_departamento` (`id`, `Nombre`) VALUES
+(1, 'Informatica'),
+(2, 'Industrial'),
+(3, 'Mecanica'),
+(4, 'Electronica'),
+(5, 'Civil'),
+(6, 'Ambiental'),
+(7, 'Agronomia'),
+(8, 'Produccion Animal'),
+(9, 'Arquitectura');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `p10_areas_conomicmiento`
+--
+
+CREATE TABLE IF NOT EXISTS `p10_areas_conomicmiento` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) NOT NULL,
+  `P09_id` int(11) NOT NULL,
+  `Descripcion` mediumtext,
+  PRIMARY KEY (`id`),
+  KEY `fk_p10_area_conocimiento_p09_departamento1_idx` (`P09_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `p10_areas_conomicmiento`
+--
+
+INSERT INTO `p10_areas_conomicmiento` (`id`, `Nombre`, `P09_id`, `Descripcion`) VALUES
+(1, 'Sistemas de Informacion', 1, 'Sistemas de informacion, modelado de datos ');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `p11_conocimientos`
+--
+
+CREATE TABLE IF NOT EXISTS `p11_conocimientos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) NOT NULL,
+  `P10_id` int(11) NOT NULL,
+  `Descripcion` mediumtext,
+  PRIMARY KEY (`id`),
+  KEY `fk_p11_conocimientos_p10_areas_conomicmiento1_idx` (`P10_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `p11_conocimientos`
+--
+
+INSERT INTO `p11_conocimientos` (`id`, `Nombre`, `P10_id`, `Descripcion`) VALUES
+(1, 'Modelado de datos', 1, 'Modelado de datos en diagrama ER');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `t01_tesis_has_usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `t01_tesis_has_usuario` (
   `M03_id` int(11) NOT NULL,
   `M05_id` int(11) NOT NULL,
-  `P03_id` int(11) NOT NULL,
   `P02_id` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `fk_Tesis_has_Usuario_Usuario1_idx` (`M05_id`),
   KEY `fk_Tesis_has_Usuario_Tesis1_idx` (`M03_id`),
-  KEY `fk_T01_Tesis_has_Usuario_P03_Status1_idx` (`P03_id`),
   KEY `fk_T01_Tesis_has_Usuario_P02_Tipo_Relacion1_idx` (`P02_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -2008,9 +2085,9 @@ CREATE TABLE IF NOT EXISTS `t01_tesis_has_usuario` (
 -- Volcado de datos para la tabla `t01_tesis_has_usuario`
 --
 
-INSERT INTO `t01_tesis_has_usuario` (`M03_id`, `M05_id`, `P03_id`, `P02_id`, `id`) VALUES
-(1, 11, 3, 1, 1),
-(1, 13, 3, 2, 2);
+INSERT INTO `t01_tesis_has_usuario` (`M03_id`, `M05_id`, `P02_id`, `id`) VALUES
+(4, 2, 1, 1),
+(4, 13, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -2022,24 +2099,22 @@ CREATE TABLE IF NOT EXISTS `t02_pasantia_has_usuario` (
   `M04_id` int(11) NOT NULL,
   `M05_id` int(11) NOT NULL,
   `M07_id` int(11) NOT NULL,
-  `P03_id` int(11) NOT NULL,
   `P02_id` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `fk_Pasantia_has_Usuario_Usuario1_idx` (`M05_id`),
   KEY `fk_Pasantia_has_Usuario_Pasantia1_idx` (`M04_id`),
   KEY `fk_Pasantia_has_Usuario_Tutor_externo1_idx` (`M07_id`),
-  KEY `fk_Pasantia_has_Usuario_Estado1_idx` (`P03_id`),
   KEY `fk_Pasantia_has_Usuario_tipo_relacion1_idx` (`P02_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `t03_acta`
+-- Estructura de tabla para la tabla `t03_acta_reunion`
 --
 
-CREATE TABLE IF NOT EXISTS `t03_acta` (
+CREATE TABLE IF NOT EXISTS `t03_acta_reunion` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `M05_id` int(11) NOT NULL,
   `Descripcion` longtext NOT NULL,
@@ -2047,82 +2122,74 @@ CREATE TABLE IF NOT EXISTS `t03_acta` (
   `Anexo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Bitacora_Usuario1_idx` (`M05_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `t03_acta`
+-- Volcado de datos para la tabla `t03_acta_reunion`
 --
 
-INSERT INTO `t03_acta` (`id`, `M05_id`, `Descripcion`, `Fecha`, `Anexo`) VALUES
-(2, 11, '<p>asfdsafa</p>', '2014-01-24', ''),
-(3, 11, '<p>adsa</p>', '2014-01-17', 'Reglamento.pdf'),
-(4, 11, '<div id="lipsum">\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\n<p>Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non.</p>\n</div>', '2014-01-31', 'Modulos propuestos .odt');
+INSERT INTO `t03_acta_reunion` (`id`, `M05_id`, `Descripcion`, `Fecha`, `Anexo`) VALUES
+(1, 11, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis dui tincidunt dictum adipiscing. Integer consequat nulla ac lectus dictum dignissim. Nunc sed lorem lectus. Maecenas tellus mi, faucibus ac laoreet sed, placerat vel lectus. Aliquam felis tellus, commodo vitae congue id, pretium at ipsum. Nulla fringilla vitae dolor ut accumsan. Nullam malesuada, velit eget lacinia interdum, erat turpis congue tortor, vitae hendrerit massa quam at mi. Vivamus porta elit et est malesuada, non varius nisl tincidunt. Vivamus leo mi, scelerisque eget ipsum id, vehicula elementum odio.</p>\r\n<p>Ut non ullamcorper arcu. Suspendisse malesuada, sapien quis fermentum mollis, odio nisi volutpat felis, at faucibus est leo eu mauris. Sed vitae aliquet nisi. Phasellus placerat non felis sit amet elementum. Nulla ut tincidunt lorem. Curabitur gravida orci mauris, vel pharetra ante ultricies eu. Nam quis justo dui. Donec scelerisque eu orci at mollis. Maecenas ligula risus, commodo et sapien semper, hendrerit tincidunt sem. Donec rutrum dapibus sapien, ut dignissim lacus elementum nec. Suspendisse cursus, eros vel venenatis auctor, dui orci lacinia purus, quis malesuada nisi metus at nibh. Suspendisse semper, sem sit amet semper volutpat, quam felis scelerisque quam, eget rutrum augue nisl sit amet dui. Cras ultrices, eros quis scelerisque rhoncus, ipsum tortor imperdiet diam, eu iaculis sem metus a neque. Aliquam varius leo et porta gravida. Cras feugiat, lectus sit amet fringilla ornare, velit mi tempor mi, eget volutpat nibh mi vitae dui.</p>', '2014-02-05', 'introduccionalprocesamientodigitaldeimagenes-090422122720-phpapp02.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `t04_profesor_has_tematica`
+-- Estructura de tabla para la tabla `t04_conocimiento_tesis`
 --
 
-CREATE TABLE IF NOT EXISTS `t04_profesor_has_tematica` (
-  `M01_id` int(11) NOT NULL,
-  `M02_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`),
-  KEY `fk_Profesor_has_Tematica_Tematica1_idx` (`M02_id`),
-  KEY `fk_Profesor_has_Tematica_Profesor_idx` (`M01_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- Volcado de datos para la tabla `t04_profesor_has_tematica`
---
-
-INSERT INTO `t04_profesor_has_tematica` (`M01_id`, `M02_id`, `id`) VALUES
-(2, 1, 2),
-(2, 2, 3),
-(2, 5, 4);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `t05_tematica_has_tesis`
---
-
-CREATE TABLE IF NOT EXISTS `t05_tematica_has_tesis` (
-  `M02_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `t04_conocimiento_tesis` (
+  `P11_id` int(11) NOT NULL,
   `M03_id` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
-  KEY `fk_T05_Tematica_has_Tesis_M02_Tematica1_idx` (`M02_id`),
-  KEY `fk_T05_Tematica_has_Tesis_M03_Tesis1_idx` (`M03_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  KEY `fk_t04_conocimiento_tesis_p11_conocimientos1_idx` (`P11_id`),
+  KEY `fk_t04_conocimiento_tesis_m03_tesis1_idx` (`M03_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `t06_observacion`
+-- Estructura de tabla para la tabla `t05_conocimiento_pasantias`
 --
 
-CREATE TABLE IF NOT EXISTS `t06_observacion` (
+CREATE TABLE IF NOT EXISTS `t05_conocimiento_pasantias` (
+  `P11_id` int(11) NOT NULL,
+  `M04_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
+  KEY `fk_t05_conocimiento_pasantias_p11_conocimientos1_idx` (`P11_id`),
+  KEY `fk_t05_conocimiento_pasantias_m04_pasantia1_idx` (`M04_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `t06_conocimiento_profesor`
+--
+
+CREATE TABLE IF NOT EXISTS `t06_conocimiento_profesor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `P11_id` int(11) NOT NULL,
+  `M01_d` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_t10_conocimiento_profesor_p11_conocimientos1_idx` (`P11_id`),
+  KEY `fk_t10_conocimiento_profesor_m01_profesor1_idx` (`M01_d`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `t07_observacion_tesis`
+--
+
+CREATE TABLE IF NOT EXISTS `t07_observacion_tesis` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Descripcion` text NOT NULL,
   `Fecha` date NOT NULL,
   `M03_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_T06_Observacion_M03_Tesis1_idx` (`M03_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
---
--- Volcado de datos para la tabla `t06_observacion`
---
-
-INSERT INTO `t06_observacion` (`id`, `Descripcion`, `Fecha`, `M03_id`) VALUES
-(1, '<p><strong>Buena</strong></p>', '2014-01-23', 1),
-(2, '<p>Buena</p>', '2014-01-23', 1),
-(3, '<p>Buena chino</p>', '2014-01-24', 1),
-(4, '<p>Buena chino</p>', '2014-01-24', 1),
-(5, '<p>buena pelao</p>', '2014-01-24', 1),
-(6, '<p>bdfbd</p>', '2014-01-24', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -2145,11 +2212,11 @@ CREATE TABLE IF NOT EXISTS `t08_usuario_has_rol` (
 
 INSERT INTO `t08_usuario_has_rol` (`M05_id`, `P01_id`, `id`) VALUES
 (2, 1, 2),
-(11, 10, 11),
-(15, 11, 15),
-(13, 12, 16),
-(13, 12, 17),
-(13, 12, 18);
+(11, 1, 11),
+(15, 2, 15),
+(13, 3, 16),
+(13, 3, 17),
+(13, 3, 18);
 
 -- --------------------------------------------------------
 
@@ -2162,33 +2229,35 @@ CREATE TABLE IF NOT EXISTS `t09_noticias` (
   `Descripcion` text NOT NULL,
   `Fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Titulo` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `M05_id` int(11) NOT NULL,
+  `Imagen` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_t09_noticias_m05_usuario1_idx` (`M05_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `t09_noticias`
 --
 
-INSERT INTO `t09_noticias` (`id`, `Descripcion`, `Fecha`, `Titulo`) VALUES
-(1, '<p>dfsfdsdfsdf</p>', '2014-02-07 15:54:10', 'Noticia 1'),
-(2, '<div id="lipsum">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\r\n<p><strong> Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non. </strong></p>\r\n</div>', '2014-02-07 15:54:15', 'Noticia 2'),
-(3, '<div id="lipsum">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\r\n<p><strong> Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non. </strong></p>\r\n</div>', '2014-02-07 15:54:20', 'Noticia 3'),
-(4, '<div id="lipsum">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\r\n<p><strong> Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non. </strong></p>\r\n</div>', '2014-02-07 15:54:25', 'Noticia 4'),
-(5, '<div id="lipsum">\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum ligula. Cras mollis mi interdum, molestie nibh eu, varius ipsum. Suspendisse tincidunt convallis nisl. Morbi fermentum, libero et tincidunt pharetra, dolor ante commodo lorem, sit amet luctus purus justo non nibh. Vestibulum pretium, lacus quis dapibus eleifend, urna diam congue magna, et consequat erat justo in dolor. Proin non venenatis ipsum. Etiam gravida elementum auctor. Nam viverra, diam ut blandit tincidunt, erat lorem mattis metus, sit amet malesuada tortor nisi eget elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Mauris ipsum sapien, rhoncus ut vestibulum at, posuere vel neque. Nulla massa dolor, gravida eget mi id, aliquam accumsan ipsum.</p>\r\n<p><strong> Proin eget porta libero. Curabitur sodales nibh in urna vulputate, sit amet congue leo viverra. Quisque aliquam lobortis eros, ut sollicitudin nulla viverra id. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc imperdiet, lorem ac vehicula volutpat, nibh turpis aliquet libero, in posuere metus dolor non eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam id turpis vitae nisi adipiscing auctor in non lacus. Pellentesque ut erat in lectus interdum ullamcorper eget id tortor. Vivamus consequat vel velit at aliquam. Phasellus facilisis velit neque, vitae facilisis nisi imperdiet vel. Quisque non enim quis nisi dignissim pellentesque tempor et velit. Maecenas sodales eleifend hendrerit. Vestibulum quis nulla sed ligula posuere luctus eu id magna. Nulla ultrices lorem eu dolor luctus varius. Etiam tristique placerat placerat. Proin suscipit dui quam, quis feugiat lectus suscipit non. </strong></p>\r\n</div>', '2014-02-07 15:54:30', 'Noticia 5');
+INSERT INTO `t09_noticias` (`id`, `Descripcion`, `Fecha`, `Titulo`, `M05_id`, `Imagen`) VALUES
+(1, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis dui tincidunt dictum adipiscing. Integer consequat nulla ac lectus dictum dignissim. Nunc sed lorem lectus. Maecenas tellus mi, faucibus ac laoreet sed, placerat vel lectus. Aliquam felis tellus, commodo vitae congue id, pretium at ipsum. Nulla fringilla vitae dolor ut accumsan. Nullam malesuada, velit eget lacinia interdum, erat turpis congue tortor, vitae hendrerit massa quam at mi. Vivamus porta elit et est malesuada, non varius nisl tincidunt. Vivamus leo mi, scelerisque eget ipsum id, vehicula elementum odio.</p>\r\n<p>Ut non ullamcorper arcu. Suspendisse malesuada, sapien quis fermentum mollis, odio nisi volutpat felis, at faucibus est leo eu mauris. Sed vitae aliquet nisi. Phasellus placerat non felis sit amet elementum. Nulla ut tincidunt lorem. Curabitur gravida orci mauris, vel pharetra ante ultricies eu. Nam quis justo dui. Donec scelerisque eu orci at mollis. Maecenas ligula risus, commodo et sapien semper, hendrerit tincidunt sem. Donec rutrum dapibus sapien, ut dignissim lacus elementum nec. Suspendisse cursus, eros vel venenatis auctor, dui orci lacinia purus, quis malesuada nisi metus at nibh. Suspendisse semper, sem sit amet semper volutpat, quam felis scelerisque quam, eget rutrum augue nisl sit amet dui. Cras ultrices, eros quis scelerisque rhoncus, ipsum tortor imperdiet diam, eu iaculis sem metus a neque. Aliquam varius leo et porta gravida. Cras feugiat, lectus sit amet fringilla ornare, velit mi tempor mi, eget volutpat nibh mi vitae dui.</p>', '2014-02-04 04:30:00', 'Noticia de Prueba', 11, 'unet710.jpg'),
+(2, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis dui tincidunt dictum adipiscing. Integer consequat nulla ac lectus dictum dignissim. Nunc sed lorem lectus. Maecenas tellus mi, faucibus ac laoreet sed, placerat vel lectus. Aliquam felis tellus, commodo vitae congue id, pretium at ipsum. Nulla fringilla vitae dolor ut accumsan. Nullam malesuada, velit eget lacinia interdum, erat turpis congue tortor, vitae hendrerit massa quam at mi. Vivamus porta elit et est malesuada, non varius nisl tincidunt. Vivamus leo mi, scelerisque eget ipsum id, vehicula elementum odio.</p>\r\n<p>Ut non ullamcorper arcu. Suspendisse malesuada, sapien quis fermentum mollis, odio nisi volutpat felis, at faucibus est leo eu mauris. Sed vitae aliquet nisi. Phasellus placerat non felis sit amet elementum. Nulla ut tincidunt lorem. Curabitur gravida orci mauris, vel pharetra ante ultricies eu. Nam quis justo dui. Donec scelerisque eu orci at mollis. Maecenas ligula risus, commodo et sapien semper, hendrerit tincidunt sem. Donec rutrum dapibus sapien, ut dignissim lacus elementum nec. Suspendisse cursus, eros vel venenatis auctor, dui orci lacinia purus, quis malesuada nisi metus at nibh. Suspendisse semper, sem sit amet semper volutpat, quam felis scelerisque quam, eget rutrum augue nisl sit amet dui. Cras ultrices, eros quis scelerisque rhoncus, ipsum tortor imperdiet diam, eu iaculis sem metus a neque. Aliquam varius leo et porta gravida. Cras feugiat, lectus sit amet fringilla ornare, velit mi tempor mi, eget volutpat nibh mi vitae dui.</p>', '2014-02-04 04:30:00', 'Noticia de Prueba', 11, NULL),
+(3, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis dui tincidunt dictum adipiscing. Integer consequat nulla ac lectus dictum dignissim. Nunc sed lorem lectus. Maecenas tellus mi, faucibus ac laoreet sed, placerat vel lectus. Aliquam felis tellus, commodo vitae congue id, pretium at ipsum. Nulla fringilla vitae dolor ut accumsan. Nullam malesuada, velit eget lacinia interdum, erat turpis congue tortor, vitae hendrerit massa quam at mi. Vivamus porta elit et est malesuada, non varius nisl tincidunt. Vivamus leo mi, scelerisque eget ipsum id, vehicula elementum odio.</p>', '2014-02-05 04:30:00', 'Nueva reunion', 11, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `t10_conocimientos`
+-- Estructura de tabla para la tabla `t10_observacion_pasantias`
 --
 
-CREATE TABLE IF NOT EXISTS `t10_conocimientos` (
+CREATE TABLE IF NOT EXISTS `t10_observacion_pasantias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(120) NOT NULL,
-  `M04_Pasantia_id` int(11) DEFAULT NULL,
+  `Descripcion` varchar(45) NOT NULL,
+  `Fecha` date NOT NULL,
+  `M04_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_T10_Conocimientos_M04_Pasantia1_idx` (`M04_Pasantia_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  KEY `fk_t10_observacion_pasantias_m04_pasantia1_idx` (`M04_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -2198,22 +2267,21 @@ CREATE TABLE IF NOT EXISTS `t10_conocimientos` (
 
 CREATE TABLE IF NOT EXISTS `t11_actividad` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `M04_Pasantia_id` int(11) NOT NULL,
   `Descripcion` text NOT NULL,
   `Fecha_inicio` date NOT NULL,
   `Fecha_Fin` date NOT NULL,
+  `M02_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_Actividad_M04_Pasantia1_idx` (`M04_Pasantia_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  KEY `fk_t11_actividad_m02_cronograma1_idx` (`M02_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `t11_actividad`
 --
 
-INSERT INTO `t11_actividad` (`id`, `M04_Pasantia_id`, `Descripcion`, `Fecha_inicio`, `Fecha_Fin`) VALUES
-(1, 1, 'hrth', '2014-02-04', '2014-02-21'),
-(2, 1, 'Prueba 2', '2014-03-19', '2014-05-16'),
-(3, 1, 'prueba 3', '2014-05-16', '2014-06-01');
+INSERT INTO `t11_actividad` (`id`, `Descripcion`, `Fecha_inicio`, `Fecha_Fin`, `M02_id`) VALUES
+(1, 'primera', '2014-02-17', '2014-02-21', 1),
+(2, 'segunda', '2014-02-26', '2014-05-14', 1);
 
 --
 -- Restricciones para tablas volcadas
@@ -2233,9 +2301,23 @@ ALTER TABLE `auth_relacion`
   ADD CONSTRAINT `auth_relacion_ibfk_2` FOREIGN KEY (`child`) REFERENCES `auth_items` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `m02_cronograma`
+--
+ALTER TABLE `m02_cronograma`
+  ADD CONSTRAINT `fk_m02_cronograma_m04_pasantia1` FOREIGN KEY (`m04_pasantia_id`) REFERENCES `m04_pasantia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `m03_tesis`
+--
+ALTER TABLE `m03_tesis`
+  ADD CONSTRAINT `fk_m03_tesis_m06_empresa1` FOREIGN KEY (`M06_id`) REFERENCES `m06_empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_m03_tesis_p03_status1` FOREIGN KEY (`P03_id`) REFERENCES `p03_status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Filtros para la tabla `m04_pasantia`
 --
 ALTER TABLE `m04_pasantia`
+  ADD CONSTRAINT `fk_m04_pasantia_p03_status1` FOREIGN KEY (`P03_id`) REFERENCES `p03_status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pasantia_empresa1` FOREIGN KEY (`M06_id`) REFERENCES `m06_empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -2243,7 +2325,10 @@ ALTER TABLE `m04_pasantia`
 --
 ALTER TABLE `m06_empresa`
   ADD CONSTRAINT `fk_M06_Empresa_P04_Parroquia1` FOREIGN KEY (`P04_id`) REFERENCES `p04_parroquia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_M06_Empresa_P07_Categoria1` FOREIGN KEY (`P08_id`) REFERENCES `p08_categoria` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_m06_empresa_p05_municipio1` FOREIGN KEY (`P05_id`) REFERENCES `p05_municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_m06_empresa_p06_estado1` FOREIGN KEY (`P06_id`) REFERENCES `p06_estado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_M06_Empresa_P07_Categoria1` FOREIGN KEY (`P08_id`) REFERENCES `p08_categoria` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_m06_empresa_p07_pais1` FOREIGN KEY (`P07_id`) REFERENCES `p07_pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `p04_parroquia`
@@ -2264,11 +2349,22 @@ ALTER TABLE `p06_estado`
   ADD CONSTRAINT `fk_P06_Estado_P07_Pais1` FOREIGN KEY (`P07_id`) REFERENCES `p07_pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Filtros para la tabla `p10_areas_conomicmiento`
+--
+ALTER TABLE `p10_areas_conomicmiento`
+  ADD CONSTRAINT `fk_p10_area_conocimiento_p09_departamento1` FOREIGN KEY (`P09_id`) REFERENCES `p09_departamento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `p11_conocimientos`
+--
+ALTER TABLE `p11_conocimientos`
+  ADD CONSTRAINT `fk_p11_conocimientos_p10_areas_conomicmiento1` FOREIGN KEY (`P10_id`) REFERENCES `p10_areas_conomicmiento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Filtros para la tabla `t01_tesis_has_usuario`
 --
 ALTER TABLE `t01_tesis_has_usuario`
   ADD CONSTRAINT `fk_T01_Tesis_has_Usuario_P02_Tipo_Relacion1` FOREIGN KEY (`P02_id`) REFERENCES `p02_tipo_relacion` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_T01_Tesis_has_Usuario_P03_Status1` FOREIGN KEY (`P03_id`) REFERENCES `p03_status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Tesis_has_Usuario_Tesis1` FOREIGN KEY (`M03_id`) REFERENCES `m03_tesis` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Tesis_has_Usuario_Usuario1` FOREIGN KEY (`M05_id`) REFERENCES `m05_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -2276,36 +2372,42 @@ ALTER TABLE `t01_tesis_has_usuario`
 -- Filtros para la tabla `t02_pasantia_has_usuario`
 --
 ALTER TABLE `t02_pasantia_has_usuario`
-  ADD CONSTRAINT `fk_Pasantia_has_Usuario_Estado1` FOREIGN KEY (`P03_id`) REFERENCES `p03_status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pasantia_has_Usuario_Pasantia1` FOREIGN KEY (`M04_id`) REFERENCES `m04_pasantia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pasantia_has_Usuario_tipo_relacion1` FOREIGN KEY (`P02_id`) REFERENCES `p02_tipo_relacion` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pasantia_has_Usuario_Tutor_externo1` FOREIGN KEY (`M07_id`) REFERENCES `m07_tutor_externo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pasantia_has_Usuario_Usuario1` FOREIGN KEY (`M05_id`) REFERENCES `m05_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `t03_acta`
+-- Filtros para la tabla `t03_acta_reunion`
 --
-ALTER TABLE `t03_acta`
+ALTER TABLE `t03_acta_reunion`
   ADD CONSTRAINT `fk_Bitacora_Usuario1` FOREIGN KEY (`M05_id`) REFERENCES `m05_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `t04_profesor_has_tematica`
+-- Filtros para la tabla `t04_conocimiento_tesis`
 --
-ALTER TABLE `t04_profesor_has_tematica`
-  ADD CONSTRAINT `fk_Profesor_has_Tematica_Profesor` FOREIGN KEY (`M01_id`) REFERENCES `m01_profesor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Profesor_has_Tematica_Tematica1` FOREIGN KEY (`M02_id`) REFERENCES `m02_tematica` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `t04_conocimiento_tesis`
+  ADD CONSTRAINT `fk_t04_conocimiento_tesis_m03_tesis1` FOREIGN KEY (`M03_id`) REFERENCES `m03_tesis` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_t04_conocimiento_tesis_p11_conocimientos1` FOREIGN KEY (`P11_id`) REFERENCES `p11_conocimientos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `t05_tematica_has_tesis`
+-- Filtros para la tabla `t05_conocimiento_pasantias`
 --
-ALTER TABLE `t05_tematica_has_tesis`
-  ADD CONSTRAINT `fk_T05_Tematica_has_Tesis_M02_Tematica1` FOREIGN KEY (`M02_id`) REFERENCES `m02_tematica` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_T05_Tematica_has_Tesis_M03_Tesis1` FOREIGN KEY (`M03_id`) REFERENCES `m03_tesis` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `t05_conocimiento_pasantias`
+  ADD CONSTRAINT `fk_t05_conocimiento_pasantias_m04_pasantia1` FOREIGN KEY (`M04_id`) REFERENCES `m04_pasantia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_t05_conocimiento_pasantias_p11_conocimientos1` FOREIGN KEY (`P11_id`) REFERENCES `p11_conocimientos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `t06_observacion`
+-- Filtros para la tabla `t06_conocimiento_profesor`
 --
-ALTER TABLE `t06_observacion`
+ALTER TABLE `t06_conocimiento_profesor`
+  ADD CONSTRAINT `fk_t10_conocimiento_profesor_m01_profesor1` FOREIGN KEY (`M01_d`) REFERENCES `m01_profesor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_t10_conocimiento_profesor_p11_conocimientos1` FOREIGN KEY (`P11_id`) REFERENCES `p11_conocimientos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `t07_observacion_tesis`
+--
+ALTER TABLE `t07_observacion_tesis`
   ADD CONSTRAINT `fk_T06_Observacion_M03_Tesis1` FOREIGN KEY (`M03_id`) REFERENCES `m03_tesis` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -2316,16 +2418,22 @@ ALTER TABLE `t08_usuario_has_rol`
   ADD CONSTRAINT `fk_M05_Usuario_has_P01_Rol_P01_Rol1` FOREIGN KEY (`P01_id`) REFERENCES `p01_rol` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `t10_conocimientos`
+-- Filtros para la tabla `t09_noticias`
 --
-ALTER TABLE `t10_conocimientos`
-  ADD CONSTRAINT `fk_T10_Conocimientos_M04_Pasantia1` FOREIGN KEY (`M04_Pasantia_id`) REFERENCES `m04_pasantia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `t09_noticias`
+  ADD CONSTRAINT `fk_t09_noticias_m05_usuario1` FOREIGN KEY (`M05_id`) REFERENCES `m05_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `t10_observacion_pasantias`
+--
+ALTER TABLE `t10_observacion_pasantias`
+  ADD CONSTRAINT `fk_t10_observacion_pasantias_m04_pasantia1` FOREIGN KEY (`M04_id`) REFERENCES `m04_pasantia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `t11_actividad`
 --
 ALTER TABLE `t11_actividad`
-  ADD CONSTRAINT `fk_Actividad_M04_Pasantia1` FOREIGN KEY (`M04_Pasantia_id`) REFERENCES `m04_pasantia` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_t11_actividad_m02_cronograma1` FOREIGN KEY (`M02_id`) REFERENCES `m02_cronograma` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

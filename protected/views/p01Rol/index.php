@@ -7,12 +7,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create P01Rol', 'url'=>array('create')),
-	array('label'=>'Manage P01Rol', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Nuevo Rol', 'url'=>array('create')),
+	array('label'=>'Administrar Roles', 'url'=>array('admin')),
 );
 ?>
 
-<h1>P01 Rols</h1>
+<h1> Roles</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

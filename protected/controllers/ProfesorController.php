@@ -119,12 +119,24 @@ class ProfesorController extends Controller{
 		$jefe_2=T08UsuarioHasRol::model()->find("P01_id = ".$jefe_1->id);
 		$jefe=M05Usuario::model()->findByPk($jefe_2->M05_id);
 		$tesis=M03Tesis::model()->findByPk($id);
+		$tes=P02TipoRelacion::model()->find("Descripcion = 'Tesista'" );
+		$aso=T01TesisHasUsuario::model()->findALL('M03_id = '.$tesis->id.' AND P02_id = '.$tes->id);
+		if(count($aso)>1){
 
+			$nombre_c1=$aso[0]->m05->Nombre.' '.$aso[0]->m05->Apellido.' '.$aso[0]->m05->Cedula;
+			$nombre_c2='</br>'.$aso[1]->m05->Nombre.' '.$aso[1]->m05->Apellido.' '.$aso[1]->m05->Cedula;
+		}
+		else{
+		$nombre_c1=$aso[0]->m05->Nombre.' '.$aso[0]->m05->Apellido.' '.$aso[0]->m05->Cedula;
+		$nombre_c2='</br>';	
+		}
 
 		$this->render('cont_1',array(
 			'Usuario'=>$tar,
 			'jefe'=>$jefe,
 			'tesis'=>$tesis,
+			'nombre_1'=>$nombre_c1,
+			'nombre_2'=>$nombre_c2,
 			));
 
 

@@ -9,13 +9,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List P08Categoria', 'url'=>array('index')),
-	array('label'=>'Create P08Categoria', 'url'=>array('create')),
-	array('label'=>'View P08Categoria', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage P08Categoria', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Categorias', 'url'=>array('index')),
+	array('label'=>'Nueva Categoria', 'url'=>array('create')),
+	array('label'=>'Detalle de Categoria', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Categorias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update P08Categoria <?php echo $model->id; ?></h1>
+<h1>Actualizar Categoria <?php echo $model->Descripcion; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

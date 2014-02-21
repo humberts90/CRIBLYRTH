@@ -7,12 +7,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create T09Noticias', 'url'=>array('create')),
-	array('label'=>'Manage T09Noticias', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Nueva Noticias', 'url'=>array('create')),
+	array('label'=>'Administrar Noticias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>T09 Noticiases</h1>
+<h1> Noticias</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

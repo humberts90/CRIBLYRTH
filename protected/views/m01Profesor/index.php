@@ -7,12 +7,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create M01Profesor', 'url'=>array('create')),
-	array('label'=>'Manage M01Profesor', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Nuevo Profesor', 'url'=>array('create')),
+	array('label'=>'Administrar Profesor', 'url'=>array('admin')),
 );
 ?>
 
-<h1>M01 Profesors</h1>
+<h1> Profesores</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -8,22 +8,25 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List T09Noticias', 'url'=>array('index')),
-	array('label'=>'Create T09Noticias', 'url'=>array('create')),
-	array('label'=>'Update T09Noticias', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete T09Noticias', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage T09Noticias', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Noticias', 'url'=>array('index')),
+	array('label'=>'Nueva Noticias', 'url'=>array('create')),
+	array('label'=>'Actualizar Noticias', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Borrar Noticia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Noticias', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View T09Noticias #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->Titulo; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'Descripcion',
+		
+		
 		'Fecha',
 		'Titulo',
+		
+		
 	),
 )); ?>

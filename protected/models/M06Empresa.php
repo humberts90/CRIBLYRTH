@@ -17,18 +17,35 @@
  * @property string $Sitio_Web
  * @property integer $P04_id
  * @property integer $P08_id
+ * @property integer $P05_id
+ * @property integer $P06_id
+ * @property integer $P07_id
  *
  * The followings are the available model relations:
+ * @property M03Tesis[] $m03Tesises
  * @property M04Pasantia[] $m04Pasantias
  * @property P04Parroquia $p04
  * @property P08Categoria $p08
+ * @property P05Municipio $p05
+ * @property P06Estado $p06
+ * @property P07Pais $p07
  */
 class M06Empresa extends CActiveRecord
 {
 	/**
-	 * @return string the associated database table name
+	 * Returns the static model of the specified AR class.
+	 * @param string $className active record class name.
+	 * @return M06Empresa the static model class
 	 */
 	public $temp;
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * @return string the associated database table name
+	 */
 	public function tableName()
 	{
 		return 'm06_empresa';
@@ -42,13 +59,13 @@ class M06Empresa extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('RIF, Status, Razon_Social, Direccion, Telefono_1, Correo, Descripcion, P04_id, P08_id', 'required'),
-			array('Status, P04_id, P08_id', 'numerical', 'integerOnly'=>true),
+			array('RIF, Razon_Social, Direccion, Telefono_1, Correo, Descripcion, P06_id, P07_id', 'required'),
+			array('Status, P04_id, P08_id, P05_id, P06_id, P07_id', 'numerical', 'integerOnly'=>true),
 			array('RIF, Telefono_1, Telefono_2, Fax', 'length', 'max'=>25),
 			array('Razon_Social, Correo, Sitio_Web', 'length', 'max'=>255),
 			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, RIF, Status, Razon_Social, Direccion, Telefono_1, Telefono_2, Fax, Correo, Descripcion, Sitio_Web, P04_id, P08_id', 'safe', 'on'=>'search'),
+			// Please remove those attributes that should not be searched.
+			array('id, RIF, Status, Razon_Social, Direccion, Telefono_1, Telefono_2, Fax, Correo, Descripcion, Sitio_Web, P04_id, P08_id, P05_id, P06_id, P07_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,9 +77,13 @@ class M06Empresa extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'm03Tesises' => array(self::HAS_MANY, 'M03Tesis', 'M06_id'),
 			'm04Pasantias' => array(self::HAS_MANY, 'M04Pasantia', 'M06_id'),
 			'p04' => array(self::BELONGS_TO, 'P04Parroquia', 'P04_id'),
 			'p08' => array(self::BELONGS_TO, 'P08Categoria', 'P08_id'),
+			'p05' => array(self::BELONGS_TO, 'P05Municipio', 'P05_id'),
+			'p06' => array(self::BELONGS_TO, 'P06Estado', 'P06_id'),
+			'p07' => array(self::BELONGS_TO, 'P07Pais', 'P07_id'),
 		);
 	}
 
@@ -85,24 +106,20 @@ class M06Empresa extends CActiveRecord
 			'Sitio_Web' => 'Sitio Web',
 			'P04_id' => 'P04',
 			'P08_id' => 'P08',
+			'P05_id' => 'P05',
+			'P06_id' => 'P06',
+			'P07_id' => 'P07',
 		);
 	}
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
 
 		$criteria=new CDbCriteria;
 
@@ -119,20 +136,12 @@ class M06Empresa extends CActiveRecord
 		$criteria->compare('Sitio_Web',$this->Sitio_Web,true);
 		$criteria->compare('P04_id',$this->P04_id);
 		$criteria->compare('P08_id',$this->P08_id);
+		$criteria->compare('P05_id',$this->P05_id);
+		$criteria->compare('P06_id',$this->P06_id);
+		$criteria->compare('P07_id',$this->P07_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-	}
-
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return M06Empresa the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
 	}
 }

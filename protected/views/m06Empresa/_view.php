@@ -5,9 +5,7 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('RIF')); ?>:</b>
 	<?php echo CHtml::encode($data->RIF); ?>
@@ -58,6 +56,22 @@
 	<?php echo CHtml::encode($data->P08_id); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('P05_id')); ?>:</b>
+	<?php echo CHtml::encode($data->P05_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('P06_id')); ?>:</b>
+	<?php echo CHtml::encode($data->P06_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('P07_id')); ?>:</b>
+	<?php echo CHtml::encode($data->P07_id); ?>
+	<br />
+
 	*/ ?>
+	<br />
+	<?php echo CHtml::link(CHtml::encode('Detalles'), array('view', 'id'=>$data->id)); ?>
+	<br />
+	<br />
 
 </div>

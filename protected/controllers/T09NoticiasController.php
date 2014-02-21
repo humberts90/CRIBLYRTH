@@ -63,15 +63,35 @@ class T09NoticiasController extends Controller
 	public function actionCreate()
 	{
 		$model=new T09Noticias;
-
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['T09Noticias']))
 		{
 			$model->attributes=$_POST['T09Noticias'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->Imagen=CUploadedFile::getInstance($model,'Imagen');
+			$model->M05_id=$tar->id;
+			if($model->save()){
+
+				$estructura=Yii::app()->theme->basePath.'/Noticias/'.$model->id;
+				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE
+					
+		            mkdir($estructura,0777,true);//CREAR CARPETA CN TODOS LOS PERMISOS
+		            $path="$estructura/$model->Imagen";//DEFINE LA RUTA DEL DOCUMENTO
+					if($model->Imagen!=null||$model->Imagen!=''){
+		                 $model->Imagen->saveAs($path);
+		            }	                 	
+		       	}
+		        else{	                 	
+		                 	$path="$estructura/$model->Imagen";
+		            if($model->Imagen!=null||$model->Imagen!=''){
+		                $model->Imagen->saveAs($path);
+		            }	                 	
+		        }
+		        $this->redirect(array('view','id'=>$model->id));
+			}
+				
 		}
 
 		$this->render('create',array(
@@ -87,6 +107,8 @@ class T09NoticiasController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+	
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -94,8 +116,28 @@ class T09NoticiasController extends Controller
 		if(isset($_POST['T09Noticias']))
 		{
 			$model->attributes=$_POST['T09Noticias'];
-			if($model->save())
+			$model->Imagen=CUploadedFile::getInstance($model,'Imagen');
+			$model->M05_id=$tar->id;
+			if($model->save()){
+
+				$estructura=Yii::app()->theme->basePath.'/Noticias/'.$model->id;
+				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE
+					
+		            mkdir($estructura,0777,true);//CREAR CARPETA CN TODOS LOS PERMISOS
+		            $path="$estructura/$model->Imagen";//DEFINE LA RUTA DEL DOCUMENTO
+					if($model->Imagen!=null||$model->Imagen!=''){
+		                 $model->Imagen->saveAs($path);
+		            }	                 	
+		       	}
+		        else{	                 	
+		                 	$path="$estructura/$model->Imagen";
+		            if($model->Imagen!=null||$model->Imagen!=''){
+		                $model->Imagen->saveAs($path);
+		            }	                 	
+		        }
 				$this->redirect(array('view','id'=>$model->id));
+			}
+				
 		}
 
 		$this->render('update',array(

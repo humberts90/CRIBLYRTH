@@ -9,13 +9,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List P03Status', 'url'=>array('index')),
-	array('label'=>'Create P03Status', 'url'=>array('create')),
-	array('label'=>'View P03Status', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage P03Status', 'url'=>array('admin')),
+	array('label'=>'Inicio', 'url'=>array('site/admin')),
+	array('label'=>'Lista de Status', 'url'=>array('index')),
+	array('label'=>'Nuevo Status', 'url'=>array('create')),
+	array('label'=>'Detalle del Status', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Status', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update P03Status <?php echo $model->id; ?></h1>
+<h1>Administrar Status <?php echo $model->Descripcion; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

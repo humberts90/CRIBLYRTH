@@ -98,6 +98,4 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 	<p><?php echo CHtml::encode($model->Referencias); ?></p>
 	<br />
 
-	<?php echo CHtml::link(CHtml::encode("Evaluar"), array('evalua', 'id'=>$model->id)); ?>
-	<br />
-
+	
