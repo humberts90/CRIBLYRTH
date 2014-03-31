@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-02-2014 a las 21:32:25
+-- Tiempo de generación: 31-03-2014 a las 23:19:54
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `auth_asignacion` (
 INSERT INTO `auth_asignacion` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 ('Administrador', 'admin', NULL, 'N;'),
 ('Administrador', 'samuel.useche', NULL, 'N;'),
+('Comision', 'jose.figeroa', NULL, 'N;'),
 ('Jefe del Departamento', 'maria.valero', NULL, 'N;'),
 ('Profesor', 'dahyana.nimo', NULL, 'N;');
 
@@ -68,6 +69,9 @@ INSERT INTO `auth_items` (`name`, `type`, `description`, `bizrule`, `data`) VALU
 ('Alumno ', 2, 'Alumno normal de la carrera Alumno ', NULL, 'N;'),
 ('Alumno normal de la carrera', 0, 'Alumno normal de la carreraEsta operacion para personas deAlumno ', NULL, 'N;'),
 ('Alumno normal de la carrera9', 1, 'Alumno normal de la carrera Alumno ', NULL, 'N;'),
+('Comision', 2, 'Comision tap Comision', NULL, 'N;'),
+('Comision tap', 0, 'Comision tapEsta operacion para personas deComision', NULL, 'N;'),
+('Comision tap4', 1, 'Comision tap Comision', NULL, 'N;'),
 ('Jefe', 0, 'JefeEsta operacion para personas deJefe del Departamento', NULL, 'N;'),
 ('Jefe del Departamento', 2, 'Jefe Jefe del Departamento', NULL, 'N;'),
 ('Jefe11', 1, 'Jefe Jefe del Departamento', NULL, 'N;'),
@@ -97,6 +101,8 @@ CREATE TABLE IF NOT EXISTS `auth_relacion` (
 INSERT INTO `auth_relacion` (`parent`, `child`) VALUES
 ('Alumno normal de la carrera9', 'Alumno normal de la carrera'),
 ('Alumno ', 'Alumno normal de la carrera9'),
+('Comision tap4', 'Comision tap'),
+('Comision', 'Comision tap4'),
 ('Jefe11', 'Jefe'),
 ('Jefe del Departamento', 'Jefe11'),
 ('Profesor...12', 'Profesor...'),
@@ -256,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `m05_usuario` (
   UNIQUE KEY `Correo_Electronico_2` (`Correo_Electronico`),
   UNIQUE KEY `Correo_Electronico_3` (`Correo_Electronico`),
   UNIQUE KEY `Usuario_UNIQUE` (`Usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Volcado de datos para la tabla `m05_usuario`
@@ -267,7 +273,8 @@ INSERT INTO `m05_usuario` (`id`, `Cedula`, `Apellido`, `Nombre`, `Usuario`, `Cla
 (5, '17677687', 'useche', 'Samuel', 'samuel.useche', '9330f907bab4c871a96fc7b75e2f7925a28f31d0', '041622', 'maverick71036@gmail.com', 'S/c', NULL, NULL, '', '', '52de7b6ef35db1.57725116'),
 (11, '666', 'Admin', 'Admin', 'admin', 'ef372c7247ddffff2f572b2375e434136f139234', '666', 'Admin@admin.com', 'sc', NULL, NULL, '', '', '52d5bd4de12f50.09275149'),
 (13, '00025', 'Nimo', 'Dahyana', 'dahyana.nimo', '30fe17639a1d313455aec3dcc8680d01dd6a9f08', '5555', '----', 'S/C', NULL, NULL, '', '', '52f83f9e1d8658.37559252'),
-(15, '123456', 'Valero de Clemente', 'Maria. A.', 'maria.valero', '4893b63e649c12d698218d2111fe2e9b6e68b45f', '555555', 'maria.valero@unet.edu.ve', 'S/C', NULL, NULL, '', '', '52f82e27300127.53649136');
+(15, '123456', 'Valero de Clemente', 'Maria. A.', 'maria.valero', '4893b63e649c12d698218d2111fe2e9b6e68b45f', '555555', 'maria.valero@unet.edu.ve', 'S/C', NULL, NULL, '', '', '52f82e27300127.53649136'),
+(16, '12534', 'Figeroa', 'Jose', 'jose.figeroa', '19743c10d8031a2ad78def86dae124b06f45084f', '555', 'kdijaiosdh@ifhdih', 'nbfgn', NULL, NULL, '', '', '5339dbc73956c7.97902102');
 
 -- --------------------------------------------------------
 
@@ -337,7 +344,7 @@ CREATE TABLE IF NOT EXISTS `p01_rol` (
   `nombre` varchar(45) NOT NULL,
   `Descripcion` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `p01_rol`
@@ -346,7 +353,8 @@ CREATE TABLE IF NOT EXISTS `p01_rol` (
 INSERT INTO `p01_rol` (`id`, `nombre`, `Descripcion`) VALUES
 (1, 'Administrador', 'Todo Poderoso'),
 (2, 'Jefe del Departamento', 'Jefe'),
-(3, 'Profesor', 'Profesor...');
+(3, 'Profesor', 'Profesor...'),
+(4, 'Comision', 'Comision tap');
 
 -- --------------------------------------------------------
 
@@ -2204,7 +2212,7 @@ CREATE TABLE IF NOT EXISTS `t08_usuario_has_rol` (
   PRIMARY KEY (`id`),
   KEY `fk_M05_Usuario_has_P01_Rol_P01_Rol1_idx` (`P01_id`),
   KEY `fk_M05_Usuario_has_P01_Rol_M05_Usuario1_idx` (`M05_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- Volcado de datos para la tabla `t08_usuario_has_rol`
@@ -2216,7 +2224,8 @@ INSERT INTO `t08_usuario_has_rol` (`M05_id`, `P01_id`, `id`) VALUES
 (15, 2, 15),
 (13, 3, 16),
 (13, 3, 17),
-(13, 3, 18);
+(13, 3, 18),
+(16, 4, 19);
 
 -- --------------------------------------------------------
 
