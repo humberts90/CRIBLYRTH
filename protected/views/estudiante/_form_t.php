@@ -214,6 +214,6 @@
 				<br />
                 </section>
             </div>
-        </div>
+        
 <?php $this->endWidget(); ?>
 
