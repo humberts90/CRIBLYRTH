@@ -4,4 +4,4 @@ $this->breadcrumbs=array(
 );
 echo $this->renderPartial('menu', array('usu'=>$Usuario));
 ?>
-<h1>Bienvenido  <?php echo $Usuario->Nombre.' '.$Usuario->Apellido;?> </h1>
+<h1>Bienvenido </h1>
