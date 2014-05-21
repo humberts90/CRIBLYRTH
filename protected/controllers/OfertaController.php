@@ -27,10 +27,15 @@ class OfertaController extends Controller {
 	public function accessRules()
 	{
 		return array(
+<<<<<<< HEAD
 			
 			array('allow', 
+=======
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+>>>>>>> ac105fb110649766139b543f27069193945cd6b9
 				'users'=>array('*'),
-			),
+			)
 		);
 	}
 	public function actionIndex(){
@@ -62,7 +67,6 @@ class OfertaController extends Controller {
 			$a++;
 		}
 
-	   
 
 		$this->render('oferta',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pasantias'=>$model_p));
 	}
@@ -75,12 +79,29 @@ class OfertaController extends Controller {
 		$this->render("detalle_t",array('Usuario'=>$tar,'model'=>$model));
 	}
 
+	public function actionPostular_t($id)
+	{		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$model = M03Tesis::model()->findByPk($id);
+
+		$this->render("postular_t",array('Usuario'=>$tar,'model'=>$model));
+	}
+
+
 	public function actionDetalle_p($id)
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model = M04Pasantia::model()->findByPk($id);
 
 		$this->render("detalle_p",array('Usuario'=>$tar,'model'=>$model));
+	}
+
+	public function actionPostular_p($id)
+	{		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$model = M04Pasantia::model()->findByPk($id);
+
+		$this->render("postular_p",array('Usuario'=>$tar,'model'=>$model));
 	}
 
 }
