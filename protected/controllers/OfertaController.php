@@ -21,24 +21,14 @@ class OfertaController extends Controller {
 
 	/**
 	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
+	 * This method is used by the 'accessControl' filter. pfdsjgfoishigfoi
 	 * @return array access control rules
 	 */
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'roles'=>array('Administrador'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
+			
+			array('allow', 
 				'users'=>array('*'),
 			),
 		);
