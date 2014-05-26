@@ -135,8 +135,8 @@ class ProfesorController extends Controller{
 
 		 $mPDF1 = Yii::app()->ePdf->mpdf('utf-8','A4','','',15,15,35,25,9,9,'P'); //Esto lo pueden configurar como quieren, para eso deben de entrar en la web de MPDF para ver todo lo que permite.
 		 $mPDF1->useOnlyCoreFonts = true;
-		 $mPDF1->SetTitle("JuzgadoSys - Reporte");
-		 $mPDF1->SetAuthor("JuzgadoSys");
+		 $mPDF1->SetTitle(" Reporte");
+		 $mPDF1->SetAuthor("Reporte");
 		
 		 $mPDF1->showWatermarkText = true;
 		 $mPDF1->watermark_font = 'DejaVuSansCondensed';
