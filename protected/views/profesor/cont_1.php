@@ -1,9 +1,12 @@
+
+
+
+
 <?php
-$pdf = Yii::createComponent('application.extensions.MPDF52.mpdf');
+
+
 
 $html='
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -110,7 +113,7 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
 	<p align="center">'.$jefe->Nombre.' '.$jefe->Apellido.'</p>
     <p align="center">Jefe del Departamento de Ing. Informática</p>
 
-	<br></br>
+	
 
     <!-- end .content --></div>
   <div class="footer">
@@ -122,10 +125,8 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
   <!-- end .container --></div>
 </body>
 </html>
-
 ';
-$mpdf=new mPDF('win-1252','LETTER','','',15,15,25,12,5,7);
-$mpdf->WriteHTML($html);
-$mpdf->Output('Consulta-'.$paciente->nombre."-".$paciente->identificacion."-".$model->fecha.'.pdf','D');
-exit;
+echo $html;
+
+
 ?>

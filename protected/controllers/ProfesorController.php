@@ -131,6 +131,27 @@ class ProfesorController extends Controller{
 		$nombre_c2='</br>';	
 		}
 
+
+
+		 $mPDF1 = Yii::app()->ePdf->mpdf('utf-8','A4','','',15,15,35,25,9,9,'P'); //Esto lo pueden configurar como quieren, para eso deben de entrar en la web de MPDF para ver todo lo que permite.
+		 $mPDF1->useOnlyCoreFonts = true;
+		 $mPDF1->SetTitle("JuzgadoSys - Reporte");
+		 $mPDF1->SetAuthor("JuzgadoSys");
+		
+		 $mPDF1->showWatermarkText = true;
+		 $mPDF1->watermark_font = 'DejaVuSansCondensed';
+		 $mPDF1->watermarkTextAlpha = 0.1;
+		 $mPDF1->SetDisplayMode('fullpage');
+		 $mPDF1->WriteHTML($this->renderPartial('cont_1',array(
+			'Usuario'=>$tar,
+			'jefe'=>$jefe,
+			'tesis'=>$tesis,
+			'nombre_1'=>$nombre_c1,
+			'nombre_2'=>$nombre_c2,
+			), true)); //hacemos un render partial a una vista preparada, en este caso es la vista pdfReport
+		 $mPDF1->Output('Constancia'.date('YmdHis'),'I');  //Nombre del pdf y parámetro para ver pdf o descargarlo directamente.
+		 exit;
+/*
 		$this->render('cont_1',array(
 			'Usuario'=>$tar,
 			'jefe'=>$jefe,
@@ -138,7 +159,7 @@ class ProfesorController extends Controller{
 			'nombre_1'=>$nombre_c1,
 			'nombre_2'=>$nombre_c2,
 			));
-
+*/
 
 	}
 	public function actionTesis(){

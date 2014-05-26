@@ -123,6 +123,13 @@ class SiteController extends Controller
 					if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id)){
 						$this->redirect(Yii::app()->user->returnUrl.'/estudiante/index');
 					}
+					if(Yii::app()->authManager->checkAccess('Secretaria',Yii::app()->user->id)){
+						$this->redirect(Yii::app()->user->returnUrl.'/secretaria/index');
+					}
+					
+					
+					
+
 
 			}
 				
