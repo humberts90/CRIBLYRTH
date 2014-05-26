@@ -43,4 +43,10 @@ class SecretariaController extends Controller {
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$this->render('index',array('Usuario'=>$tar,));
 	}
+	public function actionEvalua(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$model = M03Tesis::model()->findAll();
+		$this->render('index',array('Usuario'=>$tar,));
+		
+	}
 }
