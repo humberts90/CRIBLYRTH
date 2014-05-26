@@ -4,7 +4,7 @@ $this->breadcrumbs=array(
 );
 echo $this->renderPartial('menu', array('usu'=>$Usuario));
 ?>
-<h1>Bienvenido Prof <?php echo $Usuario->Nombre.' '.$Usuario->Apellido;?> </h1>
+<h1>Bienvenida <?php echo $Usuario->Nombre.' '.$Usuario->Apellido;?> </h1>
 <p>
 	aqui va una breve reseña del sistema desde el punto de vista de la Secretaria </br>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin adipiscing suscipit lacus vitae posuere.
