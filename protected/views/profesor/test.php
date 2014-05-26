@@ -28,7 +28,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 </br>
 </br>
 <b>
-<?php echo CHtml::link(CHtml::encode("Generar constancia"), array('const', 'id'=>$model->id)); ?></b>
+<?php echo CHtml::link(CHtml::encode("Descargar constancia"), array('const', 'id'=>$model->id)); ?></b>
 </br>
 </br>
 <b><?php echo CHtml::encode($model->getAttributeLabel('Introduccion')); ?>:</b>
