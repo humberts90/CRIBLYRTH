@@ -43,10 +43,38 @@ class SecretariaController extends Controller {
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$this->render('index',array('Usuario'=>$tar,));
 	}
+
+
 	public function actionEvalua(){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		$model = M03Tesis::model()->findAll();
-		$this->render('index',array('Usuario'=>$tar,));
+		$modelStatus = P03Status::model()->find("Descripcion = 'Aprobada'");
+		$criteria=new CDbCriteria;		
+		$criteria->condition='P03_id= '.$modelStatus->id;
+
+		$dataProvider= new CActiveDataProvider(M03Tesis::model(), array('criteria'=>$criteria,));
+		$this->render('test',array('Usuario'=>$tar,'dataProvider'=>$dataProvider));
+	}
+	public function actionActaeva($id){
+		$dir=T01TesisHasUsuario::model()->findAll("M03_id =".$id);
+
+		foreach ($dir as $value) {
+			if($value->id=="2"){
+				$tur=M05Usuario::model()->find("id =".$value->M05_id);
+			}
+		}
+
+		// tiene que tener 5 o 6 variables 
+		$mPDF1->WriteHTML($this->renderPartial('cont_1',array(
+			'Normbre_alumno'=>$tar,
+			'Nombre_tutor'=>$jefe,
+			'Nombre_Jurado_1'=>$tesis,
+			'Nombre_Jurado_2'=>$nombre_c1,
+			'Nombre_Jurado_3'=>$nombre_c2,
+			), true));
+
+
 		
+
+
 	}
 }
