@@ -99,14 +99,7 @@ for ($i=($k<=0?($k*5):(($k*5-1)));$i<(sizeof($tesis)<$lim1?sizeof($tesis):$lim1)
 
 	echo "<br/><br/>";
 
-	if($us)
-	{
-		$rol = T08UsuarioHasRol::model()->find("M05_id = '".$Usuario->id."'");
-		if($rol->P01_id==$alumno->id)
-		echo CHtml::link('Postular',array("postular_t", "id"=>$tesis[$i]->id));	
-		else
-		echo "<i>Debe ser estudiante para postularse.</i>";	
-	}
+	
 
 	?>
 
@@ -179,14 +172,7 @@ for ($i = ($k<=0?($k*5):(($k*5-1))); $i < (sizeof($pasantias)<$lim2?sizeof($pasa
 
 	echo "<br/><br/>";
 	
-	if($us)
-	{
-		$rol = T08UsuarioHasRol::model()->find("M05_id = '".$Usuario->id."'");
-		if($rol->P01_id==$alumno->id)
-		echo CHtml::link('Postular',array("postular_p", "id"=>$pasantias[$i]->id));	
-		else
-		echo "<i>Debe ser estudiante para postularse.</i>";	
-	}
+
 
 	?>
 
