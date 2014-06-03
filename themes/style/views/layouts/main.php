@@ -27,12 +27,20 @@
 				</div>
 		
 				<div class="menu">
-				<?php $this->widget('zii.widgets.CMenu',array(
+				<?php 
+					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
+						$ruta='admin';
+					}
+					else{
+						$ruta='index';
+					}
+
+					$this->widget('zii.widgets.CMenu',array(
 					'encodeLabel'=>false,
 					'id'=>'menu4',
 					'items'=>array(
 						array('label'=>'<p class="letrasgrandes">INICIO</p>',
-									'url'=>array('/site/index')),
+									'url'=>array($ruta)),
 						array('label'=>'<p class="letrasgrandes">Ofertas TAP</p>
 									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/#/#')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Tesis</p>

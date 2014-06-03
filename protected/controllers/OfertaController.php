@@ -21,16 +21,16 @@ class OfertaController extends Controller {
 
 	/**
 	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
+	 * This method is used by the 'accessControl' filter. pfdsjgfoishigfoi
 	 * @return array access control rules
 	 */
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				
+			array('allow',  // deny all users
 				'users'=>array('*'),
-			)
+			),
 		);
 	}
 	public function actionIndex(){
@@ -38,30 +38,15 @@ class OfertaController extends Controller {
 	//	$listado = 
 		$this->render('index',array('Usuario'=>$tar,));
 	}
+
 	public function actionListar()
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 
 		$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
 
-		$modelAsoc = T01TesisHasUsuario::model()->findAll("P03_id = '".$modelStatus->id."'");
-		$model_t = array();
-		$a=0;
-		foreach ($modelAsoc as $asoc) 
-		{
-			$model_t[$a] = M03Tesis::model()->find("id = '".$asoc->M03_id."'");
-			$a++;
-		}
-
-		$modelAsoc = T02PasantiaHasUsuario::model()->findAll("P03_id = '".$modelStatus->id."'");
-		$model_p = array();
-		$a=0;
-		foreach ($modelAsoc as $asoc) 
-		{
-			$model_p[$a] = M04Pasantia::model()->find("id = '".$asoc->M04_id."'");
-			$a++;
-		}
-
+		$model_t= M03Tesis::model()->findAll("P03_id = ".$modelStatus->id);
+		$model_p =M04Pasantia::model()->findAll("P03_id = ".$modelStatus->id);
 
 		$this->render('oferta',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pasantias'=>$model_p));
 	}
