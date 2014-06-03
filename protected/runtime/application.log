@@ -13641,3 +13641,748 @@ Stack trace:
 REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
 HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirt
 ---
+2014/04/15 18:07:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/04/15 18:07:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/site/Extra3dLogos/icono.png
+---
+2014/04/15 18:07:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/site/Extra3dLogos/icono.png
+---
+2014/04/15 18:07:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/site/Extra3dLogos/icono.png
+---
+2014/04/15 18:07:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/site/Extra3dLogos/icono.png
+---
+2014/04/15 18:07:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/04/15 18:07:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/04/15 18:07:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_t/site/admin
+---
+2014/04/15 18:07:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_t/site/admin
+---
+2014/04/15 18:07:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_t/site/admin
+---
+2014/04/15 18:07:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "alumno"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('alumno')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/alumno/
+---
+2014/04/15 18:07:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/alumno/
+---
+2014/04/15 18:07:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "alumno/Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('alumno/Extra3dL...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/alumno/Extra3dLogos/icono.png
+---
+2014/04/15 18:07:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "alumno/Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('alumno/Extra3dL...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/alumno/Extra3dLogos/icono.png
+---
+2014/04/15 18:07:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "alumno/Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('alumno/Extra3dL...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/alumno/Extra3dLogos/icono.png
+---
+2014/04/15 18:07:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "alumno/Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('alumno/Extra3dL...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/alumno/Extra3dLogos/icono.png
+---
+2014/04/15 18:07:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/alumno/
+---
+2014/04/15 18:07:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/alumno/
+---
+2014/04/15 18:08:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/04/15 18:08:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('estudiante/Extr...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/estudiante/Extra3dLogos/icono.png
+---
+2014/04/15 18:08:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('estudiante/Extr...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/estudiante/Extra3dLogos/icono.png
+---
+2014/04/15 18:08:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('estudiante/Extr...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/estudiante/Extra3dLogos/icono.png
+---
+2014/04/15 18:08:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('estudiante/Extr...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/estudiante/Extra3dLogos/icono.png
+---
+2014/04/15 18:08:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/04/15 18:08:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/04/15 18:08:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/escoger
+---
+2014/04/15 18:08:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/escoger
+---
+2014/04/15 18:08:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/escoger
+---
+2014/04/15 18:08:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirt
+---
+2014/04/15 18:08:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirt
+---
+2014/04/15 18:08:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirt
+---
+2014/05/21 21:34:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/oferta
+---
+2014/05/21 21:34:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/05/21 21:34:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/oferta
+---
+2014/05/21 21:34:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/05/21 21:34:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/05/21 21:34:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/05/21 21:34:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'P03_id' in 'where clause'. La sentencia SQL ejecutada fue: SELECT * FROM `t01_tesis_has_usuario` `t` WHERE P03_id = '5'.
+in C:\xampp\htdocs\CRIBLYRTH\protected\controllers\OfertaController.php (47)
+in C:\xampp\htdocs\CRIBLYRTH\index.php (13)
+2014/05/21 21:34:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'P03_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `t01_tesis_has_usuario` `t` WHERE P03_id = '5'' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\CRIBLYRTH\protected\controllers\OfertaController.php(47): CActiveRecord->findAll('P03_id = '5'')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OfertaController->actionListar()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Listar')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('oferta/Listar')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/CRIBLYRTH/oferta/Listar
+HTTP_REFERER=http://localhost/CRIBLYRTH/oferta
+---
+2014/06/03 03:09:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/06/03 03:09:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/06/03 03:09:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/06/03 03:09:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/06/03 03:09:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/06/03 03:09:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/06/03 03:11:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/site/Extra3dLogos/icono.png
+---
+2014/06/03 03:11:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/06/03 03:11:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/site/Extra3dLogos/icono.png
+---
+2014/06/03 03:11:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/06/03 03:11:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/06/03 03:11:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/06/03 03:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//site/admin
+---
+2014/06/03 03:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH//site/Extra3dLogos/icono.png
+---
+2014/06/03 03:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH//site/Extra3dLogos/icono.png
+---
+2014/06/03 03:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH//site/Extra3dLogos/icono.png
+---
+2014/06/03 03:11:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH//site/Extra3dLogos/icono.png
+---
+2014/06/03 03:11:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//site/admin
+---
+2014/06/03 03:11:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//site/admin
+---
+2014/06/03 03:12:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/
+---
+2014/06/03 03:12:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('profesor/Extra3...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/profesor/Extra3dLogos/icono.png
+---
+2014/06/03 03:12:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('profesor/Extra3...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/profesor/Extra3dLogos/icono.png
+---
+2014/06/03 03:12:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('profesor/Extra3...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/profesor/Extra3dLogos/icono.png
+---
+2014/06/03 03:12:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('profesor/Extra3...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/profesor/Extra3dLogos/icono.png
+---
+2014/06/03 03:12:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/
+---
+2014/06/03 03:12:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/
+---
+2014/06/03 03:12:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/tesis
+---
+2014/06/03 03:12:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/tesis
+---
+2014/06/03 03:12:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/tesis
+---
+2014/06/03 03:12:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_t
+---
+2014/06/03 03:12:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_t
+---
+2014/06/03 03:12:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/oferta_t
+---
+2014/06/03 03:13:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/oferta/
+---
+2014/06/03 03:13:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('oferta/Extra3dL...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/oferta/Extra3dLogos/icono.png
+---
+2014/06/03 03:13:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('oferta/Extra3dL...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/oferta/Extra3dLogos/icono.png
+---
+2014/06/03 03:13:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('oferta/Extra3dL...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/oferta/Extra3dLogos/icono.png
+---
+2014/06/03 03:13:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('oferta/Extra3dL...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/oferta/Extra3dLogos/icono.png
+---
+2014/06/03 03:13:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/oferta/
+---
+2014/06/03 03:13:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/oferta/
+---
+2014/06/03 03:13:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'P03_id' in 'where clause'. La sentencia SQL ejecutada fue: SELECT * FROM `t01_tesis_has_usuario` `t` WHERE P03_id = '5'.
+in C:\xampp\htdocs\CRIBLYRTH\protected\controllers\OfertaController.php (47)
+in C:\xampp\htdocs\CRIBLYRTH\index.php (13)
+2014/06/03 03:13:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'P03_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `t01_tesis_has_usuario` `t` WHERE P03_id = '5'' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\CRIBLYRTH\protected\controllers\OfertaController.php(47): CActiveRecord->findAll('P03_id = '5'')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OfertaController->actionListar()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Listar')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('oferta/Listar')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/CRIBLYRTH/oferta/Listar
+HTTP_REFERER=http://localhost/CRIBLYRTH/oferta/
+---
