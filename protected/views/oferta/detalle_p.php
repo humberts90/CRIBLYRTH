@@ -45,8 +45,7 @@ echo "<br/><br/>";
 		'Apellido',
 		'Nombre',
 		'Telefono',
-		'Correo_Electronico',
-		'Direccion'
+		'Correo_Electronico'
 	),
 )); 
 
