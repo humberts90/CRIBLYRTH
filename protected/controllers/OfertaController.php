@@ -52,11 +52,18 @@ class OfertaController extends Controller {
 	}
 
 	public function actionDetalle_t($id)
-	{		
+	{	
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model = M03Tesis::model()->findByPk($id);
 
-		$this->render("detalle_t",array('Usuario'=>$tar,'model'=>$model));
+		$model2 = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
+
+		$model3 = T01TesisHasUsuario::model()->find("P02_id ='".$model2->id."' and M03_id='".$id."'");
+
+		$model4 = M05Usuario::model()->find("id = '".$model3->M05_id."'");		
+
+
+		$this->render("detalle_t",array('Usuario'=>$tar,'model'=>$model,'tutor'=>$model4));
 	}
 
 	public function actionPostular_t($id)
@@ -73,7 +80,14 @@ class OfertaController extends Controller {
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model = M04Pasantia::model()->findByPk($id);
 
-		$this->render("detalle_p",array('Usuario'=>$tar,'model'=>$model));
+		$model2 = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
+
+		$model3 = T02PasantiasHasUsuario::model()->find("P02_id ='".$model2->id."' and M04_id='".$id."'");
+
+		$model4 = M05Usuario::model()->find("id = '".$model3->M05_id."'");		
+
+
+		$this->render("detalle_p",array('Usuario'=>$tar,'model'=>$model,'tutor'=>$model4));
 	}
 
 	public function actionPostular_p($id)
