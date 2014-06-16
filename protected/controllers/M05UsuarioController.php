@@ -107,17 +107,26 @@ class M05UsuarioController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		$asocia=T08Usuario_has_rol::model()->find('M05_id='.$model->id);
+		$asocia=T08Usuario_has_rol::model()->findAll('M05_id='.$id);
+		$var=$id." ".count($asocia);
+		
+		if(isset($_POST['M05Usuario']))
+		{
+
 		if(count($asocia)>1){
 				foreach ($asocia as $tem) {
 					$auth->revoke($tem->p01->nombre,$model->Usuario);
+					$tem->delete();
 				}
 		}
 		else{
 			$auth->revoke($asocia->p01->nombre,$model->Usuario);	
 		}
-		if(isset($_POST['M05Usuario']))
-		{
+
+
+
+
+
 			$model->attributes=$_POST['M05Usuario'];
 			$contrasena=$_POST['M05Usuario']['Clave'];
 			$model->Clave=$model->hashPassword($contrasena,$session=$model->generateSalt());
@@ -148,6 +157,7 @@ class M05UsuarioController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'varia'=>$var,
 		));
 	}
 
