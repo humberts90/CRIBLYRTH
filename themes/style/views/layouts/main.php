@@ -31,9 +31,13 @@
 
 					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
 						$ruta='admin';
-						//esto lo hgagpjasdlfkjh aihogñowfj-p
-					}
 					
+					}					
+
+					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0){
+						$ruta="/site/index";
+					}
+
 					else{
 						$ruta='/';
 					}
