@@ -68,7 +68,7 @@ class EstudianteController extends Controller
 			
 			if($model_1->save()){
 
-				// Para subir la relacion con el alumno
+				// Para subir la relacion con el alumno---------
 				
 				$model_2->M03_id=$model_1->id;
 				$model_2->M05_id=$tar->id;
