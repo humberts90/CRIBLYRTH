@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 31-03-2014 a las 23:19:54
+-- Tiempo de generación: 18-06-2014 a las 01:28:05
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -41,9 +41,12 @@ CREATE TABLE IF NOT EXISTS `auth_asignacion` (
 INSERT INTO `auth_asignacion` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 ('Administrador', 'admin', NULL, 'N;'),
 ('Administrador', 'samuel.useche', NULL, 'N;'),
-('Comision', 'jose.figeroa', NULL, 'N;'),
+('Alumno', 'CR7', NULL, 'N;'),
+('Alumno', 'paco.paquirri', NULL, 'N;'),
 ('Jefe del Departamento', 'maria.valero', NULL, 'N;'),
-('Profesor', 'dahyana.nimo', NULL, 'N;');
+('Profesor', 'dahyana.nimo', NULL, 'N;'),
+('Secretaria', 'dahyana.nimo', NULL, 'N;'),
+('Secretaria', 'lissett.carrero', NULL, 'N;');
 
 -- --------------------------------------------------------
 
@@ -65,19 +68,22 @@ CREATE TABLE IF NOT EXISTS `auth_items` (
 --
 
 INSERT INTO `auth_items` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
+('...', 0, '...Esta operacion para personas deSecretaria', NULL, 'N;'),
+('...5', 1, '... Secretaria', NULL, 'N;'),
 ('Administrador', 2, 'Todo Poderoso Administrador', NULL, 'N;'),
 ('Alumno ', 2, 'Alumno normal de la carrera Alumno ', NULL, 'N;'),
 ('Alumno normal de la carrera', 0, 'Alumno normal de la carreraEsta operacion para personas deAlumno ', NULL, 'N;'),
 ('Alumno normal de la carrera9', 1, 'Alumno normal de la carrera Alumno ', NULL, 'N;'),
-('Comision', 2, 'Comision tap Comision', NULL, 'N;'),
-('Comision tap', 0, 'Comision tapEsta operacion para personas deComision', NULL, 'N;'),
-('Comision tap4', 1, 'Comision tap Comision', NULL, 'N;'),
+('Comisión del Tap', 2, 'comision... Comisión del Tap', NULL, 'N;'),
+('comision...', 0, 'comision...Esta operacion para personas deComisión del Tap', NULL, 'N;'),
+('comision...6', 1, 'comision... Comisión del Tap', NULL, 'N;'),
 ('Jefe', 0, 'JefeEsta operacion para personas deJefe del Departamento', NULL, 'N;'),
 ('Jefe del Departamento', 2, 'Jefe Jefe del Departamento', NULL, 'N;'),
 ('Jefe11', 1, 'Jefe Jefe del Departamento', NULL, 'N;'),
 ('Profesor', 2, 'Profesor... Profesor', NULL, 'N;'),
 ('Profesor...', 0, 'Profesor...Esta operacion para personas deProfesor', NULL, 'N;'),
 ('Profesor...12', 1, 'Profesor... Profesor', NULL, 'N;'),
+('Secretaria', 2, '... Secretaria', NULL, 'N;'),
 ('Todo Poderoso', 0, 'Todo PoderosoEsta operacion para personas deAdministrador', NULL, 'N;'),
 ('Todo Poderoso10', 1, 'Todo Poderoso Administrador', NULL, 'N;');
 
@@ -99,10 +105,12 @@ CREATE TABLE IF NOT EXISTS `auth_relacion` (
 --
 
 INSERT INTO `auth_relacion` (`parent`, `child`) VALUES
+('...5', '...'),
+('Secretaria', '...5'),
 ('Alumno normal de la carrera9', 'Alumno normal de la carrera'),
 ('Alumno ', 'Alumno normal de la carrera9'),
-('Comision tap4', 'Comision tap'),
-('Comision', 'Comision tap4'),
+('comision...6', 'comision...'),
+('Comisión del Tap', 'comision...6'),
 ('Jefe11', 'Jefe'),
 ('Jefe del Departamento', 'Jefe11'),
 ('Profesor...12', 'Profesor...'),
@@ -201,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `m03_tesis` (
 --
 
 INSERT INTO `m03_tesis` (`id`, `Titulo`, `Carta_Tutor`, `Introduccion`, `Planteamiento_Problema`, `Objetivo_General`, `Objetivo_especifico`, `Justificacion_Importancia`, `Alcance_Delimitaciones`, `Antecedentes`, `Bases_Teoricas`, `Bases_Legales`, `Definicion_Terminos`, `Enfoque_Investigacion`, `Tipo_Nivel_Invesstigacion`, `Diseno_Investigacion`, `Poblacion_Muestra`, `Tecnicas_Recoleccion_Datos`, `Metodologias`, `Referencias`, `Fecha_Inscripcion`, `Fecha_Aprobación`, `Fecha_Defensa`, `P03_id`, `M06_id`) VALUES
-(4, 'Aplicacion de una tesis de prueba para el sis', NULL, ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent ', NULL, '2014-02-17', '2014-02-18', '2014-02-22', 2, 1);
+(4, 'Aplicacion de una tesis de prueba para el sis', NULL, ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent ', NULL, '2014-02-17', '2014-02-18', '2014-02-22', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -262,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `m05_usuario` (
   UNIQUE KEY `Correo_Electronico_2` (`Correo_Electronico`),
   UNIQUE KEY `Correo_Electronico_3` (`Correo_Electronico`),
   UNIQUE KEY `Usuario_UNIQUE` (`Usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Volcado de datos para la tabla `m05_usuario`
@@ -272,9 +280,11 @@ INSERT INTO `m05_usuario` (`id`, `Cedula`, `Apellido`, `Nombre`, `Usuario`, `Cla
 (2, '82294818', 'Soler', 'Humberto', 'humberts90', 'maleconazo', '02763430816', 'humberts90', 'calle xxx', NULL, NULL, '', '', ''),
 (5, '17677687', 'useche', 'Samuel', 'samuel.useche', '9330f907bab4c871a96fc7b75e2f7925a28f31d0', '041622', 'maverick71036@gmail.com', 'S/c', NULL, NULL, '', '', '52de7b6ef35db1.57725116'),
 (11, '666', 'Admin', 'Admin', 'admin', 'ef372c7247ddffff2f572b2375e434136f139234', '666', 'Admin@admin.com', 'sc', NULL, NULL, '', '', '52d5bd4de12f50.09275149'),
-(13, '00025', 'Nimo', 'Dahyana', 'dahyana.nimo', '30fe17639a1d313455aec3dcc8680d01dd6a9f08', '5555', '----', 'S/C', NULL, NULL, '', '', '52f83f9e1d8658.37559252'),
-(15, '123456', 'Valero de Clemente', 'Maria. A.', 'maria.valero', '4893b63e649c12d698218d2111fe2e9b6e68b45f', '555555', 'maria.valero@unet.edu.ve', 'S/C', NULL, NULL, '', '', '52f82e27300127.53649136'),
-(16, '12534', 'Figeroa', 'Jose', 'jose.figeroa', '19743c10d8031a2ad78def86dae124b06f45084f', '555', 'kdijaiosdh@ifhdih', 'nbfgn', NULL, NULL, '', '', '5339dbc73956c7.97902102');
+(13, '00025', 'Nimo', 'Dahyana', 'dahyana.nimo', 'cafc50bc3c245b9e0fb0d9d831d13dcfe63abf5d', '5555', '----', 'S/C', NULL, NULL, '', '', '539f5d4f40dd94.64704868'),
+(15, '123456', 'Valero de Clemente', 'Maria', 'maria.valero', '4893b63e649c12d698218d2111fe2e9b6e68b45f', '555555', 'maria.valero@unet.edu.ve', 'S/C', NULL, NULL, '', '', '52f82e27300127.53649136'),
+(16, '125', 'Ronaldo', 'Cristiano', 'CR7', '4b396f56ae7d80fb96aef4e671b6763289dac7a3', '55fd', 'dfd', 'dff', NULL, NULL, '', '', '537d02556433d9.68445810'),
+(17, '112523', 'Carrero', 'Lissett', 'lissett.carrero', '96474d76dd3475285d58b6592f45005b9ee42a17', '5555', 'fdsafsdf', '5455', NULL, NULL, '', '', '53838ccfe37b24.70798135'),
+(18, '123456', 'Paco', 'Paquirri', 'paco.paquirri', '5539703c55028aefba17c1c285290279fdd0627d', '12345', 'vgdv@unet.edu.ve', 'jrfghjnf', NULL, NULL, '', '', '538f6474a200e5.15184278');
 
 -- --------------------------------------------------------
 
@@ -344,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `p01_rol` (
   `nombre` varchar(45) NOT NULL,
   `Descripcion` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `p01_rol`
@@ -354,7 +364,9 @@ INSERT INTO `p01_rol` (`id`, `nombre`, `Descripcion`) VALUES
 (1, 'Administrador', 'Todo Poderoso'),
 (2, 'Jefe del Departamento', 'Jefe'),
 (3, 'Profesor', 'Profesor...'),
-(4, 'Comision', 'Comision tap');
+(4, 'Alumno', 'alumno'),
+(5, 'Secretaria', '...'),
+(6, 'Comisión del Tap', 'comision...');
 
 -- --------------------------------------------------------
 
@@ -2212,7 +2224,7 @@ CREATE TABLE IF NOT EXISTS `t08_usuario_has_rol` (
   PRIMARY KEY (`id`),
   KEY `fk_M05_Usuario_has_P01_Rol_P01_Rol1_idx` (`P01_id`),
   KEY `fk_M05_Usuario_has_P01_Rol_M05_Usuario1_idx` (`M05_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
 -- Volcado de datos para la tabla `t08_usuario_has_rol`
@@ -2222,10 +2234,11 @@ INSERT INTO `t08_usuario_has_rol` (`M05_id`, `P01_id`, `id`) VALUES
 (2, 1, 2),
 (11, 1, 11),
 (15, 2, 15),
-(13, 3, 16),
-(13, 3, 17),
-(13, 3, 18),
-(16, 4, 19);
+(16, 4, 19),
+(17, 5, 20),
+(18, 4, 21),
+(13, 3, 39),
+(13, 5, 40);
 
 -- --------------------------------------------------------
 

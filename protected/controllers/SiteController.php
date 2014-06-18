@@ -114,7 +114,7 @@ class SiteController extends Controller
 				if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
 							$this->redirect(Yii::app()->user->returnUrl.'/site/admin');
 					}
-					if(Yii::app()->authManager->checkAccess('Comision',Yii::app()->user->id)){
+					if(Yii::app()->authManager->checkAccess('Comisión del Tap',Yii::app()->user->id)){
 						$this->redirect(Yii::app()->user->returnUrl.'/comision/index');
 					}
 					if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){

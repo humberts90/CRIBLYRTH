@@ -32,8 +32,9 @@ echo "<br/><br/>";
 	
 	if(!$us)
 	{
-		
+
 		if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id))
+
 		{
 			?>
 
@@ -45,7 +46,8 @@ echo "<br/><br/>";
 		'Apellido',
 		'Nombre',
 		'Telefono',
-		'Correo_Electronico'
+		'Correo_Electronico',	
+
 	),
 )); 
 		}

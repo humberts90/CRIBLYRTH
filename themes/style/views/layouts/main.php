@@ -5,8 +5,8 @@
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<!-- /Added by HTTrack -->
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="Shortcut Icon" type="image/x-icon" href="Extra3dLogos/icono.png" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+		<link rel="Shortcut icon" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/favicon.ico" type="image/x-icon" />	
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/main.css" />
 		<link rel="Shortcut Icon" type="image/x-icon" href="Extra3dLogos/icono.png" />
@@ -27,15 +27,19 @@
 				</div>
 		
 				<div class="menu">
-				<?php 
+				<?php 				
+
 					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
 						$ruta='admin';
-					}
+					
+					}					
+
 					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0){
 						$ruta="/site/index";
 					}
+
 					else{
-						$ruta='index';
+						$ruta='/';
 					}
 
 					$this->widget('zii.widgets.CMenu',array(
