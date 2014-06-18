@@ -74,100 +74,57 @@ echo CHtml::radioButtonList('Modalidad','t',array('t'=>'Tesis','p'=>'Pasantías'
 <div id="tesis">
 <div class="tesis">
 <?php
-$varT = 1;
-	if(isset($_GET['nPagT'])){
-		$k = $_GET['nPagT'];
-	}
-	else {
-		$k=0;
-	}
-	if((($k+1)*5)>sizeof($tesis)){
-		$lim1 = sizeof($tesis);
-	}else{
-		$lim1 = (($k+1)*5); 
-	}
 
-for ($i=($k<=0?($k*5):(($k*5-1)));$i<(sizeof($tesis)<$lim1?sizeof($tesis):$lim1);$i++) 
+foreach ($tesis as $t)
 {
 	?>
 	<div class="bloque">	
 
 	<?php
 
-	echo '</br><b>Título: '.$tesis[$i]->Titulo."</b><br>Introducción: ".$tesis[$i]->Introduccion;
-	echo CHtml::link('Detalle',array("detalle_t", "id"=>$tesis[$i]->id));
+	echo '</br><b>Título: '.$t->Titulo."</b><br>Introducción: ".$t->Introduccion;
+	echo CHtml::link('Detalle',array("detalle_t", "id"=>$t->id));
 
 	echo "<br/><br/>";
-
-	
 
 	?>
 
 	</div>
 
+
+</br>
 	<?php
 }
 ?>
 </div>
-
-</br>
-</br>
 <?php
-$var2 = 0;
-	for ($i = 0*($k*5); $i<(sizeof($tesis)>5?sizeof($tesis):0); $i++)
-	{
-		if($i == 0 && sizeof($tesis)>5){
-			
-			echo '<a href="Listar?nPagT='.($k>0?($k-1):0).'"> << Anterior </a>';
-			echo '<a>  </a>';
-			echo '<a href="Listar?nPagT='.($var2).'">'.($var2+1).'</a>';
-			$var2 = $var2 + 1;
-		}
+$this->widget('CLinkPager', array(
+	'header' => '',
+	'firstPageLabel' => '&lt;&lt;',
+	'prevPageLabel' => '&lt;',
+	'nextPageLabel' => '&gt;',
+	'lastPageLabel' => '&lt;&lt;',
+	'pages' => $pagesT,
+));
+?>
 
-		if($i == (4 * $varT)){
-			
-				echo '<a> - </a>';
-				echo '<a href="Listar?nPagT='.($var2).'">'.($var2+1).'</a>';	
-			$varT = $varT + 1;
-			$var2 = $var2 + 1;
-		}
+<?php
 
-	}
-	
-	if(sizeof($tesis)>5){
-	echo '<a> </a>';
-		
-	echo '<a href="Listar?nPagT='.($k<($var2-1)?$k+1:($var2-1)).'"> Siguiente >> </a>';
-	}
-
-$_GET['nPagT'] = null;
 ?>
 </div>
 <div id = "pasantias" style="display:none">
 <div class="pasantias">
 <?php
-$varP = 1;
-	if(isset($_GET['nPagP'])){
-		$k2 = $_GET['nPagP'];
-	}
-	else {
-		$k2=0;
-	}
-	if((($k2+1)*5)>sizeof($pasantias)){
-		$lim2 = sizeof($pasantias);
-	}else{
-		$lim2 = (($k2+1)*5); 
-	}
 
-for ($i = ($k<=0?($k*5):(($k*5-1))); $i < (sizeof($pasantias)<$lim2?sizeof($pasantias):$lim2); $i++) 
+foreach ($pasantias as $p) 
 {
 	?>
 	<div class="bloque">	
 
 	<?php
 
-	echo "</br><b>Título: ".$pasantias[$i]->Titulo."</b><br>Descripción".$pasantias[$i]->Descripcion_Trabajo;
-	echo CHtml::link('Detalle',array("detalle_p", "id"=>$pasantias[$i]->id));
+	echo "</br><b>Título: ".$p->Titulo."</b><br>Descripción".$p->Descripcion_Trabajo;
+	echo CHtml::link('Detalle',array("detalle_p", "id"=>$p->id));
 
 
 	echo "<br/><br/>";
@@ -177,38 +134,17 @@ for ($i = ($k<=0?($k*5):(($k*5-1))); $i < (sizeof($pasantias)<$lim2?sizeof($pasa
 	?>
 
 	</div>	
-
+</div>
+</br>
 	<?php
 }
+
+$this->widget('CLinkPager', array(
+	'header' => '',
+	'firstPageLabel' => '&lt;&lt;',
+	'prevPageLabel' => '&lt;',
+	'nextPageLabel' => '&gt;',
+	'lastPageLabel' => '&lt;&lt;',
+	'pages' => $pagesP,
+));
 ?>
-</div>
-</br>
-</br>
-<?php
-$var3 = 0;
-	for ($i = 0*($k2*5); $i< (sizeof($pasantias)>5?sizeof($pasantias):0); $i++)
-	{
-		if($i == 0 && sizeof($pasantias)>5){
-			echo '<a href="Listar?nPagT='.($k2>0?($k2-1):0).'"> << Anterior </a>';
-			echo '<a>  </a>';
-			echo '<a href="Listar?nPagP='.($var3).'">'.($var3+1).'</a>';
-			$var3 = $var3 + 1;
-		}
-
-		if($i == (4 * $varP)){
-				echo '<a> - </a>';
-				echo '<a href="Listar?nPagP='.($var3).'">'.($var3+1).'</a>';	
-			$varP = $varP + 1;
-			$var3 = $var3 + 1;
-		}
-
-
-	}
-	if(sizeof($pasantias)>5){
-	echo '<a> </a>';
-	echo '<a href="Listar?nPagT='.($k2<($var3-1)?$k2+1:($var3-1)).'"> Siguiente >> </a>';
-	}
-$_GET['nPagP'] = null;
-
-?>
-</div>

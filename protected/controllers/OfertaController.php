@@ -45,10 +45,28 @@ class OfertaController extends Controller {
 
 		$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
 
-		$model_t= M03Tesis::model()->findAll("P03_id = ".$modelStatus->id);
-		$model_p =M04Pasantia::model()->findAll("P03_id = ".$modelStatus->id);
+		$criteria = new CDbCriteria();
+		$criteria->select = array("*");
+		$criteria->condition = "P03_id = :id";
+		$criteria->params = array(':id'=>$modelStatus->id);
+		$cuentaT = count($criteria);
+		$cuentaT =  M03Tesis::model()->count($criteria);
+		//pagination
+		$pagesT = new CPagination($cuentaT);
+		$pagesT->setPageSize(5);
+		$pagesT->applyLimit($criteria);
+		$model_t = M03Tesis::model()->findAll($criteria);
 
-		$this->render('oferta',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pasantias'=>$model_p));
+ 		$cuentaP = count($criteria);
+		$cuentaP=  M04Pasantia::model()->count($criteria);
+		//pagination
+		$pagesP = new CPagination($cuentaP);
+		$pagesP->setPageSize(5);
+		$pagesP->applyLimit($criteria);
+		$model_p = M04Pasantia::model()->findAll($criteria);
+
+
+		$this->render('oferta',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pasantias'=>$model_p, 'pagesT'=>$pagesT, 'pagesP'=>$pagesP));
 	}
 
 	public function actionDetalle_t($id)
