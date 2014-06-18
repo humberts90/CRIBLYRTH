@@ -39,7 +39,7 @@
 					}
 
 					else{
-						$ruta='/';
+						$ruta='index';
 					}
 
 					$this->widget('zii.widgets.CMenu',array(
