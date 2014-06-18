@@ -55,7 +55,9 @@ class OfertaController extends Controller {
 		$pagesT = new CPagination($cuentaT);
 		$pagesT->setPageSize(5);
 		$pagesT->applyLimit($criteria);
-		$model_t = M03Tesis::model()->findAll($criteria);
+		$modelt = M03Tesis::model()->findAll($criteria);
+		$model_t=new CArrayDataProvider($modelt);
+
 
  		$cuentaP = count($criteria);
 		$cuentaP=  M04Pasantia::model()->count($criteria);
@@ -63,8 +65,8 @@ class OfertaController extends Controller {
 		$pagesP = new CPagination($cuentaP);
 		$pagesP->setPageSize(5);
 		$pagesP->applyLimit($criteria);
-		$model_p = M04Pasantia::model()->findAll($criteria);
-
+		$modelp = M04Pasantia::model()->findAll($criteria);
+		$model_p=new CArrayDataProvider($modelp);
 
 		$this->render('oferta',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pasantias'=>$model_p, 'pagesT'=>$pagesT, 'pagesP'=>$pagesP));
 	}
