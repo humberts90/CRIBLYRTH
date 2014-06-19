@@ -1,9 +1,6 @@
 <?php
 class SecretariaController extends Controller {
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
+	
 	public $layout='//layouts/column2';
 
 	/**
@@ -56,7 +53,7 @@ class SecretariaController extends Controller {
 	}
 
 	public function actionActaeva($id){
-		$DosAlumnos = false;
+		$DosAlumnos = false;//
 		$dir = T01TesisHasUsuario::model()->findAll("M03_id =".$id);
 		$tr_j1 = P02TipoRelacion::model()->find("descripcion = 'Jurado 1'");
 		$tr_j2 = P02TipoRelacion::model()->find("descripcion = 'Jurado 2'");
