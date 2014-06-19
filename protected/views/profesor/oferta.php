@@ -67,6 +67,12 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 								));
 						?>
 				<br />
+				<label><h2>Lapso Académico: </h2></label> 
+           	 <br/>      
+				<?php echo $form->textField($model,'Lapso_Academico_defensa',array('size'=>6,'maxlength'=>6)); ?>
+				<?php //echo $form->error($model,'Lapso_Academico_defensa'); ?>
+            	<br /> 
+            	<br /> 
 				<div class="row buttons">
 					<?php echo CHtml::submitButton('Subir'); ?>
 				</div>
