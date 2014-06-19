@@ -38,7 +38,7 @@ class SecretariaController extends Controller {
 
 	public function actionIndex(){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		$this->render('index',array('Usuario'=>$tindexar,));
+		$this->render('index',array('Usuario'=>$tar,));
 	}
 
 
