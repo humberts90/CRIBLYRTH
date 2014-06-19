@@ -93,13 +93,13 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
       <tr>
         <td align="left">Nombres y Apellidos:'.$Nombre_alumno.'</td>
         <td align="left" width="150px">C.I: '.$Cedula_alumno.'</td>
-        <td align="left" width="120px">Fecha: '.$Fecha_presentacion'</td>
-        <td align="left" width="220px">Lapso Académico: '.$Lapso_academico_defensa.'</td>
+        <td align="left" width="120px">Fecha: '.$Fecha_presentacion.'</td>
+        <td align="left" width="220px">Lapso Académico: '.$L_academico.'</td>
       </tr>
     </table>
     
     <br></br>
-    <p>Título: <strong>.'$Titulo_TAP'.</strong></p>
+    <p>Título: <strong>'.$Titulo_TAP.'</strong></p>
     
     <br></br>
     
