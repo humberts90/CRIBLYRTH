@@ -96,6 +96,9 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Referencias')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Referencias); ?></p>
+
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Lapso_Academico_defensa')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Lapso_Academico_defensa); ?></p>
 	<br />
 
 	
