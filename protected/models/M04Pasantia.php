@@ -35,6 +35,7 @@ class M04Pasantia extends CActiveRecord
 	 * @return M04Pasantia the static model class
 	 */
 	
+	
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
