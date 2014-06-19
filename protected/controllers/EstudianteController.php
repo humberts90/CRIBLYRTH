@@ -174,7 +174,7 @@ class EstudianteController extends Controller
 				            }	                 	
 				       	}
 				        else{	                 	
-				                 	$path="$estructura/$model_1->Curriculum";
+				                 	$path="$estructura/$model_4->Curriculum";
 				            if($model_4->Curriculum!=null||$model_4->Curriculum!=''){
 				                $model_4->Curriculum->saveAs($path);
 				            }	                 	
@@ -190,7 +190,7 @@ class EstudianteController extends Controller
 			$model_5->M04_id=$model_2->id;
 			$model_5->M05_id=$tar->id;
 			$model_5->P02_id=$tipo1->id;
-			$model_5->P03_id=$estado->id;
+			$model_2->P03_id=$estado->id;
 			$model_5->M07_id=$model_4->id;
 			$model_5->save();
 			//---------------------------Cronograma de actividades----------------------------
