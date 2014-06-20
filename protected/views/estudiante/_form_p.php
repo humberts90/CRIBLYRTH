@@ -8,8 +8,8 @@
 		<h2>Datos de la empresa</h2>
 			<section > 
 				<br><label>Seleccione Empresa</label> <br>
-					<?php echo $form->dropDownList($model_1,'temp',CHtml::listData(M06Empresa::model()->findAll(),'id','Razon_Social'),array('empty'=>'Seleccione Empresa','class'=>'form-control')); ?>
-					<?php echo $form->error($model_1,'temp'); ?>
+					<?php echo $form->dropDownList($model_2,'M06_id',CHtml::listData(M06Empresa::model()->findAll(),'id','Razon_Social'),array('empty'=>'Seleccione Empresa','class'=>'form-control')); ?>
+					<?php echo $form->error($model_2,'M06_id'); ?>
 					<br />
 				<br><label>Empresa Nueva</label><br>
 					<?php echo CHtml::link('Registrar nueva empresa','#',array('class'=>'search-button')); ?>
@@ -48,10 +48,7 @@
 						<?php echo $form->textField($model_4,'Enlace',array('size'=>60,'maxlength'=>255)); ?>
 						<?php echo $form->error($model_4,'Enlace'); ?>
 					<br>
-					<label>Curriculum en pdf</label><br>
-					 <?php echo $form->fileField($model_4,'Carta_Tutor',array('rows'=>1, 'cols'=>50)); ?>
-	                <?php echo $form->error($model_4,'Carta_Tutor'); ?>	 
-					<br>
+					
 			</section>
 			<h2>Plan de Trabajo I</h2>
 			<section>
