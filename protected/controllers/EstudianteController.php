@@ -132,6 +132,8 @@ class EstudianteController extends Controller
 	}
 
 	public  function ActionSubirp(){
+
+		
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Pasante'");
 		$estado=P03Status::model()->find("Descripcion = 'Sin revisar'");
