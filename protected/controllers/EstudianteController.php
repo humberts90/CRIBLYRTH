@@ -118,15 +118,17 @@ class EstudianteController extends Controller
 		if(isset($_POST['M03Tesis'])){
 			$model_1->attributes=$_POST['M03Tesis'];
 			$model_1->Carta_Tutor=CUploadedFile::getInstance($model_1,'Carta_Tutor');
+			$model_1->P03_id=$estado->id;
 			
 			if($model_1->save()){
 
 				// Para subir la relacion con el alumno---------
 				
+				
 				$model_2->M03_id=$model_1->id;
 				$model_2->M05_id=$tar->id;
 				$model_2->P02_id=$tipo1->id;
-				$model_2->P03_id=$estado->id;
+				
 				$model_2->save();
 
 				// Para subir la relacion con el profesor
@@ -145,7 +147,7 @@ class EstudianteController extends Controller
 					$model_3->M03_id=$model_1->id;
 					$model_3->M05_id=$docente2->id;
 					$model_3->P02_id=$tipo2->id;
-					$model_3->P03_id=$estado->id;
+					
 					$model_3->save();
 				}
 				else{ // si el profesor esta en el sistema 
@@ -153,7 +155,7 @@ class EstudianteController extends Controller
 					$model_3->M03_id=$model_1->id;
 					$model_3->M05_id=$docente->id;
 					$model_3->P02_id=$tipo2->id;
-					$model_3->P03_id=$estado->id;
+					
 					$model_3->save();	
 					
 				}	
@@ -173,6 +175,7 @@ class EstudianteController extends Controller
 		                $model_1->Carta_Tutor->saveAs($path);
 		            }	                 	
 		        }
+		        $this->redirect(array('index'));
 
 			}
 			
