@@ -25,20 +25,22 @@ class ComisionController extends Controller {
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'roles'=>array('Administrador'),
-				'users'=>array('@'),
-			),
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'roles'=>array('Comision'),
-				'users'=>array('@'),
-			),			
+			   array('allow',  
+						'roles'=>array('Administrador'),
+						'users'=>array('@'),
+				),	
+			
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+					'roles'=>array('Comisión del Tap'),
+					'users'=>array('@'),
+				),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
+		
 		);
 	}
 	public function actionIndex()

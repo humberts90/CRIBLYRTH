@@ -23,16 +23,19 @@ class SecretariaController extends Controller {
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'roles'=>array('Administrador'),
-			),
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array('@'),
-			),
-		
+			   array('allow',  
+						'roles'=>array('Administrador'),
+						'users'=>array('@'),
+				),	
+			
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+					'roles'=>array('Secretaria'),
+					'users'=>array('@'),
+				),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
+		
 		);
 	}
 
