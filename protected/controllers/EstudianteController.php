@@ -8,6 +8,7 @@ class EstudianteController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
+
 	/**
 	 * @return array action filters
 	 */
@@ -43,6 +44,7 @@ class EstudianteController extends Controller
 		);
 	}
 
+	//-----------------------------Index para los dos casos ---------------------------------------------------------
 	public function actionIndex()
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
@@ -50,6 +52,26 @@ class EstudianteController extends Controller
 		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
 		$this->render('index',array('Usuario'=>$tar,"check_1"=>$check_1,"check_2"=>$check_2));
 	}
+
+
+
+	//------------------------------Para que escoja que quiere hacer Tesis o Pasantias---------------------------------
+
+	public function ActionEscoger(){
+		
+		if(isset($_POST['desi'])){
+			if($_POST["tip"]==1){
+				$this->redirect(array('subirt'));
+			}
+			else{
+				$this->redirect(array('subirp'));
+			}
+		}
+		$this->render('des');
+	}
+
+	//-----------------------------TESIS-------------------------------------------------------------------------------	
+
 	// para que estudiante vea como va quedando su tesis y imprimir constancias o la misma teis
 	public function actionVertesis()
 	{		
@@ -182,9 +204,19 @@ class EstudianteController extends Controller
 
 		}
 
+		$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
 
-		$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4));
+		if(count($check_1)>0){
+			$this->redirect(array('index'));
+		}
+		else{
+			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4));
+		}
+
+		
 	}
+
+	//---------------------------------------------------------------FIN DE TESIS----------------------------------------------------------------------
 
 	public  function ActionSubirp(){
 
@@ -261,21 +293,73 @@ class EstudianteController extends Controller
 			//---------------------------Cronograma de actividades----------------------------
 
 		}
+		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
 
-		$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,));
-	}
-	public function ActionEscoger(){
-		
-		if(isset($_POST['desi'])){
-			if($_POST["tip"]==1){
-				$this->redirect(array('subirt'));
-			}
-			else{
-				$this->redirect(array('subirp'));
-			}
+		if(count($check_2)>0){
+			$this->redirect(array('index'));
 		}
-		$this->render('des');
+		else{
+			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,));
+		}
+
+		
 	}
+
+	//---------------------------------------PASANTIAS--------------------------------------------------------------
+		// para ver los jurados de las pasantias
+	public function actionJurap()
+	{
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
+		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
+		$model=M04Pasantia::model()->findByPk($check_1->M04_id);
+		$has1=T02PasantiaHasUsuario::model()->findAll('M04_id = '.$model->id);
+		$this->render('jurapa',array(
+			'Usuario'=>$tar,
+			"check_1"=>$check_1,
+			"check_2"=>$check_2,
+			'model'=>$model,
+			'has1'=>$has1,
+			));
+	}
+		//Para ver las correcciones
+	public function actionCorrep()
+	{
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
+		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
+		$model=M04Pasantia::model()->findByPk($check_1->M04_id);
+		$model_2=T10ObservacionPasantias::model()->findAll("M04_id=".$model->id);
+		$this->render('correp',array(
+			'Usuario'=>$tar,
+			"check_1"=>$check_1,
+			"check_2"=>$check_2,
+			'model'=>$model,
+			'model_2'=>$model_2,
+			
+			));
+	}
+
+	public function actionVerpasantias()
+	{		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
+		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
+
+		$model=M04Pasantia::model()->findByPk($check_1->M04_id);
+		$has1=T02PasantiaHasUsuario::model()->findAll('M04_id = '.$model->id);
+		$status=P03Status::model()->findByPk($model->P03_id);
+		$this->render('verpas',array(
+			'Usuario'=>$tar,
+			"check_1"=>$check_1,
+			"check_2"=>$check_2,
+			'model'=>$model,
+			'has1'=>$has1,
+			'Sta'=>$status,
+			));
+	}
+
+
 
 
 }

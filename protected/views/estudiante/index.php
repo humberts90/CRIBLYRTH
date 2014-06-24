@@ -8,6 +8,7 @@ $this->breadcrumbs=array(
 echo $this->renderPartial('menu', array('usu'=>$Usuario,"check_1"=>$check_1,"check_2"=>$check_2));
 
 
+
 ?>
 
 <h1>Bienvenido <?php echo $Usuario->Nombre.' '.$Usuario->Apellido; ?></h1>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-06-2014 a las 03:04:54
+-- Tiempo de generación: 24-06-2014 a las 18:13:29
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -238,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `m04_pasantia` (
   PRIMARY KEY (`id`),
   KEY `fk_Pasantia_empresa1_idx` (`M06_id`),
   KEY `fk_m04_pasantia_p03_status1_idx` (`P03_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Volcado de datos para la tabla `m04_pasantia`
@@ -346,7 +346,14 @@ CREATE TABLE IF NOT EXISTS `m07_tutor_externo` (
   `Curriculum` varchar(255) DEFAULT NULL,
   `Enlace` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `m07_tutor_externo`
+--
+
+INSERT INTO `m07_tutor_externo` (`id`, `Cedula`, `Apellido`, `Nombre`, `Telefono`, `Correo`, `Cargo_Empresa`, `Curriculum`, `Enlace`) VALUES
+(1, '5555', 'Kempes', 'Mario', '6555', '@ksdhlklf', 'Presidente', 'ldsjd', 'jfdsjfpdjfp.com');
 
 -- --------------------------------------------------------
 
@@ -2133,7 +2140,17 @@ CREATE TABLE IF NOT EXISTS `t02_pasantia_has_usuario` (
   KEY `fk_Pasantia_has_Usuario_Pasantia1_idx` (`M04_id`),
   KEY `fk_Pasantia_has_Usuario_Tutor_externo1_idx` (`M07_id`),
   KEY `fk_Pasantia_has_Usuario_tipo_relacion1_idx` (`P02_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `t02_pasantia_has_usuario`
+--
+
+INSERT INTO `t02_pasantia_has_usuario` (`M04_id`, `M05_id`, `M07_id`, `P02_id`, `id`) VALUES
+(1, 5, 1, 1, 1),
+(1, 13, 1, 4, 2),
+(1, 16, 1, 5, 3),
+(1, 18, 1, 6, 4);
 
 -- --------------------------------------------------------
 
@@ -2289,12 +2306,19 @@ INSERT INTO `t09_noticias` (`id`, `Descripcion`, `Fecha`, `Titulo`, `M05_id`, `I
 
 CREATE TABLE IF NOT EXISTS `t10_observacion_pasantias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Descripcion` varchar(45) NOT NULL,
+  `Descripcion` text NOT NULL,
   `Fecha` date NOT NULL,
   `M04_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_t10_observacion_pasantias_m04_pasantia1_idx` (`M04_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `t10_observacion_pasantias`
+--
+
+INSERT INTO `t10_observacion_pasantias` (`id`, `Descripcion`, `Fecha`, `M04_id`) VALUES
+(1, ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor dui at vulputate gravida. Donec id hendrerit felis. In hac habitasse platea dictumst. Donec et urna facilisis, adipiscing velit ac, iaculis sapien. Mauris bibendum at dui in tincidunt. Fusce nec leo at augue condimentum fermentum vel non sapien. Donec tempus ligula ac metus aliquet lobortis.\n\nSed non felis neque. Sed et sapien turpis. Vivamus pretium odio at urna tincidunt, non rhoncus diam bibendum. Duis fringilla magna in leo iaculis sodales. Donec neque tortor, pulvinar quis varius eget, laoreet sit amet turpis. Vestibulum pharetra nisl vitae turpis pharetra condimentum. Ut id facilisis mi. Aliquam vitae commodo tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum elementum tellus arcu, non fringilla augue accumsan ut. Curabitur aliquet ornare tellus, eu accumsan diam bibendum eu.\n\nAliquam semper metus et enim vehicula tempor at fermentum ante. Vivamus a eros est. Quisque sapien nibh, malesuada sed convallis faucibus, tempor ut risus. Cras volutpat sed elit at tincidunt. Proin ultricies scelerisque lacus vel tempor. Donec cursus vel est id ornare. Nunc pretium tempor turpis, adipiscing tristique libero elementum sed. Nunc nibh sem, elementum non enim vel, volutpat fermentum tortor. Suspendisse lacinia mauris libero, nec euismod nibh tempor ut. Integer et placerat odio, non eleifend purus. Proin sodales euismod urna nec vehicula. Duis sagittis erat sed ligula bibendum, id pulvinar ante egestas. ', '2014-06-24', 1);
 
 -- --------------------------------------------------------
 
