@@ -239,7 +239,7 @@ class EstudianteController extends Controller
 				    }
 			}
 
-			//---------------------------Pasantias---------------------------------------------
+			//---------------------------Pasantias--------------
 			$model_2->P03_id=$estado->id;
 			$model_2->save();
 				
