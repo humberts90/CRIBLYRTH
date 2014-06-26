@@ -16,7 +16,7 @@ class SecretariaController extends Controller {
 
 
 	/**
-	 * Specifies the access control rules.mlfkwñmfñkwmfñknmk
+	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
