@@ -32,6 +32,10 @@ public function accessRules()
 						'roles'=>array('Administrador'),
 						'users'=>array('@'),
 				),	
+			    array('allow',  
+						'roles'=>array('Jefe del Departamento'),
+						'users'=>array('@'),
+				),	
 			
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 					'roles'=>array('Comisión del Tap'),
