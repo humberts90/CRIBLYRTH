@@ -5,8 +5,8 @@
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<!-- /Added by HTTrack -->
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="Shortcut Icon" type="image/x-icon" href="Extra3dLogos/icono.png" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+		<link rel="Shortcut icon" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/favicon.ico" type="image/x-icon" />	
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/main.css" />
 		<link rel="Shortcut Icon" type="image/x-icon" href="Extra3dLogos/icono.png" />
@@ -27,10 +27,34 @@
 				</div>
 		
 				<div class="menu">
-				<?php 
+				<?php 				
+
 					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
 						$ruta='admin';
+					
 					}
+					if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){
+						$ruta='/profesor/index';
+					
+					}	
+					if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id)){
+						$ruta='/Estudiante/index';
+					
+					}	
+					if(Yii::app()->authManager->checkAccess('Comisión del Tap',Yii::app()->user->id)){
+						$ruta='/comision/index';
+					
+					}	
+					if(Yii::app()->authManager->checkAccess('Secretaria',Yii::app()->user->id)){
+						$ruta='/secretaria/index';
+					
+					}	
+
+
+					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0){
+						$ruta="/site/index";
+					}
+
 					else{
 						$ruta='index';
 					}
@@ -42,7 +66,7 @@
 						array('label'=>'<p class="letrasgrandes">INICIO</p>',
 									'url'=>array($ruta)),
 						array('label'=>'<p class="letrasgrandes">Ofertas TAP</p>
-									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/#/#')),
+									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/oferta')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Tesis</p>
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/tesis', 'view'=>'about')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Pasantías</p>

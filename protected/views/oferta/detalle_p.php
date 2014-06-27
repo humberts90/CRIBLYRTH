@@ -12,7 +12,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 <?php 
 
 
-$us = isset($Usuario)==1?1:0;
+$us = Yii::app()->user->isGuest;
 
 $alumno = P01Rol::model()->find("nombre = 'Alumno'");
 
@@ -30,10 +30,11 @@ $alumno = P01Rol::model()->find("nombre = 'Alumno'");
 
 echo "<br/><br/>";
 	
-	if($us)
+	if(!$us)
 	{
-		$rol = T08UsuarioHasRol::model()->find("M05_id = '".$Usuario->id."'");
-		if($rol->P01_id==$alumno->id)
+
+		if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id))
+
 		{
 			?>
 
@@ -45,7 +46,7 @@ echo "<br/><br/>";
 		'Apellido',
 		'Nombre',
 		'Telefono',
-		'Correo_Electronico'
+		'Correo_Electronico',
 	),
 )); 
 
