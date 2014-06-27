@@ -59,6 +59,7 @@ class JefedepartamentoController extends Controller {
         'Usuario'=>$tar,
         )); 		
 	}
+	//------------------------Resporte de tesistas-------------------------------------------------
 
 	public function actionTes(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
@@ -76,6 +77,23 @@ class JefedepartamentoController extends Controller {
         )); 
 	}
 
+	//----------------------Reporte de pasantes --------------------------------------------------------
+
+	public function actionPas(){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		
+
+		$criteria=new CDbCriteria;		
+		$criteria->condition='P02_id = 1';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(T02PasantiaHasUsuario::model(), array('criteria'=>$criteria,));
+
+	  	$this->render('pasantias',array(
+        'dataProvider'=>$dataProvider,
+       // 'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+	}
 
 }
 

@@ -29,5 +29,6 @@ $this->menu=array(
 	array('label'=>'Evaluar planes de trabajo de Pasantias', 'url'=>array('comision/pasantias')),
 	array('label'=>'Listado de profesores', 'url'=>array('prof')),
 	array('label'=>'Listado de tesistas', 'url'=>array('tes')),
+	array('label'=>'Listado de pasantes', 'url'=>array('pas')),
 );
 ?>
