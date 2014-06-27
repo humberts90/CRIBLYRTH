@@ -339,7 +339,7 @@ class EstudianteController extends Controller
 			
 			));
 	}
-
+//-----
 	public function actionVerpasantias()
 	{		
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
