@@ -43,6 +43,39 @@ class JefedepartamentoController extends Controller {
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$this->render('index',array('Usuario'=>$tar,));
 	}
+	//----------------Reporte de listado de profesores-------------------------------------------
+
+	public function actionProf(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$model=new M01Profesor('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_POST['M01Profesor']))
+			$model->attributes=$_POST['M01Profesor'];
+
+	  	$this->render('prof',array(
+        'dataProvider'=>$model->search(),
+        'model'=>$model,
+        'Usuario'=>$tar,
+        )); 		
+	}
+
+	public function actionTes(){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		
+
+		$criteria=new CDbCriteria;		
+		$criteria->condition='P02_id = 1';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(T01TesisHasUsuario::model(), array('criteria'=>$criteria,));
+
+	  	$this->render('tesis',array(
+        'dataProvider'=>$dataProvider,
+       // 'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+	}
+
 
 }
 
