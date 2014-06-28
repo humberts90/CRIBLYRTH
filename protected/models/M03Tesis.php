@@ -44,7 +44,7 @@ class M03Tesis extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return M03Tesis the static model class
 	 */
-	public $tutor;
+	public $tutor,$cono;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
