@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-06-2014 a las 19:25:07
+-- Tiempo de generación: 29-06-2014 a las 01:17:11
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -2052,7 +2052,7 @@ INSERT INTO `p09_departamento` (`id`, `Nombre`) VALUES
 (8, 'Produccion Animal'),
 (9, 'Arquitectura');
 
-
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `p11_conocimientos`
@@ -2124,7 +2124,7 @@ CREATE TABLE IF NOT EXISTS `t02_pasantia_has_usuario` (
 
 INSERT INTO `t02_pasantia_has_usuario` (`M04_id`, `M05_id`, `M07_id`, `P02_id`, `id`) VALUES
 (1, 5, 1, 1, 1),
-(1, 13, 1, 4, 2),
+(1, 13, 1, 2, 2),
 (1, 16, 1, 5, 3),
 (1, 18, 1, 6, 4);
 
@@ -2335,6 +2335,28 @@ INSERT INTO `t11_actividad` (`id`, `Descripcion`, `Fecha_inicio`, `Fecha_Fin`, `
 (1, 'primera', '2014-02-17', '2014-02-21', 1),
 (2, 'segunda', '2014-02-26', '2014-05-14', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `t12_plantillas`
+--
+
+CREATE TABLE IF NOT EXISTS `t12_plantillas` (
+  `id_plantilla` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) DEFAULT NULL,
+  `descripcion` varchar(120) NOT NULL,
+  `contenido` varchar(500) NOT NULL,
+  PRIMARY KEY (`id_plantilla`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `t12_plantillas`
+--
+
+INSERT INTO `t12_plantillas` (`id_plantilla`, `nombre`, `descripcion`, `contenido`) VALUES
+(1, 'Acta de reunión de la comisión', 'Aspectos resaltantes de los acuerdos y debates', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum,Sed ut perspiciatis unde omnis iste natus error sit vo'),
+(2, 'Acta de asignación de tutor', 'asignacion de tutor a un trabajo de grado', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum,Sed ut perspiciatis unde omnis iste natus error sit vo');
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -2399,8 +2421,6 @@ ALTER TABLE `p05_municipio`
 --
 ALTER TABLE `p06_estado`
   ADD CONSTRAINT `fk_P06_Estado_P07_Pais1` FOREIGN KEY (`P07_id`) REFERENCES `p07_pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-
 
 --
 -- Filtros para la tabla `p11_conocimientos`

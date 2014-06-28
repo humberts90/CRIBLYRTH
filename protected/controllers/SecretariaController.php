@@ -276,4 +276,38 @@ function RandomString($length=10,$uc=TRUE,$n=TRUE,$sc=FALSE)
 
 		$this->render('correo',array('Usuario'=>$tar,'model'=>$model));
 	}
+
+public function actionContenido()
+    {
+        $q = $_POST['store'];
+		
+		
+		$agent = T12Plantillas::model()->findByPK($q);
+		
+		 echo json_encode(array(
+			'descripcion' => $agent->descripcion,
+			'contenido' => $agent->contenido
+			
+			));
+		Yii::app()->end();
+		
+		//$this->render('elaborar_acta',array('agent'=>$agent,));
+        /*$sql = "SELECT * FROM t12_plantillas WHERE id_plantilla=$q";
+        $command = Yii::app()->db->createCommand($sql);
+        $result= $command->queryScalar(); 
+        echo $result;*/
+		
+		
+
+    }
+	public function actionElaborar_acta(){
+	
+		//$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+	
+			
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=T12Plantillas::model()->findAll();
+		
+		$this->render('elaborar_acta',array('Usuario'=>$tar,'model'=>$model));
+	}
 }
