@@ -192,8 +192,7 @@ class EstudianteController extends Controller
 				}	
 				// Para guardar la carta firmada por el tutor en pdf				
 				$estructura=Yii::app()->theme->basePath.'/Cartas_tutores/Tesis/'.$model_1->id;
-				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE
-					
+				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE					
 		            mkdir($estructura,0777,true);//CREAR CARPETA CN TODOS LOS PERMISOS
 		            $path="$estructura/$model_1->Carta_Tutor";//DEFINE LA RUTA DEL DOCUMENTO
 					if($model_1->Carta_Tutor!=null||$model_1->Carta_Tutor!=''){

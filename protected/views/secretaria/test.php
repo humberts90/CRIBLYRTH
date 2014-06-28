@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 echo $this->renderPartial('menu', array('usu'=>$Usuario));
 ?>
 
-<h1> Lista  de tesis </h1>
+<h1> Buscar actas de evaluacion TAP </h1>
 
 
 <?php 
