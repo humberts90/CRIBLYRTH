@@ -288,7 +288,7 @@ class EstudianteController extends Controller
 			$model_5->save();
 			
 
-			$this->redirect(array('index','id'=>$var));
+			$this->redirect(array('index'));
 
 			//---------------------------Cronograma de actividades----------------------------
 
