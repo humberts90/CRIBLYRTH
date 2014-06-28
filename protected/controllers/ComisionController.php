@@ -279,15 +279,16 @@ public function accessRules()
 		$tesis=M03Tesis::model()->findByPk($id);
 		$model=new T07ObservacionTesis;
 		$tes=T01TesisHasUsuario::model()->findAll("M03_id =".$tesis->id);
-		$prof=M01Profesor::model()->findAll();
+		$conotes=T04ConocimientoTesis::model()->findAll("M03_id= ".$tesis->id);
+		$temporal=M03Tesis::model()->findByPk($id);
+		$prof=T08Usuario_has_rol::model()->findAll("P01_id = 3");
 		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Jurado 1'");
 		$tipo2=P02TipoRelacion::model()->find("Descripcion = 'Jurado 2'");
 		$tipo3=P02TipoRelacion::model()->find("Descripcion = 'Jurado Suplente'");
+		$jura1=new T01TesisHasUsuario;
 		
 
-		
-
-		if(isset($_POST['T06Observacion']))
+		if(isset($_POST['T07ObservacionTesis']))
 		{
 				$jurado1=$_REQUEST['j1'];
 				$jurado2=$_REQUEST['j2'];
@@ -295,32 +296,52 @@ public function accessRules()
 				$ju1=M01Profesor::model()->findByPk($jurado1);
 				$ju2=M01Profesor::model()->findByPk($jurado2);
 				$ju3=M01Profesor::model()->findByPk($jurado3);
-			$model->attributes=$_POST['T06Observacion'];
-			$temp=$_POST['T06Observacion']['M03_id'];
+			$model->attributes=$_POST['T07ObservacionTesis'];
+			$temp=$_POST['T07ObservacionTesis']['M03_id'];
 			$model->M03_id=$tesis->id;
 			$model->Fecha=date('Y-m-d');
 
-
+			
 			if($model->save()){
-			$sql="Insert into t01_tesis_has_usuario (id,M03_id,M05_id,P03_id,P02_id) values (NULL,".$tesis->id."," .$prof->Nombre.",'".$prof->Apellido."','".$prof->Correo_UNET."')";
-					$comando = Yii::app() -> db -> createCommand($sql);
-					$comando -> execute(); 
-				foreach ($tes as $value) {
-					$nue=T01TesisHasUsuario::model()->findByPk($value->id);
-					$nue->P03_id=$temp;
-					$nue->save();
+
 				
-				}
+				$sql1="INSERT INTO t01_tesis_has_usuario (id,M03_id,M05_id,P02_id) VALUES (Null,'".$tesis->id."','".$jurado1."','".$tipo1->id."')";
+				$sql2="INSERT INTO t01_tesis_has_usuario (id,M03_id,M05_id,P02_id) VALUES (Null,'".$tesis->id."','".$jurado2."','".$tipo2->id."')";
+				$sql3="INSERT INTO t01_tesis_has_usuario (id,M03_id,M05_id,P02_id) VALUES (Null,'".$tesis->id."','".$jurado3."','".$tipo3->id."')";
+				
+				$comand=Yii::app()->db->createCommand($sql1);
+				$comand->execute();
+
+				$comand=Yii::app()->db->createCommand($sql2);
+				$comand->execute();
+
+				$comand2=Yii::app()->db->createCommand($sql3);
+				$comand2->execute();
+				$tesis=$temporal;
+				$tesis->P03_id=$temp;
+				$tesis->Fecha_Aprobación=date('Y-m-d');
+				if($tesis->save()){
 				echo "<script>alert('Evaluacion realizada con exito');</script>";
 				$this->redirect(array('tesis'));
+
+				}
+
+			
+
+			
+				
+				
 			}
+			
 				
 		}
+
 		$this->render('evalua',array(
 			'Usuario'=>$tar,
 			'tes'=>$tesis,
 			'model'=>$model,
 			'profesor'=>$prof,
+			'conocimiento'=>$conotes,
 			));
 	}
 
