@@ -137,4 +137,15 @@ class SecretariaController extends Controller {
 		}
 
 	}
+	public function actionCorreo(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$model=new M05Usuario;
+		if(isset($_POST['M05Usuario'])){
+			$model->attributes=$_POST['M05Usuario'];
+			$this->correo_e($model->Correo_Electronico,$model->Nombre,$model->Apellido);
+
+		}
+
+		$this->render('correo',array('Usuario'=>$tar,'model'=>$model));
+	}
 }
