@@ -27,5 +27,8 @@ $this->menu=array(
 	array('label'=>'Modulo de noticias', 'url'=>array('comision/noti')),
 	array('label'=>'Evaluar anteproyectos de Tesis', 'url'=>array('comision/tesis')),
 	array('label'=>'Evaluar planes de trabajo de Pasantias', 'url'=>array('comision/pasantias')),
+	array('label'=>'Listado de profesores', 'url'=>array('prof')),
+	array('label'=>'Listado de tesistas', 'url'=>array('tes')),
+	array('label'=>'Listado de pasantes', 'url'=>array('pas')),
 );
 ?>

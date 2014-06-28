@@ -32,7 +32,24 @@
 					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
 						$ruta='admin';
 					
-					}					
+					}
+					if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){
+						$ruta='/profesor/index';
+					
+					}	
+					if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id)){
+						$ruta='/Estudiante/index';
+					
+					}	
+					if(Yii::app()->authManager->checkAccess('Comisión del Tap',Yii::app()->user->id)){
+						$ruta='/comision/index';
+					
+					}	
+					if(Yii::app()->authManager->checkAccess('Secretaria',Yii::app()->user->id)){
+						$ruta='/secretaria/index';
+					
+					}	
+
 
 					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0){
 						$ruta="/site/index";
