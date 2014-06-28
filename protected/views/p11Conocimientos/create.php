@@ -8,12 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Inicio', 'url'=>array('site/admin')),
-	array('label'=>'Lista de Areas de Conomicmiento', 'url'=>array('index')),
-	array('label'=>'Administrar Areas de Conomicmiento', 'url'=>array('admin')),
+	array('label'=>'List P11Conocimientos', 'url'=>array('index')),
+	array('label'=>'Manage P11Conocimientos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Nuevo Conocimiento</h1>
+<h1>Create P11Conocimientos</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
