@@ -1,9 +1,6 @@
 <?php
 class SecretariaController extends Controller {
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
+	
 	public $layout='//layouts/column2';
 
 	/**
@@ -26,16 +23,19 @@ class SecretariaController extends Controller {
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'roles'=>array('Administrador'),
-			),
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array('@'),
-			),
-		
+			   array('allow',  
+						'roles'=>array('Administrador'),
+						'users'=>array('@'),
+				),	
+			
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+					'roles'=>array('Secretaria'),
+					'users'=>array('@'),
+				),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
+		
 		);
 	}
 
@@ -46,7 +46,7 @@ class SecretariaController extends Controller {
 
 
 	public function actionEvalua(){
-		$DosAlumnos = false;
+		
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$modelStatus = P03Status::model()->find("Descripcion = 'Aprobada'");
 		$criteria=new CDbCriteria;		
@@ -56,6 +56,7 @@ class SecretariaController extends Controller {
 	}
 
 	public function actionActaeva($id){
+		$DosAlumnos = false;//
 		$dir = T01TesisHasUsuario::model()->findAll("M03_id =".$id);
 		$tr_j1 = P02TipoRelacion::model()->find("descripcion = 'Jurado 1'");
 		$tr_j2 = P02TipoRelacion::model()->find("descripcion = 'Jurado 2'");
@@ -96,12 +97,12 @@ class SecretariaController extends Controller {
 		 $mPDF1->watermarkTextAlpha = 0.1;
 		 $mPDF1->SetDisplayMode('fullpage');
 		// tiene que tener 5 o 6 variables 
-		$mPDF1->WriteHTML($this->renderPartial('actaEva_Tesis',array(
+		$mPDF1->WriteHTML($this->renderPartial('actasEva_Tesis',array(
 			'Normbre_alumno'=>$alumno->Nombre." ".$alumno->Apellido,
 			'Cedula_alumno' =>$alumno->Cedula,
-			'Titulo_TAP' => $tesis->titulo,
+			'Titulo_TAP' => $tesis->Titulo,
 			'Fecha_presentacion' => $tesis->Fecha_Defensa,
-			'L_academico' => $tesis->Lapso_academico_defensa,
+			'L_academico' => $tesis->Lapso_Academico_defensa,
 			'Nombre_tutor'=>$tutor->Nombre." ".$tutor->Apellido,
 			'Nombre_Jurado_1'=>$jurado1->Nombre." ".$jurado1->Apellido,
 			'Nombre_Jurado_2'=>$jurado2->Nombre." ".$jurado2->Apellido,
@@ -113,7 +114,7 @@ class SecretariaController extends Controller {
 			 $mPDF1 = Yii::app()->ePdf->mpdf('utf-8','A4','','',15,15,35,25,9,9,'P'); 
 			 //Esto lo pueden configurar como quieren, para eso deben de entrar en la web de MPDF para ver todo lo que permite.
 			 $mPDF1->useOnlyCoreFonts = true;
-			 $mPDF1->SetTitle(" Acta Evaluacion ".$alumno);
+			 $mPDF1->SetTitle(" Acta Evaluacion ".$alumno->Nombre." ".$alumno->Apellido);
 			 $mPDF1->SetAuthor("Departamento Ing. Informatica");
 			
 			 $mPDF1->showWatermarkText = true;
@@ -121,12 +122,12 @@ class SecretariaController extends Controller {
 			 $mPDF1->watermarkTextAlpha = 0.1;
 			 $mPDF1->SetDisplayMode('fullpage');
 			// tiene que tener 5 o 6 variables 
-			$mPDF1->WriteHTML($this->renderPartial('actaEva_Tesis',array(
+			$mPDF1->WriteHTML($this->renderPartial('actasEva_Tesis',array(
 			'Normbre_alumno'=>$alumno2->Nombre." ".$alumno2->Apellido,
 			'Cedula_alumno' =>$alumno->Cedula,
-			'Titulo_TAP' => $tesis->titulo,
+			'Titulo_TAP' => $tesis->Titulo,
 			'Fecha_presentacion' => $tesis->Fecha_Defensa,
-			'L_academico' => "20xx-x",
+			'L_academico' => $tesis->Lapso_Academico_defensa,
 			'Nombre_tutor'=>$tutor,
 			'Nombre_Jurado_1'=>$jurado1,
 			'Nombre_Jurado_2'=>$jurado2,

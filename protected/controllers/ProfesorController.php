@@ -24,19 +24,22 @@ class ProfesorController extends Controller{
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'roles'=>array('Administrador'),
-			),
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'users'=>array('@'),
-			),
-		
+			   array('allow',  
+						'roles'=>array('Administrador'),
+						'users'=>array('@'),
+				),	
+			
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+					'roles'=>array('Profesor'),
+					'users'=>array('@'),
+				),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
+		
 		);
 	}
 
@@ -53,18 +56,24 @@ class ProfesorController extends Controller{
 		{
 			$model->attributes=$_POST["M03Tesis"];
 
+			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
+
+			$model->Lapso_Academico_defensa = $_POST["M03Tesis"]["Lapso_Academico_defensa"];
+			$model->P03_id = $modelStatus->id;
+
 			if($model->save())
-			{
-				$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
+			{    
+			
 				$modelRelacion = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
 				
 				$modelAsoc = new T01TesisHasUsuario;
 				$modelAsoc->M05_id = $tar->id;
 				$modelAsoc->M03_id = $model->id;
-				$modelAsoc->P03_id = $modelStatus->id;
 				$modelAsoc->P02_id = $modelRelacion->id;
 
 				$modelAsoc->save();
+
+				$this->render('index',array('Usuario'=>$tar,));
 			}
 
 		}
@@ -86,19 +95,24 @@ class ProfesorController extends Controller{
 		{
 			$model->attributes=$_POST["M04Pasantia"];
 
+			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
+
+			$model->Lapso_Academico_defensa = $_POST["M04Pasantia"]["Lapso_Academico_defensa"];
+			$model->P03_id = $modelStatus->id;
+
 			if($model->save())
 			{
-				$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
 				$modelRelacion = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
 				
 				$modelAsoc = new T02PasantiaHasUsuario;
 				$modelAsoc->M05_id = $tar->id;
 				$modelAsoc->M04_id = $model->id;
-				$modelAsoc->P03_id = $modelStatus->id;
 				$modelAsoc->P02_id = $modelRelacion->id;
 				$modelAsoc->M07_id = $_POST["M07TutorExterno"]["id"]; 				
 
 				$modelAsoc->save();
+
+				$this->render('index',array('Usuario'=>$tar,));
 			}
 
 		}
@@ -158,12 +172,50 @@ class ProfesorController extends Controller{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$model=T01TesisHasUsuario::model()->findAll('M05_id = '.$tar->id);
 
-		
+		$criteria = new CDbCriteria();
+		$criteria->select = array("*");
+		$criteria->condition = "M05_id = :id";
+		$criteria->params = array(':id'=>$tar->id);
+		$cuenta = count($criteria);
+		$cuenta =  T01TesisHasUsuario::model()->count($criteria);
+		//pagination
+		$pages = new CPagination($cuenta);
+		$pages->setPageSize(5);
+		$pages->applyLimit($criteria);
+		$modell = T01TesisHasUsuario::model()->findAll($criteria);
+		//$model = new CArrayDataProvider($modell);		
 		
 
-		$this->render('list_1',array(
+		$this->render('list_t',array(
 			'Usuario'=>$tar,			 
-			 'model'=>$model,
+			 'model'=>$modell,
+			 'pages'=>$pages,
+
+			));
+	}
+	public function actionPasantias(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=T02PasantiaHasUsuario::model()->findAll('M05_id = '.$tar->id);
+
+		$criteria = new CDbCriteria();
+		$criteria->select = array("*");
+		$criteria->condition = "M05_id = :id";
+		$criteria->params = array(':id'=>$tar->id);
+		$cuenta = count($criteria);
+		$cuenta =  T02PasantiaHasUsuario::model()->count($criteria);
+		//pagination
+		$pages = new CPagination($cuenta);
+		$pages->setPageSize(5);
+		$pages->applyLimit($criteria);
+		$modell = T02PasantiaHasUsuario::model()->findAll($criteria);
+		//$model = new CArrayDataProvider($modell);		
+		
+
+		$this->render('list_p',array(
+			'Usuario'=>$tar,			 
+			 'model'=>$modell,
+			 'pages'=>$pages,
+			 
 			));
 	}
 	public function actionTesdeta($id){
@@ -173,6 +225,17 @@ class ProfesorController extends Controller{
 		$this->render('test',array(
 			'Usuario'=>$tar,
 			'model'=>$tesis,
+			'has1'=>$has1,
+			));
+	}
+
+	public function actionPasdeta($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$Pasantia=M04Pasantia::model()->findByPk($id);
+		$has1=T02PasantiaHasUsuario::model()->findAll('M04_id = '.$Pasantia->id);
+		$this->render('tesp',array(
+			'Usuario'=>$tar,
+			'model'=>$Pasantia,
 			'has1'=>$has1,
 			));
 	}
