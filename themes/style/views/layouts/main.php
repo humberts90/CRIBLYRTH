@@ -27,7 +27,9 @@
 				</div>
 		
 				<div class="menu">
-				<?php 				
+				<?php 		
+
+					$ruta="/site/index";		
 
 					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
 						$ruta='admin';
@@ -51,13 +53,12 @@
 					}	
 
 
-					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0){
+					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0&&Yii::app()->user->isGuest){
 						$ruta="/site/index";
-					}
+					}				
+					
 
-					else{
-						$ruta='index';
-					}
+					
 
 					$this->widget('zii.widgets.CMenu',array(
 					'encodeLabel'=>false,
