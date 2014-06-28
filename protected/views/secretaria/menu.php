@@ -29,6 +29,7 @@ $this->menu=array(
 	array('label'=>'Buscar Acta de Evaluación Tesis', 'url'=>array('evaluatesis')),
 	array('label'=>'Buscar Acta de Evaluación Pasantía', 'url'=>array('evaluapasantia')),	
 	array('label'=>'Registrar TAP culminado', 'url'=>array('viejas_tap')),
+	array('label'=>'Elaborar Acta', 'url'=>array('elaborar_acta'))
 
 );
 ?>
