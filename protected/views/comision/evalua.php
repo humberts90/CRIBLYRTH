@@ -92,7 +92,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 				<td>
 				<select name="j3">
 					<option selected> </option>
-					<?php 
+					<?php //pro
 						foreach ($profesor as  $val) {
 							$value=M05Usuario::model()->findByPk($val->M05_id);
 						echo '<option value='.$value->id.'>'.$value->Nombre.' '.$value->Apellido.'</option>';
