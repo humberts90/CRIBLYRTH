@@ -21,7 +21,7 @@ class EstudianteController extends Controller
 	}
 
 	/**
-	 * Specifies the access control rules.
+	 * Specifies the access control rules.hakghkfgkfvgskgksgfksgk
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
