@@ -54,15 +54,6 @@ class SecretariaController extends Controller {
 		$dataProvider= new CActiveDataProvider(M03Tesis::model(), array('criteria'=>$criteria,));
 		$this->render('test',array('Usuario'=>$tar,'dataProvider'=>$dataProvider));
 	}
-	public function actionEvaluapasantia(){
-		
-		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		$modelStatus = P03Status::model()->find("Descripcion = 'Aprobada'");
-		$criteria=new CDbCriteria;		
-		$criteria->condition='P03_id= '.$modelStatus->id;
-		$dataProvider= new CActiveDataProvider(M03Tesis::model(), array('criteria'=>$criteria,));
-		$this->render('test',array('Usuario'=>$tar,'dataProvider'=>$dataProvider));
-	}
 
 	public function actionActaevatesis($idEntrante){
 		list($id,$id_alum) = explode("-", $idEntrante);
@@ -92,20 +83,18 @@ class SecretariaController extends Controller {
 			} 
 
 		}
-		 
-			
-			// convertir a pdf
+		// convertir a pdf
 
-		 $mPDF1 = Yii::app()->ePdf->mpdf('utf-8','Letter-L','','',12,12,10,10,9,9,'L'); 
-		 //Esto lo pueden configurar como quieren, para eso deben de entrar en la web de MPDF para ver todo lo que permite.
-		 $mPDF1->useOnlyCoreFonts = true;
-		 $mPDF1->SetTitle("Acta Evaluacion ".$alumno->Nombre." ".$alumno->Apellido);
-		 $mPDF1->SetAuthor("Departamento Ing. Informatica");
-		
-		 $mPDF1->showWatermarkText = true;
-		 $mPDF1->watermark_font = 'DejaVuSansCondensed';
-		 $mPDF1->watermarkTextAlpha = 0.1;
-		 $mPDF1->SetDisplayMode('fullpage');
+		$mPDF1 = Yii::app()->ePdf->mpdf('utf-8','Letter-L','','',12,12,10,10,9,9,'L'); 
+		//Esto lo pueden configurar como quieren, para eso deben de entrar en la web de MPDF para ver todo lo que permite.
+		$mPDF1->useOnlyCoreFonts = true;
+		$mPDF1->SetTitle("Acta Evaluacion ".$alumno->Nombre." ".$alumno->Apellido);
+		$mPDF1->SetAuthor("Departamento Ing. Informatica");
+
+		$mPDF1->showWatermarkText = true;
+		$mPDF1->watermark_font = 'DejaVuSansCondensed';
+		$mPDF1->watermarkTextAlpha = 0.1;
+		$mPDF1->SetDisplayMode('fullpage');
 		// tiene que tener 5 o 6 variables 
 		 echo "entro 1";
 		$mPDF1->WriteHTML($this->renderPartial('actasEva_Tesis',array(
@@ -122,6 +111,74 @@ class SecretariaController extends Controller {
 		$mPDF1->Output("Acta Evaluacion ".$alumno->Nombre." ".$alumno->Apellido,'D');  //Nombre del pdf y parámetro para ver pdf o descargarlo directamente.
 		exit;
 
+	}
+	public function actionEvaluapasantia(){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$modelStatus = P03Status::model()->find("Descripcion = 'Aprobada'");
+		$criteria=new CDbCriteria;		
+		$criteria->condition='P03_id= '.$modelStatus->id;
+		$dataProvider= new CActiveDataProvider(M04Pasantia::model(), array('criteria'=>$criteria,));
+		$this->render('pasant',array('Usuario'=>$tar,'dataProvider'=>$dataProvider));
+	}
+
+	public function actionEvapasantia($id){
+	
+		$dir = T02PasantiaHasUsuario::model()->findAll("M04_id =".$id);
+		$dir1 = T02PasantiaHasUsuario::model()->find("M04_id =".$id);
+		$tr_j1 = P02TipoRelacion::model()->find("descripcion = 'Jurado 1'");
+		$tr_j2 = P02TipoRelacion::model()->find("descripcion = 'Jurado 2'");
+		$tr_js = P02TipoRelacion::model()->find("descripcion = 'Jurado Suplente'");
+		$tr_ta = P02TipoRelacion::model()->find("descripcion = 'Tutor'");
+		$tr_a = P02TipoRelacion::model()->find("descripcion = 'Pasante'");
+		$pasantia = M04Pasantia::model()->find("id = ".$id);
+		$empresa = M06Empresa::model()->find("id = ".$pasantia->M06_id);
+		$TutorExt = M07TutorExterno::model()->findByPk($dir1->M07_id);
+		foreach ($dir as $value) {
+			if ($value->P02_id == $tr_a->id) {
+			$alumno = M05Usuario::model()->find("id =".$value->M05_id);	
+			echo "Jurado 1: ".$alumno->Nombre."<br />";
+			} elseif($value->P02_id == $tr_j1->id){
+			$jurado1=M05Usuario::model()->find("id =".$value->M05_id);
+			echo "Jurado 1: ".$jurado1->Nombre."<br />";
+			} elseif ($value->P02_id == $tr_j2->id) {
+			$jurado2 = M05Usuario::model()->find("id =".$value->M05_id);
+			echo "Jurado 2: ".$jurado2->Nombre."<br />";
+			} elseif ($value->P02_id == $tr_js->id) {
+			$juradoS = M05Usuario::model()->find("id =".$value->M05_id);
+			echo "Jurado Suplente: ".$juradoS->Nombre."<br />";
+			} elseif ($value->P02_id == $tr_ta->id) {
+			$tutor = M05Usuario::model()->find("id =".$value->M05_id);
+			echo "tutor: ".$tutor->Nombre."<br />";
+			} 
+		}
+		// convertir a pdf
+		$mPDF1 = Yii::app()->ePdf->mpdf('utf-8','Letter-L','','',12,12,10,10,9,9,'L'); 
+		//Esto lo pueden configurar como quieren, para eso deben de entrar en la web de MPDF para ver todo lo que permite.
+		$mPDF1->useOnlyCoreFonts = true;
+		$mPDF1->SetTitle("Acta Evaluacion ".$alumno->Nombre." ".$alumno->Apellido);
+		$mPDF1->SetAuthor("Departamento Ing. Informatica");
+		$mPDF1->showWatermarkText = true;
+		$mPDF1->watermark_font = 'DejaVuSansCondensed';
+		$mPDF1->watermarkTextAlpha = 0.1;
+		$mPDF1->SetDisplayMode('fullpage');
+		// tiene que tener 5 o 6 variables 
+		echo "entro 1";
+		$mPDF1->WriteHTML($this->renderPartial('actasEva_Pasantia',array(
+		'Nombre_alumno'=>$alumno->Nombre." ".$alumno->Apellido,
+		'Cedula_alumno' =>$alumno->Cedula,
+		'Titulo_TAP' => $pasantia->Titulo,
+		'Nombre_empresa' => $empresa->Razon_Social,
+		'Nombre_TutorE' => $TutorExt->Nombre." ".$TutorExt->Apellido,
+		'Fecha_presentacion' => $pasantia->Fecha_Defensa,
+		'L_academico' => $pasantia->Lapso_Academico_defensa,
+		'Nombre_tutor'=>$tutor->Nombre." ".$tutor->Apellido,
+		'Nombre_Jurado_1'=>$jurado1->Nombre." ".$jurado1->Apellido,
+		'Nombre_Jurado_2'=>$jurado2->Nombre." ".$jurado2->Apellido,
+		'Nombre_Jurado_S'=>$juradoS->Nombre." ".$juradoS->Apellido,
+		), true));
+		$mPDF1->Output("Acta Evaluacion ".$alumno->Nombre." ".$alumno->Apellido,'D');  //Nombre del pdf y parámetro para ver pdf o descargarlo directamente.
+		exit;
 	}
 	
 	public function Actionviejas_tap()
