@@ -39,7 +39,7 @@ class SecretariaController extends Controller {
 		);
 	}
 
-	public function actionIndex(){
+	public function actionIndex(){  // esta paja es para que haga pull
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$this->render('index',array('Usuario'=>$tar,));
 	}
