@@ -47,6 +47,23 @@ public function accessRules()
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$this->render('index',array('Usuario'=>$tar,));
 	}
+	public function actionCono(){
+	  $tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=new T06ConocimientoProfesor;
+		if(isset($_POST['T06ConocimientoProfesor']))
+		{
+			$model->attributes=$_POST['T06ConocimientoProfesor'];
+			$cons=M01Profesor::model()->find("Cedula=".$tar->Cedula);
+			$model->M01_d=$cons->id;
+			if($model->save()){
+			
+			}
+				
+		}
+		
+		$this->render('cprof',array('Usuario'=>$tar,'model'=>$model,));
+	}
+	
 	public function actionOferta_t()
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
