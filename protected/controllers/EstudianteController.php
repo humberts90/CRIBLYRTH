@@ -21,7 +21,7 @@ class EstudianteController extends Controller
 	}
 
 	/**
-	 * Specifies the access control rules.
+	 * Specifies the access control rules.hakghkfgkfvgskgksgfksgk
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
@@ -134,6 +134,10 @@ class EstudianteController extends Controller
 		$model_2=new T01TesisHasUsuario;
 		$model_3=new T01TesisHasUsuario;
 		$model_4=new M05Usuario;
+		$model_5=new T04ConocimientoTesis;
+		
+		
+		
 
                 
 		//
@@ -163,6 +167,12 @@ class EstudianteController extends Controller
 				$model_2->P02_id=$tipo1->id;
 				
 				$model_2->save();
+				// repetir para varios conocimientos
+				
+				$model_5->P11_id=$_POST['M03Tesis']['cono'];
+				$model_5->M03_id= $model_1->id;
+				$model_5->save();
+				
 
 				// Para subir la relacion con el profesor
 				$prof=M01Profesor::model()->findByPk($_POST['M03Tesis']['tutor']);
@@ -194,8 +204,7 @@ class EstudianteController extends Controller
 				}	
 				// Para guardar la carta firmada por el tutor en pdf				
 				$estructura=Yii::app()->theme->basePath.'/Cartas_tutores/Tesis/'.$model_1->id;
-				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE
-					
+				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE					
 		            mkdir($estructura,0777,true);//CREAR CARPETA CN TODOS LOS PERMISOS
 		            $path="$estructura/$model_1->Carta_Tutor";//DEFINE LA RUTA DEL DOCUMENTO
 					if($model_1->Carta_Tutor!=null||$model_1->Carta_Tutor!=''){
@@ -222,7 +231,7 @@ class EstudianteController extends Controller
 			$this->redirect(array('index'));
 		}
 		else{
-			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4));
+			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5));
 		}
 
 		
@@ -241,7 +250,8 @@ class EstudianteController extends Controller
 		$model_2=new M04Pasantia;
 		$model_3=new T11Actividad;
 		$model_4=new M07TutorExterno;
-		$model_5=new T02PasantiaHasUsuario;		
+		$model_5=new T02PasantiaHasUsuario;	
+		$model_6=new T05ConocimientoPasantias;		
 		if(isset($_POST['M04Pasantia']))
 		{	
 
@@ -262,7 +272,8 @@ class EstudianteController extends Controller
 				}				
 			}
 			
-			
+				
+				
 			//--------------------------Tutor Externo---------------------------------------
 			$model_4->attributes=$_POST['M07TutorExterno']; //Datos del tutor externo
 
@@ -290,6 +301,10 @@ class EstudianteController extends Controller
 			//---------------------------Pasantias--------------
 			$model_2->P03_id=$estado->id;
 			$model_2->save();
+			
+			$model_6->P11_id=$_POST['M04Pasantia']['cono'];
+				$model_6->M04_id= $model_2->id;
+				$model_6->save();
 				
 			
 			//---------------------------Pasantias has Usuario---------------------------------

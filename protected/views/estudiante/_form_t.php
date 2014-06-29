@@ -21,7 +21,11 @@ $("#guardar").click(function(){
                   
 					<?php echo $form->textField($model_1,'Titulo',array('size'=>45,'maxlength'=>45)); ?>
 					<?php echo $form->error($model_1,'Titulo'); ?>
-                    <br />              
+                    <br />      
+						<label>Seleccione Conocimiento</label> 
+					<?php echo $form->dropDownList($model_1,'cono',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimiento','class'=>'form-control')); ?>
+					<?php echo $form->error($model_1,'cono'); ?>
+					<br />					
                  	<label>¿ En Pareja ?</label> 
 					<input type="radio" name="par" value="1"><br>
 					<br />

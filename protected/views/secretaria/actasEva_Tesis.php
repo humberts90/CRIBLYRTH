@@ -9,7 +9,7 @@ $html = '
 <!--
 body {
   font: "Times New Roman",Times,FreeSerif,serif;
-  font-size:12pt;
+  font-size:11pt;
   margin: 0;
   padding: 0;
   color: #000;
@@ -62,7 +62,7 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
 
 /* ~~ El pie de página ~~ */
 .footer {
-  padding: 10px 0;
+  padding: 5px 0;
   font-size:8pt;
 }
 
@@ -72,19 +72,17 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
 
 <div class="container">
   <div class="header">
-    <a href="#"><img src="'.Yii::app()->theme->baseUrl.'/images/Logotipo_Unet_republica_bolivariana.jpg" alt="Insertar logotipo aquí" name="Insert_logo" width="233" height="100" id="Insert_logo" style="background: #C6D580;"/></a>
+    <a href="#"><img src="'.Yii::app()->theme->baseUrl.'/images/Logotipo_Unet_republica_bolivariana.jpg" alt="Insertar logotipo aquí" name="Insert_logo" width="200" height="90" id="Insert_logo" style="background: #C6D580;"/></a>
+    <p align="right">Departamento de Ingeniería Informática <br>Trabajo de Aplicación Profesional</p>
   </div>
   
   <div class="content">
   
-    <p align="right">Departamento de Ingeniería Informática</p>
-    <p align="right">Trabajo de Aplicación Profesional</p>
+  
   
   <h1>Evaluación del Trabajo Especial de Grado</h1> 
     <p align="center">(Incluye elaboración de equipo, dispositivos y/o software)</p>
     
-    <br></br>
-
     <table width="100%" border="1" bordercolor="#000000" rules="all">
       <tr>
         <th  colspan="2" align="center" bgcolor="#999999">Datos del Alumno</th>
@@ -93,15 +91,14 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
       <tr>
         <td align="left">Nombres y Apellidos:'.$Nombre_alumno.'</td>
         <td align="left" width="150px">C.I: '.$Cedula_alumno.'</td>
-        <td align="left" width="120px">Fecha: '.$Fecha_presentacion.'</td>
+        <td align="left" width="150px">Fecha: '.$Fecha_presentacion.'</td>
         <td align="left" width="220px">Lapso Académico: '.$L_academico.'</td>
       </tr>
     </table>
     
-    <br></br>
+    <br>
     <p>Título: <strong>'.$Titulo_TAP.'</strong></p>
     
-    <br></br>
     
     <table width="100%" border="1" bordercolor="#000000" rules="all">
       <tr>
@@ -119,9 +116,9 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
       </tr>
       <tr>
         <td></td>
-        <td align="center">Tutor (1)</td>
-        <td align="center">Jurado 1 (2)</td>
-        <td align="center">Jurado 2 (3)</td>
+        <td align="center" width="80px">Tutor (1)</td>
+        <td align="center" width="100px">Jurado 1 (2)</td>
+        <td align="center" width="100px">Jurado 2 (3)</td>
         <td>Promedio [(1) + (2) + (3) ] /3</td>
         <td align="center" bgcolor="#999999"></td>
         <td align="center" bgcolor="#999999"></td>
@@ -159,7 +156,10 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
       </tr>
     </table>
     
-    <br></br>
+    <br>
+    <br>
+    <br>
+    <br>
     <table width="100%" border="1" bordercolor="#000000" rules="all">
       <tr>
         <th scope="col"  align="left">Prof.(a) '.$Nombre_tutor.'</th>
@@ -176,9 +176,9 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
     <!-- end .content --></div>
   <div class="footer">
     <HR width=100% align="center"> 
-    <p align="center">Edificio Administrativo: Avda. Universidad - Paramillo, Teléfono: 530422,  Apartado: 436 , San Cristóbal, Estado Táchira.</p>
-    <p align="center">Oficina de Enlace: Parque Central Edificio Catuche. Nivel de Oficinas 1 – Oficinas 111 – 112.</p>
-    <p align="center">Teléfono: 577-12-16 – Fax: 577-00-80 Caracas – Distrito Federal, Venezuela.</p>
+    <p align="center">Edificio Administrativo: Avda. Universidad - Paramillo, Teléfono: 530422,  Apartado: 436 , San Cristóbal, Estado Táchira.
+    <br>Oficina de Enlace: Parque Central Edificio Catuche. Nivel de Oficinas 1 – Oficinas 111 – 112.
+    <br>Teléfono: 577-12-16 – Fax: 577-00-80 Caracas – Distrito Federal, Venezuela.</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>
