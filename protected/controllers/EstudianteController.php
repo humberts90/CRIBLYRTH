@@ -135,8 +135,20 @@ class EstudianteController extends Controller
 		$model_3=new T01TesisHasUsuario;
 		$model_4=new M05Usuario;
 
-
+                
+		//
+                
 		if(isset($_POST['M03Tesis'])){
+                    
+                    $x = $_POST['M03Tesis']['P03_id'];
+                 
+                
+                 if($x=="1"){                   
+                    $estado=P03Status::model()->find("Descripcion = 'Subiendo'");
+                }else{                  
+                    $estado=P03Status::model()->find("Descripcion = 'Sin revisar'");
+                }
+                
 			$model_1->attributes=$_POST['M03Tesis'];
 			$model_1->Carta_Tutor=CUploadedFile::getInstance($model_1,'Carta_Tutor');
 			$model_1->P03_id=$estado->id;
@@ -196,7 +208,7 @@ class EstudianteController extends Controller
 		                $model_1->Carta_Tutor->saveAs($path);
 		            }	                 	
 		        }
-		        $this->redirect(array('index'));
+		       $this->redirect(array('index'));
 
 			}
 			
