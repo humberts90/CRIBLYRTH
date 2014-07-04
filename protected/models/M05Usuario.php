@@ -167,4 +167,12 @@ class M05Usuario extends CActiveRecord
 	{
 		return uniqid('',true);
 	}
+	public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
+	}
 }

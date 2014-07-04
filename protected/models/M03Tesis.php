@@ -210,5 +210,14 @@ class M03Tesis extends CActiveRecord
 		));
 
 	}
+	//---------------------------------------------------------------------------------
+		public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
+	}
 
 }

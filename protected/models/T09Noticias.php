@@ -58,7 +58,8 @@ class T09Noticias extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
+		return array(	//--------------------------------------------------------
+		
 			'm05' => array(self::BELONGS_TO, 'M05Usuario', 'M05_id'),
 		);
 	}
@@ -99,5 +100,14 @@ class T09Noticias extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+		//--------------------------------------------------------
+		public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
 	}
 }

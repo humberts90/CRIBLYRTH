@@ -144,4 +144,14 @@ class M06Empresa extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	//--------------------------------------------------------------
+	public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
+	}
 }

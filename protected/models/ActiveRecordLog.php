@@ -1,23 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "p08_categoria".
+ * This is the model class for table "ActiveRecordLog".
  *
- * The followings are the available columns in table 'p08_categoria':
- * @property integer $id
- * @property string $Descripcion
- *
- * The followings are the available model relations:
- * @property M06Empresa[] $m06Empresas
+ * The followings are the available columns in table 'ActiveRecordLog':
+ * @property string $id
+ * @property string $description
+ * @property string $action
+ * @property string $model
+ * @property string $idModel
+ * @property string $field
+ * @property string $creationdate
+ * @property string $userid
  */
-class P08Categoria extends CActiveRecord
+class ActiveRecordLog extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'p08_categoria';
+		return 'ActiveRecordLog';
 	}
 
 	/**
@@ -28,11 +31,14 @@ class P08Categoria extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Descripcion', 'required'),
-			array('Descripcion', 'length', 'max'=>45),
+			array('creationdate', 'required'),
+			array('description', 'length', 'max'=>255),
+			array('action', 'length', 'max'=>20),
+			array('model, field, userid', 'length', 'max'=>45),
+			array('idModel', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, Descripcion', 'safe', 'on'=>'search'),
+			array('id, description, action, model, idModel, field, creationdate, userid', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -44,7 +50,6 @@ class P08Categoria extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'm06Empresas' => array(self::HAS_MANY, 'M06Empresa', 'P08_id'),
 		);
 	}
 
@@ -55,7 +60,13 @@ class P08Categoria extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'Descripcion' => 'Descripcion',
+			'description' => 'Description',
+			'action' => 'Action',
+			'model' => 'Model',
+			'idModel' => 'Id Model',
+			'field' => 'Field',
+			'creationdate' => 'Creationdate',
+			'userid' => 'Userid',
 		);
 	}
 
@@ -77,8 +88,14 @@ class P08Categoria extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('Descripcion',$this->Descripcion,true);
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('action',$this->action,true);
+		$criteria->compare('model',$this->model,true);
+		$criteria->compare('idModel',$this->idModel,true);
+		$criteria->compare('field',$this->field,true);
+		$criteria->compare('creationdate',$this->creationdate,true);
+		$criteria->compare('userid',$this->userid,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -89,19 +106,10 @@ class P08Categoria extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return P08Categoria the static model class
+	 * @return ActiveRecordLog the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-		//--------------------------------------------------------
-		public function behaviors()
-	{
-	    return array(
-	        // Classname => path to Class
-	        'ActiveRecordLogableBehavior'=>
-	            'application.behaviors.ActiveRecordLogableBehavior',
-	    );
 	}
 }

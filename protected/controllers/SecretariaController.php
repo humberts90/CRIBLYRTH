@@ -96,7 +96,7 @@ class SecretariaController extends Controller {
 		$mPDF1->watermarkTextAlpha = 0.1;
 		$mPDF1->SetDisplayMode('fullpage');
 		// tiene que tener 5 o 6 variables 
-		 echo "entro 1";
+		 
 		$mPDF1->WriteHTML($this->renderPartial('actasEva_Tesis',array(
 			'Nombre_alumno'=>$alumno->Nombre." ".$alumno->Apellido,
 			'Cedula_alumno' =>$alumno->Cedula,
@@ -163,7 +163,7 @@ class SecretariaController extends Controller {
 		$mPDF1->watermarkTextAlpha = 0.1;
 		$mPDF1->SetDisplayMode('fullpage');
 		// tiene que tener 5 o 6 variables 
-		echo "entro 1";
+		
 		$mPDF1->WriteHTML($this->renderPartial('actasEva_Pasantia',array(
 		'Nombre_alumno'=>$alumno->Nombre." ".$alumno->Apellido,
 		'Cedula_alumno' =>$alumno->Cedula,
