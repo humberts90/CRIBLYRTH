@@ -30,6 +30,7 @@ class M05Usuario extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $sta;
 	public function tableName()
 	{
 		return 'm05_usuario';

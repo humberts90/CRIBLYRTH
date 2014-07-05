@@ -399,15 +399,36 @@ class SecretariaController extends Controller {
         }
 	
 	public function actionCorreo(){
-		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$role=P01Rol::model()->findAllByPk(array(4,3,6));	
 		$model=new M05Usuario;
 		if(isset($_POST['M05Usuario'])){
 			$model->attributes=$_POST['M05Usuario'];
-			$this->correo_e($model->Correo_Electronico,$model->Nombre,$model->Apellido);
+
+			if($_POST['sta']){
+				$ree=T08UsuarioHasRol::model()->findAll("P01_id = ".$_POST['sta']);
+				
+				foreach ($ree as $key ) {
+					$usu=M05Usuario::model()->findByPK($key->M05_id);
+					$this->correo_e($usu->Correo_Electronico,$model->Nombre,$model->Apellido);
+					
+				}
+				
+				$this->redirect(array('index'));
+
+			}
+			else {
+				
+				$this->correo_e($_POST['Correo_Electronico'],$model->Nombre,$model->Apellido);
+				$this->redirect(array('index'));
+			}
+			die();
+
+			
 
 		}
 
-		$this->render('correo',array('Usuario'=>$tar,'model'=>$model));
+		$this->render('correo',array('Usuario'=>$tar,'model'=>$model,'role'=>$role));
 	}
 
 public function actionContenido()
