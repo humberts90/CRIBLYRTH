@@ -113,19 +113,18 @@ class M05UsuarioController extends Controller
 		if(isset($_POST['M05Usuario']))
 		{
 
-		if(count($asocia)>1){
+			
+
+		
 				foreach ($asocia as $tem) {
 					$auth->revoke($tem->p01->nombre,$model->Usuario);
 					$tem->delete();
 				}
-		}
-		else{
-			$auth->revoke($asocia->p01->nombre,$model->Usuario);	
-		}
+		
 
 
 
-
+		
 
 			$model->attributes=$_POST['M05Usuario'];
 			$contrasena=$_POST['M05Usuario']['Clave'];
@@ -150,7 +149,7 @@ class M05UsuarioController extends Controller
 						$auth->assign($nombre->nombre,$model->Usuario);
 					}
 				}
-			
+				
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}

@@ -68,7 +68,7 @@ class M03Tesis extends CActiveRecord
 		return array(
 			array('P03_id', 'required'),
 			array('P03_id, M06_id', 'numerical', 'integerOnly'=>true),
-			array('Titulo', 'length', 'max'=>45),
+			array('Titulo', 'length', 'max'=>255),
 			array('Carta_Tutor', 'length', 'max'=>255),
 			array('Introduccion, Planteamiento_Problema, Objetivo_General, Objetivo_especifico, Justificacion_Importancia, Alcance_Delimitaciones, Antecedentes, Bases_Teoricas, Bases_Legales, Definicion_Terminos, Enfoque_Investigacion, Tipo_Nivel_Invesstigacion, Diseno_Investigacion, Poblacion_Muestra, Tecnicas_Recoleccion_Datos, Metodologias, Referencias, Fecha_Inscripcion, Fecha_Aprobación, Fecha_Defensa', 'safe'),
 			// The following rule is used by search().

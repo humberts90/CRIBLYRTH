@@ -116,6 +116,7 @@ class M07TutorExterno extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -130,12 +131,5 @@ class M07TutorExterno extends CActiveRecord
 
 	//-----------------------------------------------------------------------------------
 
-		public function behaviors()
-	{
-	    return array(
-	        // Classname => path to Class
-	        'ActiveRecordLogableBehavior'=>
-	            'application.behaviors.ActiveRecordLogableBehavior',
-	    );
-	}
+
 }

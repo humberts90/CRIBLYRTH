@@ -23,9 +23,7 @@
 	<?php echo CHtml::encode($data->Usuario); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Clave')); ?>:</b>
-	<?php echo CHtml::encode($data->Clave); ?>
-	<br />
+	
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Telefono')); ?>:</b>
 	<?php echo CHtml::encode($data->Telefono); ?>

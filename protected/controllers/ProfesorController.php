@@ -45,7 +45,26 @@ public function accessRules()
 
 	public function actionIndex(){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		$this->render('index',array('Usuario'=>$tar,));
+
+		//-----------------Busqueda de tesis del profesor-------------------------------
+
+			$search_values=M03Tesis::model()->findAll("P03_id = 1");
+			
+			$criteria=new CDbCriteria;
+			
+			 
+			
+			$criteria->condition="M05_id=".$tar->id." AND P02_id= 2";
+
+			foreach($search_values as $txt){ 
+				    $criteria->compare('M03_id',$txt->id,true,'OR');
+				}
+			$criteria->limit="3";
+			$dataProvider= new CActiveDataProvider(T01TesisHasUsuario::model(), array('criteria'=>$criteria,));
+
+		//-----------------------------------------------------------------------------
+
+		$this->render('index',array('Usuario'=>$tar,'dataProvider'=>$dataProvider));
 	}
 	public function actionCono(){
 	  $tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
