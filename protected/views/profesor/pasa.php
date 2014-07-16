@@ -1,4 +1,4 @@
-<?php $auto=T01TesisHasUsuario::model()->findAll("M03_id= ".$data['ID']." AND P02_id = 1");?>
+<?php $auto=T02PasantiaHasUsuario::model()->findAll("M04_id= ".$data['ID']." AND P02_id = 7");?>
 
 <tr>
 	<td width="25%"><?php echo $data['Titulo']; ?></td>
@@ -16,8 +16,8 @@
 	</table>
 	</td>
 	<td><?php
-		$p=P03Status::model()->findByPk($data['P03']);
-	echo $p->Descripcion; ?></td>
+		$p=M07TutorExterno::model()->findByPk($data['M07']);
+	echo $p->Nombre." ".$p->Apellido; ?></td>
 	<td>
 	<table border="0">
 	
