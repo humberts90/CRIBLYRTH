@@ -35,6 +35,6 @@
 	</tr>
 	</table>
 	</td>
-	<td> <?php echo CHtml::link(CHtml::encode("Detalles"), array('tesdeta', 'id'=>$data['ID'])); ?></td>
+	<td> <?php echo CHtml::link(CHtml::encode("Detalles"), array('pasdeta', 'id'=>$data['ID'])); ?></td>
 
 </tr>
