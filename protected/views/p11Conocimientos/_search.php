@@ -11,17 +11,19 @@
 	'method'=>'get',
 )); ?>
 
-
+	<div class="row">
+		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'Nombre'); ?>
 		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
-		<div class="row">
-		<?php echo $form->labelEx($model,'Area de Conocimiento'); ?>
-		<?php echo $form->dropDownList($model,'P10_id',CHtml::listData(P10AreasConomicmiento::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Area de Conocimiento','class'=>'form-control')); ?>
-		<?php echo $form->error($model,'P10_id'); ?>
+	<div class="row">
+		<?php echo $form->label($model,'P09_id'); ?>
+		<?php echo $form->textField($model,'P09_id'); ?>
 	</div>
 
 	<div class="row">
@@ -30,7 +32,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Buscar'); ?>
+		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

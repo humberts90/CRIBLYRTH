@@ -35,6 +35,7 @@ class M04Pasantia extends CActiveRecord
 	 * @return M04Pasantia the static model class
 	 */
 	
+	public  $temp,$cono;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -135,5 +136,15 @@ class M04Pasantia extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	//---------------------------------------------------
+		public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
 	}
 }

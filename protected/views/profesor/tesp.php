@@ -29,4 +29,51 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 </br>
 </br>
 
+<b><?php echo CHtml::encode($model->getAttributeLabel('Titulo')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Titulo); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Planteamiento_Problema')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Planteamiento_Problema); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Descripcion_Trabajo')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Descripcion_Trabajo); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo_General')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Objetivo_General); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo_Especifico')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Objetivo_Especifico); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Antecedentes')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Antecedentes); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Metodologia')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Metodologia); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Productos_Desarrollo')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Productos_Desarrollo); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha_Inscripcion')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Fecha_Inscripcion); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha_Defensa')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Fecha_Defensa); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha_Aprobacion')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Fecha_Aprobacion); ?></p>
+	<br />
+
+<b><?php echo CHtml::encode($model->getAttributeLabel('Lapso_Academico_defensa')); ?>:</b>
+	<p><?php echo CHtml::encode($model->Lapso_Academico_defensa); ?></p>
+	<br />
 

@@ -1,6 +1,6 @@
 <?php
 
-class P10AreasConomicmientoController extends Controller
+class T07ObservacionTesisController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -26,10 +26,18 @@ class P10AreasConomicmientoController extends Controller
 	 */
 	public function accessRules()
 	{
-		return array(		
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'roles'=>array('Administrador'),
-					'users'=>array('@'),
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -54,14 +62,14 @@ class P10AreasConomicmientoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new P10AreasConomicmiento;
+		$model=new T07ObservacionTesis;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['P10AreasConomicmiento']))
+		if(isset($_POST['T07ObservacionTesis']))
 		{
-			$model->attributes=$_POST['P10AreasConomicmiento'];
+			$model->attributes=$_POST['T07ObservacionTesis'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -83,9 +91,9 @@ class P10AreasConomicmientoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['P10AreasConomicmiento']))
+		if(isset($_POST['T07ObservacionTesis']))
 		{
-			$model->attributes=$_POST['P10AreasConomicmiento'];
+			$model->attributes=$_POST['T07ObservacionTesis'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -114,7 +122,7 @@ class P10AreasConomicmientoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('P10AreasConomicmiento');
+		$dataProvider=new CActiveDataProvider('T07ObservacionTesis');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -125,10 +133,10 @@ class P10AreasConomicmientoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new P10AreasConomicmiento('search');
+		$model=new T07ObservacionTesis('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['P10AreasConomicmiento']))
-			$model->attributes=$_GET['P10AreasConomicmiento'];
+		if(isset($_GET['T07ObservacionTesis']))
+			$model->attributes=$_GET['T07ObservacionTesis'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -139,12 +147,12 @@ class P10AreasConomicmientoController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return P10AreasConomicmiento the loaded model
+	 * @return T07ObservacionTesis the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=P10AreasConomicmiento::model()->findByPk($id);
+		$model=T07ObservacionTesis::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -152,11 +160,11 @@ class P10AreasConomicmientoController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param P10AreasConomicmiento $model the model to be validated
+	 * @param T07ObservacionTesis $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='p10-areas-conomicmiento-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='t07-observacion-tesis-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
