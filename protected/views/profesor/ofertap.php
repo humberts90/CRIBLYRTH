@@ -79,14 +79,14 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 			                    ),
 			            ));
 						?>
-						<?php //echo $form->error($externo,'id'); ?>
+						<?php echo $form->error($model,'fechal_val'); ?>
 				<br />
 				<br />
 				<br />	
 
 			<label>Nº de Vacantes:</label>                                  
 						<?php echo $form->textField($model,'vacantes',array('size'=>12,'maxlength'=>12)); ?>
-						<?php // echo $form->error($model,'vacantes'); ?>
+						<?php  echo $form->error($model,'vacantes'); ?>
 				<br />
 				<br />
 				<br />	
@@ -94,7 +94,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 				<label><h2>Lapso Académico: </h2></label> 
            	 <br/>      
 				<?php echo $form->textField($model,'Lapso_Academico_defensa',array('size'=>6,'maxlength'=>6)); ?>
-				<?php //echo $form->error($model,'Lapso_Academico_defensa'); ?>
+				<?php echo $form->error($model,'Lapso_Academico_defensa'); ?>
             	<br /> 
             	<br /> 
 
