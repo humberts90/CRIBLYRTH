@@ -94,6 +94,37 @@ class JefedepartamentoController extends Controller {
         'Usuario'=>$tar,
         )); 
 	}
+	//----------------------------------------------------------------------------------------------------
+	public function actionHistTesisProfesor(){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$model=new M01Profesor('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_POST['M01Profesor']))
+			$model->attributes=$_POST['M01Profesor'];
+
+	  	$this->render('hist_tesis_profesor',array(
+        'dataProvider'=>$model->search(),
+        'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
+	}
+	public function actionHistPasantiasProfesor(){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$model=new M01Profesor('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_POST['M01Profesor']))
+			$model->attributes=$_POST['M01Profesor'];
+
+	  	$this->render('hist_tesis_profesor',array(
+        'dataProvider'=>$model->search(),
+        'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
+	}
 
 }
 
