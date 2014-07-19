@@ -32,7 +32,7 @@
 					$ruta="/site/index";		
 
 					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
-						$ruta='admin';
+						$ruta='/site/admin';
 					
 					}
 					if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){
@@ -51,6 +51,10 @@
 						$ruta='/secretaria/index';
 					
 					}	
+					if(Yii::app()->authManager->checkAccess('Jefe del Departamento',Yii::app()->user->id)){
+						$ruta='/jefedepartamento/index';
+					
+					}	
 
 
 					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0&&Yii::app()->user->isGuest){
@@ -67,7 +71,7 @@
 						array('label'=>'<p class="letrasgrandes">INICIO</p>',
 									'url'=>array($ruta)),
 						array('label'=>'<p class="letrasgrandes">Ofertas TAP</p>
-									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/oferta')),
+									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/oferta/index')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Tesis</p>
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/tesis', 'view'=>'about')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Pasantías</p>
