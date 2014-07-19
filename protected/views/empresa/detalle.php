@@ -10,7 +10,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 ?>
 
-
+<br /><br /><br />
 <h2><?php echo $model->Titulo; ?></h2>
 
 			<?php 		
@@ -25,41 +25,15 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 			<?php } ?>
 
-<?php echo CHtml::link(CHtml::encode("Descargar constancia"), array('const', 'id'=>$model->id)); ?></b>
-</br>
-</br>
-
+<br /><br />
 <b><?php echo CHtml::encode($model->getAttributeLabel('Titulo')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Titulo); ?></p>
-	<br />
-
-<b><?php echo CHtml::encode($model->getAttributeLabel('Planteamiento_Problema')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Planteamiento_Problema); ?></p>
 	<br />
 
 <b><?php echo CHtml::encode($model->getAttributeLabel('Descripcion_Trabajo')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Descripcion_Trabajo); ?></p>
 	<br />
 
-<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo_General')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Objetivo_General); ?></p>
-	<br />
-
-<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo_Especifico')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Objetivo_Especifico); ?></p>
-	<br />
-
-<b><?php echo CHtml::encode($model->getAttributeLabel('Antecedentes')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Antecedentes); ?></p>
-	<br />
-
-<b><?php echo CHtml::encode($model->getAttributeLabel('Metodologia')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Metodologia); ?></p>
-	<br />
-
-<b><?php echo CHtml::encode($model->getAttributeLabel('Productos_Desarrollo')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Productos_Desarrollo); ?></p>
-	<br />
 
 <b><?php echo CHtml::encode($model->getAttributeLabel('Fecha_Inscripcion')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Fecha_Inscripcion); ?></p>
@@ -73,10 +47,10 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 	<p><?php echo CHtml::encode($model->Fecha_Aprobacion); ?></p>
 	<br />
 	
-	<b><?php echo CHtml::encode($model->getAttributeLabel('fecha_val')); ?>:</b>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha Limite')); ?>:</b>
 	<p><?php echo CHtml::encode($model->fecha_val); ?></p>
 	<br />
-	<b><?php echo CHtml::encode($model->getAttributeLabel('vacantes')); ?>:</b>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('Vacantes')); ?>:</b>
 	<p><?php echo CHtml::encode($model->vacantes); ?></p>
 	<br />
 
