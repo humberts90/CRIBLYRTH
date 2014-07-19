@@ -24,11 +24,11 @@ class ActiveRecordLogableBehavior extends CActiveRecordBehavior
                     //$changes = $name . ' ('.$old.') => ('.$value.'), ';
  
                     $log=new ActiveRecordLog;
-                    $log->description=  'User ' . Yii::app()->user->Name
-                                            . ' changed ' . $name . ' for '
+                    $log->description=  'Usuario ' . Yii::app()->user->Name
+                                            . ' cambio ' . $name . ' por '
                                             . get_class($this->Owner)
                                             . '[' . $this->Owner->getPrimaryKey() .'].';
-                    $log->action=       'CHANGE';
+                    $log->action=       'Actualizo';
                     $log->model=        get_class($this->Owner);
                     $log->idModel=      $this->Owner->getPrimaryKey();
                     $log->field=        $name;
@@ -39,10 +39,10 @@ class ActiveRecordLogableBehavior extends CActiveRecordBehavior
             }
         } else {
             $log=new ActiveRecordLog;
-            $log->description=  'User ' . Yii::app()->user->Name
-                                    . ' created ' . get_class($this->Owner)
+            $log->description=  'Usuario' . Yii::app()->user->Name
+                                    . ' Creado ' . get_class($this->Owner)
                                     . '[' . $this->Owner->getPrimaryKey() .'].';
-            $log->action=       'CREATE';
+            $log->action=       'CREADO';
             $log->model=        get_class($this->Owner);
             $log->idModel=      $this->Owner->getPrimaryKey();
             $log->field=        '';
@@ -55,10 +55,10 @@ class ActiveRecordLogableBehavior extends CActiveRecordBehavior
     public function afterDelete($event)
     {
         $log=new ActiveRecordLog;
-        $log->description=  'User ' . Yii::app()->user->Name . ' deleted '
+        $log->description=  'Usuario ' . Yii::app()->user->Name . ' Borrado'
                                 . get_class($this->Owner)
                                 . '[' . $this->Owner->getPrimaryKey() .'].';
-        $log->action=       'DELETE';
+        $log->action=       'BORRADO';
         $log->model=        get_class($this->Owner);
         $log->idModel=      $this->Owner->getPrimaryKey();
         $log->field=        '';

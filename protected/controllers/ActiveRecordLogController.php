@@ -1,6 +1,6 @@
 <?php
 
-class M01ProfesorController extends Controller
+class ActiveRecordLogController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -26,14 +26,12 @@ class M01ProfesorController extends Controller
 	 */
 	public function accessRules()
 	{
-		return array(		
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'roles'=>array('Administrador'),
-					'users'=>array('@'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
+		return array(
+		 	 array('allow',  
+						'roles'=>array('Administrador'),
+						'users'=>array('@'),
+				),	
+			
 		);
 	}
 
@@ -54,14 +52,14 @@ class M01ProfesorController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new M01Profesor;
+		$model=new ActiveRecordLog;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['M01Profesor']))
+		if(isset($_POST['ActiveRecordLog']))
 		{
-			$model->attributes=$_POST['M01Profesor'];
+			$model->attributes=$_POST['ActiveRecordLog'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -83,9 +81,9 @@ class M01ProfesorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['M01Profesor']))
+		if(isset($_POST['ActiveRecordLog']))
 		{
-			$model->attributes=$_POST['M01Profesor'];
+			$model->attributes=$_POST['ActiveRecordLog'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -100,15 +98,9 @@ class M01ProfesorController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionBorrar($id)
+	public function actionDelete($id)
 	{
-		$aso=T06ConocimientoProfesor::model()->findAll("M01_d=".$id);
-		foreach ($aso as $key) {
-			$key->delete();
-		}
 		$this->loadModel($id)->delete();
-
-
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -120,7 +112,7 @@ class M01ProfesorController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('M01Profesor');
+		$dataProvider=new CActiveDataProvider('ActiveRecordLog');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -131,10 +123,10 @@ class M01ProfesorController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new M01Profesor('search');
+		$model=new ActiveRecordLog('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['M01Profesor']))
-			$model->attributes=$_GET['M01Profesor'];
+		if(isset($_GET['ActiveRecordLog']))
+			$model->attributes=$_GET['ActiveRecordLog'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -145,12 +137,12 @@ class M01ProfesorController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return M01Profesor the loaded model
+	 * @return ActiveRecordLog the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=M01Profesor::model()->findByPk($id);
+		$model=ActiveRecordLog::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -158,11 +150,11 @@ class M01ProfesorController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param M01Profesor $model the model to be validated
+	 * @param ActiveRecordLog $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='m01-profesor-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='active-record-log-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
