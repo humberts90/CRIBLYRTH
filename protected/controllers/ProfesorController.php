@@ -99,7 +99,8 @@ public function accessRules()
                     ),
                 ));
  
-
+			 print_r($dataProvider);
+			 die();
 		$this->render('index',array('Usuario'=>$tar,'dataProvider'=>$dataProvider,'dataProvider2'=>$dataProvider2));
 	}
 	public function actionCono(){
@@ -129,7 +130,8 @@ public function accessRules()
 			$model->attributes=$_POST["M03Tesis"];
 
 			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
-
+			$model->fecha_val = $_POST["M03Tesis"]["fecha_val"];
+			$model->vacantes = $_POST["M03Tesis"]["vacantes"];
 			$model->Lapso_Academico_defensa = $_POST["M03Tesis"]["Lapso_Academico_defensa"];
 			$model->P03_id = $modelStatus->id;
 
@@ -168,7 +170,8 @@ public function accessRules()
 			$model->attributes=$_POST["M04Pasantia"];
 
 			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
-
+			$model->fecha_val = $_POST["M04Pasantia"]["fecha_val"];
+			$model->vacantes = $_POST["M04Pasantia"]["vacantes"];
 			$model->Lapso_Academico_defensa = $_POST["M04Pasantia"]["Lapso_Academico_defensa"];
 			$model->P03_id = $modelStatus->id;
 
