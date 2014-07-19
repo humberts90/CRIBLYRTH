@@ -3749,3 +3749,93 @@ Stack trace:
 REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
 HTTP_REFERER=http://localhost/CRIBLYRTH/
 ---
+2014/07/20 01:25:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/07/20 01:25:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/07/20 01:25:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
+---
+2014/07/20 01:25:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//jefedepartamento/index
+---
+2014/07/20 01:25:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//jefedepartamento/index
+---
+2014/07/20 01:25:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//jefedepartamento/index
+---
+2014/07/20 01:25:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/jefedepartamento/tes
+---
+2014/07/20 01:25:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/jefedepartamento/tes
+---
+2014/07/20 01:25:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/jefedepartamento/prof
+---
+2014/07/20 01:25:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/jefedepartamento/prof
+---
