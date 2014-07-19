@@ -19,6 +19,7 @@ class T10ObservacionPasantias extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return T10ObservacionPasantias the static model class
 	 */
+	public $sta;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -93,5 +94,14 @@ class T10ObservacionPasantias extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+		//--------------------------------------------------------
+		public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
 	}
 }

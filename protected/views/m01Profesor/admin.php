@@ -50,6 +50,7 @@ $('.search-form form').submit(function(){
 		'Correo_UNET',
 		array(
 			'class'=>'CButtonColumn',
+			'deleteButtonUrl'=>'Yii::app()->createUrl("m01Profesor/borrar?id=$data->id" )', 
 		),
 	),
 )); ?>

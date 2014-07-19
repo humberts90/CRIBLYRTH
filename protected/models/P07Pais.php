@@ -96,4 +96,13 @@ class P07Pais extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	//--------------------------------------------------------
+		public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
+	}
 }

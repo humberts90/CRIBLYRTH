@@ -27,7 +27,9 @@
 				</div>
 		
 				<div class="menu">
-				<?php 				
+				<?php 		
+
+					$ruta="/site/index";		
 
 					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
 						$ruta='admin';
@@ -51,13 +53,12 @@
 					}	
 
 
-					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0){
+					if(strcmp(Yii::app()->getController()->getId(),"oferta")==0&&Yii::app()->user->isGuest){
 						$ruta="/site/index";
-					}
+					}				
+					
 
-					else{
-						$ruta='index';
-					}
+					
 
 					$this->widget('zii.widgets.CMenu',array(
 					'encodeLabel'=>false,
@@ -73,7 +74,7 @@
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/pasantias')),
 						array('label'=>'<p class="letrasgrandes">Inicio de sesión</p>
 								<p class="letraspequenas">Adaptado a tus necesidades</p>', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Cerrar Sesion ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 						
 					),
 				)); ?>
