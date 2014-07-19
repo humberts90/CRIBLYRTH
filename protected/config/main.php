@@ -88,7 +88,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=tapbd',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'rm1902',
 			'charset' => 'utf8',
 		),
 	
