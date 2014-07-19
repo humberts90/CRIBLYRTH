@@ -2,30 +2,19 @@
 /* @var $this M01ProfesorController */
 /* @var $data M01Profesor */
 ?>
+<tr>
+	<td width="25%"><?php echo CHtml::encode($data->Cedula); ?></td>
+	<td><?php echo CHtml::encode($data->Nombre." ".$data->Apellido); ?></td>
+	<td ><?php echo CHtml::encode($data->Correo_UNET); ?></td>
+	<td><?php echo CHtml::link(CHtml::encode('Detalles'), array('detalle', 'id'=>$data->id)); ?> </td>
+</tr>
 
-<div class="view">
+
 
 	
 
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Cedula')); ?>:</b>
-	<?php echo CHtml::encode($data->Cedula); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Apellido')); ?>:</b>
-	<?php echo CHtml::encode($data->Apellido); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Nombre')); ?>:</b>
-	<?php echo CHtml::encode($data->Nombre); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Correo Electronico')); ?>:</b>
-	<?php echo CHtml::encode($data->Correo_UNET); ?>
-	<br />
-	<?php echo CHtml::link(CHtml::encode('Detalles'), array('view', 'id'=>$data->id)); ?>
-	<br />
-	<br />
+	
 
 
-</div>
+
