@@ -38,6 +38,10 @@
 					if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){
 						$ruta='/profesor/index';
 					
+					}
+					if(Yii::app()->authManager->checkAccess('Empresa',Yii::app()->user->id)){
+						$ruta='/empresa/index';
+					
 					}	
 					if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id)){
 						$ruta='/Estudiante/index';

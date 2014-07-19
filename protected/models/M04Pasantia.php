@@ -21,6 +21,7 @@
  * @property string $Lapso_Academico_defensa
  * @property string $fecha_val
  * @property integer $vacantes
+ * @property double $pago
  *
  * The followings are the available model relations:
  * @property M02Cronograma[] $m02Cronogramas
@@ -48,14 +49,15 @@ class M04Pasantia extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('P03_id, vacantes', 'required'),
+			array('P03_id', 'required'),
 			array('M06_id, P03_id, vacantes', 'numerical', 'integerOnly'=>true),
+			array('pago', 'numerical'),
 			array('Titulo', 'length', 'max'=>255),
 			array('Lapso_Academico_defensa', 'length', 'max'=>6),
 			array('Planteamiento_Problema, Descripcion_Trabajo, Objetivo_General, Objetivo_Especifico, Antecedentes, Metodologia, Productos_Desarrollo, Fecha_Inscripcion, Fecha_Defensa, Fecha_Aprobacion, fecha_val', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, Titulo, Planteamiento_Problema, Descripcion_Trabajo, Objetivo_General, Objetivo_Especifico, Antecedentes, Metodologia, Productos_Desarrollo, Fecha_Inscripcion, Fecha_Defensa, Fecha_Aprobacion, M06_id, P03_id, Lapso_Academico_defensa, fecha_val, vacantes', 'safe', 'on'=>'search'),
+			array('id, Titulo, Planteamiento_Problema, Descripcion_Trabajo, Objetivo_General, Objetivo_Especifico, Antecedentes, Metodologia, Productos_Desarrollo, Fecha_Inscripcion, Fecha_Defensa, Fecha_Aprobacion, M06_id, P03_id, Lapso_Academico_defensa, fecha_val, vacantes, pago', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -99,6 +101,7 @@ class M04Pasantia extends CActiveRecord
 			'Lapso_Academico_defensa' => 'Lapso Academico Defensa',
 			'fecha_val' => 'Fecha Val',
 			'vacantes' => 'Vacantes',
+			'pago' => 'Pago',
 		);
 	}
 
@@ -137,6 +140,7 @@ class M04Pasantia extends CActiveRecord
 		$criteria->compare('Lapso_Academico_defensa',$this->Lapso_Academico_defensa,true);
 		$criteria->compare('fecha_val',$this->fecha_val,true);
 		$criteria->compare('vacantes',$this->vacantes);
+		$criteria->compare('pago',$this->pago);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
