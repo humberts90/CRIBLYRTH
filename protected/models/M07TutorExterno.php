@@ -88,7 +88,14 @@ class M07TutorExterno extends CActiveRecord
 	 *
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
-	 */
+	 */	public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
+	}
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
@@ -109,6 +116,7 @@ class M07TutorExterno extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -120,4 +128,8 @@ class M07TutorExterno extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	//-----------------------------------------------------------------------------------
+
+
 }

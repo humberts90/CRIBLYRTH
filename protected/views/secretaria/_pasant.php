@@ -10,7 +10,7 @@
 	<br />
 	<br />
 	<?php 	
-	echo $data->id." <br />";
+	
 	echo CHtml::link(CHtml::encode("Descargar Planilla de evaluación"), array('evapasantia', 'id'=>$data->id)); 
 	?>
 	<br />

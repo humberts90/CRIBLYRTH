@@ -146,8 +146,8 @@ class EstudianteController extends Controller
                     
                     $x = $_POST['M03Tesis']['P03_id'];
                  
-                
-                 if($x=="1"){                   
+               
+                  if($x=="1"){                   
                     $estado=P03Status::model()->find("Descripcion = 'Subiendo'");
                 }else{                  
                     $estado=P03Status::model()->find("Descripcion = 'Sin revisar'");
@@ -158,7 +158,7 @@ class EstudianteController extends Controller
 			$model_1->P03_id=$estado->id;
 			
 			if($model_1->save()){
-
+					
 				// Para subir la relacion con el alumno---------
 				
 				

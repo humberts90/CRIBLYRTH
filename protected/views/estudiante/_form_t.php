@@ -19,7 +19,7 @@ $("#guardar").click(function(){
 			<section >              
 					<label>* Título del proyecto</label> 
                   
-					<?php echo $form->textField($model_1,'Titulo',array('size'=>45,'maxlength'=>45)); ?>
+					<?php echo $form->textField($model_1,'Titulo',array('size'=>255,'maxlength'=>255)); ?>
 					<?php echo $form->error($model_1,'Titulo'); ?>
                     <br />      
 						<label>Seleccione Conocimiento</label> 

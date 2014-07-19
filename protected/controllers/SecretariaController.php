@@ -96,7 +96,7 @@ class SecretariaController extends Controller {
 		$mPDF1->watermarkTextAlpha = 0.1;
 		$mPDF1->SetDisplayMode('fullpage');
 		// tiene que tener 5 o 6 variables 
-		 echo "entro 1";
+		 
 		$mPDF1->WriteHTML($this->renderPartial('actasEva_Tesis',array(
 			'Nombre_alumno'=>$alumno->Nombre." ".$alumno->Apellido,
 			'Cedula_alumno' =>$alumno->Cedula,
@@ -163,7 +163,7 @@ class SecretariaController extends Controller {
 		$mPDF1->watermarkTextAlpha = 0.1;
 		$mPDF1->SetDisplayMode('fullpage');
 		// tiene que tener 5 o 6 variables 
-		echo "entro 1";
+		
 		$mPDF1->WriteHTML($this->renderPartial('actasEva_Pasantia',array(
 		'Nombre_alumno'=>$alumno->Nombre." ".$alumno->Apellido,
 		'Cedula_alumno' =>$alumno->Cedula,
@@ -290,34 +290,145 @@ class SecretariaController extends Controller {
 		$this->render('viejas_tap_subirt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4));
 	}	
 
-function RandomString($length=10,$uc=TRUE,$n=TRUE,$sc=FALSE)
-       {
-               $source = 'abcdefghijklmnopqrstuvwxyz';
-               if($uc==1) $source .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-               if($n==1) $source .= '1234567890';
-               if($sc==1) $source .= '|@#~$%()=^*+[]{}-_';
-               if($length>0){
-                       $rstr = "";
-                       $source = str_split($source,1);
-                       for($i=1; $i<=$length; $i++){
-                               mt_srand((double)microtime() * 1000000);
-                               $num = mt_rand(1,count($source));
-                               $rstr .= $source[$num-1];
-                       }
-     
-               }
-               return $rstr;
-       }	
+//////////////////------------------------- Parte de LEYRY :) ---------------////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	
+	public  function Actionviejas_tap_subirp(){
+
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'"); // aqui debo traerme es el usuario con la cedula que estoy pidiendo en la vista
+		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Pasante'");
+		$estado=P03Status::model()->find("Descripcion = 'Aprobada'"); 
+		$status=P08Categoria::model()->find("Descripcion = 'Aceptada'"); 
+		$model_1=new M06Empresa;
+		$model_2=new M04Pasantia;
+		$model_3=new M05Usuario;
+		$model_4=new M07TutorExterno;
+		$model_5=new T02PasantiaHasUsuario;		
+		if(isset($_POST['M04Pasantia']))
+		{	
+			//--------------------------Usuario-----------------------------------------
+
+			$model_3->attributes=$_POST['M05Usuario'];
+			$model_3->Usuario=$model_3->Nombre.".".$model_3->Apellido;
+			$contrasena=$this->RandomString();
+			$contenido="<p> Buen día, has sido registraddo en el sistema TAP del departamento de Ing Informática. Usuario: ".$model_3->Usuario." Contraseña: ".$contrasena."</p>";
+			$this->correo_e($model_3->Correo_Electronico,$contenido,"nuevo usuario del sistema tap");
+			$model_3->Direccion="no especifico";
+			$model_3->Telefono="no especifico";
+			$model_3->Clave=$model_3->hashPassword($contrasena,$session=$model_3->generateSalt());
+			$model_3->session=$session;
+			
+			if($model_3->save())
+			{
+				
+				$item = new T08UsuarioHasRol;
+				$item->M05_id=$model_3->id;
+				$item->P01_id="4";
+				$item->save();
+				
+				$modelRol = P01Rol::model()->findByPk($item->P01_id);
+				
+				$auth=Yii::app()->authManager;
+				$nombre=P01Rol::model()->find("id=".$item->P01_id);
+				$auth->assign($modelRol->nombre,$model_3->Usuario);
+			}
+			
+			
+			
+			//--------------------------Empresa-----------------------------------------
+
+			$model_2->attributes=$_POST['M04Pasantia']; // datos de las pasantias 
+
+			if($model_2->M06_id==null){ // si no selecciono empresa es por que va cargar una nueva
+
+				$model_1->attributes=$_POST['M06Empresa'];
+					
+				if($model_1->validate()){	
+					$model_1->Status='1';
+					$model_1->P08_id=$status->id;
+					$model_1->save(); //Guardo en la tabla Empresa
+					
+					$model_2->M06_id=$model_1->id;// Guarda la nueva empresa y se asocia el id de esta
+				}				
+			}
+			
+			
+			//--------------------------Tutor Externo---------------------------------------
+			$model_4->attributes=$_POST['M07TutorExterno']; //Datos del tutor externo
+			$model_4->save();
+			
+			
+			//---------------------------Pasantias--------------
+			$model_2->P03_id=$estado->id;
+			$model_2->save();
+				
+			
+			//---------------------------Pasantias has Usuario---------------------------------
+			$model_5->M04_id=$model_2->id;
+			$model_5->M05_id=$model_3->id;
+			$model_5->P02_id=$tipo1->id;			
+			$model_5->M07_id=$model_4->id;
+			$model_5->save();
+
+			$this->redirect(array('index'));
+		}
+		$this->render('viejas_tap_subirp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,));
+
+	}
+	
+	function RandomString($length=10,$uc=TRUE,$n=TRUE,$sc=FALSE)
+        {
+                $source = 'abcdefghijklmnopqrstuvwxyz';
+                if($uc==1) $source .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                if($n==1) $source .= '1234567890';
+                if($sc==1) $source .= '|@#~$%()=^*+[]{}-_';
+                if($length>0){
+                        $rstr = "";
+                        $source = str_split($source,1);
+                        for($i=1; $i<=$length; $i++){
+                                mt_srand((double)microtime() * 1000000);
+                                $num = mt_rand(1,count($source));
+                                $rstr .= $source[$num-1];
+                        }
+       
+                }
+                return $rstr;
+        }
+	
 	public function actionCorreo(){
-		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$role=P01Rol::model()->findAllByPk(array(4,3,6));	
 		$model=new M05Usuario;
 		if(isset($_POST['M05Usuario'])){
 			$model->attributes=$_POST['M05Usuario'];
-			$this->correo_e($model->Correo_Electronico,$model->Nombre,$model->Apellido);
+
+			if($_POST['sta']){
+				$ree=T08UsuarioHasRol::model()->findAll("P01_id = ".$_POST['sta']);
+				
+				foreach ($ree as $key ) {
+					$usu=M05Usuario::model()->findByPK($key->M05_id);
+					$this->correo_e($usu->Correo_Electronico,$model->Nombre,$model->Apellido);
+					
+				}
+				
+				$this->redirect(array('index'));
+
+			}
+			else {
+				
+				$this->correo_e($_POST['Correo_Electronico'],$model->Nombre,$model->Apellido);
+				$this->redirect(array('index'));
+			}
+			die();
+
+			
 
 		}
 
-		$this->render('correo',array('Usuario'=>$tar,'model'=>$model));
+		$this->render('correo',array('Usuario'=>$tar,'model'=>$model,'role'=>$role));
 	}
 
 public function actionContenido()
