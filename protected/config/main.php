@@ -48,11 +48,15 @@ return array(
 					'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 		         	'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>', // this is the rule you absolutely need for update to work
 		         	'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-		         	'<action>'=>'site/<action>'
+		         	
 
 
 			),
 		),
+		
+
+
+
 'ePdf' => array(
  'class' => 'ext.yii-pdf.EYiiPdf',
  'params' => array(
@@ -88,7 +92,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=tapbd',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'rm1902',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 	

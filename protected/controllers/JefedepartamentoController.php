@@ -59,6 +59,13 @@ class JefedepartamentoController extends Controller {
         'Usuario'=>$tar,
         )); 		
 	}
+	public function actionDetalle($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=M01Profesor::model()->findByPk($id);
+		
+		$this->render('deta',array('model'=>$model,'Usuario'=>$tar));
+	}
+
 	//------------------------Resporte de tesistas-------------------------------------------------
 
 	public function actionTes(){
@@ -84,7 +91,7 @@ class JefedepartamentoController extends Controller {
 		
 
 		$criteria=new CDbCriteria;		
-		$criteria->condition='P02_id = 1';
+		$criteria->condition='P02_id = 7';
 		$criteria->limit="10";
 		$dataProvider= new CActiveDataProvider(T02PasantiaHasUsuario::model(), array('criteria'=>$criteria,));
 
@@ -93,6 +100,37 @@ class JefedepartamentoController extends Controller {
        // 'model'=>$model,
         'Usuario'=>$tar,
         )); 
+	}
+	//----------------------------------------------------------------------------------------------------
+	public function actionHistTesisProfesor(){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$model=new M01Profesor('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_POST['M01Profesor']))
+			$model->attributes=$_POST['M01Profesor'];
+
+	  	$this->render('hist_tesis_profesor',array(
+        'dataProvider'=>$model->search(),
+        'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
+	}
+	public function actionHistPasantiasProfesor(){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$model=new M01Profesor('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_POST['M01Profesor']))
+			$model->attributes=$_POST['M01Profesor'];
+
+	  	$this->render('hist_tesis_profesor',array(
+        'dataProvider'=>$model->search(),
+        'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
 	}
 
 }
