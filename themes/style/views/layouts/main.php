@@ -74,7 +74,7 @@
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/pasantias')),
 						array('label'=>'<p class="letrasgrandes">Inicio de sesión</p>
 								<p class="letraspequenas">Adaptado a tus necesidades</p>', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Cerrar Sesion ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 						
 					),
 				)); ?>
