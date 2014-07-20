@@ -123,6 +123,9 @@ class SiteController extends Controller
 					if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){
 						$this->redirect(Yii::app()->user->returnUrl.'/profesor/index');
 					}
+					if(Yii::app()->authManager->checkAccess('Empresa',Yii::app()->user->id)){
+						$this->redirect(Yii::app()->user->returnUrl.'/Empresa/index');
+					}					
 					if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id)){
 						$this->redirect(Yii::app()->user->returnUrl.'/estudiante/index');
 					}
@@ -137,7 +140,7 @@ class SiteController extends Controller
 			}
 				
 		}
-		// display the login form
+		
 		$this->render('login',array('model'=>$model));
 	}
 	

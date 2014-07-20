@@ -31,6 +31,13 @@ class M05UsuarioController extends Controller
 				'roles'=>array('Administrador'),
 					'users'=>array('@'),
 			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+					'actions'=>array('Delete'),
+					'roles'=>array('Administrador'),
+					'users'=>array('@'),
+			),
+			
+
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -165,15 +172,20 @@ class M05UsuarioController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionBorrar($id)
 	{
+		$model=M05Usuario::model()->findByPk($id);
+		$items = T08UsuarioHasRol::model()->findAll("M05_id=".$id);
+		$auth=Yii::app()->authManager;
+
 		
-		$items = T08UsuarioHasRol::model()->findAllByAttributes(array('M05_id'=>$id));
-		
-		foreach($items as $item)
+		foreach($items as $item){			
+		$auth->revoke($item->p01->nombre,$model->Usuario);
 		$item->delete();
+		}
+
 		
-		$this->loadModel($id)->delete();
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

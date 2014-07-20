@@ -50,4 +50,6 @@ $this->menu=array(
 		$rol = P01Rol::model()->findByPk($item->P01_id);
 		echo '<br/><label>   '.$rol->Descripcion.'</label>';	
 	}
+
+	
 ?>
