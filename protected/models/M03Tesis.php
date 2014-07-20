@@ -175,6 +175,47 @@ class M03Tesis extends CActiveRecord
 		));
 	}
 
+public function search2()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('Titulo',$this->Titulo,true);
+		$criteria->compare('Carta_Tutor',$this->Carta_Tutor,true);
+		$criteria->compare('Introduccion',$this->Introduccion,true);
+		$criteria->compare('Planteamiento_Problema',$this->Planteamiento_Problema,true);
+		$criteria->compare('Objetivo_General',$this->Objetivo_General,true);
+		$criteria->compare('Objetivo_especifico',$this->Objetivo_especifico,true);
+		$criteria->compare('Justificacion_Importancia',$this->Justificacion_Importancia,true);
+		$criteria->compare('Alcance_Delimitaciones',$this->Alcance_Delimitaciones,true);
+		$criteria->compare('Antecedentes',$this->Antecedentes,true);
+		$criteria->compare('Bases_Teoricas',$this->Bases_Teoricas,true);
+		$criteria->compare('Bases_Legales',$this->Bases_Legales,true);
+		$criteria->compare('Definicion_Terminos',$this->Definicion_Terminos,true);
+		$criteria->compare('Enfoque_Investigacion',$this->Enfoque_Investigacion,true);
+		$criteria->compare('Tipo_Nivel_Invesstigacion',$this->Tipo_Nivel_Invesstigacion,true);
+		$criteria->compare('Diseno_Investigacion',$this->Diseno_Investigacion,true);
+		$criteria->compare('Poblacion_Muestra',$this->Poblacion_Muestra,true);
+		$criteria->compare('Tecnicas_Recoleccion_Datos',$this->Tecnicas_Recoleccion_Datos,true);
+		$criteria->compare('Metodologias',$this->Metodologias,true);
+		$criteria->compare('Referencias',$this->Referencias,true);
+		$criteria->compare('Fecha_Inscripcion',$this->Fecha_Inscripcion,true);
+		$criteria->compare('Fecha_Aprobación',$this->Fecha_Aprobación,true);
+		$criteria->compare('Fecha_Defensa',$this->Fecha_Defensa,true);
+		$criteria->compare('P03_id',$this->P03_id);
+		$criteria->compare('M06_id',$this->M06_id);
+		$criteria->compare('Lapso_Academico_defensa',$this->Lapso_Academico_defensa,true);
+		$criteria->compare('fecha_val',$this->fecha_val,true);
+		$criteria->compare('vacantes',$this->vacantes);
+		$criteria->condition='P03_id = 7';
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
