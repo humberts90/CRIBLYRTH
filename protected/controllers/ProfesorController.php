@@ -96,12 +96,7 @@ public function accessRules()
                         'pageSize' => 3,
                     ),
                 ));
-<<<<<<< HEAD
 
-=======
- 
-			
->>>>>>> 19d583e15ddacdb1c516fa7245847b4cd7b5fff4
 		$this->render('index',array('Usuario'=>$tar,'dataProvider'=>$dataProvider,'dataProvider2'=>$dataProvider2));
 	}
 	public function actionCono(){
@@ -131,12 +126,8 @@ public function accessRules()
 			$model->attributes=$_POST["M03Tesis"];
 
 			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
-<<<<<<< HEAD
+
 				$model->P03_id = $modelStatus->id;
-=======
-			
-			$model->P03_id = $modelStatus->id;
->>>>>>> 19d583e15ddacdb1c516fa7245847b4cd7b5fff4
 
 			if($model->save())
 			{    
@@ -173,11 +164,8 @@ public function accessRules()
 			$model->attributes=$_POST["M04Pasantia"];
 
 			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
-<<<<<<< HEAD
+
 						$model->P03_id = $modelStatus->id;
-=======
-			
->>>>>>> 19d583e15ddacdb1c516fa7245847b4cd7b5fff4
 
 			if($model->save())
 			{
