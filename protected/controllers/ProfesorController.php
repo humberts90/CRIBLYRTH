@@ -50,7 +50,7 @@ public function accessRules()
 
 			$search_values=M03Tesis::model()->findAll("P03_id = 3");
 
-			$consulta="select A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Aprobación as FA, A.Fecha_Inscripcion as FI, A.Fecha_Defensa as FD,B.P02_id AS P02 from m03_tesis as A, t01_tesis_has_usuario as B WHERE A.id=B.M03_id AND B.P02_id=2 AND A.Fecha_Defensa > DATE_FORMAT(NOW(),'%Y-%m-%d') AND B.M05_id=".$tar->id." ORDER BY A.Fecha_Defensa DESC";
+			$consulta="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Aprobación as FA, A.Fecha_Inscripcion as FI, A.Fecha_Defensa as FD,B.P02_id AS P02 from m03_tesis as A, t01_tesis_has_usuario as B WHERE A.id=B.M03_id AND B.P02_id=2 AND A.Fecha_Defensa > DATE_FORMAT(NOW(),'%Y-%m-%d') AND B.M05_id=".$tar->id." ORDER BY A.Fecha_Defensa DESC";
 			$rawData = Yii::app()->db->createCommand($consulta); //or use ->queryAll(); in CArrayDataProvider
 			$count = Yii::app()->db->createCommand('SELECT COUNT(*) FROM (' . $consulta . ') as count_alias')->queryScalar();
 
@@ -77,7 +77,7 @@ public function accessRules()
 		//-----------------------------------------------------------------------------
 		//----------------------Para las Pasantias-------------------------------------
 		
-		$consulta2="select A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Aprobacion as FA,M07_id as M07, A.Fecha_Inscripcion as FI, A.Fecha_Defensa as FD,B.P02_id AS P02 from m04_pasantia as A, t02_pasantia_has_usuario as B WHERE A.id=B.M04_id AND B.P02_id=2 AND A.Fecha_Defensa  > DATE_FORMAT(NOW(),'%Y-%m-%d') AND B.M05_id=".$tar->id." ORDER BY A.Fecha_Defensa DESC";
+		$consulta2="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Aprobacion as FA,M07_id as M07, A.Fecha_Inscripcion as FI, A.Fecha_Defensa as FD,B.P02_id AS P02 from m04_pasantia as A, t02_pasantia_has_usuario as B WHERE A.id=B.M04_id AND B.P02_id=2 AND A.Fecha_Defensa  > DATE_FORMAT(NOW(),'%Y-%m-%d') AND B.M05_id=".$tar->id." ORDER BY A.Fecha_Defensa DESC";
 		$rawData2 = Yii::app()->db->createCommand($consulta2); //or use ->queryAll(); in CArrayDataProvider
 			$count2 = Yii::app()->db->createCommand('SELECT COUNT(*) FROM (' . $consulta2 . ') as count_alias')->queryScalar();
 			$criteria=new CDbCriteria;
@@ -127,9 +127,7 @@ public function accessRules()
 			$model->attributes=$_POST["M03Tesis"];
 
 			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
-			$model->fecha_val = $_POST["M03Tesis"]["fecha_val"];
-			$model->vacantes = $_POST["M03Tesis"]["vacantes"];
-			$model->Lapso_Academico_defensa = $_POST["M03Tesis"]["Lapso_Academico_defensa"];
+			
 			$model->P03_id = $modelStatus->id;
 
 			if($model->save())
@@ -167,10 +165,7 @@ public function accessRules()
 			$model->attributes=$_POST["M04Pasantia"];
 
 			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
-			$model->fecha_val = $_POST["M04Pasantia"]["fecha_val"];
-			$model->vacantes = $_POST["M04Pasantia"]["vacantes"];
-			$model->Lapso_Academico_defensa = $_POST["M04Pasantia"]["Lapso_Academico_defensa"];
-			$model->P03_id = $modelStatus->id;
+			
 
 			if($model->save())
 			{

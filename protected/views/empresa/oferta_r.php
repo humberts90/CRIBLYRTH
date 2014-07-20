@@ -20,22 +20,8 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 			<?php echo $form->textField($model,'Titulo',array('size'=>45,'maxlength'=>45)); ?>
 			<?php echo $form->error($model,'Titulo'); ?>
             <br /> 
-            <br /> 	
-			<label>Planteamiento del problema:</label> 
-					
-						<?php
-							Yii::import('ext.krichtexteditor.KRichTextEditor');
-								$this->widget('KRichTextEditor', array(
-								    'model' => $model,
-								    'value' => $model->isNewRecord ? '' : $model->Planteamiento_Problema,
-								    'attribute' => 'Planteamiento_Problema',
-								    'options' => array(
-								        'theme_advanced_resizing' => 'true',
-								        'theme_advanced_statusbar_location' => 'bottom',
-								    ),
-								));
-						?>
-			<br />
+            <br />
+
 			<label><h2>Descripción de trabajo:</h2></label>						
 			
 			<br />		                
@@ -67,7 +53,8 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 				<br />
 				<br />
 				<br />
-			<label>Fecha Limite:</label>                                  
+
+			<label>Fecha limite:</label>                                  
 						<?php 
 						$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			                    'model' => $model,
@@ -91,13 +78,42 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 				<br />
 				<br />	
 
-				<label><h2>Lapso Académico: </h2></label> 
-           	 <br/>      
-				<?php echo $form->textField($model,'Lapso_Academico_defensa',array('size'=>6,'maxlength'=>6)); ?>
-				<?php echo $form->error($model,'Lapso_Academico_defensa'); ?>
-            	<br /> 
-            	<br /> 
 
+				<script>
+
+					function revisar()
+					{
+						if(document.getElementById('pago_0').checked)
+						{
+							document.getElementById('pagos').style.display='none';
+							
+						}
+						else
+						{
+							document.getElementById('pagos').style.display='block';
+							
+
+						}
+					}
+
+					</script>
+
+		<?php 
+			echo CHtml::radioButtonList('pago','sp',array('sp'=>'Sin Pago','cp'=>'Con Pago'),array('separator'=>' ','onclick'=>'revisar()'));
+		?>
+			<div id="pagos" style="display:none;">
+				
+			<br />
+				<br />
+			<label>Pago:</label>                                  
+						<?php echo $form->textField($model,'pago'); ?>
+						<?php  echo $form->error($model,'pago'); ?>
+			
+		</div>		
+		<br />
+	<br />
+				<br />
+			
 				<div class="row buttons">
 					<?php echo CHtml::submitButton('Subir'); ?>
 				</div>

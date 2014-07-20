@@ -20,7 +20,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre de Usuario'); ?>
@@ -36,9 +36,9 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 	</div>
 
 	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'Recordar'); ?>
+		
 		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'Recondar'); ?>
+		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
 
 	<div class="row buttons">
