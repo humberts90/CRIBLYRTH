@@ -30,6 +30,7 @@ class M05Usuario extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	public $sta;
 	public function tableName()
 	{
 		return 'm05_usuario';
@@ -166,5 +167,13 @@ class M05Usuario extends CActiveRecord
 	public function generateSalt()
 	{
 		return uniqid('',true);
+	}
+	public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
 	}
 }

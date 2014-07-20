@@ -1,25 +1,22 @@
+
+	<tr>
+		<td ><div style="text-align: center;"><?php echo CHtml::link(CHtml::encode("Ver detalles"), array('tesdeta', 'id'=>$data->id)); ?></div></td>
+
 	<?php 
 		$has1=T01TesisHasUsuario::model()->findAll('M03_id = '.$data->id);
 		foreach ($has1 as  $value) {
 			$val=M05Usuario::model()->findByPk($value->M05_id); 
-			$actor=P02TipoRelacion::model()->findByPk($value->P02_id);
-			?>
+				if ($value->P02_id==1 || $value->P02_id==2) {?>					
+					
+				<td><?php echo CHtml::encode($val->Nombre." ".$val->Apellido); ?></td><br />
+						
 
-			<b><?php echo CHtml::encode($actor->Descripcion); ?>:</b>
-			<?php echo CHtml::encode($val->Nombre." ".$val->Apellido); ?>
-			<br />
-
-
-	<?php	}	?>
+	<?php		}
+		}	?>
+	<td ><?php echo CHtml::encode($data->Titulo); ?></td>
+	<td ><?php echo CHtml::encode($data->Fecha_Inscripcion); ?></td>	
+	
+	</tr>
 	
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Titulo')); ?>:</b>
-	<?php echo CHtml::encode($data->Titulo); ?>
-	<br />
 
-	<b><?php echo CHtml::encode('Fecha de la propuesta'); ?>:</b>
-	<?php echo CHtml::encode($data->Fecha_Inscripcion); ?>
-	<br />
-	<br />
-	<?php echo CHtml::link(CHtml::encode("Ver detalles"), array('tesdeta', 'id'=>$data->id)); ?>
-	<br />

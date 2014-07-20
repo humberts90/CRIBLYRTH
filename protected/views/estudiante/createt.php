@@ -78,6 +78,10 @@ Yii::app()->clientScript->registerScript('wizard', '
 
 	//<![CDATA[
 							bkLib.onDomLoaded(function() {
+                                               /*         $("#wizard ul[role=menu]").append("<li aria-hidden=false style=display: block;><a id=guardar  aria-hidden=false href=#finish >Guardar Sin Enviar</a></li>").click(function(){
+  $("#guardarPrev").val("activo"); 
+ // $("#tesis-form").submit();
+});*/
 							var myNicEditor = new nicEditor();
 							myNicEditor.setPanel("myNicPanel");
 							myNicEditor.setPanel("myNicPanel1");
@@ -116,9 +120,17 @@ Yii::app()->clientScript->registerScript('wizard', '
 							myNicEditor.addInstance("myInstance17");
 							});
 							//]]>
+                                                       
 ');
 
+/*Yii::app()->clientScript->registerScript('boton','
 
+ $("#wizard ul[role=menu]").append("<li aria-hidden=false style=display: block;><a id=guardar  aria-hidden=false href=#finish >Guardar Sin Enviar</a></li>").click(function(){
+  $("#guardarPrev").val("activo"); 
+ // $("#tesis-form").submit();
+});
+
+');*/
 ?>
 
 

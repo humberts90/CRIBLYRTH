@@ -28,7 +28,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
 		<?php echo '<b>Respuesta de la tesis: </b></br>'; ?>
-		<?php echo $form->dropDownList($model,'M03_id',CHtml::listData(P03Status::model()->findAllByPk(array(4,3,6)),'id','Descripcion'),array('empty'=>'Seleccione Tesis','class'=>'form-control')); ?>
+		<?php echo $form->dropDownList($model,'M03_id',CHtml::listData(P03Status::model()->findAllByPk(array(4,3,6)),'id','Descripcion'),array('empty'=>'Seleccione respuesta','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'M03_id'); ?>
 	</div>
 	<div class="row">

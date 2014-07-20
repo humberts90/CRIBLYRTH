@@ -32,11 +32,15 @@
 					$ruta="/site/index";		
 
 					if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
-						$ruta='admin';
+						$ruta='/site/admin';
 					
 					}
 					if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){
 						$ruta='/profesor/index';
+					
+					}
+					if(Yii::app()->authManager->checkAccess('Empresa',Yii::app()->user->id)){
+						$ruta='/empresa/index';
 					
 					}	
 					if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id)){
@@ -49,6 +53,10 @@
 					}	
 					if(Yii::app()->authManager->checkAccess('Secretaria',Yii::app()->user->id)){
 						$ruta='/secretaria/index';
+					
+					}	
+					if(Yii::app()->authManager->checkAccess('Jefe del Departamento',Yii::app()->user->id)){
+						$ruta='/jefedepartamento/index';
 					
 					}	
 
@@ -67,14 +75,14 @@
 						array('label'=>'<p class="letrasgrandes">INICIO</p>',
 									'url'=>array($ruta)),
 						array('label'=>'<p class="letrasgrandes">Ofertas TAP</p>
-									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/oferta')),
+									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/oferta/index')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Tesis</p>
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/tesis', 'view'=>'about')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Pasantías</p>
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/pasantias')),
 						array('label'=>'<p class="letrasgrandes">Inicio de sesión</p>
 								<p class="letraspequenas">Adaptado a tus necesidades</p>', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Cerrar Sesion ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 						
 					),
 				)); ?>

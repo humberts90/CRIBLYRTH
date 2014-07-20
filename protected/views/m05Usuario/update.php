@@ -22,5 +22,5 @@ $this->menu=array(
 
 <?php 
 
-echo "valores =".$varia;
+
 $this->renderPartial('_form', array('model'=>$model)); ?>

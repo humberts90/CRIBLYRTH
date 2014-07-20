@@ -125,8 +125,30 @@ function finishStep(wizard, state)
 {
     var currentStep = wizard.find(".steps li").eq(state.currentIndex);
 
+//
     if (wizard.triggerHandler("finishing", [state.currentIndex]))
     {
+     //  $("#M03Tesis_P03_id").val("1"); 
+        currentStep.addClass("done").removeClass("error");
+        wizard.triggerHandler("finished", [state.currentIndex]);
+    }
+    else if(wizard.triggerHandler("guardar", [state.currentIndex])){
+        $("#M03Tesis_P03_id").val("1"); 
+        currentStep.addClass("done").removeClass("error");
+        wizard.triggerHandler("finished", [state.currentIndex]);
+    }
+    else
+    {
+        currentStep.addClass("error");
+    }
+}
+
+function finishGuardar(wizard, state)
+{
+    var currentStep = wizard.find(".steps li").eq(state.currentIndex);
+
+if(wizard.triggerHandler("finishing", [state.currentIndex])){
+        $("#M03Tesis_P03_id").val("1"); 
         currentStep.addClass("done").removeClass("error");
         wizard.triggerHandler("finished", [state.currentIndex]);
     }
@@ -484,6 +506,11 @@ function paginationClickHandler(event)
 
     switch (href.substring(href.lastIndexOf("#")))
     {
+        case "#guardar":
+                finishGuardar(wizard, options, state);
+            //finishStep(wizard, options, state);
+            break;
+            
         case "#finish":
             finishStep(wizard, options, state);
             break;
@@ -605,6 +632,7 @@ function registerEvents(wizard, options)
 
     wizard.bind("finishing" + eventNamespace, options.onFinishing);
     wizard.bind("finished" + eventNamespace, options.onFinished);
+    wizard.bind("guardar" + eventNamespace, options.onFinished);
     wizard.bind("stepChanging" + eventNamespace, options.onStepChanging);
     wizard.bind("stepChanged" + eventNamespace, options.onStepChanged);
 
@@ -716,7 +744,9 @@ function renderPagination(wizard, options, state)
             buttons += format(buttonTemplate, "previous", options.labels.previous);
         }
 
+        var bt="<li><a id=\"id=guardar\" href=\"#{0}\" role=\"menuitem\">{1}</a></li>";
         buttons += format(buttonTemplate, "next", options.labels.next);
+         buttons += format(bt, "guardar", "Guardar Sin Enviar");
 
         if (options.enableFinishButton)
         {
