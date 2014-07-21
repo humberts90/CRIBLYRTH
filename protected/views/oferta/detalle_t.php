@@ -45,7 +45,6 @@ echo "<br/><br/>";
 	'attributes'=>array(
 		'Apellido',
 		'Nombre',
-		'Telefono',
 		'Correo_Electronico',	
 
 	),

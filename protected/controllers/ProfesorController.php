@@ -31,7 +31,7 @@ public function accessRules()
 						'roles'=>array('Administrador'),
 						'users'=>array('@'),
 				),	
-			
+
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 					'roles'=>array('Profesor'),
 					'users'=>array('@'),
@@ -39,14 +39,12 @@ public function accessRules()
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
-		
+
 		);
 	}
 
-	public function actionIndex(){
-		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-
-		//-----------------Busqueda de tesis del profesor-------------------------------
+	public static function testProfesor(){
+		 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 
 			$search_values=M03Tesis::model()->findAll("P03_id = 3");
 
@@ -71,13 +69,13 @@ public function accessRules()
                         'pageSize' => 3,
                     ),
                 ));
- 
-    
+			 return $dataProvider;
 
-		//-----------------------------------------------------------------------------
-		//----------------------Para las Pasantias-------------------------------------
-		
-		$consulta2="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Aprobacion as FA,M07_id as M07, A.Fecha_Inscripcion as FI, A.Fecha_Defensa as FD,B.P02_id AS P02 from m04_pasantia as A, t02_pasantia_has_usuario as B WHERE A.id=B.M04_id AND B.P02_id=2 AND A.Fecha_Defensa  > DATE_FORMAT(NOW(),'%Y-%m-%d') AND B.M05_id=".$tar->id." ORDER BY A.Fecha_Defensa DESC";
+		}
+
+		public static function pasantias(){
+		 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+				$consulta2="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Aprobacion as FA,M07_id as M07, A.Fecha_Inscripcion as FI, A.Fecha_Defensa as FD,B.P02_id AS P02 from m04_pasantia as A, t02_pasantia_has_usuario as B WHERE A.id=B.M04_id AND B.P02_id=2 AND A.Fecha_Defensa  > DATE_FORMAT(NOW(),'%Y-%m-%d') AND B.M05_id=".$tar->id." ORDER BY A.Fecha_Defensa DESC";
 		$rawData2 = Yii::app()->db->createCommand($consulta2); //or use ->queryAll(); in CArrayDataProvider
 			$count2 = Yii::app()->db->createCommand('SELECT COUNT(*) FROM (' . $consulta2 . ') as count_alias')->queryScalar();
 			$criteria=new CDbCriteria;
@@ -96,10 +94,16 @@ public function accessRules()
                         'pageSize' => 3,
                     ),
                 ));
- 
-			
-		$this->render('index',array('Usuario'=>$tar,'dataProvider'=>$dataProvider,'dataProvider2'=>$dataProvider2));
+			 return $dataProvider2;
+		}
+
+
+	public function actionIndex(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$this->render('index',array('Usuario'=>$tar,'dataProvider'=>ProfesorController::testProfesor(),'dataProvider2'=>ProfesorController::pasantias()));
 	}
+
+
 	public function actionCono(){
 	  $tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$model=new T06ConocimientoProfesor;
@@ -109,14 +113,14 @@ public function accessRules()
 			$cons=M01Profesor::model()->find("Cedula=".$tar->Cedula);
 			$model->M01_d=$cons->id;
 			if($model->save()){
-			
+
 			}
-				
+
 		}
-		
+
 		$this->render('cprof',array('Usuario'=>$tar,'model'=>$model,));
 	}
-	
+
 	public function actionOferta_t()
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
@@ -127,14 +131,14 @@ public function accessRules()
 			$model->attributes=$_POST["M03Tesis"];
 
 			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
-			
-			$model->P03_id = $modelStatus->id;
+
+				$model->P03_id = $modelStatus->id;
 
 			if($model->save())
 			{    
-			
+
 				$modelRelacion = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
-				
+
 				$modelAsoc = new T01TesisHasUsuario;
 				$modelAsoc->M05_id = $tar->id;
 				$modelAsoc->M03_id = $model->id;
@@ -142,7 +146,7 @@ public function accessRules()
 
 				$modelAsoc->save();
 
-				$this->render('index',array('Usuario'=>$tar,));
+				$this->render('index',array('Usuario'=>$tar,'dataProvider'=>ProfesorController::testProfesor(),'dataProvider2'=>ProfesorController::pasantias()));
 			}
 
 		}
@@ -150,7 +154,7 @@ public function accessRules()
 		$this->render('oferta',array(
 			'Usuario'=>$tar,
 			'model'=>$model,
-			
+
 			));
 	}
 
@@ -165,12 +169,13 @@ public function accessRules()
 			$model->attributes=$_POST["M04Pasantia"];
 
 			$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
-			
+
+						$model->P03_id = $modelStatus->id;
 
 			if($model->save())
 			{
 				$modelRelacion = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
-				
+
 				$modelAsoc = new T02PasantiaHasUsuario;
 				$modelAsoc->M05_id = $tar->id;
 				$modelAsoc->M04_id = $model->id;
@@ -179,7 +184,7 @@ public function accessRules()
 
 				$modelAsoc->save();
 
-				$this->render('index',array('Usuario'=>$tar,));
+				$this->render('index',array('Usuario'=>$tar,'dataProvider'=>ProfesorController::testProfesor(),'dataProvider2'=>ProfesorController::pasantias()));
 			}
 
 		}
@@ -218,7 +223,7 @@ public function accessRules()
 		 $mPDF1->useOnlyCoreFonts = true;
 		 $mPDF1->SetTitle(" Reporte");
 		 $mPDF1->SetAuthor("Reporte");
-		
+
 		 $mPDF1->showWatermarkText = true;
 		 $mPDF1->watermark_font = 'DejaVuSansCondensed';
 		 $mPDF1->watermarkTextAlpha = 0.1;
@@ -251,7 +256,7 @@ public function accessRules()
 		$pages->applyLimit($criteria);
 		$modell = T01TesisHasUsuario::model()->findAll($criteria);
 		//$model = new CArrayDataProvider($modell);		
-		
+
 
 		$this->render('list_t',array(
 			'Usuario'=>$tar,			 
@@ -276,13 +281,13 @@ public function accessRules()
 		$pages->applyLimit($criteria);
 		$modell = T02PasantiaHasUsuario::model()->findAll($criteria);
 		//$model = new CArrayDataProvider($modell);		
-		
+
 
 		$this->render('list_p',array(
 			'Usuario'=>$tar,			 
 			 'model'=>$modell,
 			 'pages'=>$pages,
-			 
+
 			));
 	}
 	public function actionTesdeta($id){
@@ -306,6 +311,6 @@ public function accessRules()
 			'has1'=>$has1,
 			));
 	}
-	
+
 }
 ?>
