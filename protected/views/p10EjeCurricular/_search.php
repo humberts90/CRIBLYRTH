@@ -1,6 +1,6 @@
 <?php
-/* @var $this P09DepartamentoController */
-/* @var $model P09Departamento */
+/* @var $this P10EjeCurricularController */
+/* @var $model P10EjeCurricular */
 /* @var $form CActiveForm */
 ?>
 
@@ -10,6 +10,11 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
+
+	<div class="row">
+		<?php echo $form->label($model,'P09_id'); ?>
+		<?php echo $form->textField($model,'P09_id'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'id'); ?>

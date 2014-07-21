@@ -13,12 +13,12 @@
 	<?php echo CHtml::encode($data->Nombre); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('P09_id')); ?>:</b>
-	<?php echo CHtml::encode($data->P09_id); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Descripcion')); ?>:</b>
 	<?php echo CHtml::encode($data->Descripcion); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('P10_id')); ?>:</b>
+	<?php echo CHtml::encode($data->P10_id); ?>
 	<br />
 
 

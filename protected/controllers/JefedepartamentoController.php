@@ -27,7 +27,7 @@ class JefedepartamentoController extends Controller {
 						'roles'=>array('Jefe del Departamento'),
 						'users'=>array('@'),
 				),	
-			
+
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 					'roles'=>array('Secretaria'),
 					'users'=>array('@'),
@@ -35,7 +35,7 @@ class JefedepartamentoController extends Controller {
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
-		
+
 		);
 	}
 
@@ -78,7 +78,7 @@ class JefedepartamentoController extends Controller {
 
 	public function actionTes(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		
+
 
 		$criteria=new CDbCriteria;		
 		$criteria->condition='P02_id = 1';
@@ -96,7 +96,7 @@ class JefedepartamentoController extends Controller {
 
 	public function actionPas(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		
+
 
 		$criteria=new CDbCriteria;		
 		$criteria->condition='P02_id = 7';
@@ -109,9 +109,9 @@ class JefedepartamentoController extends Controller {
         'Usuario'=>$tar,
         )); 
 	}
-	
+
 	//----------------------------------------------------------------------------------------------------
-	
+
 	public function actionHistTesisProfesor(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 
@@ -125,13 +125,13 @@ class JefedepartamentoController extends Controller {
         'model'=>$model,
         'Usuario'=>$tar,
 		));
-		
+
 	}
 	public function actionDetalleHistTesisProfesor($id){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$busqueda=M01Profesor::model()->findByPk($id); //TODAS Tesis profesor 
 		$us=M05Usuario::model()->find("Cedula=".$busqueda->Cedula);
-		
+
 		$consulta="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Defensa as FD,B.P02_id AS P02 
 					from m03_tesis as A, t01_tesis_has_usuario as B 
 					WHERE A.id = B.M03_id AND B.P02_id = 2 AND A.P03_id = 7 AND B.M05_id=".$us->id."    
@@ -156,9 +156,9 @@ class JefedepartamentoController extends Controller {
                         'pageSize' => 3,
                     ),
                 ));
-		
+
 			$this->render('detalle_htp',array('Usuario'=>$tar,'dataProvider'=>$dataProvider, 'us'=>$us));
-		
+
 	}
 	public function actionHistPasantiasProfesor(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	

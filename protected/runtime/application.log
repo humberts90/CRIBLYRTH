@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿2014/07/07 19:42:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
@@ -5532,315 +5533,131 @@ Stack trace:
 REQUEST_URI=/STAP/comision/pasdeta/Extra3dLogos/icono.png
 ---
 2014/07/20 02:12:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+=======
+2014/07/21 05:13:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+>>>>>>> 6d2c5930e0bf78381ece377efdffd0d91b03054b
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/noticias.js
-HTTP_REFERER=http://localhost/STAP/comision/pasantias
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
 ---
-2014/07/20 02:12:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+2014/07/21 05:13:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/buscar.js
-HTTP_REFERER=http://localhost/STAP/comision/pasantias
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
 ---
-2014/07/20 02:14:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+2014/07/21 05:14:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/noticias.js
-HTTP_REFERER=http://localhost/STAP/comision/tesis
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
 ---
-2014/07/20 02:14:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+2014/07/21 05:14:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/buscar.js
-HTTP_REFERER=http://localhost/STAP/comision/tesis
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/site/login
 ---
-2014/07/20 02:14:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+2014/07/21 05:14:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/buscar.js
-HTTP_REFERER=http://localhost/STAP/comision/tesis
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//jefedepartamento/index
 ---
-2014/07/20 02:14:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+2014/07/21 05:14:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/noticias.js
-HTTP_REFERER=http://localhost/STAP/comision/tesis
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//jefedepartamento/index
 ---
-2014/07/20 02:15:05 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\STAP\protected\views\comision\_test_2.php:10)
+2014/07/21 05:14:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
 Stack trace:
-#0 C:\xampp\htdocs\yii\framework\zii\widgets\CListView.php(291): ComisionController->renderFile()
-#1 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
-#2 unknown(0): CListView->renderSection()
-#3 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback()
-#4 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CListView->renderContent()
-#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CListView->run()
-#6 C:\xampp\htdocs\STAP\protected\views\comision\list_2.php(29): ComisionController->widget()
-#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
-#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ComisionController->renderInternal()
-#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): ComisionController->renderFile()
-#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): ComisionController->renderPartial()
-#11 C:\xampp\htdocs\STAP\protected\controllers\ComisionController.php(361): ComisionController->render()
-#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ComisionController->actionPasantias()
-#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
-#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ComisionController->runAction()
-#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
-#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ComisionController->filterAccessControl()
-#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
-#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): ComisionController->runActionWithFilters()
-#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ComisionController->run()
-#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#24 C:\xampp\htdocs\STAP\index.php(13): CWebApplication->run()
-REQUEST_URI=/STAP/comision/pasantias
-in C:\xampp\htdocs\STAP\protected\views\comision\_test_2.php (10)
-in C:\xampp\htdocs\STAP\protected\views\comision\list_2.php (29)
-in C:\xampp\htdocs\STAP\protected\controllers\ComisionController.php (361)
-2014/07/20 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('jefedepartament...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH//jefedepartamento/Extra3dLogos/icono.png
+---
+2014/07/21 05:14:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/noticias.js
-HTTP_REFERER=http://localhost/STAP/comision/pasantias
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//jefedepartamento/index
 ---
-2014/07/20 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+2014/07/21 05:14:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('jefedepartament...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH//jefedepartamento/Extra3dLogos/icono.png
+---
+2014/07/21 05:14:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/buscar.js
-HTTP_REFERER=http://localhost/STAP/comision/pasantias
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/jefedepartamento/HistTesisProfesor
 ---
-2014/07/20 02:15:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+2014/07/21 05:14:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
 #1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
+#2 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
 #3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/buscar.js
-HTTP_REFERER=http://localhost/STAP/comision/pasdeta/1
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/jefedepartamento/HistTesisProfesor
 ---
-2014/07/20 02:15:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+2014/07/21 05:14:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
 Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
-#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/noticias.js
-HTTP_REFERER=http://localhost/STAP/comision/pasdeta/1
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('jefedepartament...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/jefedepartamento/Extra3dLogos/icono.png
 ---
-2014/07/20 02:15:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+2014/07/21 05:14:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
 Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
-#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('pasdeta')
-#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comision/pasdet...')
-#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/STAP/comision/pasdeta/Extra3dLogos/icono.png
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('jefedepartament...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/jefedepartamento/Extra3dLogos/icono.png
 ---
-2014/07/20 02:16:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
-#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/buscar.js
-HTTP_REFERER=http://localhost/STAP/comision/cronograma/1
----
-2014/07/20 02:16:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
-#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/noticias.js
-HTTP_REFERER=http://localhost/STAP/comision/cronograma/1
----
-2014/07/20 02:16:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
-#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cronograma')
-#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comision/cronog...')
-#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/STAP/comision/cronograma/Extra3dLogos/icono.png
----
-2014/07/20 02:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
-#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/buscar.js
-HTTP_REFERER=http://localhost/STAP/comision/crono/1
----
-2014/07/20 02:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
-#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/noticias.js
-HTTP_REFERER=http://localhost/STAP/comision/crono/1
----
-2014/07/20 02:16:14 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
-#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('crono')
-#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comision/crono/...')
-#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/STAP/comision/crono/Extra3dLogos/icono.png
----
-2014/07/20 02:16:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
-#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cronograma')
-#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comision/cronog...')
-#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/STAP/comision/cronograma/Extra3dLogos/icono.png
----
-2014/07/20 02:16:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
-#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('crono')
-#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comision/crono/...')
-#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/STAP/comision/crono/Extra3dLogos/icono.png
----
-2014/07/20 02:16:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
-#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/buscar.js
-HTTP_REFERER=http://localhost/STAP/comision/crono/1
----
-2014/07/20 02:16:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
-#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/STAP/themes/stylescripts/noticias.js
-HTTP_REFERER=http://localhost/STAP/comision/crono/1
----
-2014/07/20 02:17:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
-#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('crono')
-#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comision/crono/...')
-#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/STAP/comision/crono/Extra3dLogos/icono.png
----
-2014/07/20 02:17:10 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
-#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cronograma')
-#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comision/cronog...')
-#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/STAP/comision/cronograma/Extra3dLogos/icono.png
----
-2014/07/20 02:17:19 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
-Stack trace:
-#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
-#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
-#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('pasdeta')
-#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comision/pasdet...')
-#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\STAP\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/STAP/comision/pasdeta/Extra3dLogos/icono.png
----
+<<<<<<< HEAD
 >>>>>>> 19d583e15ddacdb1c516fa7245847b4cd7b5fff4
 >>>>>>> b350c701d804d2a8b0f8a3d4cb4ee4a4a999d4cf
+=======
+>>>>>>> 6d2c5930e0bf78381ece377efdffd0d91b03054b

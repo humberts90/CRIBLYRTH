@@ -22,6 +22,7 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+
 <div class="col-lg-8">
 	<h1> Historial de pasantias por cada Profesor </h1>
 
@@ -54,3 +55,4 @@ $('.search-form form').submit(function(){
 	</br>
 					
 </div>
+

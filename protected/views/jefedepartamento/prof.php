@@ -32,12 +32,14 @@ $('.search-form form').submit(function(){
 	)); ?>
 	</div><!-- search-form -->
 
+
 	<table border="0" style="width: 90%" >
 	  <tr>
 	    <td bgcolor="#93AAD3"><h4>Cédula</h4></td>
 	    <td bgcolor="#93AAD3"><h4>Nombre Completo</h4></td>
 	    <td bgcolor="#93AAD3"><h4>Correo Electronico</h4></td>
 	   
+
 	  </tr>
 	 	<?php $this->widget('zii.widgets.CListView', array(
 					'dataProvider'=>$dataProvider,
