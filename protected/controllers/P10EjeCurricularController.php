@@ -1,6 +1,6 @@
 <?php
 
-class P09DepartamentoController extends Controller
+class P10EjeCurricularController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class P09DepartamentoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new P09Departamento;
+		$model=new P10EjeCurricular;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['P09Departamento']))
+		if(isset($_POST['P10EjeCurricular']))
 		{
-			$model->attributes=$_POST['P09Departamento'];
+			$model->attributes=$_POST['P10EjeCurricular'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class P09DepartamentoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['P09Departamento']))
+		if(isset($_POST['P10EjeCurricular']))
 		{
-			$model->attributes=$_POST['P09Departamento'];
+			$model->attributes=$_POST['P10EjeCurricular'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class P09DepartamentoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('P09Departamento');
+		$dataProvider=new CActiveDataProvider('P10EjeCurricular');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class P09DepartamentoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new P09Departamento('search');
+		$model=new P10EjeCurricular('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['P09Departamento']))
-			$model->attributes=$_GET['P09Departamento'];
+		if(isset($_GET['P10EjeCurricular']))
+			$model->attributes=$_GET['P10EjeCurricular'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class P09DepartamentoController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return P09Departamento the loaded model
+	 * @return P10EjeCurricular the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=P09Departamento::model()->findByPk($id);
+		$model=P10EjeCurricular::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +160,11 @@ class P09DepartamentoController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param P09Departamento $model the model to be validated
+	 * @param P10EjeCurricular $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='p09-departamento-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='p10-eje-curricular-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

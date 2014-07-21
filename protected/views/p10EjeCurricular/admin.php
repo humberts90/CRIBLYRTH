@@ -1,15 +1,15 @@
 <?php
-/* @var $this P09DepartamentoController */
-/* @var $model P09Departamento */
+/* @var $this P10EjeCurricularController */
+/* @var $model P10EjeCurricular */
 
 $this->breadcrumbs=array(
-	'P09 Departamentos'=>array('index'),
+	'P10 Eje Curriculars'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List P09Departamento', 'url'=>array('index')),
-	array('label'=>'Create P09Departamento', 'url'=>array('create')),
+	array('label'=>'List P10EjeCurricular', 'url'=>array('index')),
+	array('label'=>'Create P10EjeCurricular', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#p09-departamento-grid').yiiGridView('update', {
+	$('#p10-eje-curricular-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage P09 Departamentos</h1>
+<h1>Manage P10 Eje Curriculars</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -41,10 +41,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'p09-departamento-grid',
+	'id'=>'p10-eje-curricular-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+		'P09_id',
 		'id',
 		'Nombre',
 		array(
