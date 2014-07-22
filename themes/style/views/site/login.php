@@ -9,11 +9,9 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Login</h1>
 
-<p>Please fill out the following form with your login credentials:</p>
 
-<div class="form">
+<div class="form" >
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
@@ -21,33 +19,51 @@ $this->breadcrumbs=array(
 		'validateOnSubmit'=>true,
 	),
 )); ?>
+<div align= "center">
+		<h1>Inicio de Sesion</h1>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
+		<p>Por favor complete el siguiente formulario con sus datos de acceso:</p>
+	<table border="0" style="width: 30%"  align= "center" bgcolor="#93AAD3" >
+</div>		
+  <tr>
+    <td  ><h4><?php echo $form->labelEx($model,'username').": "; ?></h4></td>
+    <td>
+    	<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
-
-	<div class="row rememberMe">
+    </td>
+    </tr>
+    <tr>
+      <td  ><h4><?php echo $form->labelEx($model,'password').": "; ?></h4></td>
+    <td ><?php echo $form->passwordField($model,'password'); ?>
+		<?php echo $form->error($model,'password'); ?></td>
+    
+  </tr>
+  <tr>
+  	<td colspan="2" align="center">
+  			
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
+	
 		<?php echo $form->label($model,'rememberMe'); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
+	
+  	</td>
+  </tr>
+   <tr>
+  	<td colspan="2" align="center">
+  
+		<?php echo CHtml::submitButton('Entrar'); ?>
+	
+  	</td>
+  </tr>
+</table>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
+
+
+
+
+</br>
+
+	
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
