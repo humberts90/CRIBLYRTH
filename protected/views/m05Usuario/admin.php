@@ -62,6 +62,7 @@ $('.search-form form').submit(function(){
 		*/
 		array(
 			'class'=>'CButtonColumn',
+			'deleteButtonUrl'=>'Yii::app()->createUrl("m05Usuario/borrar?id=$data->id" )', 
 		),
 	),
 )); ?>

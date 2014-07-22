@@ -1,17 +1,31 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tesis-form',
+        
 	'enableAjaxValidation'=>false,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
-
-<div id="wizard" class="col-lg-offset-1" >
+<script>
+$(document).ready(function () {                                                        
+$("#guardar").click(function(){
+  $("#M03Tesis_P03_id").val(1); 
+ // $("#tesis-form").submit();
+});
+}); 
+</script>
+<div id="wizard" class="col-lg-offset-1"  >
+   
+    <?php echo $form->hiddenField($model_1,'P03_id',array('rows'=>1, 'cols'=>50,'type' =>'hidden')); ?>
 		<h2>Título y Introducción</h2>
 			<section >              
 					<label>* Título del proyecto</label> 
                   
-					<?php echo $form->textField($model_1,'Titulo',array('size'=>45,'maxlength'=>45)); ?>
+					<?php echo $form->textField($model_1,'Titulo',array('size'=>255,'maxlength'=>255)); ?>
 					<?php echo $form->error($model_1,'Titulo'); ?>
-                    <br />              
+                    <br />      
+						<label>Seleccione Conocimiento</label> 
+					<?php echo $form->dropDownList($model_1,'cono',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimiento','class'=>'form-control')); ?>
+					<?php echo $form->error($model_1,'cono'); ?>
+					<br />					
                  	<label>¿ En Pareja ?</label> 
 					<input type="radio" name="par" value="1"><br>
 					<br />
@@ -37,6 +51,7 @@
 		                <?php echo $form->hiddenField($model_1,"Introduccion",array("type"=>"hidden","id"=>"intro"),array('rows'=>6, 'cols'=>50)); ?>
 		                <?php echo $form->error($model_1,'Introduccion'); ?>
 					<br />
+                                        
                 </section>
         <h2>Capitulo I</h2> 
                 <section>
@@ -84,7 +99,7 @@
 						<?php echo $form->error($model_1,'Justificacion_Importancia'); ?>
 					<br />
 					
-				       
+				    
                 </section>
 
         <h2>Capitulo II</h2>

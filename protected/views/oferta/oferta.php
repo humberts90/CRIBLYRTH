@@ -33,9 +33,6 @@ function revisar()
 
 <?php
 
-$us = isset($Usuario)==1?1:0;
-
-$alumno = P01Rol::model()->find("nombre = 'Alumno'");
 
 echo CHtml::radioButtonList('Modalidad','t',array('t'=>'Tesis','p'=>'Pasantías'),array('separator'=>' ','onclick'=>'revisar()'));
 

@@ -89,12 +89,25 @@ class M01Profesor extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('Cedula',$this->Cedula,true);
-		$criteria->compare('Apellido',$this->Apellido,true);
-		$criteria->compare('Nombre',$this->Nombre,true);
+		$criteria->compare('Apellido',$this->Apellido,true,' OR ');
+		$criteria->compare('Apellido',$this->Nombre,true,' OR ');
+		$criteria->compare('Nombre',$this->Nombre,true,' OR ');
+		$criteria->compare('Nombre',$this->Apellido,true,' OR ');
 		$criteria->compare('Correo_UNET',$this->Correo_UNET,true);
+	
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	//----------------------------------------------------------------------------------------
+	public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
 	}
 }

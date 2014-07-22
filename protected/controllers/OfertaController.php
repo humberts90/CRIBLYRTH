@@ -47,7 +47,8 @@ class OfertaController extends Controller {
 
 		$criteria = new CDbCriteria();
 		$criteria->select = array("*");
-		$criteria->condition = "P03_id = :id";
+		$criteria->condition = "P03_id = :id AND (fecha_val = '0000-00-00' OR fecha_val > curdate())";
+
 		$criteria->params = array(':id'=>$modelStatus->id);
 		$cuentaT = count($criteria);
 		$cuentaT =  M03Tesis::model()->count($criteria);
@@ -102,9 +103,9 @@ class OfertaController extends Controller {
 
 		$model2 = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
 
-		$model3 = T02PasantiasHasUsuario::model()->find("P02_id ='".$model2->id."' and M04_id='".$id."'");
+		$model3 = T02PasantiaHasUsuario::model()->find("P02_id ='".$model2->id."' and M04_id='".$id."'");
 
-		$model4 = M05Usuario::model()->find("id = '".$model3->M05_id."'");		
+		$model4 = M05Usuario::model()->findByPk($model3->M05_id);		
 
 
 		$this->render("detalle_p",array('Usuario'=>$tar,'model'=>$model,'tutor'=>$model4));

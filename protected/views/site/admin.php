@@ -11,6 +11,7 @@
 <li><?php echo CHtml::link('Areas de Conocimiento',array('p10AreasConomicmiento/index')); ?></li>
 <li><?php echo CHtml::link('Conocimientos',array('p11Conocimientos/index')); ?></li>
 <li><?php echo CHtml::link('Noticias',array('t09Noticias/index')); ?></li>
+<li><?php echo CHtml::link('Registro de Cambios',array('ActiveRecordLog/admin')); ?></li>
 </ul>
 
 	

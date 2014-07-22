@@ -19,6 +19,8 @@ class T06ConocimientoProfesor extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return T06ConocimientoProfesor the static model class
 	 */
+	  public $p09_id;
+	 public $P10_id;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -91,5 +93,14 @@ class T06ConocimientoProfesor extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+		//--------------------------------------------------------
+		public function behaviors()
+	{
+	    return array(
+	        // Classname => path to Class
+	        'ActiveRecordLogableBehavior'=>
+	            'application.behaviors.ActiveRecordLogableBehavior',
+	    );
 	}
 }

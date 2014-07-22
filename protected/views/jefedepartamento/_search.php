@@ -15,26 +15,32 @@
 	$criteria= new CDbCriteria;
 	$criteria->order='Nombre ASC';
 	?>
-		<div class="form-group">
-			<?php echo $form->label($model,'Nombre'); ?>
-			<?php echo $form->textField($model,'Nombre',array('size'=>60,'maxlength'=>140,'class'=>"form-control",'placeholder'=>"Buscar")); ?>
-		</div>	
-			<div class="form-group">
-			<?php echo $form->label($model,'Correo_UNET'); ?>
-			<?php echo $form->textField($model,'Correo_UNET',array('size'=>60,'maxlength'=>140,'class'=>"form-control",'placeholder'=>"Buscar")); ?>
-		</div>	
-			<div class="form-group">
-			<?php echo $form->label($model,'Cedula'); ?>
-			<?php echo $form->textField($model,'Cedula',array('size'=>60,'maxlength'=>140,'class'=>"form-control",'placeholder'=>"Buscar")); ?>
-		</div>		
-	
-	
+	<TABLE BORDER="0">
+		<TR>
+			<TD><h4>Cedula</h4></TD> <TD><?php echo $form->textField($model,'Cedula',array('size'=>60,'maxlength'=>140,'class'=>"form-control",'placeholder'=>"Buscar")); ?></TD> 
+		</TR>
+		<TR>
+			<TD><h4>Nombre</h4></TD><TD><?php echo $form->textField($model,'Nombre',array('size'=>60,'maxlength'=>140,'class'=>"form-control",'placeholder'=>"Buscar")); ?></TD> 
+		</TR>
+		<TR>
+		  <TD><h4>Apellido</h4></TD><TD><?php echo $form->textField($model,'Apellido',array('size'=>60,'maxlength'=>140,'class'=>"form-control",'placeholder'=>"Buscar")); ?></TD>
+		</TR>
+		<TR>
+			<TD><h4>Correo Electronico</h4></TD><TD><?php echo $form->textField($model,'Correo_UNET',array('size'=>60,'maxlength'=>140,'class'=>"form-control",'placeholder'=>"Buscar")); ?></TD>
+		</TR>
+		<TR>
+		<TD COLSPAN=2>
+		<div class="row buttons" align="center">
+			<?php echo CHtml::submitButton('Buscar',array('class'=>'btn btn-danger pull-right')); ?>
+		</div>
+		</TD>
+		</TR>
+	</TABLE>
+
 	
 		
 	
-		<div class="row buttons">
-			<?php echo CHtml::submitButton('Buscar',array('class'=>'btn btn-danger pull-right')); ?>
-		</div>
+		
 	
 	<?php $this->endWidget(); ?>
 

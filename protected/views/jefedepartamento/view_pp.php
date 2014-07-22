@@ -9,49 +9,16 @@
 
 <div class="view">
 
+	<tr>
+		<td width="15%"><?php echo CHtml::encode($tesista->Cedula); ?></td>
+		<td><?php echo CHtml::encode($tesista->Nombre." ".$tesista->Apellido); ?></td>
+		<td ><?php echo CHtml::encode($tesista->Correo_Electronico); ?></td>
+		<td ><?php echo CHtml::encode($tesista->Telefono); ?></td>
+		<td ><?php echo CHtml::link(CHtml::encode("Ver detalles"), array('comision/pasdeta', 'id'=>$ts->id)); ?></td>
+
+	</tr>
 	
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Cedula')); ?>:</b>
-	<?php echo CHtml::encode($tesista->Cedula); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Apellido')); ?>:</b>
-	<?php echo CHtml::encode($tesista->Apellido); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Nombre')); ?>:</b>
-	<?php echo CHtml::encode($tesista->Nombre); ?>
-	<br />
-	
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Telefono')); ?>:</b>
-	<?php echo CHtml::encode($tesista->Telefono); ?>
-	<br />
-
-	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Correo_Electronico')); ?>:</b>
-	<?php echo CHtml::encode($tesista->Correo_Electronico); ?>
-	<br />
-
-
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Titulo')); ?>:</b>
-	<?php echo CHtml::encode($ts->Titulo)." ".CHtml::link(CHtml::encode("Ver detalles"), array('comision/pasdeta', 'id'=>$ts->id));; ?>
-	<br />
-
-
-
-	<?php foreach ($tutor as $value) { 
-		if($value->P02_id!=1){
-
-		?>
-		
-
-	<b><?php echo CHtml::encode($value->p02->Descripcion); ?>:</b>
-	<?php echo CHtml::encode($value->m05->Nombre." ".$value->m05->Apellido); ?>
-	<br />
-
-	<?php }}?>
+</div>
 
 
 	

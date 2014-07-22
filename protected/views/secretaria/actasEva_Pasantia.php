@@ -9,7 +9,7 @@ $html = '
 <!--
 body {
 	font: "Times New Roman",Times,FreeSerif,serif;
-	font-size:12pt;
+	font-size:10pt;
 	margin: 0;
 	padding: 0;
 	color: #000;
@@ -28,7 +28,7 @@ h1 {
 	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
 }
 p {
-	margin-top: 0;
+	margin-top: 4px;
 	padding-right: 15px;
 	padding-left: 15px;
 }
@@ -57,12 +57,12 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
 
 .content {
 
-	padding: 10px 0;
+	padding: 5px 0;
 }
 
 /* ~~ El pie de página ~~ */
 .footer {
-	padding: 10px 0;
+	padding: 3px 0;
 	font-size:8pt;
 }
 
@@ -72,38 +72,36 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
 
 <div class="container">
   <div class="header">
-    <a href="#"><img src="imagenes/Logotipo_Unet_republica_bolivariana.jpg" alt="Insertar logotipo aquí" name="Insert_logo" width="233" height="100" id="Insert_logo" style="background: #C6D580;"/></a>
+    <a href="#"><img src="'.Yii::app()->theme->baseUrl.'/images/Logotipo_Unet_republica_bolivariana.jpg" alt="Insertar logotipo aquí" name="Insert_logo" width="200" height="90" id="Insert_logo" style="background: #C6D580;"/></a>
+    <p align="right">Departamento de Ingeniería Informática <br />Trabajo de Aplicación Profesional</p>
   </div>
   
   <div class="content">
   
-    <p align="right">Departamento de Ingeniería Informática</p>
-    <p align="right">Trabajo de Aplicación Profesional</p>
+    
   
 	<h1>Evaluación de las Pasantías Profesionales</h1> 
-    
-    <br></br>
-
+ 
     <table width="100%" border="1" bordercolor="#000000" rules="all">
       <tr>
         <th  colspan="2" align="center" bgcolor="#999999">Datos de las Pasantías Profesionales</th>
         <th  colspan="2" align="center" bgcolor="#999999">Datos de la Presentación Pública</th>
       </tr>
       <tr>
-        <td align="left">Nombres y Apellidos:</td>
-        <td align="left">C.I:</td>
-        <td rowspan="2" align="left" width="150px">Fecha:</td>
-        <td rowspan="2" align="left" width="250px">Lapso Académico:</td>
+        <td align="left">Nombres y Apellidos: '.$Nombre_alumno.'</td>
+        <td align="left">C.I: '.$Cedula_alumno.'</td>
+        <td rowspan="2" align="left" width="150px">Fecha: '.$Fecha_presentacion.'</td>
+        <td rowspan="2" align="left" width="250px">Lapso Académico: '.$L_academico.'</td>
       </tr>
       <tr>
-        <td colspan="2" align="left">Empresa u Organismo:</td>
+        <td colspan="2" align="left">Empresa u Organismo: '.$Nombre_empresa.'</td>
       </tr>
     </table>
     
-    <br></br>
-    <p>Título: <strong>[Titulo de la Pasantia]</strong></p>
+   
+    <p>Título: <strong>'.$Titulo_TAP.'</strong></p>
     
-    <br></br>
+    
     
     <table width="100%" border="1" bordercolor="#000000" rules="all">
       <tr>
@@ -115,15 +113,15 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
       </tr>
       <tr>
         <td rowspan="2">Etapa de Permanencia (50%)</td>
-        <td>Evaluación académica en la empresa (Tutor académico)</td>
-        <td colspan="3">Prof.(a) <strong>[Nombre y Apellido Tutor]</strong></td>
+        <td font-size="8pt">Evaluación académica en la empresa (Tutor académico)</td>
+        <td colspan="3">Prof.(a) <strong>'.$Nombre_tutor.'</strong></td>
         <td>Nota:</td>
         <td></td>
         <td></td>
       </tr>
       <tr>
         <td>Evaluación tutor externo</td>
-        <td colspan="3"></td>
+        <td colspan="3"><strong>'.$Nombre_TutorE.'</strong></td>
         <td>Nota:</td>
         <td></td>
         <td></td>
@@ -163,12 +161,12 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
       </tr>
     </table>    
 
-    <br></br>
+    <br><br><br><br><br>
     <table width="100%" border="1" bordercolor="#000000" rules="all">
       <tr>
-        <th scope="col"  align="left">Prof.(a)</th>
-        <th scope="col"  align="left">Prof.(a)</th>
-        <th scope="col"  align="left">Prof.(a)</th>
+        <th scope="col"  align="center">Prof.(a)'.$Nombre_tutor.'</th>
+        <th scope="col"  align="center">Prof.(a)'.$Nombre_Jurado_1.'</th>
+        <th scope="col"  align="center">Prof.(a)'.$Nombre_Jurado_2.'</th>
       </tr>
       <tr>
         <td  align="center"  bgcolor="#999999">Tutor</td>
@@ -180,9 +178,9 @@ a img { /* este selector elimina el borde azul predeterminado que se muestra en 
     <!-- end .content --></div>
   <div class="footer">
     <HR width=100% align="center"> 
-    <p align="center">Edificio Administrativo: Avda. Universidad - Paramillo, Teléfono: 530422,  Apartado: 436 , San Cristóbal, Estado Táchira.</p>
-    <p align="center">Oficina de Enlace: Parque Central Edificio Catuche. Nivel de Oficinas 1 – Oficinas 111 – 112.</p>
-    <p align="center">Teléfono: 577-12-16 – Fax: 577-00-80 Caracas – Distrito Federal, Venezuela.</p>
+    <p align="center">Edificio Administrativo: Avda. Universidad - Paramillo, Teléfono: 530422,  Apartado: 436 , San Cristóbal, Estado Táchira.
+    <br>Oficina de Enlace: Parque Central Edificio Catuche. Nivel de Oficinas 1 – Oficinas 111 – 112.
+    <br>Teléfono: 577-12-16 – Fax: 577-00-80 Caracas – Distrito Federal, Venezuela.</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>
