@@ -20,7 +20,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Titulo'); ?>
-		<?php echo $form->textField($model,'Titulo',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'Titulo',array('size'=>60,'maxlength'=>255, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Titulo'); ?>
 	</div>
 	<div class="row">
@@ -42,7 +42,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Imagen'); ?>
-		 <?php echo $form->fileField($model,'Imagen',array('rows'=>1, 'cols'=>50)); ?>
+		 <?php echo $form->fileField($model,'Imagen',array('rows'=>1, 'cols'=>50, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Imagen'); ?>
 	</div>
 		<div class="row">		

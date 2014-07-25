@@ -30,9 +30,8 @@ $this->menu=array(
 	array('label'=>'Listado de profesores', 'url'=>array('prof')),
 	array('label'=>'Listado de tesistas', 'url'=>array('tes')),
 	array('label'=>'Listado de pasantes', 'url'=>array('pas')),
-
 	array('label'=>'Historial de Tesis de Profesor', 'url'=>array('HistTesisProfesor')),
-	array('label'=>'Historial de Tesis de Profesor', 'url'=>array('HistPasantiasProfesor')),
+	array('label'=>'Historial de Pasantias de Profesor', 'url'=>array('HistPasantiasProfesor')),
 
 );
 ?>
