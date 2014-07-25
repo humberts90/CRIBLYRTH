@@ -96,7 +96,13 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Referencias')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Referencias); ?></p>
-
+	<br/>
+	<b><?php echo CHtml::encode($model->getAttributeLabel('fecha_val')); ?>:</b>
+	<p><?php echo CHtml::encode($model->fecha_val); ?></p>
+	<br />
+	<b><?php echo CHtml::encode($model->getAttributeLabel('vacantes')); ?>:</b>
+	<p><?php echo CHtml::encode($model->vacantes); ?></p>
+	<br />
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Lapso_Academico_defensa')); ?>:</b>
 	<p><?php echo CHtml::encode($model->Lapso_Academico_defensa); ?></p>
 	<br />

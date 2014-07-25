@@ -8,20 +8,10 @@
  * @property string $Nombre
  *
  * The followings are the available model relations:
- * @property P10AreasConomicmiento[] $p10AreasConomicmientos
+ * @property P10EjeCurricular[] $p10EjeCurriculars
  */
 class P09Departamento extends CActiveRecord
 {
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return P09Departamento the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
-
 	/**
 	 * @return string the associated database table name
 	 */
@@ -41,7 +31,7 @@ class P09Departamento extends CActiveRecord
 			array('Nombre', 'required'),
 			array('Nombre', 'length', 'max'=>45),
 			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
+			// @todo Please remove those attributes that should not be searched.
 			array('id, Nombre', 'safe', 'on'=>'search'),
 		);
 	}
@@ -54,7 +44,7 @@ class P09Departamento extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'p10AreasConomicmientos' => array(self::HAS_MANY, 'P10AreasConomicmiento', 'P09_id'),
+			'p10EjeCurriculars' => array(self::HAS_MANY, 'P10EjeCurricular', 'P09_id'),
 		);
 	}
 
@@ -71,12 +61,19 @@ class P09Departamento extends CActiveRecord
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
 	 */
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
@@ -87,13 +84,15 @@ class P09Departamento extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-		//--------------------------------------------------------
-		public function behaviors()
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return P09Departamento the static model class
+	 */
+	public static function model($className=__CLASS__)
 	{
-	    return array(
-	        // Classname => path to Class
-	        'ActiveRecordLogableBehavior'=>
-	            'application.behaviors.ActiveRecordLogableBehavior',
-	    );
+		return parent::model($className);
 	}
 }

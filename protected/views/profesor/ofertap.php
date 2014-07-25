@@ -67,7 +67,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 				<br />
 				<br />
 				<br />
-			<label>Valido Hasta:</label>                                  
+			<label>Fecha Limite:</label>                                  
 						<?php 
 						$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			                    'model' => $model,

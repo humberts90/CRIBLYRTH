@@ -47,7 +47,7 @@ class OfertaController extends Controller {
 
 		$criteria = new CDbCriteria();
 		$criteria->select = array("*");
-		$criteria->condition = "P03_id = :id AND fecha_val > curdate()";
+		$criteria->condition = "P03_id = :id AND (fecha_val = '0000-00-00' OR fecha_val > curdate())";
 
 		$criteria->params = array(':id'=>$modelStatus->id);
 		$cuentaT = count($criteria);

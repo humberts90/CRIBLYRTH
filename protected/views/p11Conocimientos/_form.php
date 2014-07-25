@@ -8,6 +8,10 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'p11-conocimientos-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -17,20 +21,20 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre'); ?>
-		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Nombre'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'P09_id'); ?>
-		<?php echo $form->textField($model,'P09_id'); ?>
-		<?php echo $form->error($model,'P09_id'); ?>
+		<?php echo $form->labelEx($model,'Descripcion'); ?>
+		<?php echo $form->textArea($model,'Descripcion',array('rows'=>6, 'cols'=>50, 'class'=>"form-control")); ?>
+		<?php echo $form->error($model,'Descripcion'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Descripcion'); ?>
-		<?php echo $form->textArea($model,'Descripcion',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'Descripcion'); ?>
+		<?php echo $form->labelEx($model,'P10_id'); ?>
+		<?php echo $form->textField($model,'P10_id'); ?>
+		<?php echo $form->error($model,'P10_id'); ?>
 	</div>
 
 	<div class="row buttons">

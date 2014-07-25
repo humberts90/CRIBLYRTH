@@ -9,15 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-
-	array('label'=>'Inicio', 'url'=>array('site/admin')),
-	array('label'=>'Lista de Departamentos', 'url'=>array('index')),
-	array('label'=>'Nuevo Departamento', 'url'=>array('create')),
-	array('label'=>'Detalles del Departamento', 'url'=>array('view', 'id'=>$model->id)),	
-	array('label'=>'Administrar Departamentos', 'url'=>array('admin')),
+	array('label'=>'List P09Departamento', 'url'=>array('index')),
+	array('label'=>'Create P09Departamento', 'url'=>array('create')),
+	array('label'=>'View P09Departamento', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Manage P09Departamento', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Departamento <?php echo $model->Nombre; ?></h1>
+<h1>Update P09Departamento <?php echo $model->id; ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>

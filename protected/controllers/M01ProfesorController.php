@@ -102,7 +102,13 @@ class M01ProfesorController extends Controller
 	 */
 	public function actionBorrar($id)
 	{
+		$aso=T06ConocimientoProfesor::model()->findAll("M01_d=".$id);
+		foreach ($aso as $key) {
+			$key->delete();
+		}
 		$this->loadModel($id)->delete();
+
+
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
