@@ -23,8 +23,8 @@ foreach ($roles as  $value) {
 }
 $this->menu=array(
 	array('label'=>'Inicio', 'url'=>array('index')),
-	array('label'=>'Tesis', 'url'=>array('tesis')),
-	array('label'=>'Pasantias', 'url'=>array('Pasantias')),
+	array('label'=>'Ofertas Tesis', 'url'=>array('tesis')),
+	array('label'=>'Ofertas Pasantias', 'url'=>array('Pasantias')),
 	array('label'=>'Subir oferta tesis', 'url'=>array('oferta_t')),	
 	array('label'=>'Subir oferta pasantias', 'url'=>array('oferta_p')),
 	array('label'=>'Agregar areas de conocimiento', 'url'=>array('cono')),

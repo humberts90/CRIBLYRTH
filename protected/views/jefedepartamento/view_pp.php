@@ -4,9 +4,6 @@
  $ts=M04Pasantia::model()->findByPk($data->M04_id);
  $tutor=T02PasantiaHasUsuario::model()->findAll("M04_id =".$ts->id);
 ?>
-
-
-
 <div class="view">
 
 	<tr>

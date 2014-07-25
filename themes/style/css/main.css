@@ -45,6 +45,38 @@ body{
 	margin-left:0px;
 	float:left;
 }
+.principal .banner .inicio{
+	height: 20px;
+	color:#03216A;
+	padding:0px;
+	margin-right:25px;
+	float:right;
+}
+.principal .banner .inicio .ini{
+	width: 350px;
+	height: 72px;
+	font-size: 14px;
+	color:#03216A;
+	text-align: right;
+	padding: 40px 20px 30px 80px;
+	float:right;
+}
+.principal .banner .inicio .ini_2{
+	height: 72px;
+	font-size: 16px;
+	color:#03216A;
+	margin-bottom: 50px;
+	padding: 10px 20px 50px 0px;
+	float:right;
+}
+ .ini_2{
+	height: 72px;
+	font-size: 16px;
+	color:#03216A;
+	margin-bottom: 50px;
+	padding: 10px 20px 50px 0px;
+	float:right;
+}
 .principal .banner .logounet{
 	width: 63px;
 	height: 72px;

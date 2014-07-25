@@ -10,11 +10,14 @@
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/main.css" />
 		<link rel="Shortcut Icon" type="image/x-icon" href="Extra3dLogos/icono.png" />
+		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-glyphicons.css "/>
+		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css "/>
 		<script type="text/javascript" rel="javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/scripts/jquery-1.7.2.min.js" ></script>
 		<script type="text/javascript" rel="javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/scripts/jquery.cycle.all.js" ></script>
 		<script type="text/javascript" rel="javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/scripts/fotos.js" ></script>
 		<script src="<?php echo Yii::app()->theme->baseUrl; ?>scripts/buscar.js" type="text/javascript"></script>
 		<script src="<?php echo Yii::app()->theme->baseUrl; ?>scripts/noticias.js" type="text/javascript"></script>
+		<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/bootstrap.js"></script>	
 	</head>
 	<body>
 		<div class="principal" >
@@ -24,6 +27,38 @@
 				
 				<div class="logoinf">
 					<span><h1></h1></span>
+				</div>
+				<div class="inicio">					
+						<?php 
+							if(!Yii::app()->user->isGuest ){
+								echo '<div class= "ini">';
+								echo " ".Yii::app()->user->name." ";
+								echo CHtml::link(CHtml::encode('(Cerrar sesion)'), array('/site/logout'));
+								echo '</div>';
+							}
+							else{
+								if(strcmp(Yii::app()->controller->action->id,"login")!=0){
+									echo '<div class= "ini_2" >';
+									
+									?>
+									<form method="POST" action=<?php echo Yii::app()->homeUrl.'/site/login'; ?> name="login-form" id="logintop" class="form-inline pull-right" >
+									<div class="form-group">
+									<input name="usuario" id="usuario" type="text" class="form-control input-sm" placeholder="Usuario">
+									</div>
+									<div class="form-group">
+									<input name="contrasena" id="contrasena" type="password" class="form-control input-sm" placeholder="Contraseña">
+									</div>
+									<button type="submit" class="btn btn-default" > Iniciar sesión </button>
+									<div style="color:#93AAD3">							
+
+									</div>
+									</form>
+
+									<?php
+									echo '</div>';
+								}
+							}
+						 ?>					
 				</div>
 		
 				<div class="menu">
@@ -80,14 +115,12 @@
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/tesis', 'view'=>'about')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Pasantías</p>
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/pasantias')),
-						array('label'=>'<p class="letrasgrandes">Inicio de sesión</p>
-								<p class="letraspequenas">Adaptado a tus necesidades</p>', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Cerrar Sesion ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+					
 						
 					),
 				)); ?>
 				</div>
-				<<div class="lineazul"></div>
+				<div class="lineazul"></div>
 
 			</div>
 				<div class="content">
