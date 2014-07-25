@@ -1,4 +1,4 @@
-<?php
+, 'class'=>"form-control"<?php
 /* @var $this M07TutorExternoController */
 /* @var $model M07TutorExterno */
 /* @var $form CActiveForm */
@@ -22,49 +22,49 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Cedula'); ?>
-		<?php echo $form->textField($model,'Cedula',array('size'=>12,'maxlength'=>12)); ?>
+		<?php echo $form->textField($model,'Cedula',array('size'=>12,'maxlength'=>12, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Cedula'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Apellido'); ?>
-		<?php echo $form->textField($model,'Apellido',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'Apellido',array('size'=>45,'maxlength'=>45, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Apellido'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre'); ?>
-		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Nombre'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Telefono'); ?>
-		<?php echo $form->textField($model,'Telefono',array('size'=>25,'maxlength'=>25)); ?>
+		<?php echo $form->textField($model,'Telefono',array('size'=>25,'maxlength'=>25, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Telefono'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Correo'); ?>
-		<?php echo $form->textField($model,'Correo',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'Correo',array('size'=>60,'maxlength'=>255, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Correo'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Cargo_Empresa'); ?>
-		<?php echo $form->textField($model,'Cargo_Empresa',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'Cargo_Empresa',array('size'=>60,'maxlength'=>255, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Cargo_Empresa'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Curriculum'); ?>
-		<?php echo $form->fileField($model,'Curriculum',array('rows'=>1, 'cols'=>50)); ?>
+		<?php echo $form->fileField($model,'Curriculum',array('rows'=>1, 'cols'=>50, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Curriculum'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Enlace'); ?>
-		<?php echo $form->textField($model,'Enlace',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'Enlace',array('size'=>60,'maxlength'=>255, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Enlace'); ?>
 	</div>
 

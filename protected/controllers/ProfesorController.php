@@ -104,22 +104,7 @@ public function accessRules()
 	}
 
 
-	public function actionCono(){
-	  $tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
-		$model=new T06ConocimientoProfesor;
-		if(isset($_POST['T06ConocimientoProfesor']))
-		{
-			$model->attributes=$_POST['T06ConocimientoProfesor'];
-			$cons=M01Profesor::model()->find("Cedula=".$tar->Cedula);
-			$model->M01_d=$cons->id;
-			if($model->save()){
 
-			}
-
-		}
-
-		$this->render('cprof',array('Usuario'=>$tar,'model'=>$model,));
-	}
 
 	public function actionOferta_t()
 	{
@@ -310,6 +295,51 @@ public function accessRules()
 			'model'=>$Pasantia,
 			'has1'=>$has1,
 			));
+	}
+	
+	public function actionCono()
+	{
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=new T06ConocimientoProfesor;
+		
+		$this->render('cono',array('Usuario'=>$tar,'model'=>$model));
+		if( isset ($_POST['T06ConocimientoProfesor'])){
+		  $model->attributes=$_POST['T06ConocimientoProfesor'];
+		  $prof=M01Profesor::model()->find('Cedula='.$tar->Cedula);
+		  $model->M01_d=$prof->id;
+		  $model->save();
+		}
+		
+	}
+	public function actionSelect(){
+
+
+		$id_uno =$_POST['T06ConocimientoProfesor']['p09_id'];
+
+		$lista=P10EjeCurricular::model()->findAll('p09_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
+	}
+	public function actionSelectdos(){
+
+
+		$id_uno =$_POST['T06ConocimientoProfesor']['P10_id'];
+
+		$lista=P11Conocimientos::model()->findAll('P10_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
 	}
 
 }

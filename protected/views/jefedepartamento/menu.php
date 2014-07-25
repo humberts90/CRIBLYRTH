@@ -33,7 +33,7 @@ $this->menu=array(
 	array('label'=>'Historial de Tesis Culminadas', 'url'=>array('TesisFin')),	
 	array('label'=>'Historial de Pasantías Culminadas', 'url'=>array('PasantiaFin')),
 	array('label'=>'Historial de Tesis de Profesor', 'url'=>array('HistTesisProfesor')),
-	array('label'=>'Historial de Tesis de Profesor', 'url'=>array('HistPasantiasProfesor')),
+	array('label'=>'Historial de Pasantias de Profesor', 'url'=>array('HistPasantiasProfesor')),
 
 );
 ?>
