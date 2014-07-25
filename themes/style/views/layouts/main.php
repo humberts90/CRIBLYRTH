@@ -41,7 +41,7 @@
 									echo '<div class= "ini_2" >';
 									
 									?>
-									<form method="POST" action="../site/login" name="login-form" id="logintop" class="form-inline pull-right" >
+									<form method="POST" action=<?php echo Yii::app()->homeUrl.'/site/login'; ?> name="login-form" id="logintop" class="form-inline pull-right" >
 									<div class="form-group">
 									<input name="usuario" id="usuario" type="text" class="form-control input-sm" placeholder="Usuario">
 									</div>
