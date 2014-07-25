@@ -2,9 +2,6 @@
 /* @var $this M05UsuarioController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Inicio',
-);
 
 echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
@@ -22,23 +19,22 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-<h1> Listado de Pasantes</h1>
 
-<div class="col-lg-8">
-<h2> Resultados de la búsqueda </h2> 
-<table border="0" style="width: 100%" >
-
+<h1>Histórico de Tesis Finalizadas</h1>
+<div style='overflow-x:scroll'>
+<table border="0"  width="680px">
+	 	
 	 <tr>
-	 <td bgcolor="#93AAD3"><h4>Cédula</h4></td>
-	 <td bgcolor="#93AAD3"><h4>Nombre Completo</h4></td>
-	  <td bgcolor="#93AAD3"><h4>Teléfono</h4></td>
-	 <td bgcolor="#93AAD3"><h4>Correo Electrónico</h4></td>
+	 <td bgcolor="#93AAD3" ><h4>&nbsp;Título</h4></td>
+	 <td bgcolor="#93AAD3"><h4>Fecha de Inscipción</h4></td>
+	 <td bgcolor="#93AAD3"><h4>Fecha de Aprobación</h4></td>
+	 <td bgcolor="#93AAD3"><h4>Fecha de Defensa</h4></td>
 	 <td bgcolor="#93AAD3"><h4>Proyecto</h4></td>
-	</tr>
+	 </tr>
 
 		<?php $this->widget('zii.widgets.CListView', array(
 				'dataProvider'=>$dataProvider,
-				'itemView'=>'view_pp',
+				'itemView'=>'view_tfin',
 				'pager' => array(
 							//'cssFile'=>Yii::app()->theme->baseUrl."/css/bootstrap.css",
 							'htmlOptions'=>array(
@@ -48,6 +44,7 @@ $('.search-form form').submit(function(){
 					),
 		)); ?>	
 
-		</table>
-	</br>			
+</table>
 </div>
+</br>	
+
