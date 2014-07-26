@@ -39,6 +39,7 @@
 							else{
 								if(strcmp(Yii::app()->controller->action->id,"login")!=0){
 									echo '<div class= "ini_2" >';
+									//echo Yii::app()->controller->id ." ". Yii::app()->controller->action->id;
 									
 									?>
 									<form method="POST" action=<?php echo Yii::app()->homeUrl.'/site/login'; ?> name="login-form" id="logintop" class="form-inline pull-right" >
@@ -106,13 +107,15 @@
 					$this->widget('zii.widgets.CMenu',array(
 					'encodeLabel'=>false,
 					'id'=>'menu4',
+
+					
 					'items'=>array(
 						array('label'=>'<p class="letrasgrandes">INICIO</p>',
-									'url'=>array($ruta)),
+									'url'=>array($ruta), 'itemOptions'=>array('class'=>''),),
 						array('label'=>'<p class="letrasgrandes">Ofertas TAP</p>
-									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/oferta/index')),
+									<p class="letraspequenas">Propuestas en Tesis y Pasantías</p>', 'url'=>array('/oferta/index'),'itemOptions'=>array('class'=>'')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Tesis</p>
-									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/tesis', 'view'=>'about')),
+									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/tesis')),
 						array('label'=>'<p class="letrasgrandes">Decidí hacer Pasantías</p>
 									<p class="letraspequenas">¿Y ahora qué?</p>', 'url'=>array('/site/pasantias')),
 					

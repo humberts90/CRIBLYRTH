@@ -1044,16 +1044,18 @@ body{
 .principal .banner .menu #menu4 li {
     float: left;
 	margin-right:4px;
-	
+	background-color: #93AAD3;
+	border-radius: 5px 5px 0 0;
 }
+
 .principal .banner .menu #menu4 li a {
 	/*width: 860px;
 	height: 40px;
 	192
 	*/
 	
-    background-color: #93AAD3;
-	width: 180px;
+    /*background-color: #93AAD3;*/
+	width: 225px;
 	height: 40px;
 	/*padding-left:10px;
 	padding-top:7px;
@@ -1067,6 +1069,7 @@ body{
 	text-decoration:none;
     
 }
+
 .principal .banner .menu #menu4 li a .letrasgrandes{
 	/*color:#FFF;
 	font:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -1112,6 +1115,13 @@ body{
     background-color: #284181;
     color: #FFF;
 }
+
+.principal .banner .menu #menu4 li.active {
+   background-color: #284181;
+    color: #FFF;
+	
+}
+
 
 
 
