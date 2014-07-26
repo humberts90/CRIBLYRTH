@@ -242,7 +242,6 @@ public function actionHistPasantiaProfesor(){
                 ));
 		
 			$this->render('detalle_htp',array('Usuario'=>$tar,'dataProvider'=>$dataProvider, 'us'=>$us));
-        ));
 
 	}
 
