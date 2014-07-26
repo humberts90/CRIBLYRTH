@@ -11,6 +11,10 @@
 	'method'=>'get',
 )); ?>
 
+	<div class="row">
+		<?php echo $form->label($model,'id'); ?>
+		<?php echo $form->textField($model,'id'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'Nombre'); ?>
@@ -18,7 +22,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Buscar'); ?>
+		<?php echo CHtml::submitButton('Search'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

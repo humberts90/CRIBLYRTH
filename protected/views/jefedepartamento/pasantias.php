@@ -24,14 +24,18 @@ $('.search-form form').submit(function(){
 ?>
 <h1> Listado de Pasantes</h1>
 
-
-
-
-
 <div class="col-lg-8">
+<h2> Resultados de la búsqueda </h2> 
+<table border="0" style="width: 100%" >
 
+	 <tr>
+	 <td bgcolor="#93AAD3"><h4>Cédula</h4></td>
+	 <td bgcolor="#93AAD3"><h4>Nombre Completo</h4></td>
+	  <td bgcolor="#93AAD3"><h4>Teléfono</h4></td>
+	 <td bgcolor="#93AAD3"><h4>Correo Electrónico</h4></td>
+	 <td bgcolor="#93AAD3"><h4>Proyecto</h4></td>
+	</tr>
 
-	<h2> Resultados de la búsqueda </h2>
 		<?php $this->widget('zii.widgets.CListView', array(
 				'dataProvider'=>$dataProvider,
 				'itemView'=>'view_pp',
@@ -42,5 +46,8 @@ $('.search-form form').submit(function(){
 							),
 					
 					),
-		)); ?>				
+		)); ?>	
+
+		</table>
+	</br>			
 </div>

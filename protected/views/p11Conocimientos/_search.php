@@ -22,13 +22,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'P09_id'); ?>
-		<?php echo $form->textField($model,'P09_id'); ?>
+		<?php echo $form->label($model,'Descripcion'); ?>
+		<?php echo $form->textArea($model,'Descripcion',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'Descripcion'); ?>
-		<?php echo $form->textArea($model,'Descripcion',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->label($model,'P10_id'); ?>
+		<?php echo $form->textField($model,'P10_id'); ?>
 	</div>
 
 	<div class="row buttons">

@@ -17,25 +17,25 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Cedula'); ?>
-		<?php echo $form->textField($model,'Cedula',array('size'=>12,'maxlength'=>12)); ?>
+		<?php echo $form->textField($model,'Cedula',array('size'=>12,'maxlength'=>12, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Cedula'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Apellido'); ?>
-		<?php echo $form->textField($model,'Apellido',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'Apellido',array('size'=>45,'maxlength'=>45, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Apellido'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre'); ?>
-		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Nombre'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Correo_UNET'); ?>
-		<?php echo $form->textField($model,'Correo_UNET',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'Correo_UNET',array('size'=>45,'maxlength'=>45, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Correo_UNET'); ?>
 	</div>
 
