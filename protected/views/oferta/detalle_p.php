@@ -11,15 +11,10 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 <?php 
 
-
-$us = Yii::app()->user->isGuest;
-
-$alumno = P01Rol::model()->find("nombre = 'Alumno'");
-
 	$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
+		
 		'Titulo',
 		'Planteamiento_Problema',
 		'Descripcion_Trabajo',

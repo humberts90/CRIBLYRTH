@@ -124,7 +124,7 @@
 
 			</div>
 				<div class="content">
-				<<?php echo $content; ?>
+				<?php echo $content; ?>
 				</div>
 			<!-- Inicio pie de pag-->
 			<div class="piedepag">
