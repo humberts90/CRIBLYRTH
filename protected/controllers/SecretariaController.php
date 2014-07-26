@@ -1,4 +1,7 @@
 <?php
+
+include 'Excel/PHPExcel/IOFactory.php';
+
 class SecretariaController extends Controller {
 	
 	public $layout='//layouts/column2';
@@ -44,6 +47,174 @@ class SecretariaController extends Controller {
 		$this->render('index',array('Usuario'=>$tar,));
 	}
 
+	public static function validar($claves)
+	{
+		$ind=1;
+		if(strcasecmp("Titulo",trim($claves["A"]))!=0)
+			$ind=0;
+		if(strcasecmp("Introduccion",trim($claves["B"]))!=0)
+			$ind=0;
+		if(strcasecmp("Planteamiento del Problema",trim($claves["C"]))!=0)
+			$ind=0;
+		if(strcasecmp("Objetivo General",trim($claves["D"]))!=0)
+			$ind=0;
+		if(strcasecmp("Objetivos Especificos",trim($claves["E"]))!=0)
+			$ind=0;
+		if(strcasecmp("Justificacion e Importancia",trim($claves["F"]))!=0)
+			$ind=0;
+		if(strcasecmp("Alcance y Delimitaciones",trim($claves["G"]))!=0)
+			$ind=0;
+		if(strcasecmp("Antecedentes",trim($claves["H"]))!=0)
+			$ind=0;
+		if(strcasecmp("Bases Teoricas",trim($claves["I"]))!=0)
+			$ind=0;
+		if(strcasecmp("Bases Legales",trim($claves["J"]))!=0)
+			$ind=0;
+		if(strcasecmp("Definicion de Terminos",trim($claves["K"]))!=0)
+			$ind=0;
+		if(strcasecmp("Enfoque de la Investigacion",trim($claves["L"]))!=0)
+			$ind=0;
+		if(strcasecmp("Tipo de Investigacion",trim($claves["M"]))!=0)
+			$ind=0;
+		if(strcasecmp("D. de la Investigacion",trim($claves["N"]))!=0)
+			$ind=0;
+		if(strcasecmp("Poblacion y Muestra",trim($claves["O"]))!=0)
+			$ind=0;
+		if(strcasecmp("Tecnicas de recoleccion de Datos",trim($claves["P"]))!=0)
+			$ind=0;
+		if(strcasecmp("Metodologias",trim($claves["Q"]))!=0)
+			$ind=0;	
+		if(strcasecmp("Referencias",trim($claves["R"]))!=0)
+			$ind=0;
+		if(strcasecmp("Fecha de Defensa",trim($claves["S"]))!=0)
+			$ind=0;
+		if(strcasecmp("Lapso Academico",trim($claves["T"]))!=0)
+			$ind=0;	
+
+		return $ind;
+	}
+
+	public static function guardar($data)
+	{
+		$status = P03Status::model()->find("Descripcion='Culminada'");
+
+		if(isset($data["A"]))
+		{
+			$tesis = new M03Tesis();
+
+			$tesis->Titulo = $data["A"];
+
+			$tesis->Introduccion = $data["B"];
+
+			$tesis->Planteamiento_Problema = $data["C"];
+
+			$tesis->Objetivo_General = $data["D"];
+
+			$tesis->Objetivo_especifico = $data["E"];
+
+			$tesis->Justificacion_Importancia = $data["F"];
+
+			$tesis->Alcance_Delimitaciones = $data["G"];
+
+			$tesis->Antecedentes = $data["H"];
+
+			$tesis->Bases_Teoricas = $data["I"];
+
+			$tesis->Bases_Legales = $data["J"];
+
+			$tesis->Definicion_Terminos = $data["K"];
+
+			$tesis->Enfoque_Investigacion = $data["L"];
+
+			$tesis->Tipo_Nivel_Invesstigacion = $data["M"];
+
+			$tesis->Diseno_Investigacion = $data["N"];
+
+			$tesis->Poblacion_Muestra = $data["O"];
+
+			$tesis->Tecnicas_Recoleccion_Datos = $data["P"];
+
+			$tesis->Metodologias = $data["Q"];
+
+			$tesis->Referencias = $data["R"];
+
+			$tesis->Fecha_Defensa = $data["S"];
+
+			$tesis->Lapso_Academico_defensa = $data["T"];
+
+			$tesis->P03_id = $status->id;
+
+			$tesis->save(false);
+		}
+
+	}
+
+	public function actionCargar(){  
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$error="";
+		
+		if(isset($_FILES['file']))
+		{
+			if($_FILES['file']['error']==0)
+			{
+				$ext = end(explode(".",$_FILES['file']['name']));
+
+				if(strcmp($ext,"xls")==0 || strcmp($ext,"xlsx")==0)
+				{	
+
+					rename($_FILES['file']['tmp_name'],$_FILES['file']['name']);
+
+					$objPHPExcel = PHPExcel_IOFactory::load($_FILES['file']['name']);
+					$sheetData = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+
+					$pos=1;
+					$enc=false;
+					while(isset($sheetData[$pos]) && !$enc)
+					{
+						if(isset($sheetData[$pos]["A"]))
+							$enc=true;
+						else
+							$pos=$pos+1;
+					}
+
+					if($enc)
+					{
+						if(count($sheetData[$pos])>=20)
+						{
+							if(SecretariaController::validar($sheetData[$pos]))
+							{
+								
+								$a=$pos+1;
+								while(isset($sheetData[$a]))
+								{
+									SecretariaController::guardar($sheetData[$a]);
+									$a=$a+1;
+								}
+							
+								$this->render('index',array('Usuario'=>$tar,));	
+							}
+							else
+							$error="formato no valido";
+						}
+						else
+						$error="formato no valido";	
+					}
+					else
+					$error="hoja de calculo vacia";	
+
+					unlink($_FILES['file']['name']);
+
+				}
+				else
+				$error="tipo de archivo no valido";	
+			}
+			else
+			$error="error al cargar el archivo";	
+		}
+
+		$this->render('cargar_excel',array('Usuario'=>$tar, 'error'=>$error,));
+	}
 
 	public function actionEvaluatesis(){
 		

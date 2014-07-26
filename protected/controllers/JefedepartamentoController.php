@@ -62,7 +62,38 @@ class JefedepartamentoController extends Controller {
 	//----------------Reporte de Tesis Finalizadas-------------------------------------------
 
 	public function actionTesisFin(){
+		
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$criteria=new CDbCriteria;	
+		$criteria->condition='P03_id = 7';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M03Tesis::model(), array('criteria'=>$criteria,));
+	
+	  	$this->render('tesisfin',array(
+        'dataProvider'=>$dataProvider,
+       // 'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
+
+	}
+
+	//----------------Reporte de Pasantías Finalizadas-------------------------------------------
+
+	public function actionPasantiaFin(){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$criteria=new CDbCriteria;	
+		$criteria->condition='P03_id = 7';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M04Pasantia::model(), array('criteria'=>$criteria,));
+	
+	  	$this->render('pasantiafin',array(
+        'dataProvider'=>$dataProvider,
+       // 'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
 
 	}
 
@@ -142,6 +173,7 @@ class JefedepartamentoController extends Controller {
 			 $dataProvider = new CSqlDataProvider($rawData, array( //or $model=new CArrayDataProvider($rawData, array(... //using with querAll...
                     'keyField' => 'ID',   
                     'totalItemCount'=>$count,       
+
  
  
                     'sort' => array(
