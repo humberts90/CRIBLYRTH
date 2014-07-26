@@ -46,6 +46,16 @@ class SiteController extends Controller
 		$model=T09Noticias::model()->findAll();
 		$this->render('index',array('model'=>$model));
 	}
+		public function actionMision()
+	{
+		
+		$this->render('mision');
+	}
+		public function actionDocu()
+	{
+		
+		$this->render('documentos');
+	}
 
 	/**
 	 * This is the action to handle external exceptions.
