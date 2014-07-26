@@ -27,7 +27,7 @@ class JefedepartamentoController extends Controller {
 						'roles'=>array('Jefe del Departamento'),
 						'users'=>array('@'),
 				),	
-			
+
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 					'roles'=>array('Secretaria'),
 					'users'=>array('@'),
@@ -35,7 +35,7 @@ class JefedepartamentoController extends Controller {
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
-		
+
 		);
 	}
 
@@ -59,10 +59,49 @@ class JefedepartamentoController extends Controller {
         'Usuario'=>$tar,
         )); 		
 	}
+	//----------------Reporte de Tesis Finalizadas-------------------------------------------
+
+	public function actionTesisFin(){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$criteria=new CDbCriteria;	
+		$criteria->condition='P03_id = 7';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M03Tesis::model(), array('criteria'=>$criteria,));
+	
+	  	$this->render('tesisfin',array(
+        'dataProvider'=>$dataProvider,
+       // 'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
+
+	}
+
+	//----------------Reporte de Pasantías Finalizadas-------------------------------------------
+
+	public function actionPasantiaFin(){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$criteria=new CDbCriteria;	
+		$criteria->condition='P03_id = 7';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M04Pasantia::model(), array('criteria'=>$criteria,));
+	
+	  	$this->render('pasantiafin',array(
+        'dataProvider'=>$dataProvider,
+       // 'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
+
+	}
+
+	//------------------------Detalle profesor-------------------------------------------------
+
 	public function actionDetalle($id){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$model=M01Profesor::model()->findByPk($id);
-		
 		$this->render('deta',array('model'=>$model,'Usuario'=>$tar));
 	}
 
@@ -70,7 +109,7 @@ class JefedepartamentoController extends Controller {
 
 	public function actionTes(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		
+
 
 		$criteria=new CDbCriteria;		
 		$criteria->condition='P02_id = 1';
@@ -88,7 +127,7 @@ class JefedepartamentoController extends Controller {
 
 	public function actionPas(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		
+
 
 		$criteria=new CDbCriteria;		
 		$criteria->condition='P02_id = 7';
@@ -101,9 +140,7 @@ class JefedepartamentoController extends Controller {
         'Usuario'=>$tar,
         )); 
 	}
-	
-	//----------------------------------------------------------------------------------------------------
-	
+	//----------Historial tesis por profesor -------------------------------------------------------------------------------------
 	public function actionHistTesisProfesor(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 
@@ -117,13 +154,14 @@ class JefedepartamentoController extends Controller {
         'model'=>$model,
         'Usuario'=>$tar,
 		));
-		
+
 	}
+
 	public function actionDetalleHistTesisProfesor($id){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$busqueda=M01Profesor::model()->findByPk($id); //TODAS Tesis profesor 
 		$us=M05Usuario::model()->find("Cedula=".$busqueda->Cedula);
-		
+
 		$consulta="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Defensa as FD,B.P02_id AS P02 
 					from m03_tesis as A, t01_tesis_has_usuario as B 
 					WHERE A.id = B.M03_id AND B.P02_id = 2 AND A.P03_id = 7 AND B.M05_id=".$us->id."    
@@ -134,6 +172,7 @@ class JefedepartamentoController extends Controller {
 			 $dataProvider = new CSqlDataProvider($rawData, array( //or $model=new CArrayDataProvider($rawData, array(... //using with querAll...
                     'keyField' => 'ID',   
                     'totalItemCount'=>$count,       
+
  
  
                     'sort' => array(
@@ -148,10 +187,12 @@ class JefedepartamentoController extends Controller {
                         'pageSize' => 3,
                     ),
                 ));
-		
+
 			$this->render('detalle_htp',array('Usuario'=>$tar,'dataProvider'=>$dataProvider, 'us'=>$us));
-		
+
 	}
+
+
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 public function actionHistPasantiaProfesor(){
@@ -166,6 +207,7 @@ public function actionHistPasantiaProfesor(){
         'dataProvider'=>$model->search(),
         'model'=>$model,
         'Usuario'=>$tar,
+
 		));
 		
 	}
@@ -200,7 +242,8 @@ public function actionHistPasantiaProfesor(){
                 ));
 		
 			$this->render('detalle_htp',array('Usuario'=>$tar,'dataProvider'=>$dataProvider, 'us'=>$us));
-		
+        ));
+
 	}
 
 }

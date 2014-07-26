@@ -7,13 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Inicio', 'url'=>array('site/admin')),	
-	array('label'=>'Nuevo Departamento', 'url'=>array('create')),	
-	array('label'=>'Administrar Departamentos', 'url'=>array('admin')),
+	array('label'=>'Create P09Departamento', 'url'=>array('create')),
+	array('label'=>'Manage P09Departamento', 'url'=>array('admin')),
 );
 ?>
 
-<h1> Departamentos</h1>
+<h1>P09 Departamentos</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

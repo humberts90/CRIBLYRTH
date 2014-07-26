@@ -30,7 +30,10 @@ $this->menu=array(
 	array('label'=>'Listado de profesores', 'url'=>array('prof')),
 	array('label'=>'Listado de tesistas', 'url'=>array('tes')),
 	array('label'=>'Listado de pasantes', 'url'=>array('pas')),
-	array('label'=>'Historial Tesis por Profesor', 'url'=>array('HistTesisProfesor')),
-	array('label'=>'Historial Pasantias por Profesor', 'url'=>array('HistPasantiaProfesor')),
+	array('label'=>'Historial de Tesis Culminadas', 'url'=>array('TesisFin')),	
+	array('label'=>'Historial de Pasantías Culminadas', 'url'=>array('PasantiaFin')),
+	array('label'=>'Historial de Tesis por Profesor', 'url'=>array('HistTesisProfesor')),
+	array('label'=>'Historial de Pasantias por Profesor', 'url'=>array('HistPasantiasProfesor')),
+
 );
 ?>

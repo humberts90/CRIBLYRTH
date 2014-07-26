@@ -22,7 +22,7 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-<div class="col-lg-8">
+<div class="col-lg-12">
 	<h1> Listado de profesores </h1>
 
 	<?php echo CHtml::link('Busqueda Avanzada','#',array('class'=>'search-button')); ?>
@@ -32,12 +32,15 @@ $('.search-form form').submit(function(){
 	)); ?>
 	</div><!-- search-form -->
 
-	<table border="0" style="width: 100%" >
+
+	<table border="0" >
 	  <tr>
-	    <td bgcolor="#93AAD3"><h4>Cedula</h4></td>
+	    <td bgcolor="#93AAD3"><h4>Cédula</h4></td>
 	    <td bgcolor="#93AAD3"><h4>Nombre Completo</h4></td>
 	    <td bgcolor="#93AAD3"><h4>Correo Electronico</h4></td>
 	    <td bgcolor="#93AAD3"><h4>Detalles</h4></td>
+	   
+
 	  </tr>
 	 	<?php $this->widget('zii.widgets.CListView', array(
 					'dataProvider'=>$dataProvider,

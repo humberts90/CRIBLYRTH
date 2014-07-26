@@ -1,53 +1,91 @@
-<?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
 
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
-?>
 
-<h1>Login</h1>
-
-<p>Please fill out the following form with your login credentials:</p>
-
-<div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),
-)); ?>
+)); 
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	if(isset($_POST['usuario'])){
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
+$model->username=$_POST['usuario'];
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
+$model->password=$_POST['contrasena'];
 
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
+		if($model->login()){
+				if(Yii::app()->authManager->checkAccess('Administrador',Yii::app()->user->id)){
+									$this->redirect(Yii::app()->user->returnUrl.'/site/admin');
+							}
+							if(Yii::app()->authManager->checkAccess('Jefe del Departamento',Yii::app()->user->id)){
+								$this->redirect(Yii::app()->user->returnUrl.'/jefedepartamento/index');
+							}
+							if(Yii::app()->authManager->checkAccess('Comisión del Tap',Yii::app()->user->id)){
+								$this->redirect(Yii::app()->user->returnUrl.'/comision/index');
+							}
+							if(Yii::app()->authManager->checkAccess('Profesor',Yii::app()->user->id)){
+								$this->redirect(Yii::app()->user->returnUrl.'/profesor/index');
+							}
+							if(Yii::app()->authManager->checkAccess('Empresa',Yii::app()->user->id)){
+								$this->redirect(Yii::app()->user->returnUrl.'/Empresa/index');
+							}					
+							if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id)){
+								$this->redirect(Yii::app()->user->returnUrl.'/estudiante/index');
+							}
+							if(Yii::app()->authManager->checkAccess('Secretaria',Yii::app()->user->id)){
+								$this->redirect(Yii::app()->user->returnUrl.'/secretaria/index');
+							}
+		}else{
+			$this->redirect(Yii::app()->user->returnUrl.'/site/login');
+		}
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
+}else{
+
+
+					
+?>
+
+								<div align= "center">
+								<h1>Inicio de Sesion</h1>
+
+								<p>Por favor complete el siguiente formulario con sus datos de acceso:</p>
+								<table border="0" style="width: 30%" align= "center" bgcolor="#93AAD3" >
+								</div>
+								<tr>
+								<td ><h4><?php echo $form->labelEx($model,'username').": "; ?></h4></td>
+								<td>
+								<?php echo $form->textField($model,'username'); ?>
+								<?php echo $form->error($model,'username'); ?>
+								</td>
+								</tr>
+								<tr>
+								<td ><h4><?php echo $form->labelEx($model,'password').": "; ?></h4></td>
+								<td ><?php echo $form->passwordField($model,'password'); ?>
+								<?php echo $form->error($model,'password'); ?></td>
+								</tr>
+								<tr>
+								<td colspan="2" align="center">
+								<?php echo $form->checkBox($model,'rememberMe'); ?>
+								<?php echo $form->label($model,'rememberMe'); ?>
+								<?php echo $form->error($model,'rememberMe'); ?>
+								</td>
+								</tr>
+								<tr>
+								<td colspan="2" align="center">
+								<?php echo CHtml::submitButton('Entrar'); ?>
+								</td>
+								</tr>
+								</table>
+
+
+
+
+
+								</br>
+<?php } ?>
+
 
 <?php $this->endWidget(); ?>
-</div><!-- form -->
+
+
