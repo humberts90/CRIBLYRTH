@@ -145,10 +145,7 @@
 						<?php echo $form->error($model_2,'Productos_Desarrollo'); ?>
 					<br>
 			</section>
-			<h2>Cronograma de actividades</h2>
-			<section>
-
-			</section>
+			
 </div>             
 
 <?php $this->endWidget(); ?>

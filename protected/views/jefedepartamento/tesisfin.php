@@ -22,7 +22,7 @@ $('.search-form form').submit(function(){
 
 <h1>Histórico de Tesis Finalizadas</h1>
 <div style='overflow-x:scroll'>
-<table border="0"  width="680px">
+<table border="0"  width="720px">
 	 	
 	 <tr>
 	 <td bgcolor="#93AAD3" ><h4>&nbsp;Título</h4></td>
