@@ -28,7 +28,7 @@ $this->menu=array(
 	array('label'=>'Ofertas Pasantias', 'url'=>array('Pasantias')),
 	array('label'=>'Subir oferta tesis', 'url'=>array('oferta_t')),	
 	array('label'=>'Subir oferta pasantias', 'url'=>array('oferta_p')),
-	array('label'=>'Agregar areas de conocimiento', 'url'=>array('cono')),
+	array('label'=>'Agregar areas de conocimiento a su perfil', 'url'=>array('cono')),
 );
 
 

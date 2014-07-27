@@ -26,6 +26,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 			<?php } ?>
 <b><?php echo '<A HREF="'.Yii::app()->theme->baseUrl.'/Cartas_tutores/Tesis/'.$model->id.'/'.$model->Carta_Tutor.'" TARGET="_blank" >Carta del tutor</A>'; ?></b>
 </br>
+<?php echo CHtml::link(CHtml::encode("Agregar Area de Conocimiento"), array('areas', 'id'=>$model->id)); ?></b>
 </br>
 <b>
 <?php echo CHtml::link(CHtml::encode("Descargar constancia"), array('const', 'id'=>$model->id)); ?></b>

@@ -30,78 +30,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 		<?php echo '<b>Respuesta de la tesis: </b></br>'; ?>
 		<?php echo $form->dropDownList($model,'M03_id',CHtml::listData(P03Status::model()->findAllByPk(array(4,3,6)),'id','Descripcion'),array('empty'=>'Seleccione respuesta','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'M03_id'); ?>
-	    <?php //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++areas de conocimiento++++++++++++++++++++++++++++++++++++++?>
-	</br>
-	 	<label>Agregar Area de conocimiento</label>
-		</br>
-		</br>
-	   	<label>Seleccione Departamento:</label>
-					</br>
-					</br>
-<?php echo $form->dropDownList($model_1,'p09_id',CHtml::listData(P09Departamento::model()->findAll(),'id','Nombre'),array(
-
-															'ajax'=>array(
-
-															'type'=>'POST',
-
-															'url'=>CController::createUrl('comision/select'),
-
-															'update'=>'#'.CHtml::activeId($model_1,'P10_id'),
-
-
-															),
-
-															'empty'=>'Seleccione Departamento',
-
-															'class'=>'form-control'
-
-
-														)); ?>
-
-					<?php echo $form->error($model_1,'p09_id'); ?>
-					</br>
-					</br>
-					<label>Seleccione Eje Curricular:</label>
-					</br>
-					</br>
-					<?php echo $form->dropDownList($model_1,'P10_id',CHtml::listData(P10EjeCurricular::model()->findAll(),'id','Nombre'),array(
-
-															'ajax'=>array(
-
-															'type'=>'POST',
-
-															'url'=>CController::createUrl('comision/selectdos'),
-
-															'update'=>'#'.CHtml::activeId($model_1,'P11_id'),
-
-
-															),
-
-															'empty'=>'Seleccione Eje Curricular',
-
-															'class'=>'form-control'
-
-
-														)); ?>
-
-					<?php echo $form->error($model_1,'P10_id'); ?>
-					</br>
-					</br>
-					<label>Seleccione Conocimiento:</label>
-					</br>
-					</br>
-					<?php echo $form->dropDownList($model_1,'P11_id',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimientos','class'=>'form-control')); ?>
-					</br>
-					</br>
-				
-					<?php echo $form->error($model_1,'P11_id'); ?>
-
-					
-					
-					
-	
-	<?php //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++?>
-	
+	 
 	
 	
 	</div>
