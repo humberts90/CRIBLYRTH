@@ -33,6 +33,7 @@
  */
 class M04Pasantia extends CActiveRecord
 {
+    public $cono;
 	/**
 	 * @return string the associated database table name
 	 */

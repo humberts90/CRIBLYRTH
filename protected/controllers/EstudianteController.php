@@ -123,6 +123,62 @@ class EstudianteController extends Controller
 			
 			));
 	}
+	public function actionCrono(){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=new M02Cronograma;
+		$model_2=new T11Actividad;
+		
+		if( isset ($_POST['M02Cronograma'])){    
+		  $model->attributes=$_POST['M02Cronograma'];
+		  $pas=T02PasantiaHasUsuario::model()->find('M05_id='.$tar->id);
+		  $model->m04_pasantia_id=$pas->M04_id;
+		   $model->save(); 
+		     $this->redirect(array('acti','id'=>$model->id));
+		}
+		
+	$this->render('cronogramaestudiante',array(
+			'Usuario'=>$tar,
+			'model_7'=>$model,
+			'model_3'=>$model_2,
+			
+			));
+	}
+	public function actionacti($id){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+	$model=new T11Actividad;
+	if( isset ($_POST['T11Actividad'])){
+		  $model->attributes=$_POST['T11Actividad'];
+		  $model->M02_id=$id;
+		  $model->save();
+		  $this->redirect(array('index'));
+		}
+	$this->render('actividad',array(
+			'Usuario'=>$tar,
+			'model_3'=>$model,
+			
+			
+			));
+	
+	}
+	public function actionUpd($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['T11Actividad']))
+		{
+			$model->attributes=$_POST['T11Actividad'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
 	// Subir tesis por parte del estudiante al sistema 
 	public function actionSubirt()
 	{
@@ -251,7 +307,9 @@ class EstudianteController extends Controller
 		$model_3=new T11Actividad;
 		$model_4=new M07TutorExterno;
 		$model_5=new T02PasantiaHasUsuario;	
-		$model_6=new T05ConocimientoPasantias;		
+		$model_6=new T05ConocimientoPasantias;	
+		$model_7=new M02Cronograma;
+		
 		if(isset($_POST['M04Pasantia']))
 		{	
 
@@ -299,13 +357,13 @@ class EstudianteController extends Controller
 			}
 
 			//---------------------------Pasantias--------------
-			$model_2->P03_id=$estado->id;
+			/*$model_2->P03_id=$estado->id;
 			$model_2->save();
 			
 			$model_6->P11_id=$_POST['M04Pasantia']['cono'];
 				$model_6->M04_id= $model_2->id;
 				$model_6->save();
-				
+				*/
 			
 			//---------------------------Pasantias has Usuario---------------------------------
 			$model_5->M04_id=$model_2->id;
@@ -326,11 +384,12 @@ class EstudianteController extends Controller
 			$this->redirect(array('index'));
 		}
 		else{
-			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,));
+			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_7'=>$model_7));
 		}
-
-		
+	
 	}
+	//--------------------------------------------------------------------------------------------------------------
+	 
 
 	//---------------------------------------PASANTIAS--------------------------------------------------------------
 		// para ver los jurados de las pasantias

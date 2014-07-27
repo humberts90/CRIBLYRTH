@@ -53,16 +53,7 @@
 					<br>
 					
 			</section>
-			<h2>Datos de area de conocimiento</h2>
-			<section>
-					<br>
-					<h2>Datos de area de conocimiento</h2><br><br>
-					<label>Seleccione Conocimiento</label> <br>
-					<?php echo $form->dropDownList($model_2,'cono',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimiento','class'=>'form-control')); ?>
-					<?php echo $form->error($model_2,'cono'); ?>
-					
-					<br />					
-			</section>
+		
 			<h2>Plan de Trabajo I</h2>
 			<section>
 					<label>Titulo:</label><br>
@@ -154,10 +145,7 @@
 						<?php echo $form->error($model_2,'Productos_Desarrollo'); ?>
 					<br>
 			</section>
-			<h2>Cronograma de actividades</h2>
-			<section>
-
-			</section>
+			
 </div>             
 
 <?php $this->endWidget(); ?>
