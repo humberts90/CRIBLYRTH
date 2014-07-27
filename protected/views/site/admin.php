@@ -8,7 +8,7 @@
 <li><?php echo CHtml::link('Status',array('p03Status/index')); ?></li>
 <li><?php echo CHtml::link('Categorias',array('p08Categoria/index')); ?></li>
 <li><?php echo CHtml::link('Departamentos',array('p09Departamento/index')); ?></li>
-<li><?php echo CHtml::link('Areas de Conocimiento',array('p10AreasConomicmiento/index')); ?></li>
+<li><?php echo CHtml::link('Ejes Curriculares',array('p10ejecurricular/index')); ?></li>
 <li><?php echo CHtml::link('Conocimientos',array('p11Conocimientos/index')); ?></li>
 <li><?php echo CHtml::link('Noticias',array('t09Noticias/index')); ?></li>
 <li><?php echo CHtml::link('Registro de Cambios',array('ActiveRecordLog/admin')); ?></li>

@@ -48,8 +48,10 @@ class M03Tesis extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
-	  public $cono;
-	  public $tutor;
+
+	public $cono;
+	public $tutor;
+
 	public function tableName()
 	{
 		return 'm03_tesis';

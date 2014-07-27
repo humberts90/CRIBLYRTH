@@ -18,15 +18,21 @@ $us = Yii::app()->user->isGuest;
  $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
+		
 		'Titulo',
 		'Introduccion',
-		'Planteamiento_Problema',
-		'Referencias'
+		'Planteamiento_Problema'
+	),
+)); 
+ if($conocimiento)
+ $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$conocimiento,
+	'attributes'=>array(
+		
+		'Nombre',
 	),
 )); 
 
- 
 
 echo "<br/><br/>";
 	

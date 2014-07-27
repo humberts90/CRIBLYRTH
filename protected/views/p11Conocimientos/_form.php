@@ -21,19 +21,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre'); ?>
-		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Nombre'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Descripcion'); ?>
-		<?php echo $form->textArea($model,'Descripcion',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'Descripcion',array('rows'=>6, 'cols'=>50, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Descripcion'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'P10_id'); ?>
-		<?php echo $form->textField($model,'P10_id'); ?>
+		<?php echo $form->dropDownList($model,'P10_id',CHtml::listData(P10EjeCurricular::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Eje Curricular','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'P10_id'); ?>
 	</div>
 

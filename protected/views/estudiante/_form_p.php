@@ -53,7 +53,7 @@
 					<br>
 					
 			</section>
-		
+
 			<h2>Plan de Trabajo I</h2>
 			<section>
 					<label>Titulo:</label><br>

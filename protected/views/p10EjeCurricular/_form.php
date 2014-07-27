@@ -21,13 +21,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'P09_id'); ?>
-		<?php echo $form->textField($model,'P09_id'); ?>
+		<?php echo $form->dropDownList($model,'P09_id',CHtml::listData(P09Departamento::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Departamento','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'P09_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Nombre'); ?>
-		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'Nombre',array('size'=>45,'maxlength'=>45, 'class'=>"form-control")); ?>
 		<?php echo $form->error($model,'Nombre'); ?>
 	</div>
 

@@ -45,6 +45,38 @@ body{
 	margin-left:0px;
 	float:left;
 }
+.principal .banner .inicio{
+	height: 20px;
+	color:#03216A;
+	padding:0px;
+	margin-right:25px;
+	float:right;
+}
+.principal .banner .inicio .ini{
+	width: 350px;
+	height: 72px;
+	font-size: 14px;
+	color:#03216A;
+	text-align: right;
+	padding: 40px 20px 30px 80px;
+	float:right;
+}
+.principal .banner .inicio .ini_2{
+	height: 72px;
+	font-size: 16px;
+	color:#03216A;
+	margin-bottom: 50px;
+	padding: 10px 20px 50px 0px;
+	float:right;
+}
+ .ini_2{
+	height: 72px;
+	font-size: 16px;
+	color:#03216A;
+	margin-bottom: 50px;
+	padding: 10px 20px 50px 0px;
+	float:right;
+}
 .principal .banner .logounet{
 	width: 63px;
 	height: 72px;
@@ -957,12 +989,14 @@ body{
 	padding-left:2px;
 	padding-bottom:1px;
 	margin-left:20px;
+	color: #FFF;
 }
 
 .principal .piedepag .sec4 .enlaces2 .letblancas{
 	padding:0px;
 	margin:0px;
 	font-weight:bold;
+	color: #FFF;
 }
 
 .principal .piedepag .sec4 .enlaces3{
@@ -1012,16 +1046,18 @@ body{
 .principal .banner .menu #menu4 li {
     float: left;
 	margin-right:4px;
-	
+	background-color: #93AAD3;
+	border-radius: 5px 5px 0 0;
 }
+
 .principal .banner .menu #menu4 li a {
 	/*width: 860px;
 	height: 40px;
 	192
 	*/
 	
-    background-color: #93AAD3;
-	width: 180px;
+    /*background-color: #93AAD3;*/
+	width: 225px;
 	height: 40px;
 	/*padding-left:10px;
 	padding-top:7px;
@@ -1035,6 +1071,7 @@ body{
 	text-decoration:none;
     
 }
+
 .principal .banner .menu #menu4 li a .letrasgrandes{
 	/*color:#FFF;
 	font:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -1080,6 +1117,13 @@ body{
     background-color: #284181;
     color: #FFF;
 }
+
+.principal .banner .menu #menu4 li.active {
+   background-color: #284181;
+    color: #FFF;
+	
+}
+
 
 
 

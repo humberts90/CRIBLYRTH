@@ -62,7 +62,38 @@ class JefedepartamentoController extends Controller {
 	//----------------Reporte de Tesis Finalizadas-------------------------------------------
 
 	public function actionTesisFin(){
+		
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$criteria=new CDbCriteria;	
+		$criteria->condition='P03_id = 7';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M03Tesis::model(), array('criteria'=>$criteria,));
+	
+	  	$this->render('tesisfin',array(
+        'dataProvider'=>$dataProvider,
+       // 'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
+
+	}
+
+	//----------------Reporte de Pasantías Finalizadas-------------------------------------------
+
+	public function actionPasantiaFin(){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$criteria=new CDbCriteria;	
+		$criteria->condition='P03_id = 7';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M04Pasantia::model(), array('criteria'=>$criteria,));
+	
+	  	$this->render('pasantiafin',array(
+        'dataProvider'=>$dataProvider,
+       // 'model'=>$model,
+        'Usuario'=>$tar,
+        )); 
+
 
 	}
 
@@ -109,9 +140,7 @@ class JefedepartamentoController extends Controller {
         'Usuario'=>$tar,
         )); 
 	}
-
-	//----------------------------------------------------------------------------------------------------
-
+	//----------Historial tesis por profesor -------------------------------------------------------------------------------------
 	public function actionHistTesisProfesor(){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 
@@ -127,6 +156,7 @@ class JefedepartamentoController extends Controller {
 		));
 
 	}
+
 	public function actionDetalleHistTesisProfesor($id){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$busqueda=M01Profesor::model()->findByPk($id); //TODAS Tesis profesor 
@@ -135,6 +165,60 @@ class JefedepartamentoController extends Controller {
 		$consulta="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Defensa as FD,B.P02_id AS P02 
 					from m03_tesis as A, t01_tesis_has_usuario as B 
 					WHERE A.id = B.M03_id AND B.P02_id = 2 AND A.P03_id = 7 AND B.M05_id=".$us->id."    
+					ORDER BY A.Fecha_Defensa DESC";
+			$rawData = Yii::app()->db->createCommand($consulta); //or use ->queryAll(); in CArrayDataProvider
+			$count = Yii::app()->db->createCommand('SELECT COUNT(*) FROM (' . $consulta . ') as count_alias')->queryScalar();
+
+			 $dataProvider = new CSqlDataProvider($rawData, array( //or $model=new CArrayDataProvider($rawData, array(... //using with querAll...
+                    'keyField' => 'ID',   
+                    'totalItemCount'=>$count,       
+
+ 
+ 
+                    'sort' => array(
+                        'attributes' => array(
+                            'Titulo', 'FD',
+                        ),
+                        'defaultOrder' => array(
+                            'ID' => CSort::SORT_ASC, //default sort value
+                        ),
+                    ),
+                    'pagination' => array(
+                        'pageSize' => 3,
+                    ),
+                ));
+
+			$this->render('detalle_htp',array('Usuario'=>$tar,'dataProvider'=>$dataProvider, 'us'=>$us));
+
+	}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+public function actionHistPasantiaProfesor(){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$model=new M01Profesor('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_POST['M01Profesor']))
+			$model->attributes=$_POST['M01Profesor'];
+
+	  	$this->render('hist_pasantias_profesor',array(
+        'dataProvider'=>$model->search(),
+        'model'=>$model,
+        'Usuario'=>$tar,
+
+		));
+		
+	}
+	public function actionDetalleHistPasantiasProfesor($id){
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$busqueda=M01Profesor::model()->findByPk($id); //TODAS Tesis profesor 
+		$us=M05Usuario::model()->find("Cedula=".$busqueda->Cedula);
+		
+		$consulta="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Defensa as FD,B.P02_id AS P02 
+					from m04_pasantia as A, t02_pasantia_has_usuario as B 
+					WHERE A.id = B.M04_id AND B.P02_id = 2 AND A.P03_id = 7 AND B.M05_id=".$us->id."    
 					ORDER BY A.Fecha_Defensa DESC";
 			$rawData = Yii::app()->db->createCommand($consulta); //or use ->queryAll(); in CArrayDataProvider
 			$count = Yii::app()->db->createCommand('SELECT COUNT(*) FROM (' . $consulta . ') as count_alias')->queryScalar();
@@ -156,23 +240,9 @@ class JefedepartamentoController extends Controller {
                         'pageSize' => 3,
                     ),
                 ));
-
+		
 			$this->render('detalle_htp',array('Usuario'=>$tar,'dataProvider'=>$dataProvider, 'us'=>$us));
 
-	}
-	public function actionHistPasantiasProfesor(){
-	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-
-		$model=new M01Profesor('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_POST['M01Profesor']))
-			$model->attributes=$_POST['M01Profesor'];
-
-	  	$this->render('hist_pasantias_profesor',array(
-        'dataProvider'=>$model->search(),
-        'model'=>$model,
-        'Usuario'=>$tar,
-        ));
 	}
 
 }

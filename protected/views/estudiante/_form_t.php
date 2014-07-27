@@ -23,8 +23,8 @@ $("#guardar").click(function(){
 					<?php echo $form->error($model_1,'Titulo'); ?>
                     <br />      
 						<label>Seleccione Conocimiento</label> 
-					<?php echo $form->dropDownList($model_1,'cono',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimiento','class'=>'form-control')); ?>
-					<?php echo $form->error($model_1,'cono'); ?>
+					<?php echo $form->dropDownList($model_5,'P11_id',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimiento','class'=>'form-control')); ?>
+					<?php echo $form->error($model_5,'P11_id'); ?>
 					<br />					
                  	<label>¿ En Pareja ?</label> 
 					<input type="radio" name="par" value="1"><br>
@@ -33,8 +33,8 @@ $("#guardar").click(function(){
 					<input type="text" name="firstname"><br>
 					<br />
 					<label>Seleccione Tutor</label> 
-					<?php echo $form->dropDownList($model_1,'tutor',CHtml::listData(M01Profesor::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Tutor','class'=>'form-control')); ?>
-					<?php echo $form->error($model_1,'Tutor'); ?>
+					<?php echo $form->dropDownList($model_2,'P02_id',CHtml::listData(M01Profesor::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Tutor','class'=>'form-control')); ?>
+					<?php echo $form->error($model_2,'P02_id'); ?>
 					<br />
 					<br />
 					<label>Carta del tutor</label> 
