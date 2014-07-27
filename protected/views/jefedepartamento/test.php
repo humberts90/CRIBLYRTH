@@ -26,6 +26,17 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
       <?php } ?>
 <b><?php echo '<A HREF="'.Yii::app()->theme->baseUrl.'/Cartas_tutores/Tesis/'.$model->id.'/'.$model->Carta_Tutor.'" TARGET="_blank" >Carta del tutor</A>'; ?></b>
 </br>
+ <?php 
+
+  if($model->P03_id!='1'){
+
+  echo CHtml::link(CHtml::encode("Evaluar este anteproyecto"), array('evalua', 'id'=>$model->id),array('class'=>'btn btn-default btn-lg pull-left')); 
+
+  }
+
+  ?>
+</br>
+</br>
 </br>
 <div class="panel-group" id="accordion">
   <div class="panel panel-default">
@@ -312,14 +323,6 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
   
 
-  <?php 
-
-  if($model->P03_id!='1'){
-
-  echo CHtml::link(CHtml::encode("Evaluar"), array('evalua', 'id'=>$model->id)); 
-
-  }
-
-  ?>
+ 
   <br />
 
