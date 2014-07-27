@@ -7,11 +7,11 @@
 <div class="view">
 
 	<tr>
-		<td width="15%"><?php echo CHtml::encode($tesista->Cedula); ?></td>
-		<td><?php echo CHtml::encode($tesista->Nombre." ".$tesista->Apellido); ?></td>
-		<td ><?php echo CHtml::encode($tesista->Correo_Electronico); ?></td>
-		<td ><?php echo CHtml::encode($tesista->Telefono); ?></td>
-		<td ><?php echo CHtml::link(CHtml::encode("Ver detalles"), array('comision/pasdeta', 'id'=>$ts->id)); ?></td>
+		<td width="120px"><?php echo CHtml::encode($tesista->Cedula); ?></td>
+		<td width="200px"><?php echo CHtml::encode($tesista->Nombre." ".$tesista->Apellido); ?></td>
+		<td width="120px"><?php echo CHtml::encode($tesista->Telefono); ?></td>
+		<td width="250px" ><?php echo CHtml::encode($tesista->Correo_Electronico); ?></td>
+		<td width="120px"><?php echo CHtml::link(CHtml::encode("Ver detalles"), array('comision/pasdeta', 'id'=>$ts->id)); ?></td>
 
 	</tr>
 	

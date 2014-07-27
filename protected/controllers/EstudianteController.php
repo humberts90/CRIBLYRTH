@@ -82,7 +82,19 @@ class EstudianteController extends Controller
 		}
 		$this->render('des');
 	}
+	//------------------------------Para que escoja que quiere hacer Tesis o Pasantias---------------------------------
 
+	public function ActionTutorialP(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+		$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
+		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);		
+		$this->render('tutorial_pasantias',array(
+		"check_1"=>$check_1,
+		"check_2"=>$check_2,
+        'Usuario'=>$tar,
+		));
+
+	}
 	//-----------------------------TESIS-------------------------------------------------------------------------------	
 
 	// para que estudiante vea como va quedando su tesis y imprimir constancias o la misma teis

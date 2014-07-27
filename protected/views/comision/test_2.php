@@ -29,47 +29,47 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 </br>
 </br>
 <b><?php echo CHtml::encode($model->getAttributeLabel('Titulo')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Titulo); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Titulo)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Planteamiento Problema')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Planteamiento_Problema); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Planteamiento_Problema)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo General')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Objetivo_General); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Objetivo_General)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo especifico')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Objetivo_Especifico); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Objetivo_Especifico)); ?></p>
 	<br />	
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Descripcion Trabajo')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Descripcion_Trabajo); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Descripcion_Trabajo)); ?></p>
 	<br />
 
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Antecedentes')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Antecedentes); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Antecedentes)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Metodologia')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Metodologia); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Metodologia)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Productos Desarrollo')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Productos_Desarrollo); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Productos_Desarrollo)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha Inscripcion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Fecha_Inscripcion); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Fecha_Inscripcion)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha Defensa')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Fecha_Defensa); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Fecha_Defensa)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha Aprobacion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Fecha_Aprobacion); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Fecha_Aprobacion)); ?></p>
 	<br />
 
 	
