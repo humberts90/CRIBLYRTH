@@ -297,6 +297,24 @@ public function accessRules()
 			'has1'=>$has1,
 			));
 	}
+	public function actionperfil(){
+	$model=new M01Profesor;
+	$model_1=new T06ConocimientoProfesor;
+	$model_2=new P11Conocimientos;
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+	$profesor=M01Profesor::model()->find('Cedula='.$tar->Cedula);
+	$conoci=T06ConocimientoProfesor::model()->findAll('M01_d='.$profesor->id);
+	
+	
+	$this->render('perfilprofesor',array(
+			'Usuario'=>$tar,
+			'model'=>$model,
+			 'model_1'=>$model_1,
+			 'model_2'=>$model_2,
+			 'conoci'=>$conoci,
+			));
+	
+	}
 	
 	public function actionCono()
 	{

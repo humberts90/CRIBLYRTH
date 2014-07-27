@@ -278,6 +278,7 @@ public function accessRules()
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$tesis=M03Tesis::model()->findByPk($id);
 		$model=new T07ObservacionTesis;
+		$model_1=new T04ConocimientoTesis;
 		$tes=T01TesisHasUsuario::model()->findAll("M03_id =".$tesis->id);
 		$conotes=T04ConocimientoTesis::model()->findAll("M03_id= ".$tesis->id);
 		$temporal=M03Tesis::model()->findByPk($id);
@@ -300,7 +301,7 @@ public function accessRules()
 			$temp=$_POST['T07ObservacionTesis']['M03_id'];
 			$model->M03_id=$tesis->id;
 			$model->Fecha=date('Y-m-d');
-
+			
 			
 			if($model->save()){
 
@@ -335,14 +336,52 @@ public function accessRules()
 			
 				
 		}
-
+		if(isset($_POST['T04ConocimientoTesis']))
+		{
+			$model_1->attributes=$_POST['T04ConocimientoTesis'];
+		    $model_1->M03_id=$tesis->id;
+		    $model_1->save();
+		}
+		
+		
 		$this->render('evalua',array(
 			'Usuario'=>$tar,
 			'tes'=>$tesis,
 			'model'=>$model,
+			'model_1'=>$model_1,
 			'profesor'=>$prof,
 			'conocimiento'=>$conotes,
 			));
+	}
+ public function actionSelect(){
+
+
+		$id_uno =$_POST['T04ConocimientoTesis']['p09_id'];
+
+		$lista=P10EjeCurricular::model()->findAll('p09_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
+	}
+	public function actionSelectdos(){
+
+
+		$id_uno =$_POST['T04ConocimientoTesis']['P10_id'];
+
+		$lista=P11Conocimientos::model()->findAll('P10_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
 	}
 
 	//---------------------------------------------Evaluar Propuestas de pasantias----------------------------------------------------------------------------------

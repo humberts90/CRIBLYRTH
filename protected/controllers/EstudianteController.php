@@ -133,7 +133,7 @@ class EstudianteController extends Controller
 		  $pas=T02PasantiaHasUsuario::model()->find('M05_id='.$tar->id);
 		  $model->m04_pasantia_id=$pas->M04_id;
 		   $model->save(); 
-		     $this->redirect(array('acti','id'=>$model->id));
+		     $this->redirect(array('acti','id'=>$model->id,));
 		}
 		
 	$this->render('cronogramaestudiante',array(
@@ -145,21 +145,25 @@ class EstudianteController extends Controller
 	}
 	public function actionacti($id){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+	$crono=M02Cronograma::model()->find('id='.$id);
 	$model=new T11Actividad;
 	if( isset ($_POST['T11Actividad'])){
 		  $model->attributes=$_POST['T11Actividad'];
 		  $model->M02_id=$id;
 		  $model->save();
-		  $this->redirect(array('index'));
+		
+		  $this->redirect(array('acti','id'=>$id,));
 		}
 	$this->render('actividad',array(
 			'Usuario'=>$tar,
 			'model_3'=>$model,
+			'crono'=>$crono,
 			
 			
 			));
 	
 	}
+	
 	public function actionUpd($id)
 	{
 		$model=$this->loadModel($id);
