@@ -676,7 +676,7 @@ CREATE TABLE IF NOT EXISTS `p02_tipo_relacion` (
 INSERT INTO `p02_tipo_relacion` (`id`, `Descripcion`) VALUES
 (1, 'Tesista'),
 (2, 'Tutor'),
-(3, 'Tutor Academico'),
+(3, 'Tutor Externo'),
 (4, 'Jurado 1'),
 (5, 'Jurado 2'),
 (6, 'Jurado Suplente'),

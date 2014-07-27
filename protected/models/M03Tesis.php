@@ -65,7 +65,7 @@ class M03Tesis extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('P03_id, Lapso_Academico_defensa, vacantes', 'required'),
+			array('P03_id,', 'required'),
 			array('P03_id, M06_id, vacantes', 'numerical', 'integerOnly'=>true),
 			array('Titulo', 'length', 'max'=>45),
 			array('Carta_Tutor', 'length', 'max'=>255),

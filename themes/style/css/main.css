@@ -3228,6 +3228,20 @@ display:block;
 .fotoM
 {
 	width:160px;
+	height:300px;
+	float:left;
+	background-image:url(../images/avatar.jpg);
+	background-repeat:no-repeat;
+	position:relative;
+	margin-left:10px;
+	margin-top:10px;
+
+	
+	
+}
+.fotoM2
+{
+	width:160px;
 	height:160px;
 	float:left;
 	background-image:url(../images/avatar.jpg);

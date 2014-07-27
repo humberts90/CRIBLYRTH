@@ -19,6 +19,8 @@ class T04ConocimientoTesis extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return T04ConocimientoTesis the static model class
 	 */
+	 public $p09_id;
+	 public $P10_id;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);

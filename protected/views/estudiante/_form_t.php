@@ -13,6 +13,7 @@ $("#guardar").click(function(){
 
 //myInstance1
 $("#myInstance1").text($("#intro").attr("value"));
+//firstname
 $("#myInstance2").text($("#Planteamiento_Problema").attr("value"));
 $("#myInstance3").text($("#Objetivo_General").attr("value"));
 $("#myInstance4").text($("#Objetivo_especifico").attr("value"));
@@ -44,14 +45,12 @@ $("#myInstance17").text($("#Referencias").attr("value"));
 					<?php echo $form->textField($model_1,'Titulo',array('size'=>255,'maxlength'=>255)); ?>
 					<?php echo $form->error($model_1,'Titulo'); ?>
                     <br />      
-						<label>Seleccione Conocimiento</label> 
-					<?php echo $form->dropDownList($model_5,'P11_id',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimiento','class'=>'form-control')); ?>
-					<?php echo $form->error($model_5,'P11_id'); ?>
-					<br />					
+											
                  	<label>¿ En Pareja ?</label> 
 					<input type="radio" name="par" value="1"><br>
 					<br />
 					<label>Cedula de la pareja</label> 
+                                       
 					<input type="text" name="firstname"><br>
 					<br />
 					<label>Seleccione Tutor</label> 
