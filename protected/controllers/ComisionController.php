@@ -398,5 +398,70 @@ public function accessRules()
 		}	
 		
 	}
+	//--------------------Elaboracion de acta mediante plantilla-------------------------------------------
+
+	public function actionContenido()
+    {
+        $q = $_POST['store'];
+		
+		
+		$agent = T12Plantillas::model()->findByPK($q);
+		
+		 echo json_encode(array(
+			'descripcion' => $agent->descripcion,
+			'contenido' => $agent->contenido
+			
+			));
+		Yii::app()->end();
+		
+		//$this->render('elaborar_acta',array('agent'=>$agent,));
+        /*$sql = "SELECT * FROM t12_plantillas WHERE id_plantilla=$q";
+        $command = Yii::app()->db->createCommand($sql);
+        $result= $command->queryScalar(); 
+        echo $result;*/
+		
+		
+
+    }
+	public function actionElaborar_acta(){
+	
+		//$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+	
+			
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=T12Plantillas::model()->findAll();
+		
+		$this->render('elaborar_acta',array('Usuario'=>$tar,'model'=>$model));
+	}
+
+		public function actionCrearActa(){
+	
+		$acta= new T03ActaReunion;
+		$tar=M05Usuario::model()->find("Usuario= '".Yii::app ()->user->name."'");
+
+		$descrip='text';
+		$contenidoA='contenido';	
+		//echo $_POST['contenido'];
+
+		$descrip= (string) $_POST['contenido'];
+		//$contenidoA= (string) $_POST['contenido'];	
+		//echo $_POST['contenido'];
+		
+		$acta->M05_id=$tar->id;
+		$acta->Descripcion=$descrip;
+		$acta->Fecha=date("Y-m-d");
+	
+
+		$acta->save();
+
+	
+		$tar2=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model2=T12Plantillas::model()->findAll();
+		
+		$this->render('elaborar_acta',array('Usuario'=>$tar2,'model'=>$model2));
+			
+
+	}
+
 
 }
