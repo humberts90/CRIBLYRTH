@@ -1,4 +1,4 @@
-2014/07/27 02:54:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in D:\Software\Xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+﻿2014/07/27 02:54:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in D:\Software\Xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
 Stack trace:
 #0 D:\Software\Xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
 #1 D:\Software\Xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
@@ -468,3 +468,6 @@ Stack trace:
 REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
 HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/vertesis
 ---
+=======
+﻿
+
