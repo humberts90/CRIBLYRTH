@@ -3,7 +3,8 @@
 if($check_1==null&&$check_2==null){
 	$this->menu=array(
 	array('label'=>'Subir proyecto', 'url'=>array('escoger')),
-	
+	array('label'=>'Pasos para empezar con la Tesis', 'url'=>array('escoger')),
+	array('label'=>'Pasos para empezar con la Pasantia', 'url'=>array('TutorialP')),
 	);
 }else{
 	if($check_2!=null){
