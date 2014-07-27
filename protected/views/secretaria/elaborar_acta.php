@@ -1,4 +1,16 @@
 <?php
+
+/* @var $model modelito */
+
+?>
+<script type="text/javascript">
+
+var element = document.getElementById("plantilla-form");
+element.setAttribute("name", "plantilla-form");
+element.setAttribute("action", "secretaria/crearActa");
+</script>
+
+<?php
 $this->breadcrumbs=array(
 	'Inicio'=>array('index'),
 	'Elaborar Acta'
@@ -9,7 +21,8 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 
 	<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'pasantias-form',
+	'id'=>'t12-plantillas-form',
+	'action'=>Yii::app()->createUrl('/secretaria/crearActa'),
 	'enableAjaxValidation'=>false,
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
@@ -31,7 +44,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 						
 						<label><h2>Descripcion del Acta:</h2></label> 
             <br/>      
-			<?php echo CHtml::textField('text','Descripcion',array('id'=>'descripcion','size'=>45,'maxlength'=>45)); ?>
+			<?php echo CHtml::textField('text','Descripcion',array('type'=>'POST','id'=>'descripcion','name'=>'descripcion','size'=>45,'maxlength'=>45)); ?>
 			
             <br /> 
             <br /> 	
@@ -40,6 +53,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 						<?php
 							Yii::import('ext.krichtexteditor.KRichTextEditor');
 								$this->widget('KRichTextEditor', array(
+									
 									'id'=>'contenido',
 								    'name'=>'contenido',
 								    'value' => '',
@@ -51,6 +65,9 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 								));
 						?>
 			<br />
+			
+			<?php echo CHtml::submitButton('Save', array('action' => 'save','onclick'=>'alerta()')); ?>
+			
 						
 				<br />
 				<br />
@@ -58,3 +75,14 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 
 <?php $this->endWidget(); ?>
+
+<script type="text/javascript">
+
+function alerta()
+{
+
+
+	alert("¿Guardar Acta Nueva?");
+}
+
+</script>

@@ -18,6 +18,7 @@ $this->breadcrumbs=array(
 	'Cargar Tesis',
 );
 
+
 Yii::app()->clientScript->registerScript('wizard', '
 	$("#wizard").steps({
 

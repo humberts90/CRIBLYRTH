@@ -275,17 +275,20 @@ public function accessRules()
 	}
 	public function actionEvalua($id){
 		
+		
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$tesis=M03Tesis::model()->findByPk($id);
 		$model=new T07ObservacionTesis;
 		$tes=T01TesisHasUsuario::model()->findAll("M03_id =".$tesis->id);
-		$conotes=T04ConocimientoTesis::model()->findAll("M03_id= ".$tesis->id);
-		$temporal=M03Tesis::model()->findByPk($id);
+		$conotes=T04ConocimientoTesis::model()->findAll("M03_id= ".$tesis->id);		
 		$prof=T08Usuario_has_rol::model()->findAll("P01_id = 3");
 		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Jurado 1'");
 		$tipo2=P02TipoRelacion::model()->find("Descripcion = 'Jurado 2'");
 		$tipo3=P02TipoRelacion::model()->find("Descripcion = 'Jurado Suplente'");
 		$jura1=new T01TesisHasUsuario;
+		$jura2=new T01TesisHasUsuario;
+		$jura3=new T01TesisHasUsuario;
+
 		
 
 		if(isset($_POST['T07ObservacionTesis']))
@@ -305,21 +308,28 @@ public function accessRules()
 			if($model->save()){
 
 				
-				$sql1="INSERT INTO t01_tesis_has_usuario (id,M03_id,M05_id,P02_id) VALUES (Null,'".$tesis->id."','".$jurado1."','".$tipo1->id."')";
-				$sql2="INSERT INTO t01_tesis_has_usuario (id,M03_id,M05_id,P02_id) VALUES (Null,'".$tesis->id."','".$jurado2."','".$tipo2->id."')";
-				$sql3="INSERT INTO t01_tesis_has_usuario (id,M03_id,M05_id,P02_id) VALUES (Null,'".$tesis->id."','".$jurado3."','".$tipo3->id."')";
-				
-				$comand=Yii::app()->db->createCommand($sql1);
-				$comand->execute();
+			
+				$jura1->M03_id=$id;
+				$jura1->M05_id=$jurado1;
+				$jura1->P02_id="4";
+				$jura1->save();
 
-				$comand=Yii::app()->db->createCommand($sql2);
-				$comand->execute();
+				$jura2->M03_id=$id;
+				$jura2->M05_id=$jurado2;
+				$jura2->P02_id="5";
+				$jura2->save();
 
-				$comand2=Yii::app()->db->createCommand($sql3);
-				$comand2->execute();
-				$tesis=$temporal;
+				$jura3->M03_id=$id;
+				$jura3->M05_id=$jurado3;
+				$jura3->P02_id="6";
+				$jura3->save(); 
+
+
 				$tesis->P03_id=$temp;
 				$tesis->Fecha_Aprobación=date('Y-m-d');
+
+			
+
 				if($tesis->save()){
 				echo "<script>alert('Evaluacion realizada con exito');</script>";
 				$this->redirect(array('tesis'));
@@ -390,6 +400,7 @@ public function accessRules()
 		}	
 		
 	}
+
 //////////////////////////////////// Leyry y leo :3 besties foreva xD ////////////////////////////////////////////////////////////////////////
 	public function actionEvaluaP($id){
 		
@@ -399,6 +410,7 @@ public function accessRules()
 		$pas=T02PasantiaHasUsuario::model()->findAll("M04_id =".$pasantia->id); //Relacion: Pasantias, Usuario, tutor externo y tipo de relacion
 		$conopas=T05ConocimientoPasantias::model()->findAll("M04_id= ".$pasantia->id); //Esto como que no esta funcionando: esta tabla no tiene datos aun...
 		$prof=T08Usuario_has_rol::model()->findAll("P01_id = 3");
+
 
 		if(isset($_POST['T10ObservacionPasantias']))
 		{
@@ -433,5 +445,69 @@ public function accessRules()
 			'profesor'=>$prof,
 			'conocimiento'=>$conopas,
 			));
+	}
+		//--------------------Elaboracion de acta mediante plantilla-------------------------------------------
+
+	public function actionContenido()
+    {
+        $q = $_POST['store'];
+		
+		
+		$agent = T12Plantillas::model()->findByPK($q);
+		
+		 echo json_encode(array(
+			'descripcion' => $agent->descripcion,
+			'contenido' => $agent->contenido
+			
+			));
+		Yii::app()->end();
+		
+		//$this->render('elaborar_acta',array('agent'=>$agent,));
+        /*$sql = "SELECT * FROM t12_plantillas WHERE id_plantilla=$q";
+        $command = Yii::app()->db->createCommand($sql);
+        $result= $command->queryScalar(); 
+        echo $result;*/
+		
+		
+
+    }
+	public function actionElaborar_acta(){
+	
+		//$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+	
+			
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=T12Plantillas::model()->findAll();
+		
+		$this->render('elaborar_acta',array('Usuario'=>$tar,'model'=>$model));
+	}
+
+		public function actionCrearActa(){
+	
+		$acta= new T03ActaReunion;
+		$tar=M05Usuario::model()->find("Usuario= '".Yii::app ()->user->name."'");
+
+		$descrip='text';
+		$contenidoA='contenido';	
+		//echo $_POST['contenido'];
+
+		$descrip= (string) $_POST['contenido'];
+		//$contenidoA= (string) $_POST['contenido'];	
+		//echo $_POST['contenido'];
+		
+		$acta->M05_id=$tar->id;
+		$acta->Descripcion=$descrip;
+		$acta->Fecha=date("Y-m-d");
+	
+
+		$acta->save();
+
+	
+		$tar2=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model2=T12Plantillas::model()->findAll();
+		
+		$this->render('elaborar_acta',array('Usuario'=>$tar2,'model'=>$model2));
+			
+
 	}
 }
