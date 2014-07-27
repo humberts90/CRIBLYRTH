@@ -42,7 +42,7 @@ class OfertaController extends Controller {
 	public function actionTesis()
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-		
+
 		$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
 
 		$criteria = new CDbCriteria();
@@ -57,6 +57,12 @@ class OfertaController extends Controller {
 		$pagesT->setPageSize(5);
 		$pagesT->applyLimit($criteria);
 		$modelt = M03Tesis::model()->findAll($criteria);
+
+		foreach($modelt as $t)
+		{
+			$t->Introduccion = strip_tags($t->Introduccion);
+		}
+
 		$model_t=new CArrayDataProvider($modelt);
 
 		$this->render('lTesis',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pagesT'=>$pagesT));
@@ -83,6 +89,12 @@ class OfertaController extends Controller {
 		$pagesP->setPageSize(5);
 		$pagesP->applyLimit($criteria);
 		$modelp = M04Pasantia::model()->findAll($criteria);
+
+		foreach ($modelp as $p)
+		{
+			$p->Descripcion_Trabajo = strip_tags($p->Descripcion_Trabajo);
+		}
+
 		$model_p=new CArrayDataProvider($modelp);
 
 		$this->render('lPasantias',array('Usuario'=>$tar, 'pasantias'=>$model_p, 'pagesP'=>$pagesP));
@@ -92,6 +104,9 @@ class OfertaController extends Controller {
 	{	
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model = M03Tesis::model()->findByPk($id);
+
+		$model->Introduccion = strip_tags($model->Introduccion);
+		$model->Planteamiento_Problema = strip_tags($model->Planteamiento_Problema);
 
 		$model2 = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
 
@@ -122,6 +137,9 @@ class OfertaController extends Controller {
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model = M04Pasantia::model()->findByPk($id);
+
+		$model->Descripcion_Trabajo = strip_tags($model->Descripcion_Trabajo);
+		$model->Planteamiento_Problema = strip_tags($model->Planteamiento_Problema);
 
 		$model2 = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
 
