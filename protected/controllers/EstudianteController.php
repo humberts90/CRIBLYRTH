@@ -242,12 +242,16 @@ class EstudianteController extends Controller
                     $model_2 = new T01TesisHasUsuario;
                     $model_3 = $check_2;
                     $model_4 = $tar;
+                    $model_5=T04ConocimientoTesis::model()->find("M03_id= ".$check_2->M03_id);
+                    
+                    if($model_5==NULL) 
+                        $model_5=new T04ConocimientoTesis;
                     $update = 1;
+                    
                 }
 
                
-		//
-                
+		
 		if(isset($_POST['M03Tesis'])){
             
                     $x = $_POST['M03Tesis']['P03_id'];
@@ -276,8 +280,8 @@ class EstudianteController extends Controller
 				// repetir para varios conocimientos
 				
 				
-				$model_5->M03_id= $model_1->id;
-				$model_5->save();
+				//$model_5->M03_id= $model_1->id;
+				//$model_5->save();
 				
 				
 				// Para subir la relacion con el profesor
@@ -328,20 +332,25 @@ class EstudianteController extends Controller
 		          $this->redirect(array('index'));
 
                         }else if($update==1&&$model_1->update()){
-                             $this->redirect(array('vertesis'));
+                             
                             // Para subir la relacion con el alumno---------
 				
 				
 				$model_2->M03_id=$model_1->id;
 				$model_2->M05_id=$tar->id;
 				$model_2->P02_id=$tipo1->id;
+                                  $ax = $model_2->find("M03_id= " . $model_1->id);
+                    
+                                if($ax==NULL){
 				
-				$model_2->save();
+                                    $model_2->save();
+                                    
+                                }
 				// repetir para varios conocimientos
 				
 				
-				$model_5->M03_id= $model_1->id;
-				$model_5->save();
+				//$model_5->M03_id= $model_1->id;
+				//$model_5->save();
 				
 				
 				// Para subir la relacion con el profesor
