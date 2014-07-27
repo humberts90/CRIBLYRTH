@@ -1,8 +1,8 @@
 <?php 
 $this->breadcrumbs=array(
-	'Inicio'=>array('index'),
-	'Evaluar Anteproyectos'=>array('tesis'),
-	'Detalles',
+  'Inicio'=>array('index'),
+  'Evaluar Anteproyectos'=>array('tesis'),
+  'Detalles',
 
 );
 
@@ -13,17 +13,17 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 <h2><?php echo $model->Titulo; ?></h2>
 
-			<?php 		
-			foreach ($has1 as  $value) {
-			$val=M05Usuario::model()->findByPk($value->M05_id); 
-			$actor=P02TipoRelacion::model()->findByPk($value->P02_id);
-			?>
+      <?php     
+      foreach ($has1 as  $value) {
+      $val=M05Usuario::model()->findByPk($value->M05_id); 
+      $actor=P02TipoRelacion::model()->findByPk($value->P02_id);
+      ?>
 
-			<b><?php echo CHtml::encode($actor->Descripcion); ?>:</b>
-			<?php echo CHtml::encode($val->Nombre." ".$val->Apellido); ?>
-			<br />
+      <b><?php echo CHtml::encode($actor->Descripcion); ?>:</b>
+      <?php echo CHtml::encode($val->Nombre." ".$val->Apellido); ?>
+      <br />
 
-			<?php } ?>
+      <?php } ?>
 <b><?php echo '<A HREF="'.Yii::app()->theme->baseUrl.'/Cartas_tutores/Tesis/'.$model->id.'/'.$model->Carta_Tutor.'" TARGET="_blank" >Carta del tutor</A>'; ?></b>
 </br>
 </br>
@@ -39,9 +39,9 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
     <div id="collapseOne" class="panel-collapse collapse in">
       <div class="panel-body">
 
-	<p><?php echo CHtml::encode($model->Introduccion); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Introduccion); ?></p>
+  <br />
+      </div>
     </div>
   </div>
   <div class="panel-group" id="accordion">
@@ -55,9 +55,9 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
     </div>
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Planteamiento_Problema); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Planteamiento_Problema); ?></p>
+  <br />
+      </div>
     </div>
   </div>
  <div class="panel-group" id="accordion">
@@ -71,12 +71,12 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Objetivo_General); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Objetivo_General); ?></p>
+  <br />
+      </div>
     </div>
   </div>
-	<div class="panel-group" id="accordion">
+  <div class="panel-group" id="accordion">
     <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -85,11 +85,11 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse ">
+    <div id="collapseFour" class="panel-collapse collapse ">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Objetivo_especifico); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Objetivo_especifico); ?></p>
+  <br />
+      </div>
     </div>
   </div>
 
@@ -102,15 +102,15 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseFive" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Justificacion_Importancia); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Justificacion_Importancia); ?></p>
+  <br />
+      </div>
     </div>
   </div>
 <div class="panel-group" id="accordion">
-   <div class="panel-heading">>
+   <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
@@ -118,14 +118,14 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseSix" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Alcance_Delimitaciones); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Alcance_Delimitaciones); ?></p>
+  <br />
+      </div>
     </div>
   </div>
-	<div class="panel-group" id="accordion">
+  <div class="panel-group" id="accordion">
     <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -134,11 +134,11 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseSeven" class="panel-collapse collapse ">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Antecedentes); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Antecedentes); ?></p>
+  <br />
+      </div>
     </div>
   </div>
   <div class="panel-group" id="accordion">
@@ -150,15 +150,15 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseEight" class="panel-collapse collapse ">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Bases_Teoricas); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Bases_Teoricas); ?></p>
+  <br />
+      </div>
     </div>
   </div>
 <div class="panel-group" id="accordion">
-   <div class="panel-heading">>
+   <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
@@ -166,11 +166,11 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseNine" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Bases_Legales); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Bases_Legales); ?></p>
+  <br />
+      </div>
     </div>
   </div>
 <div class="panel-group" id="accordion">
@@ -182,15 +182,15 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseTen" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Definicion_Terminos); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Definicion_Terminos); ?></p>
+  <br />
+      </div>
     </div>
   </div>
 <div class="panel-group" id="accordion">
-   <div class="panel-heading">>
+   <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">
@@ -198,14 +198,14 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseEleven" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Enfoque_Investigacion); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Enfoque_Investigacion); ?></p>
+  <br />
+      </div>
     </div>
   </div>
-	<div class="panel-group" id="accordion">
+  <div class="panel-group" id="accordion">
     <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -214,15 +214,15 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseTwelve" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Tipo_Nivel_Invesstigacion); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Tipo_Nivel_Invesstigacion); ?></p>
+  <br />
+      </div>
     </div>
   </div>
-	<div class="panel-group" id="accordion">
-   <div class="panel-heading">>
+  <div class="panel-group" id="accordion">
+   <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">
@@ -230,15 +230,15 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseThirteen" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Diseno_Investigacion); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Diseno_Investigacion); ?></p>
+  <br />
+      </div>
     </div>
   </div>
-		<div class="panel-group" id="accordion">
-   <div class="panel-heading">>
+    <div class="panel-group" id="accordion">
+   <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen">
@@ -246,80 +246,80 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseFourteen" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Poblacion_Muestra); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Poblacion_Muestra); ?></p>
+  <br />
+      </div>
     </div>
   </div>
 
-		<div class="panel-group" id="accordion">
-   <div class="panel-heading">>
+    <div class="panel-group" id="accordion">
+   <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFiveteen">
-   	<b><?php echo CHtml::encode($model->getAttributeLabel('Tecnicas_Recoleccion_Datos')); ?>:</b>
+    <b><?php echo CHtml::encode($model->getAttributeLabel('Tecnicas_Recoleccion_Datos')); ?>:</b>
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseFiveteen" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Tecnicas_Recoleccion_Datos); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Tecnicas_Recoleccion_Datos); ?></p>
+  <br />
+      </div>
     </div>
   </div>
-			<div class="panel-group" id="accordion">
+      <div class="panel-group" id="accordion">
     <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen">
-   	<b><?php echo CHtml::encode($model->getAttributeLabel('Metodologias')); ?>:</b>
+    <b><?php echo CHtml::encode($model->getAttributeLabel('Metodologias')); ?>:</b>
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseSixteen" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Metodologias); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Metodologias); ?></p>
+  <br />
+      </div>
     </div>
   </div>
-  			<div class="panel-group" id="accordion">
+        <div class="panel-group" id="accordion">
     <div class="panel-heading">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen">
-   	<b><?php echo CHtml::encode($model->getAttributeLabel('Referencias')); ?>:</b>
+    <b><?php echo CHtml::encode($model->getAttributeLabel('Referencias')); ?>:</b>
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseSeventeen" class="panel-collapse collapse">
       <div class="panel-body">
-	<p><?php echo CHtml::encode($model->Referencias); ?></p>
-	<br />
-	    </div>
+  <p><?php echo CHtml::encode($model->Referencias); ?></p>
+  <br />
+      </div>
     </div>
   </div>
 
-	
+  
 
 
 
-	
-	
+  
+  
 
-	
+  
 
-	<?php 
+  <?php 
 
-	if($model->P03_id!='1'){
+  if($model->P03_id!='1'){
 
-	echo CHtml::link(CHtml::encode("Evaluar"), array('evalua', 'id'=>$model->id)); 
+  echo CHtml::link(CHtml::encode("Evaluar"), array('evalua', 'id'=>$model->id)); 
 
-	}
+  }
 
-	?>
-	<br />
+  ?>
+  <br />
 
