@@ -39,10 +39,10 @@ class OfertaController extends Controller {
 		$this->render('index',array('Usuario'=>$tar,));
 	}
 
-	public function actionListar()
+	public function actionTesis()
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-
+		
 		$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
 
 		$criteria = new CDbCriteria();
@@ -59,6 +59,22 @@ class OfertaController extends Controller {
 		$modelt = M03Tesis::model()->findAll($criteria);
 		$model_t=new CArrayDataProvider($modelt);
 
+		$this->render('lTesis',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pagesT'=>$pagesT));
+	}
+
+	public function actionPasantias()
+	{
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+		$modelStatus = P03Status::model()->find("Descripcion = 'Oferta'");
+
+		$criteria = new CDbCriteria();
+		$criteria->select = array("*");
+		$criteria->condition = "P03_id = :id AND (fecha_val = '0000-00-00' OR fecha_val > curdate())";
+
+		$criteria->params = array(':id'=>$modelStatus->id);
+		
+
 
  		$cuentaP = count($criteria);
 		$cuentaP=  M04Pasantia::model()->count($criteria);
@@ -69,7 +85,7 @@ class OfertaController extends Controller {
 		$modelp = M04Pasantia::model()->findAll($criteria);
 		$model_p=new CArrayDataProvider($modelp);
 
-		$this->render('oferta',array('Usuario'=>$tar, 'tesis'=>$model_t, 'pasantias'=>$model_p, 'pagesT'=>$pagesT, 'pagesP'=>$pagesP));
+		$this->render('lPasantias',array('Usuario'=>$tar, 'pasantias'=>$model_p, 'pagesP'=>$pagesP));
 	}
 
 	public function actionDetalle_t($id)
@@ -81,10 +97,16 @@ class OfertaController extends Controller {
 
 		$model3 = T01TesisHasUsuario::model()->find("P02_id ='".$model2->id."' and M03_id='".$id."'");
 
-		$model4 = M05Usuario::model()->find("id = '".$model3->M05_id."'");		
+		$model4 = M05Usuario::model()->find("id = '".$model3->M05_id."'");	
+
+		$model_aux = T04ConocimientoTesis::model()->find("M03_id='".$model->id."'");
+
+		$model5 = null;
+		if(isset($model_aux->P11_id))
+		$model5 = P11Conocimientos::model()->find("id = '".$model_aux->P11_id."'");
 
 
-		$this->render("detalle_t",array('Usuario'=>$tar,'model'=>$model,'tutor'=>$model4));
+		$this->render("detalle_t",array('Usuario'=>$tar,'model'=>$model,'tutor'=>$model4, 'conocimiento' => $model5));
 	}
 
 	public function actionPostular_t($id)
