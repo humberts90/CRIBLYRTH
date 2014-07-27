@@ -18,15 +18,22 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 		'Titulo',
 		'Planteamiento_Problema',
 		'Descripcion_Trabajo',
-		'M06_id',
+		
 	),
 )); 
+$empresa = M06Empresa::model()->find("id = '".$model->M06_id."'");
 
-
+$this->widget('zii.widgets.CDetailView', array(
+	'data'=>$empresa,
+	'attributes'=>array(
+		
+		'Correo',
+		
+	),
+)); 
 echo "<br/><br/>";
 	
-	if(!$us)
-	{
+
 
 		if(Yii::app()->authManager->checkAccess('Alumno',Yii::app()->user->id))
 
@@ -48,6 +55,6 @@ echo "<br/><br/>";
 		}
 		else
 		echo "<i>Debe ser estudiante para ver información del tutor.</i>";	
-	}
+	
 
 	?>

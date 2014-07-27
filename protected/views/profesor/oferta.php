@@ -21,6 +21,10 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 			<?php echo $form->error($model,'Titulo'); ?>
             <br /> 
             <br /> 
+            <label>Seleccione Conocimiento</label> 
+					<?php echo $form->dropDownList($model_5,'P11_id',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimiento','class'=>'form-control')); ?>
+					<?php echo $form->error($model_5,'P11_id'); ?>
+					<br />	
 		<label><h2>Introducción:</h2></label>						
 			
 			<br />		                

@@ -134,6 +134,7 @@ class EstudianteController extends Controller
 		$model_2=new T01TesisHasUsuario;
 		$model_3=new T01TesisHasUsuario;
 		$model_4=new M05Usuario;
+		
 		$model_5=new T04ConocimientoTesis;
 		
 		
@@ -143,10 +144,10 @@ class EstudianteController extends Controller
 		//
                 
 		if(isset($_POST['M03Tesis'])){
-                    
+            
                     $x = $_POST['M03Tesis']['P03_id'];
                  
-               
+            
                   if($x=="1"){                   
                     $estado=P03Status::model()->find("Descripcion = 'Subiendo'");
                 }else{                  
@@ -157,8 +158,8 @@ class EstudianteController extends Controller
 			$model_1->Carta_Tutor=CUploadedFile::getInstance($model_1,'Carta_Tutor');
 			$model_1->P03_id=$estado->id;
 			
-			if($model_1->save()){
-					
+			if($model_1->save(false)){
+			
 				// Para subir la relacion con el alumno---------
 				
 				
@@ -169,13 +170,13 @@ class EstudianteController extends Controller
 				$model_2->save();
 				// repetir para varios conocimientos
 				
-				$model_5->P11_id=$_POST['M03Tesis']['cono'];
+				
 				$model_5->M03_id= $model_1->id;
 				$model_5->save();
 				
-
+				
 				// Para subir la relacion con el profesor
-				$prof=M01Profesor::model()->findByPk($_POST['M03Tesis']['tutor']);
+				$prof=M01Profesor::model()->findByPk($_POST['T01TesisHasUsuario']['P02_id']);
 				$docente=M05Usuario::model()->find("Cedula = '".$prof->Cedula."'");	
 
 				if(count($docente)==0){ //si el profesor no se encuentra en el sistema se crea un usuario temporal no puede entrar en el sistema hasta que no se le habilite un Usuario y clave
@@ -251,7 +252,6 @@ class EstudianteController extends Controller
 		$model_3=new T11Actividad;
 		$model_4=new M07TutorExterno;
 		$model_5=new T02PasantiaHasUsuario;	
-		$model_6=new T05ConocimientoPasantias;		
 		if(isset($_POST['M04Pasantia']))
 		{	
 
@@ -302,11 +302,6 @@ class EstudianteController extends Controller
 			$model_2->P03_id=$estado->id;
 			$model_2->save();
 			
-			$model_6->P11_id=$_POST['M04Pasantia']['cono'];
-				$model_6->M04_id= $model_2->id;
-				$model_6->save();
-				
-			
 			//---------------------------Pasantias has Usuario---------------------------------
 			$model_5->M04_id=$model_2->id;
 			$model_5->M05_id=$tar->id;
@@ -326,7 +321,7 @@ class EstudianteController extends Controller
 			$this->redirect(array('index'));
 		}
 		else{
-			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,));
+			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,));
 		}
 
 		
