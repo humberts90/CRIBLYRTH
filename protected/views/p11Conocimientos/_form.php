@@ -33,7 +33,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'P10_id'); ?>
-		<?php echo $form->textField($model,'P10_id'); ?>
+		<?php echo $form->dropDownList($model,'P10_id',CHtml::listData(P10EjeCurricular::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Eje Curricular','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'P10_id'); ?>
 	</div>
 

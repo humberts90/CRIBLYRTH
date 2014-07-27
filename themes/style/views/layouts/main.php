@@ -234,7 +234,7 @@
 					</div>
 					<div class="line"></div>
 					<div class="enlaces2">
-						<span class="letblancas">Tel&eacute;fono</span>
+						Tel&eacute;fono
 						+58 (276) 000-0000
 					</div>
 					<div class="line"></div>

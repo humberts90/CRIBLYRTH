@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-07-2014 a las 05:08:28
--- Versión del servidor: 5.5.36
--- Versión de PHP: 5.4.27
+-- Tiempo de generación: 27-07-2014 a las 02:22:46
+-- Versión del servidor: 5.5.32
+-- Versión de PHP: 5.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tapbd`
 --
+CREATE DATABASE IF NOT EXISTS `tapbd` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `tapbd`;
 
 -- --------------------------------------------------------
 
@@ -36,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `activerecordlog` (
   `creationdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `userid` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Volcado de datos para la tabla `activerecordlog`
@@ -67,7 +69,38 @@ INSERT INTO `activerecordlog` (`id`, `description`, `action`, `model`, `idModel`
 (22, 'User admin created T08UsuarioHasRol[50].', 'CREATE', 'T08UsuarioHasRol', 50, '', '2014-07-19 22:51:18', 'admin'),
 (23, 'User pedro.perez created T02PasantiaHasUsuario[11].', 'CREATE', 'T02PasantiaHasUsuario', 11, '', '2014-07-19 23:13:12', 'pedro.perez'),
 (24, 'User pedro.perez created T02PasantiaHasUsuario[12].', 'CREATE', 'T02PasantiaHasUsuario', 12, '', '2014-07-19 23:14:26', 'pedro.perez'),
-(25, 'Usuariopedro.perez Creado T02PasantiaHasUsuario[13].', 'CREADO', 'T02PasantiaHasUsuario', 13, '', '2014-07-19 23:54:22', 'pedro.perez');
+(25, 'Usuarioadmin Creado M05Usuario[34].', 'CREADO', 'M05Usuario', 34, '', '2014-07-24 03:19:35', 'admin'),
+(26, 'Usuarioadmin Creado T08UsuarioHasRol[51].', 'CREADO', 'T08UsuarioHasRol', 51, '', '2014-07-24 03:19:35', 'admin'),
+(27, 'Usuarioadmin Creado M05Usuario[35].', 'CREADO', 'M05Usuario', 35, '', '2014-07-26 14:08:53', 'admin'),
+(28, 'Usuarioadmin Creado T08UsuarioHasRol[52].', 'CREADO', 'T08UsuarioHasRol', 52, '', '2014-07-26 14:08:53', 'admin'),
+(29, 'Usuariopepito Creado T01TesisHasUsuario[5].', 'CREADO', 'T01TesisHasUsuario', 5, '', '2014-07-26 15:09:49', 'pepito'),
+(30, 'Usuariopepito Creado T01TesisHasUsuario[6].', 'CREADO', 'T01TesisHasUsuario', 6, '', '2014-07-26 15:12:35', 'pepito'),
+(31, 'Usuariopepito Creado T01TesisHasUsuario[7].', 'CREADO', 'T01TesisHasUsuario', 7, '', '2014-07-26 15:13:26', 'pepito'),
+(32, 'Usuariopepito Creado T01TesisHasUsuario[8].', 'CREADO', 'T01TesisHasUsuario', 8, '', '2014-07-26 15:14:28', 'pepito'),
+(33, 'Usuariopepito Creado T01TesisHasUsuario[9].', 'CREADO', 'T01TesisHasUsuario', 9, '', '2014-07-26 15:15:42', 'pepito'),
+(34, 'Usuariopepito Creado T01TesisHasUsuario[10].', 'CREADO', 'T01TesisHasUsuario', 10, '', '2014-07-26 15:18:02', 'pepito'),
+(35, 'Usuariopepito Creado T01TesisHasUsuario[11].', 'CREADO', 'T01TesisHasUsuario', 11, '', '2014-07-26 15:25:13', 'pepito'),
+(36, 'Usuariopepito Creado T01TesisHasUsuario[12].', 'CREADO', 'T01TesisHasUsuario', 12, '', '2014-07-26 15:25:13', 'pepito'),
+(37, 'Usuarioadmin Creado M05Usuario[38].', 'CREADO', 'M05Usuario', 38, '', '2014-07-26 15:33:58', 'admin'),
+(38, 'Usuarioadmin Creado T08UsuarioHasRol[53].', 'CREADO', 'T08UsuarioHasRol', 53, '', '2014-07-26 15:33:58', 'admin'),
+(39, 'Usuariopmaria Creado M07TutorExterno[2].', 'CREADO', 'M07TutorExterno', 2, '', '2014-07-26 15:50:33', 'pmaria'),
+(40, 'Usuariopmaria Creado T02PasantiaHasUsuario[13].', 'CREADO', 'T02PasantiaHasUsuario', 13, '', '2014-07-26 15:50:33', 'pmaria'),
+(41, 'Usuarioadmin Creado M05Usuario[39].', 'CREADO', 'M05Usuario', 39, '', '2014-07-26 15:54:57', 'admin'),
+(42, 'Usuarioadmin Creado T08UsuarioHasRol[54].', 'CREADO', 'T08UsuarioHasRol', 54, '', '2014-07-26 15:54:57', 'admin'),
+(43, 'Usuarioronaldo Creado M07TutorExterno[3].', 'CREADO', 'M07TutorExterno', 3, '', '2014-07-26 16:01:31', 'ronaldo'),
+(44, 'Usuarioronaldo Creado M07TutorExterno[4].', 'CREADO', 'M07TutorExterno', 4, '', '2014-07-26 16:14:27', 'ronaldo'),
+(45, 'Usuarioronaldo Creado T02PasantiaHasUsuario[14].', 'CREADO', 'T02PasantiaHasUsuario', 14, '', '2014-07-26 16:14:27', 'ronaldo'),
+(46, 'Usuarioronaldo Creado M07TutorExterno[5].', 'CREADO', 'M07TutorExterno', 5, '', '2014-07-26 16:18:10', 'ronaldo'),
+(47, 'Usuarioronaldo Creado T02PasantiaHasUsuario[15].', 'CREADO', 'T02PasantiaHasUsuario', 15, '', '2014-07-26 16:18:10', 'ronaldo'),
+(48, 'Usuarioronaldo Creado M07TutorExterno[6].', 'CREADO', 'M07TutorExterno', 6, '', '2014-07-26 16:19:00', 'ronaldo'),
+(49, 'Usuarioronaldo Creado T02PasantiaHasUsuario[16].', 'CREADO', 'T02PasantiaHasUsuario', 16, '', '2014-07-26 16:19:01', 'ronaldo'),
+(50, 'Usuarioadmin Creado M05Usuario[40].', 'CREADO', 'M05Usuario', 40, '', '2014-07-26 20:45:38', 'admin'),
+(51, 'Usuarioadmin Creado T08UsuarioHasRol[55].', 'CREADO', 'T08UsuarioHasRol', 55, '', '2014-07-26 20:45:38', 'admin'),
+(52, 'Usuariodahyana.nimo Creado T01TesisHasUsuario[13].', 'CREADO', 'T01TesisHasUsuario', 13, '', '2014-07-27 00:01:53', 'dahyana.nimo'),
+(53, 'Usuariodahyana.nimo Creado T01TesisHasUsuario[14].', 'CREADO', 'T01TesisHasUsuario', 14, '', '2014-07-27 00:02:38', 'dahyana.nimo'),
+(54, 'Usuariodahyana.nimo Creado T02PasantiaHasUsuario[17].', 'CREADO', 'T02PasantiaHasUsuario', 17, '', '2014-07-27 00:08:47', 'dahyana.nimo'),
+(55, 'Usuariomanyeli Creado M07TutorExterno[7].', 'CREADO', 'M07TutorExterno', 7, '', '2014-07-27 00:12:37', 'manyeli'),
+(56, 'Usuariomanyeli Creado T02PasantiaHasUsuario[18].', 'CREADO', 'T02PasantiaHasUsuario', 18, '', '2014-07-27 00:12:37', 'manyeli');
 
 -- --------------------------------------------------------
 
@@ -95,13 +128,18 @@ INSERT INTO `auth_asignacion` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 ('Alumno', 'erickad', NULL, 'N;'),
 ('Alumno', 'estudiante', NULL, 'N;'),
 ('Alumno', 'humberts90', NULL, 'N;'),
+('Alumno', 'manyeli', NULL, 'N;'),
 ('Alumno', 'nuevo', NULL, 'N;'),
 ('Alumno', 'paco.paquirri', NULL, 'N;'),
+('Alumno', 'pepito', NULL, 'N;'),
+('Alumno', 'pmaria', NULL, 'N;'),
+('Alumno', 'ronaldo', NULL, 'N;'),
 ('Comisión del Tap', 'armando.carrero', NULL, 'N;'),
 ('Empresa', 'pedro.perez', NULL, 'N;'),
 ('Jefe del Departamento', 'froilan.guerrero', NULL, 'N;'),
 ('Profesor', 'dahyana.nimo', NULL, 'N;'),
 ('Secretaria', 'dahyana.nimo', NULL, 'N;'),
+('Secretaria', 'laura.morales', NULL, 'N;'),
 ('Secretaria', 'lissett.carrero', NULL, 'N;');
 
 -- --------------------------------------------------------
@@ -260,13 +298,13 @@ CREATE TABLE IF NOT EXISTS `m03_tesis` (
   `Fecha_Defensa` date DEFAULT NULL,
   `P03_id` int(11) NOT NULL,
   `M06_id` int(11) DEFAULT NULL,
-  `Lapso_Academico_defensa` varchar(6) NOT NULL,
+  `Lapso_Academico_defensa` varchar(6) DEFAULT NULL,
   `fecha_val` date DEFAULT NULL,
   `vacantes` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_m03_tesis_p03_status1_idx` (`P03_id`),
   KEY `fk_m03_tesis_m06_empresa1_idx` (`M06_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Volcado de datos para la tabla `m03_tesis`
@@ -274,7 +312,22 @@ CREATE TABLE IF NOT EXISTS `m03_tesis` (
 
 INSERT INTO `m03_tesis` (`id`, `Titulo`, `Carta_Tutor`, `Introduccion`, `Planteamiento_Problema`, `Objetivo_General`, `Objetivo_especifico`, `Justificacion_Importancia`, `Alcance_Delimitaciones`, `Antecedentes`, `Bases_Teoricas`, `Bases_Legales`, `Definicion_Terminos`, `Enfoque_Investigacion`, `Tipo_Nivel_Invesstigacion`, `Diseno_Investigacion`, `Poblacion_Muestra`, `Tecnicas_Recoleccion_Datos`, `Metodologias`, `Referencias`, `Fecha_Inscripcion`, `Fecha_Aprobación`, `Fecha_Defensa`, `P03_id`, `M06_id`, `Lapso_Academico_defensa`, `fecha_val`, `vacantes`) VALUES
 (4, 'Aplicacion de una tesis de prueba para el sis', NULL, ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum blandit diam vitae ipsum bibendum volutpat. Sed blandit rhoncus arcu, at lobortis orci imperdiet at. Vestibulum eu neque hendrerit magna euismod suscipit. Fusce placerat fringilla felis, ac ultrices dui vehicula ut. Suspendisse potenti. Nulla vitae ante vitae nisl pharetra dignissim. Aliquam posuere dapibus blandit.', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet venenatis nunc eget viverra. Class aptent ', NULL, '2014-02-17', '2014-02-18', '2014-09-25', 2, 1, '2013-1', NULL, NULL),
-(5, 'ejemplo', NULL, '<p>xxx</p>', '<p>yyy</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>zzz</p>', NULL, NULL, NULL, 5, NULL, '2013-1', '2014-07-31', 2);
+(5, 'ejemplo', NULL, '<p>xxx</p>', '<p>yyy</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>zzz</p>', NULL, NULL, NULL, 5, NULL, '2013-1', '2014-07-31', 2),
+(9, 'Lorem ipsum dolor sit amet, consectetur adipi', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', NULL, NULL, '2020-02-13', 7, NULL, '2010-2', NULL, NULL),
+(10, 'Lorem ipsum dolor sit amet, consectetur adipi', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, NULL, NULL, NULL, NULL, '2010-02-13', 7, NULL, '2010-2', NULL, NULL),
+(11, 'Lorem ipsum dolor sit amet, consectetur adipi', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, NULL, NULL, NULL, NULL, '2020-01-13', 7, NULL, '2010-2', NULL, NULL),
+(12, 'Lorem ipsum dolor sit amet, consectetur adipi', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', NULL, NULL, '2020-02-13', 7, NULL, '2010-2', NULL, NULL),
+(13, 'Lorem ipsum dolor sit amet, consectetur adipi', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, NULL, NULL, NULL, NULL, '2010-02-13', 7, NULL, '2010-2', NULL, NULL),
+(14, 'Lorem ipsum dolor sit amet, consectetur adipi', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL, NULL, NULL, NULL, NULL, '2020-01-13', 7, NULL, '2010-2', NULL, NULL),
+(15, 'scwdkn', NULL, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '', '\r\n						\r\n						', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
+(16, 'scwdkn', NULL, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '', '\r\n						\r\n						', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
+(17, 'scwdkn', NULL, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '', '\r\n						\r\n						', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
+(18, 'scwdkn', NULL, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '', '\r\n						\r\n						', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
+(19, 'scwdkn', NULL, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '', '\r\n						\r\n						', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
+(20, 'scwdkn', NULL, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '', '\r\n						\r\n						', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
+(21, 'scwdkn', NULL, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '', '\r\n						\r\n						', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL),
+(22, 'titota', NULL, '<p>wsdjs</p>', '<p>sxcjvzx,</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>xcxcfn</p>', NULL, NULL, NULL, 5, NULL, '2013-1', '2014-07-31', 3),
+(23, 'titota', NULL, '<p>wsdjs</p>', '<p>sxcjvzx,</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>xcxcfn</p>', NULL, NULL, NULL, 5, NULL, '2013-1', '2014-07-31', 3);
 
 -- --------------------------------------------------------
 
@@ -304,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `m04_pasantia` (
   PRIMARY KEY (`id`),
   KEY `fk_Pasantia_empresa1_idx` (`M06_id`),
   KEY `fk_m04_pasantia_p03_status1_idx` (`P03_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- Volcado de datos para la tabla `m04_pasantia`
@@ -320,7 +373,16 @@ INSERT INTO `m04_pasantia` (`id`, `Titulo`, `Planteamiento_Problema`, `Descripci
 (7, 'reo', NULL, '<p>x</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, '2014-07-29', 8, 4000),
 (8, 'una', NULL, '<p>x</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, '2014-07-22', 8, NULL),
 (9, 'dos', NULL, '<p>x</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, '2014-07-25', 4, 9500),
-(10, 'Carpintero espacial', NULL, '<p>jksdfhskjfhdkjshkjhkjhkj</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, '2014-11-21', 10, 1500);
+(10, '\r\n						\r\n						', NULL, '\r\n						\r\n						', '\r\n						\r\n						', NULL, NULL, NULL, NULL, NULL, NULL, '0000-00-00', NULL, 3, '', NULL, NULL, NULL),
+(11, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL),
+(12, '\r\n						\r\n						', 'print_r("aqui");\r\n						\r\n						', '\r\n						\r\n						', 'print_r("aqui");\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL),
+(13, '\r\n						\r\n						', '\r\n						\r\n						', '&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;render(''createp'',array(''Usuario''=&gt;$tar,''model_1''=&gt;$model_1,''model_2''=&gt;$model_2,''model_3''=&gt;$model_3,''model_4''=&gt;$model_4,''model_5''=&gt;$model_5,''model_6''=&gt;$model_6,));\r\n						\r\n						', '&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;render(''createp'',array(''Usuario''=&gt;$tar,''model_1''=&gt;$model_1,''model_2''=&gt;$model_2,''model_3''=&gt;$model_3,''model_4''=&gt;$model_4,''model_5''=&gt;$model_5,''model_6''=&gt;$model_6,));\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL),
+(14, '\r\n						\r\n						', '\r\n						\r\n						', '&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;render(''createp'',array(''Usuario''=&gt;$tar,''model_1''=&gt;$model_1,''model_2''=&gt;$model_2,''model_3''=&gt;$model_3,''model_4''=&gt;$model_4,''model_5''=&gt;$model_5,''model_6''=&gt;$model_6,));\r\n						\r\n						', '&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;render(''createp'',array(''Usuario''=&gt;$tar,''model_1''=&gt;$model_1,''model_2''=&gt;$model_2,''model_3''=&gt;$model_3,''model_4''=&gt;$model_4,''model_5''=&gt;$model_5,''model_6''=&gt;$model_6,));\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL),
+(15, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', 'print_r("aqui");\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', 'print_r("aqui");\r\n						\r\n						', NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL),
+(16, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', 'print_r("aqui");\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', 'print_r("aqui");\r\n						\r\n						', NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL),
+(17, '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', 'print_r("aqui");\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', 'print_r("aqui");\r\n						\r\n						', NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL),
+(18, 'tato', '<p>hola</p>', '<p>como</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 5, '2013-1', '2014-07-31', 3, NULL),
+(19, 'titulo\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', '\r\n						\r\n						', NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -348,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `m05_usuario` (
   UNIQUE KEY `Correo_Electronico_2` (`Correo_Electronico`),
   UNIQUE KEY `Correo_Electronico_3` (`Correo_Electronico`),
   UNIQUE KEY `Usuario_UNIQUE` (`Usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
 -- Volcado de datos para la tabla `m05_usuario`
@@ -367,7 +429,12 @@ INSERT INTO `m05_usuario` (`id`, `Cedula`, `Apellido`, `Nombre`, `Usuario`, `Cla
 (30, '18564806', 'donoso', 'ericka', 'erickad', '047a46574e56ddf6117e985f4b9d1953d9f7a8bf', '02765111234', 'donosoericka2010@gmail.com', 'cordero', 124, 1, '', '', '53bd88128cf201.03174978'),
 (31, '18564806992', 'donoso', 'ericka', 'ericka.donoso', '65db7cae6d670d990b5f9ce352971a72b3fb093e', '02765111234', 'correoskjjssj2@ijdji', 'iojeij', NULL, NULL, '', '', '53bd88fc282978.48759926'),
 (32, '7556698', 'Guerrero', 'Froilan', 'froilan.guerrero', 'dd242b278859ffd6fbda86c58823e3ff09888884', '23232', 'dasijdlij@podkokfpo', 'dsfsf', NULL, NULL, '', '', '53c7dde7302c25.11133022'),
-(33, '00001111', 'Perez', 'Pedro', 'pedro.perez', 'f1cf91a1db43153d69f2d1a1c8a70e46ad6182c8', '04147179768', 'correo@dominio.com', 'caracas', NULL, NULL, '', '', '53caf6668ae195.64343191');
+(33, '00001111', 'Perez', 'Pedro', 'pedro.perez', 'f1cf91a1db43153d69f2d1a1c8a70e46ad6182c8', '04147179768', 'correo@dominio.com', 'caracas', NULL, NULL, '', '', '53caf6668ae195.64343191'),
+(34, '18453532', 'Morales', 'Laura', 'laura.morales', '252fa08f9019043fda8ddfb1d7028927487785b9', '0416-5555555', 'lmor@gmail.com', 'calle x, casa 0-00', NULL, NULL, '', '', '53d07b47812650.21176614'),
+(35, '5555555', 'perez', 'pepito', 'pepito', '13878e97fdf0fe75d4aa3d0e2fdf518c1178f1b7', '00000000000', 'correo@gmail.com', 'lorem', 127, NULL, '2013-2', '', '53d3b674d82246.00327659'),
+(38, '2345432', 'perez', 'maria', 'pmaria', '005378e23f5c7636dbcfb21a1f72991f6e6ca76e', '00000000000', 'correo2@gmail.com', 'dnkckcn', 127, NULL, '2013-1', '', '53d3ca66a266e3.12403005'),
+(39, '99922233', 'otro', 'ronaldo', 'ronaldo', '48061b8092ed1c1140e8d1b3b685d5c2515f3f75', '899999', 'correo3@gmail.com', 'dcsdskdsq', 127, NULL, '2013-1', '', '53d3cf5171d1a5.18453903'),
+(40, '7878787', 'molina', 'anyeli', 'manyeli', '21e480d4c66b89330fea57c4689c440c24bdc2a7', '00000000', 'correo5@gmail.com', 'skzkmx', 120, NULL, '2013-2', '', '53d41372279721.94182448');
 
 -- --------------------------------------------------------
 
@@ -425,14 +492,20 @@ CREATE TABLE IF NOT EXISTS `m07_tutor_externo` (
   `Curriculum` varchar(255) DEFAULT NULL,
   `Enlace` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `m07_tutor_externo`
 --
 
 INSERT INTO `m07_tutor_externo` (`id`, `Cedula`, `Apellido`, `Nombre`, `Telefono`, `Correo`, `Cargo_Empresa`, `Curriculum`, `Enlace`) VALUES
-(1, '5555', 'Kempes', 'Mario', '6555', '@ksdhlklf', 'Presidente', 'ldsjd', 'jfdsjfpdjfp.com');
+(1, '5555', 'Kempes', 'Mario', '6555', '@ksdhlklf', 'Presidente', 'ldsjd', 'jfdsjfpdjfp.com'),
+(2, '2222222', 'sotelo', 'manuel', '11111111', 'empresa', 'director', NULL, ''),
+(3, '88888', 'figuero', 'santiago', '1233212', 'correo32@gmail.com', 'encargado', NULL, 'dnsjsx'),
+(4, '33333', 'w', 'nnn', '02020202', 'correo5@gmail.com', 'encargado', NULL, 'sksaxksk'),
+(5, '33333', 'w', 'nnn', '02020202', 'correo5@gmail.com', 'encargado', NULL, 'sksaxksk'),
+(6, '33333', 'w', 'nnn', '02020202', 'correo5@gmail.com', 'encargado', NULL, 'sksaxksk'),
+(7, '1111111', 'salgado', 'manuel', '01091292', 'correo11@gmail.com', 'empleado', NULL, 'www');
 
 -- --------------------------------------------------------
 
@@ -2136,45 +2209,24 @@ INSERT INTO `p09_departamento` (`id`, `Nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `p10_eje_curricular`
---
-
-CREATE TABLE IF NOT EXISTS `p10_eje_curricular` (
-  `P09_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_P10_eje_curricular_p09_departamento_idx` (`P09_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Volcado de datos para la tabla `p10_eje_curricular`
---
-
-INSERT INTO `p10_eje_curricular` (`P09_id`, `id`, `Nombre`) VALUES
-(1, 1, 'Sistemas de Informacion');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `p11_conocimientos`
 --
 
 CREATE TABLE IF NOT EXISTS `p11_conocimientos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(45) NOT NULL,
+  `P09_id` int(11) NOT NULL,
   `Descripcion` mediumtext,
-  `P10_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_p11_conocimientos_P10_eje_curricular1_idx` (`P10_id`)
+  KEY `fk_p11_conocimientos_p10_areas_conomicmiento1_idx` (`P09_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcado de datos para la tabla `p11_conocimientos`
 --
 
-INSERT INTO `p11_conocimientos` (`id`, `Nombre`, `Descripcion`, `P10_id`) VALUES
-(1, 'Modelado de datos', 'Modelado de datos en diagrama ER', 1);
+INSERT INTO `p11_conocimientos` (`id`, `Nombre`, `P09_id`, `Descripcion`) VALUES
+(1, 'Modelado de datos', 1, 'Modelado de datos en diagrama ER');
 
 -- --------------------------------------------------------
 
@@ -2191,7 +2243,7 @@ CREATE TABLE IF NOT EXISTS `t01_tesis_has_usuario` (
   KEY `fk_Tesis_has_Usuario_Usuario1_idx` (`M05_id`),
   KEY `fk_Tesis_has_Usuario_Tesis1_idx` (`M03_id`),
   KEY `fk_T01_Tesis_has_Usuario_P02_Tipo_Relacion1_idx` (`P02_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Volcado de datos para la tabla `t01_tesis_has_usuario`
@@ -2201,7 +2253,9 @@ INSERT INTO `t01_tesis_has_usuario` (`M03_id`, `M05_id`, `P02_id`, `id`) VALUES
 (4, 2, 1, 1),
 (4, 13, 2, 2),
 (4, 13, 4, 3),
-(5, 13, 2, 4);
+(5, 13, 2, 4),
+(22, 13, 2, 13),
+(23, 13, 2, 14);
 
 -- --------------------------------------------------------
 
@@ -2220,7 +2274,7 @@ CREATE TABLE IF NOT EXISTS `t02_pasantia_has_usuario` (
   KEY `fk_Pasantia_has_Usuario_Pasantia1_idx` (`M04_id`),
   KEY `fk_Pasantia_has_Usuario_Tutor_externo1_idx` (`M07_id`),
   KEY `fk_Pasantia_has_Usuario_tipo_relacion1_idx` (`P02_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Volcado de datos para la tabla `t02_pasantia_has_usuario`
@@ -2239,7 +2293,12 @@ INSERT INTO `t02_pasantia_has_usuario` (`M04_id`, `M05_id`, `M07_id`, `P02_id`, 
 (7, 11, 1, 2, 10),
 (8, 33, 1, 2, 11),
 (9, 33, 1, 2, 12),
-(10, 33, 1, 2, 13);
+(11, 38, 2, 7, 13),
+(15, 39, 4, 7, 14),
+(16, 39, 5, 7, 15),
+(17, 39, 6, 7, 16),
+(18, 13, 1, 2, 17),
+(19, 40, 7, 7, 18);
 
 -- --------------------------------------------------------
 
@@ -2361,7 +2420,7 @@ CREATE TABLE IF NOT EXISTS `t08_usuario_has_rol` (
   PRIMARY KEY (`id`),
   KEY `fk_M05_Usuario_has_P01_Rol_P01_Rol1_idx` (`P01_id`),
   KEY `fk_M05_Usuario_has_P01_Rol_M05_Usuario1_idx` (`M05_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
 
 --
 -- Volcado de datos para la tabla `t08_usuario_has_rol`
@@ -2380,7 +2439,12 @@ INSERT INTO `t08_usuario_has_rol` (`M05_id`, `P01_id`, `id`) VALUES
 (31, 4, 47),
 (2, 4, 48),
 (32, 2, 49),
-(33, 7, 50);
+(33, 7, 50),
+(34, 5, 51),
+(35, 4, 52),
+(38, 4, 53),
+(39, 4, 54),
+(40, 4, 55);
 
 -- --------------------------------------------------------
 
@@ -2543,16 +2607,10 @@ ALTER TABLE `p06_estado`
   ADD CONSTRAINT `fk_P06_Estado_P07_Pais1` FOREIGN KEY (`P07_id`) REFERENCES `p07_pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Filtros para la tabla `p10_eje_curricular`
---
-ALTER TABLE `p10_eje_curricular`
-  ADD CONSTRAINT `fk_P10_eje_curricular_p09_departamento` FOREIGN KEY (`P09_id`) REFERENCES `p09_departamento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Filtros para la tabla `p11_conocimientos`
 --
 ALTER TABLE `p11_conocimientos`
-  ADD CONSTRAINT `fk_p11_conocimientos_P10_eje_curricular1` FOREIGN KEY (`P10_id`) REFERENCES `p10_eje_curricular` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_p11_departamento_p10_areas_cono` FOREIGN KEY (`P09_id`) REFERENCES `p09_departamento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `t01_tesis_has_usuario`

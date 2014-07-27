@@ -9,32 +9,35 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 <h3><b>Tesis</b></h3>
 
+<div style='overflow-x:scroll'>
 
-<table border="0" style="width: 100%" >
+<table border="0" style="width: 950px">
   <tr>
-    <td bgcolor="#93AAD3"><h4>Titulo</h4></td>
-    <td bgcolor="#93AAD3"><h4>Autor</h4></td>
-    <td bgcolor="#93AAD3"><h4>Status</h4></td>
-    <td bgcolor="#93AAD3"><h4>Fechas</h4></td>
-    <td bgcolor="#93AAD3"><h4>Detalles</h4></td>
+    <td bgcolor="#93AAD3" width="200px"><h4>Titulo</h4></td>
+    <td bgcolor="#93AAD3" width="200px"><h4>Autor</h4></td>
+    <td bgcolor="#93AAD3" width="200px"><h4>Status</h4></td>
+    <td bgcolor="#93AAD3" width="250px"><h4>Fechas</h4></td>
+    <td bgcolor="#93AAD3" width="100px"><h4>Detalles</h4></td>
   </tr>
     <?php $this->widget('zii.widgets.CListView', array(
     'dataProvider'=>$dataProvider,
     'itemView'=>'tesi',
     )); ?>
 </table>
+</div>
 </br>
 </br>
 
 <h3><b>Pasantias</b></h3>
 
-<table border="0" style="width: 100%">
+<div style='overflow-x:scroll'>
+<table border="0" style="width: 950px">
 <tr>
-  	 <td bgcolor="#93AAD3"><h4>Titulo</h4></td>
-	  <td bgcolor="#93AAD3"><h4>Pasante</h4></td> 
-	  <td bgcolor="#93AAD3"><h4>Tutor Externo</h4></td>
-	  <td bgcolor="#93AAD3"><h4>Fecha Defensa</h4></td>
-	  <td bgcolor="#93AAD3"><h4>Detalles</h4></td>
+  	 <td bgcolor="#93AAD3" width="200px"><h4>Titulo</h4></td>
+	  <td bgcolor="#93AAD3"width="200px"><h4>Pasante</h4></td> 
+	  <td bgcolor="#93AAD3"width="200px"><h4>Tutor Externo</h4></td>
+	  <td bgcolor="#93AAD3" width="250px"><h4>Fechas</h4></td>
+	  <td bgcolor="#93AAD3" width="100px"><h4>Detalles</h4></td>
 </tr>
 
   <?php $this->widget('zii.widgets.CListView', array(
@@ -42,6 +45,6 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
     'itemView'=>'pasa',
     )); ?>
 </table>
-
+</div>
 
 </p>

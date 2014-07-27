@@ -4,10 +4,10 @@
 	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
-<h1> Cargar Tesis Culminada</h1>
+<h1> Cargar Tesis Anterior al Sistema</h1>
 
 <div id="wizard" class="col-lg-offset-1" >
-		<h2>Información Tesis Culminada</h2>
+		<h2>Información Tesis </h2>
 		<br /> 
 			<section >              
 					<label>* Título del proyecto</label> 

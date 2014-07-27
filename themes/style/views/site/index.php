@@ -138,7 +138,7 @@
 										MISIÓN Y VISIÓN
 									</p>
 								</div> <div class="icono"></div>',
-								array('site/#')); ?>								 
+								array('site/mision')); ?>								 
 							</li>
 							<li>
 							<?php echo CHtml::link('<div class="ncaja">
@@ -160,7 +160,7 @@
 										DOCUMENTOS
 									</p>
 								</div> <div class="iconolista"></div> ',
-								array('site/#')); ?>					
+								array('site/docu')); ?>					
 							</li>
 						</ul>
 					</div>
