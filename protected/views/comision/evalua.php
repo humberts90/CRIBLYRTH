@@ -30,35 +30,117 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 		<?php echo '<b>Respuesta de la tesis: </b></br>'; ?>
 		<?php echo $form->dropDownList($model,'M03_id',CHtml::listData(P03Status::model()->findAllByPk(array(4,3,6)),'id','Descripcion'),array('empty'=>'Seleccione respuesta','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'M03_id'); ?>
-	</div>
-	<div class="row">
+	    <?php //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++areas de conocimiento++++++++++++++++++++++++++++++++++++++?>
+	</br>
+	 	<label>Agregar Area de conocimiento</label>
+		</br>
+		</br>
+	   	<label>Seleccione Departamento:</label>
+					</br>
+					</br>
+<?php echo $form->dropDownList($model_1,'p09_id',CHtml::listData(P09Departamento::model()->findAll(),'id','Nombre'),array(
 
-		<table>
-			<tr><td></br></td></tr>
-			<tr>
-				<td><b>Sugerencia de jurados</b></td>
-			</tr>
-			<tr>
-				<?php  foreach ($conocimiento as $key) {
-					$aso=T06ConocimientoProfesor::model()->findAll("P11_id = ".$key->P11_id);
-					$cono=P11Conocimientos::model()->findByPk($key->P11_id);
-					echo "<tr><td><b>Area de Conocimiento</b></td></tr>";
-					echo "<tr><td></br></td></tr>";
-					echo "<tr><td>".$cono->Nombre."</td><tr>";
-					echo "<tr><td></br></td></tr>";
-					echo "<tr><td>Profesores sugeridos por esta area:</td></tr>";
-					foreach ($aso as $vari) {
-						$prof=M01Profesor::model()->findByPk($vari->M01_d);
-						echo "<td>".$prof->Nombre." ".$prof->Apellido."</td>";
+															'ajax'=>array(
+
+															'type'=>'POST',
+
+															'url'=>CController::createUrl('comision/select'),
+
+															'update'=>'#'.CHtml::activeId($model_1,'P10_id'),
+
+
+															),
+
+															'empty'=>'Seleccione Departamento',
+
+															'class'=>'form-control'
+
+
+														)); ?>
+
+					<?php echo $form->error($model_1,'p09_id'); ?>
+					</br>
+					</br>
+					<label>Seleccione Eje Curricular:</label>
+					</br>
+					</br>
+					<?php echo $form->dropDownList($model_1,'P10_id',CHtml::listData(P10EjeCurricular::model()->findAll(),'id','Nombre'),array(
+
+															'ajax'=>array(
+
+															'type'=>'POST',
+
+															'url'=>CController::createUrl('comision/selectdos'),
+
+															'update'=>'#'.CHtml::activeId($model_1,'P11_id'),
+
+
+															),
+
+															'empty'=>'Seleccione Eje Curricular',
+
+															'class'=>'form-control'
+
+
+														)); ?>
+
+					<?php echo $form->error($model_1,'P10_id'); ?>
+					</br>
+					</br>
+					<label>Seleccione Conocimiento:</label>
+					</br>
+					</br>
+					<?php echo $form->dropDownList($model_1,'P11_id',CHtml::listData(P11Conocimientos::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Conocimientos','class'=>'form-control')); ?>
+					</br>
+					</br>
+				
+					<?php echo $form->error($model_1,'P11_id'); ?>
+
 					
-					}
-					echo "<tr><td></br></td></tr>";
-				
-				}?>
-				
-			</tr>
-		</table>
+					
+					
+	
+	<?php //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++?>
+	
+	
+	
 	</div>
+
+	<h1>Sugerencias de jurados </h1>
+	<div class="row"><?php
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+				'id'=>'mymodal',
+				 'options'=>array(
+				 'title'=>'Ver sugerencias',
+				 'width'=>800,
+				 'height'=>800,
+				 'autoOpen'=>false,
+				 'resizable'=>false,
+				 'modal'=>true,
+				 'overlay'=>array(
+					'backgroundColor'=>'#000',
+					'opacity'=>'0.5'
+
+					
+				 ),
+				 ),
+				));
+			
+				echo $this->renderPartial('suje',array(
+				'conocimiento'=>$conocimiento,
+				));
+			
+				$this->endWidget('zii.widgets.jui.CJuiDialog');
+				?>
+				
+				
+					
+				
+				<?php 	
+		         echo CHtml::link('Ver sugerencias', '', array('onclick'=>'$("#mymodal").dialog("open");return false;','class'=>'btn btn-default btn-lg pull-left'));?>
+				 
+	</div>
+</br>
 	<div class="row">
 		<table>
 			<tr>

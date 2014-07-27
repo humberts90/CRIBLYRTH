@@ -92,7 +92,7 @@ public function accessRules()
 
 			if($model->save())
 			{
-				$modelRelacion = P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
+				$modelRelacion = P02TipoRelacion::model()->find("Descripcion = 'Tutor Externo'");
 				
 				$modelAsoc = new T02PasantiaHasUsuario;
 				$modelAsoc->M05_id = $tar->id;

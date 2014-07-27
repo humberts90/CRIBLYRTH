@@ -75,4 +75,14 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 	
 	<?php echo CHtml::link(CHtml::encode("Ver Cronograma de Actividades"), array('cronograma', 'id'=>$model->id)); ?>
 	<br />
+	<br />
+	<?php 
 
+	if($model->P03_id!='1'){
+
+	echo CHtml::link(CHtml::encode("Evaluar"), array('evaluaP', 'id'=>$model->id)); 
+
+	}
+
+	?>
+	<br />
