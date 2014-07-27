@@ -32,6 +32,8 @@
  * @property string $Lapso_Academico_defensa
  * @property string $fecha_val
  * @property integer $vacantes
+ 
+ 
  *
  * The followings are the available model relations:
  * @property M06Empresa $m06
@@ -40,13 +42,16 @@
  * @property T04ConocimientoTesis[] $t04ConocimientoTesises
  * @property T07ObservacionTesis[] $t07ObservacionTesises
  */
+
 class M03Tesis extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
+
 	public $cono;
 	public $tutor;
+
 	public function tableName()
 	{
 		return 'm03_tesis';
