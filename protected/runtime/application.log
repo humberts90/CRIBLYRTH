@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿2014/07/27 21:26:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
@@ -2734,3 +2735,5 @@ Stack trace:
 REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
 HTTP_REFERER=http://localhost/CRIBLYRTH/profesor/areasp/1
 ---
+=======
+>>>>>>> 03526bf5ef2b63d3ab1af5cab7c9f8836caae897
