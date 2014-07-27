@@ -76,53 +76,61 @@
 					</div>
 					<div class="inform">
 						<div class="vineta"></div>
-						<a class="cic" href="#">
+
+						<?php echo CHtml::link('
+
 						<p class="letrasoscuras">
 							Lorem ipsum ad his scripta blandit eirmod consectetuer
 						</p>
 						<p class="letrasclaras">
 							eum fastidii accumsan euripidis in...
-						</p> </a>
+						</p> ',
+								array('site/Cartelere')); ?>
+						
 					</div>
 					<div class="inform">
 						<div class="vineta"></div>
-						<a class="cic" href="ver_cartelera3773.html?id=27">
+						<?php echo CHtml::link('
 						<p class="letrasoscuras">
-							Qui ut wisi vocibus suscipiantur signiferumque
+							Lorem ipsum ad his scripta blandit eirmod consectetuer
 						</p>
 						<p class="letrasclaras">
-							Quo mundi lobortis reformidans eu...
-						</p> </a>
+							eum fastidii accumsan euripidis in...
+						</p> ',
+								array('site/Cartelere')); ?>
 					</div>
 					<div class="inform">
 						<div class="vineta"></div>
-						<a class="cic" href="ver_cartelera2e5f.html?id=22">
+						<?php echo CHtml::link('
 						<p class="letrasoscuras">
-							Quo no falli viris intellegam, ut fugit veritus placerat per
+							Lorem ipsum ad his scripta blandit eirmod consectetuer
 						</p>
 						<p class="letrasclaras">
-							eirmod consectetuer signiferumque...
-						</p> </a>
+							eum fastidii accumsan euripidis in...
+						</p> ',
+								array('site/Cartelere')); ?>
 					</div>
 					<div class="inform">
 						<div class="vineta"></div>
-						<a class="cic" href="ver_cartelerad61c.html?id=5">
+						<?php echo CHtml::link('
 						<p class="letrasoscuras">
-							Quo mundi lobortis reformidans
+							Lorem ipsum ad his scripta blandit eirmod consectetuer
 						</p>
 						<p class="letrasclaras">
-							Sed at malis omnesque delicata, usu et consectetuer...
-						</p> </a>
+							eum fastidii accumsan euripidis in...
+						</p> ',
+								array('site/Cartelere')); ?>
 					</div>
 					<div class="inform">
 						<div class="vineta"></div>
-						<a class="cic" href="ver_cartelera2e5f.html?id=22">
+						<?php echo CHtml::link('
 						<p class="letrasoscuras">
-							Quo no falli viris intellegam, ut fugit veritus wisi vocibus
+							Lorem ipsum ad his scripta blandit eirmod consectetuer
 						</p>
 						<p class="letrasclaras">
-							eirmod consectetuer lobortis at malis omnesque...
-						</p> </a>
+							eum fastidii accumsan euripidis in...
+						</p> ',
+								array('site/Cartelere')); ?>
 					</div>
 				</div>
 				<div class="sec" style="width:400px;">

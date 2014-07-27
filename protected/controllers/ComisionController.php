@@ -279,6 +279,7 @@ public function accessRules()
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$tesis=M03Tesis::model()->findByPk($id);
 		$model=new T07ObservacionTesis;
+		$model_1=new T04ConocimientoTesis;
 		$tes=T01TesisHasUsuario::model()->findAll("M03_id =".$tesis->id);
 		$conotes=T04ConocimientoTesis::model()->findAll("M03_id= ".$tesis->id);		
 		$prof=T08Usuario_has_rol::model()->findAll("P01_id = 3");
@@ -303,7 +304,7 @@ public function accessRules()
 			$temp=$_POST['T07ObservacionTesis']['M03_id'];
 			$model->M03_id=$tesis->id;
 			$model->Fecha=date('Y-m-d');
-
+			
 			
 			if($model->save()){
 
@@ -334,25 +335,55 @@ public function accessRules()
 				echo "<script>alert('Evaluacion realizada con exito');</script>";
 				$this->redirect(array('tesis'));
 
-				}
-
-			
-
-			
-				
-				
-			}
-			
-				
+				}			
+			}		
 		}
-
+		if(isset($_POST['T04ConocimientoTesis']))
+		{
+			$model_1->attributes=$_POST['T04ConocimientoTesis'];
+		    $model_1->M03_id=$tesis->id;
+		    $model_1->save();
+		}
+		
+		
 		$this->render('evalua',array(
 			'Usuario'=>$tar,
 			'tes'=>$tesis,
 			'model'=>$model,
+			'model_1'=>$model_1,
 			'profesor'=>$prof,
 			'conocimiento'=>$conotes,
 			));
+	}
+ public function actionSelect(){
+
+
+		$id_uno =$_POST['T04ConocimientoTesis']['p09_id'];
+
+		$lista=P10EjeCurricular::model()->findAll('p09_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
+	}
+	public function actionSelectdos(){
+
+
+		$id_uno =$_POST['T04ConocimientoTesis']['P10_id'];
+
+		$lista=P11Conocimientos::model()->findAll('P10_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
 	}
 
 	//---------------------------------------------Evaluar Propuestas de pasantias----------------------------------------------------------------------------------
@@ -366,7 +397,7 @@ public function accessRules()
 
 		$this->render('list_2',array(
 			'Usuario'=>$tar,
-			 'dataProvider'=>$model->search(),
+			 'dataProvider'=>$dataProvider,
 			 'model'=>$model,
 			));
 	}
@@ -408,7 +439,60 @@ public function accessRules()
 		}	
 		
 	}
-	//--------------------Elaboracion de acta mediante plantilla-------------------------------------------
+
+//////////////////////////////////// Leyry y leo :3 besties foreva xD ////////////////////////////////////////////////////////////////////////
+	public function actionEvaluaP($id){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'"); 	//Usuario que esta logueado
+		$pasantia=M04Pasantia::model()->findByPk($id);								//plan de trabajo que se esta evaluando
+		$model=new T10ObservacionPasantias; 
+		$pas= new T02PasantiaHasUsuario; //Relacion: Pasantias, Usuario, tutor externo y tipo de relacion
+		$conopas=T05ConocimientoPasantias::model()->findAll("M04_id= ".$pasantia->id); //Esto como que no esta funcionando: esta tabla no tiene datos aun...
+		$prof=T08Usuario_has_rol::model()->findAll("P01_id = 3");
+		$pas2=T02PasantiaHasUsuario::model()->find("M04_id = ".$pasantia->id);
+
+		if(isset($_POST['T10ObservacionPasantias']))
+		{
+			
+			
+			$jurado1= $_REQUEST['j1'];
+			$pas->M05_id=$jurado1;
+			$pas->M04_id=$id;
+			$pas->P02_id="3";
+			$pas->M07_id=$pas2->M07_id;
+			$pas->save();
+
+
+
+
+			$model->attributes=$_POST['T10ObservacionPasantias'];
+			$temp=$_POST['T10ObservacionPasantias']['M04_id'];
+			$model->M04_id=$pasantia->id;
+			$model->Fecha=date('Y-m-d');
+
+			
+			if($model->save()){
+				
+				$pasantia->P03_id=$temp;
+				$pasantia->Fecha_Aprobacion=date('Y-m-d');
+				
+				if($pasantia->save()){
+				echo "<script>alert('Evaluacion realizada con exito');</script>";
+				$this->redirect(array('pasantias'));
+
+				}
+			}	
+		}
+
+		$this->render('evaluaP',array(
+			'Usuario'=>$tar,
+			'pas'=>$pasantia,
+			'model'=>$model,
+			'profesor'=>$prof,
+			'conocimiento'=>$conopas,
+			));
+	}
+		//--------------------Elaboracion de acta mediante plantilla-------------------------------------------
 
 	public function actionContenido()
     {
@@ -472,6 +556,4 @@ public function accessRules()
 			
 
 	}
-
-
 }
