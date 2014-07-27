@@ -62,7 +62,7 @@ class M05UsuarioController extends Controller
 	public function actionCreate()
 	{
 		$model=new M05Usuario;
-
+		$model_2=new M01Profesor;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -89,6 +89,13 @@ class M05UsuarioController extends Controller
 						$auth=Yii::app()->authManager;
 						$nombre=P01Rol::model()->find("id=".$item->P01_id);
 						$auth->assign($nombre->nombre,$model->Usuario);
+						if($nombre->id==3){
+							$model_2->Cedula=$model->Cedula;
+							$model_2->Apellido=$model->Apellido;
+							$model_2->Nombre=$model->Nombre;
+							$model_2->Correo_UNET=$model->Correo_Electronico;
+							$model_2->save();
+						}
 
 					}
 				}
