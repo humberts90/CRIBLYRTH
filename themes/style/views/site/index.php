@@ -76,7 +76,7 @@
 					</div>
 					<div class="inform">
 						<div class="vineta"></div>
-						<a class="cic" href="ver_cartelera8bcf.html?id=30">
+						<a class="cic" href="#">
 						<p class="letrasoscuras">
 							Lorem ipsum ad his scripta blandit eirmod consectetuer
 						</p>
