@@ -1,76 +1,62 @@
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'pasantias-form',
-	'enableAjaxValidation'=>false,
-	'htmlOptions' => array('enctype' => 'multipart/form-data'),
-)); ?>
+
+
 <div id="wizard" class="col-lg-offset-1" >
-		<h2>Actividades del cronograma</h2>
+		<h2> Cronograma</h2>
 			
+				<b><?php echo CHtml::encode($crono->getAttributeLabel('Nombre')); ?>:</b>
+	            <p><?php echo CHtml::encode($crono->nombre); ?></p>
+				<br>		
+		
+				<?php
 				
-						
-			<label><h2>Agregar Actividades</h2></label>		
-			
-					<br>
-						<br>
-					<label>Nombre de la actividad:</label>
-							<?php echo $form->textField($model_3,'Descripcion',array('size'=>50,'maxlength'=>12)); ?>
-							<?php echo $form->error($model_3,'Descripcion'); ?>
-						
-						<br>
-						<br>
+				 $conocimientos=T11Actividad::model()->findAll('m02_id='.$crono->id);
+				?> <h2>Actividades del cronograma</h2><?php
+				 foreach ( $conocimientos as $valor){
+				 echo $valor->Descripcion; 
+				?> <br>	<?php
 							
-									
-		<?php echo $form->labelEx($model_3,'Fecha de Inicio:'); ?>
-			<?php
-			$this->widget('zii.widgets.jui.CJuiDatePicker',
-				array(
-					'model'=>$model_3,
-					'attribute'=>'Fecha_inicio',
-					'language'=>'es',
-					'options'=>array( 
-							'dateFormat'=>'yy-mm-dd',
-							'constrainInput'=>'fast',
-							'showAnim'=>'slide',							
-							'changeMonth' => 'true',
-							'changeYear' => 'true',
-									),
-					)				
-			);			
-			?>
-		<?php echo $form->error($model_3,'Fecha_inicio'); ?>
-	
-					    <br>	
-						<br>
-					    		
-		<?php echo $form->labelEx($model_3,'Fecha Fin:'); ?>
-			<?php
-			$this->widget('zii.widgets.jui.CJuiDatePicker',
-				array(
-					'model'=>$model_3,
-					'attribute'=>'Fecha_Fin',
-					'language'=>'es',
-					'options'=>array( 
-							'dateFormat'=>'yy-mm-dd',
-							'constrainInput'=>'fast',
-							'showAnim'=>'slide',							
-							'changeMonth' => 'true',
-							'changeYear' => 'true',
-									),
-					)				
-			);			
-			?>
-		<?php echo $form->error($model_3,'Fecha_Fin'); ?>
-	
-					<br>
-					<br>
-					<div class="row buttons">
-		<?php echo CHtml::submitButton($model_3->isNewRecord ? 'Guardar' : 'Guardar'); ?>
-	</div>
+				
+		
+				}
+			
+				$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+				'id'=>'mymodal',
+				 'options'=>array(
+				 'title'=>'Agregar Actividad',
+				 'width'=>400,
+				 'height'=>400,
+				 'autoOpen'=>false,
+				 'resizable'=>false,
+				 'modal'=>true,
+				 'overlay'=>array(
+					'backgroundColor'=>'#000',
+					'opacity'=>'0.5'
+					
+				 ),
+				 ),
+				));
+			
+				echo $this->renderPartial('actividades',array(
+				'model_3'=>$model_3,
+				));
+			
+				$this->endWidget('zii.widgets.jui.CJuiDialog');
+				?>
+				
+				
+				<br>	
+				
+				<?php 	
+		         echo CHtml::link('Agregar Actividad al Cronograma', '', array('onclick'=>'$("#mymodal").dialog("open");return false;'));?>
+				 	<br>
+				 <?php echo CHtml::link(CHtml::encode("Finalizar"), array('index')); ?>
+				
+				
+					
+		
 			
 			
 			
 			
 </div>             
-
-<?php $this->endWidget(); ?>

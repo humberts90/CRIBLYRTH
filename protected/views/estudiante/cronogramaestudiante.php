@@ -25,6 +25,7 @@
 					<br>
 					<div class="row buttons">
 		<?php echo CHtml::submitButton($model_7->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+	
 	</div>
 			
 			

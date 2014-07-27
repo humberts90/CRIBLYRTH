@@ -74,6 +74,11 @@ class SiteController extends Controller
 	/**
 	 * Displays the contact page
 	 */
+	public function actionCartelere()
+	{
+		
+		$this->render('cartelere');
+	}
 	public function actionContact()
 	{
 	

@@ -51,10 +51,7 @@ $('.search-form form').submit(function(){
 						),
 			)); ?>
 	</table>
-
-					
-</div>
-
+				
 	</br>
 					
 </div>

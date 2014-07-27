@@ -30,7 +30,11 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 		<?php echo '<b>Respuesta de la tesis: </b></br>'; ?>
 		<?php echo $form->dropDownList($model,'M03_id',CHtml::listData(P03Status::model()->findAllByPk(array(4,3,6)),'id','Descripcion'),array('empty'=>'Seleccione respuesta','class'=>'form-control')); ?>
 		<?php echo $form->error($model,'M03_id'); ?>
+	 
+	
+	
 	</div>
+
 	<h1>Sugerencias de jurados </h1>
 	<div class="row"><?php
 	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
@@ -45,6 +49,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 				 'overlay'=>array(
 					'backgroundColor'=>'#000',
 					'opacity'=>'0.5'
+
 					
 				 ),
 				 ),
