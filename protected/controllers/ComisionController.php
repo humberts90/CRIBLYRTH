@@ -324,16 +324,8 @@ public function accessRules()
 				echo "<script>alert('Evaluacion realizada con exito');</script>";
 				$this->redirect(array('tesis'));
 
-				}
-
-			
-
-			
-				
-				
-			}
-			
-				
+				}			
+			}		
 		}
 
 		$this->render('evalua',array(
@@ -398,5 +390,48 @@ public function accessRules()
 		}	
 		
 	}
+//////////////////////////////////// Leyry y leo :3 besties foreva xD ////////////////////////////////////////////////////////////////////////
+	public function actionEvaluaP($id){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'"); 	//Usuario que esta logueado
+		$pasantia=M04Pasantia::model()->findByPk($id);								//plan de trabajo que se esta evaluando
+		$model=new T10ObservacionPasantias; 
+		$pas=T02PasantiaHasUsuario::model()->findAll("M04_id =".$pasantia->id); //Relacion: Pasantias, Usuario, tutor externo y tipo de relacion
+		$conopas=T05ConocimientoPasantias::model()->findAll("M04_id= ".$pasantia->id); //Esto como que no esta funcionando: esta tabla no tiene datos aun...
+		$prof=T08Usuario_has_rol::model()->findAll("P01_id = 3");
 
+		if(isset($_POST['T10ObservacionPasantias']))
+		{
+
+			//$tutor_academico=$_REQUEST['j1'];
+			//$pas->P02_id=$tutor_academico->value->id;
+			//$pas->save();
+
+			$model->attributes=$_POST['T10ObservacionPasantias'];
+			$temp=$_POST['T10ObservacionPasantias']['M04_id'];
+			$model->M04_id=$pasantia->id;
+			$model->Fecha=date('Y-m-d');
+
+			
+			if($model->save()){
+				
+				$pasantia->P03_id=$temp;
+				$pasantia->Fecha_Aprobacion=date('Y-m-d');
+				
+				if($pasantia->save()){
+				echo "<script>alert('Evaluacion realizada con exito');</script>";
+				$this->redirect(array('pasantias'));
+
+				}
+			}	
+		}
+
+		$this->render('evaluaP',array(
+			'Usuario'=>$tar,
+			'pas'=>$pasantia,
+			'model'=>$model,
+			'profesor'=>$prof,
+			'conocimiento'=>$conopas,
+			));
+	}
 }
