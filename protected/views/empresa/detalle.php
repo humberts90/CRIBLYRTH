@@ -31,30 +31,30 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 	<br />
 
 <b><?php echo CHtml::encode($model->getAttributeLabel('Descripcion_Trabajo')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Descripcion_Trabajo); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Descripcion_Trabajo)); ?></p>
 	<br />
 
 
 <b><?php echo CHtml::encode($model->getAttributeLabel('Fecha_Inscripcion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Fecha_Inscripcion); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Fecha_Inscripcion)); ?></p>
 	<br />
 
 <b><?php echo CHtml::encode($model->getAttributeLabel('Fecha_Defensa')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Fecha_Defensa); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Fecha_Defensa)); ?></p>
 	<br />
 
 <b><?php echo CHtml::encode($model->getAttributeLabel('Fecha_Aprobacion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Fecha_Aprobacion); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Fecha_Aprobacion)); ?></p>
 	<br />
 	
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Fecha Limite')); ?>:</b>
-	<p><?php echo CHtml::encode($model->fecha_val); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->fecha_val)); ?></p>
 	<br />
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Vacantes')); ?>:</b>
-	<p><?php echo CHtml::encode($model->vacantes); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->vacantes)); ?></p>
 	<br />
 
 <b><?php echo CHtml::encode($model->getAttributeLabel('Lapso_Academico_defensa')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Lapso_Academico_defensa); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Lapso_Academico_defensa)); ?></p>
 	<br />
 

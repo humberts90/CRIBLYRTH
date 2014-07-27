@@ -22,8 +22,9 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-<div class="col-lg-12">
-	<h1> Listado de profesores </h1>
+<h1> Listado de profesores </h1>
+<div style='overflow-x:scroll'>
+
 
 	<?php echo CHtml::link('Busqueda Avanzada','#',array('class'=>'search-button')); ?>
 	<div class="search-form" style="display:none">
@@ -33,7 +34,7 @@ $('.search-form form').submit(function(){
 	</div><!-- search-form -->
 
 
-	<table border="0" >
+	<table border="0" width="640px">
 	  <tr>
 	    <td bgcolor="#93AAD3"><h4>Cédula</h4></td>
 	    <td bgcolor="#93AAD3"><h4>Nombre Completo</h4></td>

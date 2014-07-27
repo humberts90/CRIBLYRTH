@@ -20,7 +20,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 	 <td bgcolor="#93AAD3"><h4>Estudiante</h4></td>
 	 <td bgcolor="#93AAD3"><h4>Tutor</h4></td>
 	 <td bgcolor="#93AAD3"><h4>Título de la Propuesta</h4></td>
-	  <td bgcolor="#93AAD3"><h4>Fecha</h4></td>
+	  <td bgcolor="#93AAD3"><h4>Fecha de Inscripción</h4></td>
 	 
 	</tr>
 <?php $this->widget('zii.widgets.CListView', array(
