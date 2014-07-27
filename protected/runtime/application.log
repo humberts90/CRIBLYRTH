@@ -16093,3 +16093,585 @@ HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirt
 =======
 ﻿
 >>>>>>> b00a09b9354458996d0a6afd79c08ced64a76b81
+2014/07/27 16:38:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 16:38:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 16:38:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 16:38:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "Extra3dLogos/icono.png"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Extra3dLogos/ic...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/Extra3dLogos/icono.png
+---
+2014/07/27 17:09:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:09:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:09:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:10:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/subirt
+---
+2014/07/27 17:10:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/subirt
+---
+2014/07/27 17:10:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/subirt
+---
+2014/07/27 17:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in D:\Software\Xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('estudiante/Extr...')
+#3 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH//estudiante/Extra3dLogos/icono.png
+---
+2014/07/27 17:10:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:10:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:10:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/subirt
+---
+2014/07/27 17:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/subirt
+---
+2014/07/27 17:18:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/subirt
+---
+2014/07/27 17:18:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:18:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:18:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:18:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH//site/admin
+---
+2014/07/27 17:18:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//site/admin
+---
+2014/07/27 17:18:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//site/admin
+---
+2014/07/27 17:18:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in D:\Software\Xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Extra3dLog...')
+#3 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH//site/Extra3dLogos/icono.png
+---
+2014/07/27 17:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/index
+---
+2014/07/27 17:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/index
+---
+2014/07/27 17:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/index
+---
+2014/07/27 17:19:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in D:\Software\Xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('m05Usuario/Extr...')
+#3 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/m05Usuario/Extra3dLogos/icono.png
+---
+2014/07/27 17:19:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/create
+---
+2014/07/27 17:19:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/create
+---
+2014/07/27 17:19:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/create
+---
+2014/07/27 17:20:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/43
+---
+2014/07/27 17:20:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/43
+---
+2014/07/27 17:20:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/m05Usuario/43
+---
+2014/07/27 17:20:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:20:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:20:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/
+---
+2014/07/27 17:20:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/index
+---
+2014/07/27 17:20:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/index
+---
+2014/07/27 17:20:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/index
+---
+2014/07/27 17:20:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "subirtes" solicitada.' in D:\Software\Xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('subirtes')
+#1 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('subirtes')
+#2 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('estudiante/subi...')
+#3 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/estudiante/subirtes
+HTTP_REFERER=http://localhost/CRIBLYRTH//estudiante/index
+---
+2014/07/27 17:20:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirtes
+---
+2014/07/27 17:20:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirtes
+---
+2014/07/27 17:20:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirtes
+---
+2014/07/27 17:20:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in D:\Software\Xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('estudiante/Extr...')
+#3 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/estudiante/Extra3dLogos/icono.png
+---
+2014/07/27 17:21:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:21:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:21:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:21:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirt
+---
+2014/07/27 17:21:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirt
+---
+2014/07/27 17:21:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirt
+---
+2014/07/27 17:21:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:21:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:21:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/
+---
+2014/07/27 17:27:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirp
+---
+2014/07/27 17:27:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirp
+---
+2014/07/27 17:27:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/estudiante/subirp
+---
+2014/07/27 17:27:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/buscar.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/buscar.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/Estudiante/index
+---
+2014/07/27 17:27:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/style/css/bootstrap-glyphicons.css"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/style/cs...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/style/css/bootstrap-glyphicons.css
+HTTP_REFERER=http://localhost/CRIBLYRTH/Estudiante/index
+---
+2014/07/27 17:27:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "themes/stylescripts/noticias.js"' in D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/stylescr...')
+#1 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/CRIBLYRTH/themes/stylescripts/noticias.js
+HTTP_REFERER=http://localhost/CRIBLYRTH/Estudiante/index
+---
+2014/07/27 17:27:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Extra3dLogos" solicitada.' in D:\Software\Xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\Software\Xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('Extra3dLogos')
+#1 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Extra3dLogos')
+#2 D:\Software\Xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Estudiante/Extr...')
+#3 D:\Software\Xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\Software\Xampp\htdocs\CRIBLYRTH\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/CRIBLYRTH/Estudiante/Extra3dLogos/icono.png
+---

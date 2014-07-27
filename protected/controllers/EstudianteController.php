@@ -232,7 +232,7 @@ class EstudianteController extends Controller
                     $update = 1;
                 }
 
-                echo "Update ".$update;
+               
 		//
                 
 		if(isset($_POST['M03Tesis'])){
