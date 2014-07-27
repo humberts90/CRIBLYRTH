@@ -4,7 +4,6 @@ $this->breadcrumbs=array(
 );
 echo $this->renderPartial('menu', array('usu'=>$Usuario));
 ?>
-<h1>Bienvenida <?php echo $Usuario->Nombre.' '.$Usuario->Apellido;?> </h1>
 
 <h2>Importar Tesis</h2>
 

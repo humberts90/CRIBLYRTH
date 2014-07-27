@@ -121,6 +121,7 @@ public function accessRules()
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
 		$Pasantia=M04Pasantia::model()->findByPk($id);
 		$has1=T02PasantiaHasUsuario::model()->findAll('M04_id = '.$Pasantia->id);
+		
 		$this->render('detalle',array(
 			'Usuario'=>$tar,
 			'model'=>$Pasantia,

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-07-2014 a las 16:58:19
+-- Tiempo de generación: 27-07-2014 a las 18:58:38
 -- Versión del servidor: 5.5.36
 -- Versión de PHP: 5.4.27
 
@@ -2466,20 +2466,20 @@ CREATE TABLE IF NOT EXISTS `t02_pasantia_has_usuario` (
 
 INSERT INTO `t02_pasantia_has_usuario` (`M04_id`, `M05_id`, `M07_id`, `P02_id`, `id`) VALUES
 (1, 5, 1, 7, 1),
-(1, 49, 1,2, 2),
-(1, 43, 1,3, 3),
+(1, 49, 1, 2, 2),
+(1, 43, 1, 3, 3),
 (2, 55, 1, 7, 4),
-(2, 18, 1,2, 5),
-(2, 42, 1,3, 6),
+(2, 18, 1, 2, 5),
+(2, 42, 1, 3, 6),
 (3, 34, 1, 7, 7),
-(3, 16, 1,2, 8),
-(3, 48, 1,3, 9),
+(3, 16, 1, 2, 8),
+(3, 48, 1, 3, 9),
 (4, 61, 1, 7, 10),
-(4, 16, 1,2, 11),
-(4, 36, 1,3, 12),
+(4, 16, 1, 2, 11),
+(4, 36, 1, 3, 12),
 (5, 59, 1, 7, 13),
-(5, 16, 1,2, 14),
-(5, 40, 1,3, 15);
+(5, 16, 1, 2, 14),
+(5, 40, 1, 3, 15);
 
 -- --------------------------------------------------------
 
@@ -2552,8 +2552,9 @@ CREATE TABLE IF NOT EXISTS `t05_conocimiento_pasantias` (
   PRIMARY KEY (`id`),
   KEY `fk_t05_conocimiento_pasantias_p11_conocimientos1_idx` (`P11_id`),
   KEY `fk_t05_conocimiento_pasantias_m04_pasantia1_idx` (`M04_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
+--
 -- Volcado de datos para la tabla `t05_conocimiento_pasantias`
 --
 
@@ -2572,6 +2573,7 @@ INSERT INTO `t05_conocimiento_pasantias` (`P11_id`, `M04_id`, `id`) VALUES
 (7, 6, 12),
 (9, 7, 13),
 (7, 8, 14);
+
 -- --------------------------------------------------------
 
 --

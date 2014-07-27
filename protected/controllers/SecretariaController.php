@@ -138,7 +138,7 @@ class SecretariaController extends Controller {
 
 			$tesis->Referencias = $data["R"];
 
-			$tesis->Fecha_Defensa = $data["S"];
+			$tesis->Fecha_Defensa = date("Y-m-d",strtotime($data["S"]));
 
 			$tesis->Lapso_Academico_defensa = $data["T"];
 

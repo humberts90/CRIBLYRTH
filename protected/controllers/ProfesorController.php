@@ -110,7 +110,7 @@ public function accessRules()
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model=new M03Tesis;
-
+		$model_5=new T04ConocimientoTesis;
 		if(isset($_POST["M03Tesis"]))
 		{
 			$model->attributes=$_POST["M03Tesis"];
@@ -130,7 +130,8 @@ public function accessRules()
 				$modelAsoc->P02_id = $modelRelacion->id;
 
 				$modelAsoc->save();
-
+				$model_5->M03_id= $model->id;
+				$model_5->save();
 				$this->render('index',array('Usuario'=>$tar,'dataProvider'=>ProfesorController::testProfesor(),'dataProvider2'=>ProfesorController::pasantias()));
 			}
 
@@ -139,7 +140,7 @@ public function accessRules()
 		$this->render('oferta',array(
 			'Usuario'=>$tar,
 			'model'=>$model,
-
+			'model_5'=>$model_5,
 			));
 	}
 
@@ -168,7 +169,6 @@ public function accessRules()
 				$modelAsoc->M07_id = $_POST["M07TutorExterno"]["id"]; 				
 
 				$modelAsoc->save();
-
 				$this->render('index',array('Usuario'=>$tar,'dataProvider'=>ProfesorController::testProfesor(),'dataProvider2'=>ProfesorController::pasantias()));
 			}
 
@@ -179,6 +179,7 @@ public function accessRules()
 			'Usuario'=>$tar,
 			'model'=>$model,
 			'externo'=>$modelExterno,
+		
 			));
 	}
 

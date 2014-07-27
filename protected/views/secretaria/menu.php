@@ -31,7 +31,7 @@ $this->menu=array(
 	array('label'=>'Registrar TAP culminado', 'url'=>array('viejas_tap')),
 	array('label'=>'Elaborar Acta', 'url'=>array('elaborar_acta')),
 	array('label'=>'Enviar Correo', 'url'=>array('correo')),
-
+	array('label'=>'Importar Tesis', 'url'=>array('cargar')),
 );
 ?>
 </br>

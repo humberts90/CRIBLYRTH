@@ -32,79 +32,79 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 </br>
 </br>
 <b><?php echo CHtml::encode($model->getAttributeLabel('Introduccion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Introduccion); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Introduccion)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Planteamiento_Problema')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Planteamiento_Problema); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Planteamiento_Problema)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo_General')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Objetivo_General); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Objetivo_General)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Objetivo_especifico')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Objetivo_especifico); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Objetivo_especifico)); ?></p>
 	<br />	
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Justificacion_Importancia')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Justificacion_Importancia); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Justificacion_Importancia)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Alcance_Delimitaciones')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Alcance_Delimitaciones); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Alcance_Delimitaciones)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Antecedentes')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Antecedentes); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Antecedentes)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Bases_Teoricas')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Bases_Teoricas); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Bases_Teoricas)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Bases_Legales')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Bases_Legales); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Bases_Legales)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Definicion_Terminos')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Definicion_Terminos); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Definicion_Terminos)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Enfoque_Investigacion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Enfoque_Investigacion); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Enfoque_Investigacion)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Tipo_Nivel_Invesstigacion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Tipo_Nivel_Invesstigacion); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Tipo_Nivel_Invesstigacion)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Diseno_Investigacion')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Diseno_Investigacion); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Diseno_Investigacion)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Poblacion_Muestra')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Poblacion_Muestra); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Poblacion_Muestra)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Tecnicas_Recoleccion_Datos')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Tecnicas_Recoleccion_Datos); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Tecnicas_Recoleccion_Datos)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Metodologias')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Metodologias); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Metodologias)); ?></p>
 	<br />
 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Referencias')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Referencias); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Referencias)); ?></p>
 	<br/>
 	<b><?php echo CHtml::encode($model->getAttributeLabel('fecha_val')); ?>:</b>
-	<p><?php echo CHtml::encode($model->fecha_val); ?></p>
-	<br />
+	<p><?php echo CHtml::encode(strip_tags($model->fecha_val)); ?></p>
+	<br /> 
 	<b><?php echo CHtml::encode($model->getAttributeLabel('vacantes')); ?>:</b>
-	<p><?php echo CHtml::encode($model->vacantes); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->vacantes)); ?></p>
 	<br />
 	<b><?php echo CHtml::encode($model->getAttributeLabel('Lapso_Academico_defensa')); ?>:</b>
-	<p><?php echo CHtml::encode($model->Lapso_Academico_defensa); ?></p>
+	<p><?php echo CHtml::encode(strip_tags($model->Lapso_Academico_defensa)); ?></p>
 	<br />
 
 	
