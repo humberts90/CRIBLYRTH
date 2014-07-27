@@ -17,6 +17,10 @@ $this->breadcrumbs=array(
 	'Inicio'=>array('index'),
 	'Cargar Tesis',
 );
+echo $this->renderPartial('menu', array('usu'=>$Usuario,"check_1"=>$check_1,"check_2"=>$check_2));
+
+
+
 
 
 Yii::app()->clientScript->registerScript('wizard', '

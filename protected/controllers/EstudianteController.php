@@ -228,6 +228,8 @@ class EstudianteController extends Controller
 		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Tesista'");
 		$tipo2=P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
 		$estado=P03Status::model()->find("Descripcion = 'Sin revisar'");
+		$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
+		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
 		$model_1=new M03Tesis;
 		$model_2=new T01TesisHasUsuario;
 		$model_3=new T01TesisHasUsuario;
@@ -423,7 +425,7 @@ class EstudianteController extends Controller
 		}
 		else{
                    
-			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5));
+			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,"check_1"=>$check_1,"check_2"=>$check_2,));
 		}
 
 		
@@ -515,7 +517,7 @@ class EstudianteController extends Controller
 		}
 		else{
 
-			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_7'=>$model_7));
+			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_7'=>$model_7,"check_1"=>$check_1,"check_2"=>$check_2,));
 
 		}
 	
