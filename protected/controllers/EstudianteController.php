@@ -174,35 +174,34 @@ class EstudianteController extends Controller
 				$model_5->M03_id= $model_1->id;
 				$model_5->save();
 				
-				
+				echo "Then ". $_POST['T01TesisHasUsuario']['P02_id'];
 				// Para subir la relacion con el profesor
 				$prof=M01Profesor::model()->findByPk($_POST['T01TesisHasUsuario']['P02_id']);
-				$docente=M05Usuario::model()->find("Cedula = '".$prof->Cedula."'");	
+                                //en caso de guardar sin enviar y no hayan guardado tutor aún
+                                if ($prof != NULL) {
+                    $docente = M05Usuario::model()->find("Cedula = '" . $prof->Cedula . "'");
 
-				if(count($docente)==0){ //si el profesor no se encuentra en el sistema se crea un usuario temporal no puede entrar en el sistema hasta que no se le habilite un Usuario y clave
-						
-					//Crea usuario temporal
-					$sql="Insert into m05_usuario (id,Cedula,Apellido,Nombre,Correo_Electronico) values (NULL,'".$prof->Cedula."','" .$prof->Nombre."','".$prof->Apellido."','".$prof->Correo_UNET."')";
-					$comando = Yii::app() -> db -> createCommand($sql);
-					$comando -> execute(); 
-					$docente2=M05Usuario::model()->find("Cedula = '".$prof->Cedula."'");	
-					
-					// asociar profesor a tesis
-					$model_3->M03_id=$model_1->id;
-					$model_3->M05_id=$docente2->id;
-					$model_3->P02_id=$tipo2->id;
-					
-					$model_3->save();
-				}
-				else{ // si el profesor esta en el sistema 
-					
-					$model_3->M03_id=$model_1->id;
-					$model_3->M05_id=$docente->id;
-					$model_3->P02_id=$tipo2->id;
-					
-					$model_3->save();	
-					
-				}	
+                    if (count($docente) == 0) { //si el profesor no se encuentra en el sistema se crea un usuario temporal no puede entrar en el sistema hasta que no se le habilite un Usuario y clave
+                        //Crea usuario temporal
+                        $sql = "Insert into m05_usuario (id,Cedula,Apellido,Nombre,Correo_Electronico) values (NULL,'" . $prof->Cedula . "','" . $prof->Nombre . "','" . $prof->Apellido . "','" . $prof->Correo_UNET . "')";
+                        $comando = Yii::app()->db->createCommand($sql);
+                        $comando->execute();
+                        $docente2 = M05Usuario::model()->find("Cedula = '" . $prof->Cedula . "'");
+
+                        // asociar profesor a tesis
+                        $model_3->M03_id = $model_1->id;
+                        $model_3->M05_id = $docente2->id;
+                        $model_3->P02_id = $tipo2->id;
+
+                        $model_3->save();
+                    } else { // si el profesor esta en el sistema 
+                        $model_3->M03_id = $model_1->id;
+                        $model_3->M05_id = $docente->id;
+                        $model_3->P02_id = $tipo2->id;
+
+                        $model_3->save();
+                    }
+                }//end if
 				// Para guardar la carta firmada por el tutor en pdf				
 				$estructura=Yii::app()->theme->basePath.'/Cartas_tutores/Tesis/'.$model_1->id;
 				if(file_exists($estructura)==false){ //VE SI LA CARPETA EXISTE					
@@ -220,7 +219,10 @@ class EstudianteController extends Controller
 		        }
 		       $this->redirect(array('index'));
 
-			}
+                        }else{
+                            //en caso de error del modelo
+                            var_dump($model_1->getErrors());
+                        }
 			
 
 
