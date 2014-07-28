@@ -59,14 +59,17 @@ class EstudianteController extends Controller
 		$model_4=$tar;
 		
 		$model_5=new T04ConocimientoTesis;
-                
+                try{
                 $sql = "Select M05_id from t01_tesis_has_usuario where M03_id = ".$model_1->id." and not M05_id = ".$tar->id;
                 $comando = Yii::app()->db->createCommand($sql);
                 $value=$comando->queryAll();
                // echo print_r($value);
                  if(count($value)>0)
                   $model_6=  M05Usuario::model()->find("id= ".$value[0]['M05_id']);
-                
+                }  catch (Exception $e){
+                    $model_6=new M05Usuario;
+                    
+                }
                    $this->redirect('subirt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,'model_6'=>$model_6));
                  //$this->render('index',array('Usuario'=>$tar,"check_1"=>$check_1,"check_2"=>$check_2));
                 }else
@@ -265,12 +268,12 @@ class EstudianteController extends Controller
                     $update = 1;
                     
                 }
-                
+                try{
                  $sql = "Select M05_id from t01_tesis_has_usuario where M03_id = ".$model_1->id." and not M05_id = ".$tar->id;
                 $comando = Yii::app()->db->createCommand($sql);
                 $value=$comando->queryAll();
                // echo print_r($value);
-                try{
+                
                     if(count($value)>0)
                    $model_6=  M05Usuario::model()->find("id= ".$value[0]['M05_id']); 
                 }  catch (Exception $e){
