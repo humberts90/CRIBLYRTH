@@ -6,9 +6,6 @@ if($check_1==null&&$check_2==null){
 	//array('label'=>'Subir proyecto', 'url'=>array('escoger')),
         array('label'=>'Cargar Tesis', 'url'=>array('subirt')),
             array('label'=>'Subir Pasantía', 'url'=>array('subirp')),
-	array('label'=>'Pasos para empezar con la Tesis', 'url'=>array('escoger')),
-
-	//array('label'=>'Subir proyecto', 'url'=>array('escoger')),
 	array('label'=>'Pasos para empezar con la Tesis', 'url'=>array('TutorialT')),
 
 	array('label'=>'Pasos para empezar con la Pasantia', 'url'=>array('TutorialP')),

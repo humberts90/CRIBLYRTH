@@ -27,6 +27,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 
 <?php echo CHtml::link(CHtml::encode("Descargar constancia"), array('const', 'id'=>$model->id)); ?></b>
 </br>
+<?php echo CHtml::link(CHtml::encode("Agregar Area de Conocimiento"), array('areasp', 'id'=>$model->id)); ?></b>
 </br>
 
 <b><?php echo CHtml::encode($model->getAttributeLabel('Titulo')); ?>:</b>

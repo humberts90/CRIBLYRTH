@@ -179,7 +179,7 @@ class EstudianteController extends Controller
 		  $pas=T02PasantiaHasUsuario::model()->find('M05_id='.$tar->id);
 		  $model->m04_pasantia_id=$pas->M04_id;
 		   $model->save(); 
-		     $this->redirect(array('acti','id'=>$model->id));
+		     $this->redirect(array('acti','id'=>$model->id,));
 		}
 		
 	$this->render('cronogramaestudiante',array(
@@ -191,21 +191,25 @@ class EstudianteController extends Controller
 	}
 	public function actionacti($id){
 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+	$crono=M02Cronograma::model()->find('id='.$id);
 	$model=new T11Actividad;
 	if( isset ($_POST['T11Actividad'])){
 		  $model->attributes=$_POST['T11Actividad'];
 		  $model->M02_id=$id;
 		  $model->save();
-		  $this->redirect(array('index'));
+		
+		  $this->redirect(array('acti','id'=>$id,));
 		}
 	$this->render('actividad',array(
 			'Usuario'=>$tar,
 			'model_3'=>$model,
+			'crono'=>$crono,
 			
 			
 			));
 	
 	}
+	
 	public function actionUpd($id)
 	{
 		$model=$this->loadModel($id);
@@ -232,6 +236,8 @@ class EstudianteController extends Controller
 		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Tesista'");
 		$tipo2=P02TipoRelacion::model()->find("Descripcion = 'Tutor'");
 		$estado=P03Status::model()->find("Descripcion = 'Sin revisar'");
+		$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
+		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
 		$model_1=new M03Tesis;
 		$model_2=new T01TesisHasUsuario;
 		$model_3=new T01TesisHasUsuario;
@@ -474,7 +480,11 @@ class EstudianteController extends Controller
 		}
 		else{
                    
+<<<<<<< HEAD
 			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,'model_6'=>$model_6));
+=======
+			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,"check_1"=>$check_1,"check_2"=>$check_2,));
+>>>>>>> f8e1cbc5a4bab539654b6aa9164f7b8b0571aadf
 		}
 
 		
@@ -566,7 +576,7 @@ class EstudianteController extends Controller
 		}
 		else{
 
-			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_7'=>$model_7));
+			$this->render('createp',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_7'=>$model_7,"check_1"=>$check_1,"check_2"=>$check_2,));
 
 		}
 	

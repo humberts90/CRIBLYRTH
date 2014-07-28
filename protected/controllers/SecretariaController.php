@@ -192,7 +192,7 @@ class SecretariaController extends Controller {
 									$a=$a+1;
 								}
 							
-								$this->render('index',array('Usuario'=>$tar,));	
+								$this->redirect('index',array('Usuario'=>$tar,));	
 							}
 							else
 							$error="formato no valido";

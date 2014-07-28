@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 	'Cargar Plan de Trabajo',
 );
 
-
+echo $this->renderPartial('menu', array('usu'=>$Usuario,"check_1"=>$check_1,"check_2"=>$check_2));
 Yii::app()->clientScript->registerScript('wizard', '
 	$("#wizard").steps({
 
