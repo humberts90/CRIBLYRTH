@@ -370,11 +370,11 @@ class EstudianteController extends Controller
 		            }	                 	
 		        }//end else
                         
-                        /*if($x=="1")
+                        if($x=="1")
                             $this->redirect(array('vertesis'));
                         else
 		          $this->redirect(array('index'));
-                          */
+                          
                         }else if($update==1&&$model_1->update()){
                             
                             //cédula de pareja
@@ -456,10 +456,10 @@ class EstudianteController extends Controller
 		            }	                 	
 		        }//end else
                         
-                        /*if($x=="1")
+                        if($x=="1")
                             $this->redirect(array('vertesis'));
                         else
-		          $this->redirect(array('index'));*/
+		          $this->redirect(array('index'));
                         }
                         
                         else{
@@ -480,11 +480,11 @@ class EstudianteController extends Controller
 		}
 		else{
                    
-<<<<<<< HEAD
-			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,'model_6'=>$model_6));
-=======
-			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,"check_1"=>$check_1,"check_2"=>$check_2,));
->>>>>>> f8e1cbc5a4bab539654b6aa9164f7b8b0571aadf
+
+			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,'model_6'=>$model_6,"check_1"=>$check_1,"check_2"=>$check_2));
+
+			//$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,"check_1"=>$check_1,"check_2"=>$check_2,));
+
 		}
 
 		
