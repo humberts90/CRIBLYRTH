@@ -50,7 +50,7 @@ class EstudianteController extends Controller
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
 		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
-              
+                $model_6=new M05Usuario;
                 //si tiene tesis cargando, automáticamente redirecciona
                 if($check_2!=NULL&&$check_2->P02_id==1){
                     $model_1=M03Tesis::model()->find("id= ".$check_2->M03_id);
@@ -59,7 +59,15 @@ class EstudianteController extends Controller
 		$model_4=$tar;
 		
 		$model_5=new T04ConocimientoTesis;
-                   $this->redirect('subirt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5));
+                
+                $sql = "Select M05_id from t01_tesis_has_usuario where M03_id = ".$model_1->id." and not M05_id = ".$tar->id;
+                $comando = Yii::app()->db->createCommand($sql);
+                $value=$comando->queryAll();
+               // echo print_r($value);
+                 if(count($value)>0)
+                  $model_6=  M05Usuario::model()->find("id= ".$value[0]['M05_id']);
+                
+                   $this->redirect('subirt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,'model_6'=>$model_6));
                  //$this->render('index',array('Usuario'=>$tar,"check_1"=>$check_1,"check_2"=>$check_2));
                 }else
 		   $this->render('index',array('Usuario'=>$tar,"check_1"=>$check_1,"check_2"=>$check_2));
@@ -230,10 +238,12 @@ class EstudianteController extends Controller
 		$model_4=new M05Usuario;
 		
 		$model_5=new T04ConocimientoTesis;
-		
+		$model_6=new M05Usuario;
 		
 		
 		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
+                
+               
               
                 //si tiene tesis cargando, hay que hacer update
                 $update=0;
@@ -249,11 +259,24 @@ class EstudianteController extends Controller
                     $update = 1;
                     
                 }
-
+                
+                 $sql = "Select M05_id from t01_tesis_has_usuario where M03_id = ".$model_1->id." and not M05_id = ".$tar->id;
+                $comando = Yii::app()->db->createCommand($sql);
+                $value=$comando->queryAll();
+               // echo print_r($value);
+                try{
+                    if(count($value)>0)
+                   $model_6=  M05Usuario::model()->find("id= ".$value[0]['M05_id']); 
+                }  catch (Exception $e){
+                    $model_6=new M05Usuario;
+                    
+                }
                
 		
 		if(isset($_POST['M03Tesis'])){
             
+                    $ced = Yii::app()->request->getPost("Cedula");
+                           
                     $x = $_POST['M03Tesis']['P03_id'];
                  
             
@@ -269,6 +292,21 @@ class EstudianteController extends Controller
 			
 			if($update==0&&$model_1->save(false)){
 			
+                            
+                            //cédula de pareja
+                             //cédula de pareja
+                            if($ced!=NULL){
+                               
+                                $model_6=  M05Usuario::model()->find("Cedula= ".$ced);
+                                //guardar user has tesis
+                                $model_7=  new T01TesisHasUsuario;
+                                $model_7->M05_id=$model_6->id;
+                                $model_7->M03_id=$model_1->id;
+                                $model_7->P02_id=$tipo1->id;
+                                
+                                $model_7->save();
+                           
+                            }
 				// Para subir la relacion con el alumno---------
 				
 				
@@ -326,13 +364,30 @@ class EstudianteController extends Controller
 		            }	                 	
 		        }//end else
                         
-                        if($x=="1")
+                        /*if($x=="1")
                             $this->redirect(array('vertesis'));
                         else
 		          $this->redirect(array('index'));
-
+                          */
                         }else if($update==1&&$model_1->update()){
+                            
+                            //cédula de pareja
                              
+                            if($ced!=NULL){
+                               
+                                $model_6=  M05Usuario::model()->find("Cedula= ".$ced);         
+                                
+                                
+                                
+                                //guardar user has tesis
+                                $model_7=  new T01TesisHasUsuario;
+                                $model_7->M05_id=$model_6->id;
+                                $model_7->M03_id=$model_1->id;
+                                $model_7->P02_id=$tipo1->id;
+                               
+                                $model_7->save();
+                           
+                            }
                             // Para subir la relacion con el alumno---------
 				
 				
@@ -395,10 +450,10 @@ class EstudianteController extends Controller
 		            }	                 	
 		        }//end else
                         
-                        if($x=="1")
+                        /*if($x=="1")
                             $this->redirect(array('vertesis'));
                         else
-		          $this->redirect(array('index'));
+		          $this->redirect(array('index'));*/
                         }
                         
                         else{
@@ -419,7 +474,7 @@ class EstudianteController extends Controller
 		}
 		else{
                    
-			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5));
+			$this->render('createt',array('Usuario'=>$tar,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,'model_6'=>$model_6));
 		}
 
 		
