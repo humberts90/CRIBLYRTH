@@ -59,8 +59,7 @@ $("#myInstance17").text($("#Referencias").attr("value"));
                     <br />      
 											
                  	<label>¿ En Pareja ?</label> 
-                        <input type="radio" id="check" name="par" value="1" ><br>
-				
+
 					<label>Cedula de la pareja</label> 
                                        
 					<!--<input type="text" name="cedula"><br>-->

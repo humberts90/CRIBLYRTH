@@ -497,8 +497,10 @@ class EstudianteController extends Controller
 
 	public  function ActionSubirp(){
 
-		
+				
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+			$check_1=T02PasantiaHasUsuario::model()->find("M05_id= ".$tar->id);
+		$check_2=T01TesisHasUsuario::model()->find("M05_id= ".$tar->id);
 		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Pasante'");
 		$estado=P03Status::model()->find("Descripcion = 'Sin revisar'");
 		$status=P08Categoria::model()->find("Descripcion = 'Nueva'");
