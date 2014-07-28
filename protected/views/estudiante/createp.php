@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 	'Cargar Plan de Trabajo',
 );
 
-
+echo $this->renderPartial('menu', array('usu'=>$Usuario,"check_1"=>$check_1,"check_2"=>$check_2));
 Yii::app()->clientScript->registerScript('wizard', '
 	$("#wizard").steps({
 
@@ -97,4 +97,6 @@ $('.search-form form').submit(function(){
 
 <h1> Cargar Proyecto de Trabajo</h1>
 
-<?php $this->renderPartial('_form_p', array('Usuario'=>$Usuario,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,)); ?>
+
+<?php $this->renderPartial('_form_p', array('Usuario'=>$Usuario,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_7'=>$model_7)); ?>
+

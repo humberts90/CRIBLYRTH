@@ -20,6 +20,7 @@ echo $this->renderPartial('menu', array('usu'=>$Usuario));
 			<?php echo $form->textField($model,'Titulo',array('size'=>45,'maxlength'=>45)); ?>
 			<?php echo $form->error($model,'Titulo'); ?>
             <br /> 
+            
             <br /> 	
 			<label>Planteamiento del problema:</label> 
 					

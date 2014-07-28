@@ -17,6 +17,11 @@ $this->breadcrumbs=array(
 	'Inicio'=>array('index'),
 	'Cargar Tesis',
 );
+echo $this->renderPartial('menu', array('usu'=>$Usuario,"check_1"=>$check_1,"check_2"=>$check_2));
+
+
+
+
 
 Yii::app()->clientScript->registerScript('wizard', '
 	$("#wizard").steps({
@@ -136,4 +141,4 @@ Yii::app()->clientScript->registerScript('wizard', '
 
 <h1> Cargar Anteproyecto de Tesis</h1>
 
-<?php $this->renderPartial('_form_t', array('Usuario'=>$Usuario,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4)); ?>
+<?php $this->renderPartial('_form_t', array('Usuario'=>$Usuario,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,'model_5'=>$model_5,'model_6'=>$model_6)); ?>

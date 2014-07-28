@@ -110,7 +110,7 @@ public function accessRules()
 	{
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
 		$model=new M03Tesis;
-
+		$model_5=new T04ConocimientoTesis;
 		if(isset($_POST["M03Tesis"]))
 		{
 			$model->attributes=$_POST["M03Tesis"];
@@ -130,7 +130,8 @@ public function accessRules()
 				$modelAsoc->P02_id = $modelRelacion->id;
 
 				$modelAsoc->save();
-
+				$model_5->M03_id= $model->id;
+				$model_5->save();
 				$this->render('index',array('Usuario'=>$tar,'dataProvider'=>ProfesorController::testProfesor(),'dataProvider2'=>ProfesorController::pasantias()));
 			}
 
@@ -139,7 +140,7 @@ public function accessRules()
 		$this->render('oferta',array(
 			'Usuario'=>$tar,
 			'model'=>$model,
-
+			'model_5'=>$model_5,
 			));
 	}
 
@@ -168,7 +169,6 @@ public function accessRules()
 				$modelAsoc->M07_id = $_POST["M07TutorExterno"]["id"]; 				
 
 				$modelAsoc->save();
-
 				$this->render('index',array('Usuario'=>$tar,'dataProvider'=>ProfesorController::testProfesor(),'dataProvider2'=>ProfesorController::pasantias()));
 			}
 
@@ -179,6 +179,7 @@ public function accessRules()
 			'Usuario'=>$tar,
 			'model'=>$model,
 			'externo'=>$modelExterno,
+		
 			));
 	}
 
@@ -285,6 +286,56 @@ public function accessRules()
 			'has1'=>$has1,
 			));
 	}
+	public function actionareas($id){
+	
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$tesis=M03Tesis::model()->findByPk($id);
+	    $model_1=new T04ConocimientoTesis;
+		
+		if( isset ($_POST['T04ConocimientoTesis'])){
+		  $model_1->attributes=$_POST['T04ConocimientoTesis'];
+		  $model_1->M03_id =$id;
+		  $model_1->save();
+		 
+		  $this->redirect(array('tesdeta','id'=>$id));
+		}
+		$this->render('areaconocimiento',array(
+			'Usuario'=>$tar,
+			'model_1'=>$model_1,
+			'model'=>$tesis,
+
+			));
+	}
+	public function actionSelect2(){
+
+
+		$id_uno =$_POST['T04ConocimientoTesis']['p09_id'];
+
+		$lista=P10EjeCurricular::model()->findAll('p09_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
+	}
+	public function actionSelectdos2(){
+
+
+		$id_uno =$_POST['T04ConocimientoTesis']['P10_id'];
+
+		$lista=P11Conocimientos::model()->findAll('P10_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
+	}
 
 	public function actionPasdeta($id){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
@@ -295,6 +346,76 @@ public function accessRules()
 			'model'=>$Pasantia,
 			'has1'=>$has1,
 			));
+	}
+	public function actionareasp($id){
+	
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$Pasantia=M04Pasantia::model()->findByPk($id);
+	    $model_1=new T05ConocimientoPasantias;
+		
+		if( isset ($_POST['T05ConocimientoPasantias'])){
+		  $model_1->attributes=$_POST['T05ConocimientoPasantias'];
+		  $model_1->M04_id=$id;
+		  $model_1->save();
+		 
+		  $this->redirect(array('pasdeta','id'=>$id));
+		}
+		$this->render('areaconocimientopas',array(
+			'Usuario'=>$tar,
+			'model_1'=>$model_1,
+			'model'=>$Pasantia,
+
+			));
+	}
+	public function actionSelect3(){
+
+
+		$id_uno =$_POST['T05ConocimientoPasantias']['p09_id'];
+
+		$lista=P10EjeCurricular::model()->findAll('p09_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
+	}
+	public function actionSelectdos3(){
+
+
+		$id_uno =$_POST['T05ConocimientoPasantias']['P10_id'];
+
+		$lista=P11Conocimientos::model()->findAll('P10_id = :id_uno',array(':id_uno'=>$id_uno));
+
+		$lista= CHtml::listData($lista,'id','Nombre');
+
+		foreach($lista as $valor=>$nombre){
+
+			echo Chtml::tag('option',array('value'=>$valor),CHtml::encode($nombre),true);
+
+		}
+	}
+	
+	
+	public function actionperfil(){
+	$model=new M01Profesor;
+	$model_1=new T06ConocimientoProfesor;
+	$model_2=new P11Conocimientos;
+	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+	$profesor=M01Profesor::model()->find('Cedula='.$tar->Cedula);
+	$conoci=T06ConocimientoProfesor::model()->findAll('M01_d='.$profesor->id);
+	
+	
+	$this->render('perfilprofesor',array(
+			'Usuario'=>$tar,
+			'model'=>$model,
+			 'model_1'=>$model_1,
+			 'model_2'=>$model_2,
+			 'conoci'=>$conoci,
+			));
+	
 	}
 	
 	public function actionCono()

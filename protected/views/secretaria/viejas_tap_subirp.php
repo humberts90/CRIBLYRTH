@@ -85,6 +85,6 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1> Cargar Pasantía Culminada</h1>
+<h1> Cargar Pasantía Anterior al Sistema</h1>
 
 <?php $this->renderPartial('_form_p', array('Usuario'=>$Usuario,'model_1'=>$model_1,'model_2'=>$model_2,'model_3'=>$model_3,'model_4'=>$model_4,)); ?>

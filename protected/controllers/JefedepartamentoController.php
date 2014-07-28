@@ -77,7 +77,164 @@ class JefedepartamentoController extends Controller {
 
 
 	}
+	//------------------------------------------------------------------------------------------
+	public function actionPasantias(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=new M04Pasantia();
+		$criteria=new CDbCriteria;
+		$criteria->condition='P03_id= 2';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M04Pasantia::model(), array('criteria'=>$criteria,));
 
+		$this->render('list_2',array(
+			'Usuario'=>$tar,
+			 'dataProvider'=>$dataProvider,
+			 'model'=>$model,
+			));
+	}
+	public function actionPasdeta($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$tesis=M04Pasantia::model()->findByPk($id);
+		$has1=T02PasantiaHasUsuario::model()->findAll('M04_id = '.$tesis->id);
+		$this->render('test_2',array(
+			'Usuario'=>$tar,
+			'model'=>$tesis,
+			'has1'=>$has1,
+			));
+	}
+	public function actionCronograma($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$cronos=M02Cronograma::model()->findAll("m04_pasantia_id = '".$id."'");
+		$this->render('cronogramas',array('Usuario'=>$tar,'cronos'=>$cronos,));
+	}
+	public function actionCrono($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$psa=M02Cronograma::model()->findByPk($id);
+		$datos=T11Actividad::model()->findAll("M02_id = ".$id);
+		if(count($datos)>0){
+			foreach ($datos as $value) {
+				$data[] = array(
+		  		'label' => $value->Descripcion,
+		  		'start' => $value->Fecha_inicio, 
+			     'end'   => $value->Fecha_Fin,
+				);
+			}
+			$this->render('gantt',array(
+			'data'=>$data,
+			'proy'=>$psa,
+			'Usuario'=>$tar,
+			));
+		}
+		else{
+			$this->redirect(array('cronograma','id'=>$psa->m04_pasantia_id));
+		}	
+		
+	}
+	//------------------------------------------------------------------------------------------
+		public function actionTesis(){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=new M03Tesis();
+		$criteria=new CDbCriteria;		
+		$criteria->condition='P03_id= 2';
+		$criteria->limit="10";
+		$dataProvider= new CActiveDataProvider(M03Tesis::model(), array('criteria'=>$criteria,));
+
+		$this->render('list_1',array(
+			'Usuario'=>$tar,
+			 'dataProvider'=>$dataProvider,
+			 'model'=>$model,
+			));
+	}
+		public function actionTesdeta($id){
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$tesis=M03Tesis::model()->findByPk($id);
+		$has1=T01TesisHasUsuario::model()->findAll('M03_id = '.$tesis->id);
+		$this->render('test',array(
+			'Usuario'=>$tar,
+			'model'=>$tesis,
+			'has1'=>$has1,
+			));
+	}
+	public function actionEvalua($id){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$tesis=M03Tesis::model()->findByPk($id);
+		$model=new T07ObservacionTesis;
+		$tes=T01TesisHasUsuario::model()->findAll("M03_id =".$tesis->id);
+		$conotes=T04ConocimientoTesis::model()->findAll("M03_id= ".$tesis->id);		
+		$prof=T08Usuario_has_rol::model()->findAll("P01_id = 3");
+		$tipo1=P02TipoRelacion::model()->find("Descripcion = 'Jurado 1'");
+		$tipo2=P02TipoRelacion::model()->find("Descripcion = 'Jurado 2'");
+		$tipo3=P02TipoRelacion::model()->find("Descripcion = 'Jurado Suplente'");
+		$jura1=new T01TesisHasUsuario;
+		$jura2=new T01TesisHasUsuario;
+		$jura3=new T01TesisHasUsuario;
+
+		
+
+		if(isset($_POST['T07ObservacionTesis']))
+		{
+				$jurado1=$_REQUEST['j1'];
+				$jurado2=$_REQUEST['j2'];
+				$jurado3=$_REQUEST['j3'];
+				$ju1=M01Profesor::model()->findByPk($jurado1);
+				$ju2=M01Profesor::model()->findByPk($jurado2);
+				$ju3=M01Profesor::model()->findByPk($jurado3);
+			$model->attributes=$_POST['T07ObservacionTesis'];
+			$temp=$_POST['T07ObservacionTesis']['M03_id'];
+			$model->M03_id=$tesis->id;
+			$model->Fecha=date('Y-m-d');
+
+			
+			if($model->save()){
+
+				
+			
+				$jura1->M03_id=$id;
+				$jura1->M05_id=$jurado1;
+				$jura1->P02_id="4";
+				$jura1->save();
+
+				$jura2->M03_id=$id;
+				$jura2->M05_id=$jurado2;
+				$jura2->P02_id="5";
+				$jura2->save();
+
+				$jura3->M03_id=$id;
+				$jura3->M05_id=$jurado3;
+				$jura3->P02_id="6";
+				$jura3->save(); 
+
+
+				$tesis->P03_id=$temp;
+				$tesis->Fecha_Aprobación=date('Y-m-d');
+
+			
+
+				if($tesis->save()){
+				echo "<script>alert('Evaluacion realizada con exito');</script>";
+				$this->redirect(array('tesis'));
+
+				}
+
+			
+
+			
+				
+				
+			}
+			
+				
+		}
+
+		$this->render('evalua',array(
+			'Usuario'=>$tar,
+			'tes'=>$tesis,
+			'model'=>$model,
+			'profesor'=>$prof,
+			'conocimiento'=>$conotes,
+			));
+	}
 	//----------------Reporte de Pasantías Finalizadas-------------------------------------------
 
 	public function actionPasantiaFin(){
@@ -242,6 +399,124 @@ public function actionHistPasantiaProfesor(){
                 ));
 		
 			$this->render('detalle_htp',array('Usuario'=>$tar,'dataProvider'=>$dataProvider, 'us'=>$us));
+
+	}
+
+	//////////////////////////////////// Leyry y leo :3 besties foreva xD ////////////////////////////////////////////////////////////////////////
+	public function actionEvaluaP($id){
+		
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'"); 	//Usuario que esta logueado
+		$pasantia=M04Pasantia::model()->findByPk($id);								//plan de trabajo que se esta evaluando
+		$model=new T10ObservacionPasantias; 
+		$pas= new T02PasantiaHasUsuario; //Relacion: Pasantias, Usuario, tutor externo y tipo de relacion
+		$conopas=T05ConocimientoPasantias::model()->findAll("M04_id= ".$pasantia->id); //Esto como que no esta funcionando: esta tabla no tiene datos aun...
+		$prof=T08Usuario_has_rol::model()->findAll("P01_id = 3");
+		$pas2=T02PasantiaHasUsuario::model()->find("M04_id = ".$pasantia->id);
+
+		if(isset($_POST['T10ObservacionPasantias']))
+		{
+			
+			
+			$jurado1= $_REQUEST['j1'];
+			$pas->M05_id=$jurado1;
+			$pas->M04_id=$id;
+			$pas->P02_id="3";
+			$pas->M07_id=$pas2->M07_id;
+			$pas->save();
+
+
+
+
+			$model->attributes=$_POST['T10ObservacionPasantias'];
+			$temp=$_POST['T10ObservacionPasantias']['M04_id'];
+			$model->M04_id=$pasantia->id;
+			$model->Fecha=date('Y-m-d');
+
+			
+			if($model->save()){
+				
+				$pasantia->P03_id=$temp;
+				$pasantia->Fecha_Aprobacion=date('Y-m-d');
+				
+				if($pasantia->save()){
+				echo "<script>alert('Evaluacion realizada con exito');</script>";
+				$this->redirect(array('pasantias'));
+
+				}
+			}	
+		}
+
+		$this->render('evaluaP',array(
+			'Usuario'=>$tar,
+			'pas'=>$pasantia,
+			'model'=>$model,
+			'profesor'=>$prof,
+			'conocimiento'=>$conopas,
+			));
+	}
+	//--------------------Elaboracion de acta mediante plantilla-------------------------------------------
+
+	public function actionContenido()
+    {
+        $q = $_POST['store'];
+		
+		
+		$agent = T12Plantillas::model()->findByPK($q);
+		
+		 echo json_encode(array(
+			'descripcion' => $agent->descripcion,
+			'contenido' => $agent->contenido
+			
+			));
+		Yii::app()->end();
+		
+		//$this->render('elaborar_acta',array('agent'=>$agent,));
+        /*$sql = "SELECT * FROM t12_plantillas WHERE id_plantilla=$q";
+        $command = Yii::app()->db->createCommand($sql);
+        $result= $command->queryScalar(); 
+        echo $result;*/
+		
+		
+
+    }
+	public function actionElaborar_acta(){
+	
+		//$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+	
+			
+		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model=T12Plantillas::model()->findAll();
+		
+		$this->render('elaborar_acta',array('Usuario'=>$tar,'model'=>$model));
+	}
+
+
+		public function actionCrearActa(){
+	
+		$acta= new T03ActaReunion;
+		$tar=M05Usuario::model()->find("Usuario= '".Yii::app ()->user->name."'");
+
+		$descrip='text';
+		$contenidoA='contenido';	
+		//echo $_POST['contenido'];
+
+		$descrip= (string) $_POST['contenido'];
+		//$contenidoA= (string) $_POST['contenido'];	
+		//echo $_POST['contenido'];
+		
+		$acta->M05_id=$tar->id;
+		$acta->Descripcion=$descrip;
+		$acta->Fecha=date("Y-m-d");
+	
+
+		$acta->save();
+
+	
+		$tar2=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");
+		$model2=T12Plantillas::model()->findAll();
+		
+		$this->render('elaborar_acta',array('Usuario'=>$tar2,'model'=>$model2));
+			
 
 	}
 
