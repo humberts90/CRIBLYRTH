@@ -75,7 +75,7 @@ public function accessRules()
 
 		public static function pasantias(){
 		 	$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
-				$consulta2="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Aprobacion as FA,M07_id as M07, A.Fecha_Inscripcion as FI, A.Fecha_Defensa as FD,B.P02_id AS P02 from m04_pasantia as A, t02_pasantia_has_usuario as B WHERE A.id=B.M04_id AND B.P02_id=2 AND A.Fecha_Defensa  > DATE_FORMAT(NOW(),'%Y-%m-%d') AND B.M05_id=".$tar->id." ORDER BY A.Fecha_Defensa DESC";
+				$consulta2="SELECT A.Titulo as Titulo,A.id as ID,A.P03_id AS P03, A.Fecha_Aprobacion as FA,M07_id as M07, A.Fecha_Inscripcion as FI, A.Fecha_Defensa as FD,B.P02_id AS P02 from m04_pasantia as A, t02_pasantia_has_usuario as B WHERE A.id=B.M04_id AND B.P02_id=3 AND A.Fecha_Defensa  > DATE_FORMAT(NOW(),'%Y-%m-%d') AND B.M05_id=".$tar->id." ORDER BY A.Fecha_Defensa DESC";
 		$rawData2 = Yii::app()->db->createCommand($consulta2); //or use ->queryAll(); in CArrayDataProvider
 			$count2 = Yii::app()->db->createCommand('SELECT COUNT(*) FROM (' . $consulta2 . ') as count_alias')->queryScalar();
 			$criteria=new CDbCriteria;
@@ -100,6 +100,8 @@ public function accessRules()
 
 	public function actionIndex(){
 		$tar=M05Usuario::model()->find("Usuario = '".Yii::app ()->user->name."'");	
+
+
 		$this->render('index',array('Usuario'=>$tar,'dataProvider'=>ProfesorController::testProfesor(),'dataProvider2'=>ProfesorController::pasantias()));
 	}
 
