@@ -11,6 +11,12 @@ $("#guardar").click(function(){
  // $("#tesis-form").submit();
 });
 
+$("#check").click(function() {
+    $("#Cedula").hide();
+    
+    
+});
+
 //myInstance1
 $("#myInstance1").text($("#intro").attr("value"));
 //firstname
@@ -32,8 +38,14 @@ $("#myInstance14").text($("#Poblacion_Muestra").attr("value"));
 $("#myInstance15").text($("#Tecnicas_Recoleccion_Datos").attr("value"));
 $("#myInstance16").text($("#Metodologias").attr("value"));
 $("#myInstance17").text($("#Referencias").attr("value"));
+//$("#check").click(function(){
+   // if($("#check").is(':checked'))
+       // $("#check").attr('checked', 'checked');
+          // $("#check").prop("checked", false).checkboxradio('refresh');;
+             
+//}); 
 
-}); 
+});
 </script>
 <div id="wizard" class="col-lg-offset-1"  >
    
@@ -47,11 +59,11 @@ $("#myInstance17").text($("#Referencias").attr("value"));
                     <br />      
 											
                  	<label>¿ En Pareja ?</label> 
-					
-					<br />
+
 					<label>Cedula de la pareja</label> 
                                        
-					<input type="text" name="firstname"><br>
+					<!--<input type="text" name="cedula"><br>-->
+                                        <?php echo $form->textField($model_6,'Cedula',array('size'=>55,'maxlength'=>255,'name'=>'Cedula','value'=>$model_6->Cedula)); ?>
 					<br />
 					<label>Seleccione Tutor</label> 
 					<?php echo $form->dropDownList($model_2,'P02_id',CHtml::listData(M01Profesor::model()->findAll(),'id','Nombre'),array('empty'=>'Seleccione Tutor','class'=>'form-control')); ?>
